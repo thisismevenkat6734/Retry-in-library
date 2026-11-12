@@ -1,0 +1,1211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b46">
+  <meta name="description" content="Practice bilingual competitive examination MCQs for APPSC, TGPSC, UPSC, SSC, Railway, Banking and other exams.">
+  <title>MCQ Practice Centre | RETRY IN LIBRARY</title>
+
+  <link rel="manifest" href="../manifest.json">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/reader.css">
+  <script src="../assets/js/app.js" defer></script>
+
+  <style>
+    .mcq-page {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .mcq-toolbar,
+    .mcq-stats,
+    .mcq-actions,
+    .mcq-navigation,
+    .mcq-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .mcq-toolbar {
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .mcq-filters {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-bottom: 22px;
+    }
+
+    .mcq-filters label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .mcq-filters select {
+      width: 100%;
+      min-height: 44px;
+      padding: 9px;
+      border: 1px solid #aab5c2;
+      border-radius: 8px;
+      background: transparent;
+      color: inherit;
+    }
+
+    .mcq-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-bottom: 20px;
+    }
+
+    .mcq-stat {
+      padding: 14px;
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .mcq-stat strong {
+      display: block;
+      font-size: 1.5rem;
+    }
+
+    .mcq-stat span {
+      font-size: 0.85rem;
+    }
+
+    .mcq-progress-track {
+      height: 9px;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #dce3eb;
+      margin: 12px 0 22px;
+    }
+
+    .mcq-progress-fill {
+      height: 100%;
+      width: 0;
+      background: #2476c7;
+      transition: width 0.2s ease;
+    }
+
+    .mcq-question-card {
+      padding: 22px;
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 14px;
+      margin-bottom: 18px;
+    }
+
+    .mcq-meta {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+    }
+
+    .mcq-question {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .mcq-options {
+      display: grid;
+      gap: 11px;
+    }
+
+    .mcq-option {
+      width: 100%;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      text-align: left;
+      padding: 13px;
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 10px;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .mcq-option:hover:not(:disabled) {
+      border-color: #2476c7;
+    }
+
+    .mcq-option:focus-visible,
+    .mcq-toolbar button:focus-visible,
+    .mcq-actions button:focus-visible {
+      outline: 3px solid #2476c7;
+      outline-offset: 3px;
+    }
+
+    .mcq-option:disabled {
+      cursor: default;
+      opacity: 1;
+    }
+
+    .mcq-option.correct {
+      border: 2px solid #16834a;
+      background: rgba(22, 131, 74, 0.09);
+    }
+
+    .mcq-option.incorrect {
+      border: 2px solid #c33d3d;
+      background: rgba(195, 61, 61, 0.08);
+    }
+
+    .mcq-option-letter {
+      font-weight: 800;
+      min-width: 24px;
+    }
+
+    .mcq-feedback {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color, #d9e0e7);
+    }
+
+    .mcq-feedback[hidden] {
+      display: none;
+    }
+
+    .mcq-feedback.correct-feedback {
+      border-left: 5px solid #16834a;
+    }
+
+    .mcq-feedback.wrong-feedback {
+      border-left: 5px solid #c33d3d;
+    }
+
+    .mcq-navigation {
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .mcq-actions {
+      margin-top: 16px;
+    }
+
+    .mcq-actions button,
+    .mcq-toolbar button,
+    .mcq-navigation button {
+      min-height: 42px;
+      padding: 9px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #d9e0e7);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 600;
+    }
+
+    .mcq-primary {
+      background: #1769aa;
+      color: #fff;
+      border-color: #1769aa !important;
+    }
+
+    .mcq-secondary {
+      background: transparent;
+      color: inherit;
+    }
+
+    .mcq-navigation button:disabled,
+    .mcq-actions button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .mcq-result {
+      padding: 22px;
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 14px;
+      margin-top: 20px;
+    }
+
+    .mcq-result[hidden] {
+      display: none;
+    }
+
+    .mcq-result-score {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    .mcq-empty {
+      padding: 25px;
+      text-align: center;
+    }
+
+    .mcq-note {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 650px) {
+      .mcq-filters {
+        grid-template-columns: 1fr;
+      }
+
+      .mcq-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mcq-question-card {
+        padding: 15px;
+      }
+
+      .mcq-question {
+        font-size: 1.05rem;
+      }
+
+      .mcq-navigation button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <a class="brand" href="../index.html" aria-label="Retry in Library home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span class="brand-text">
+          <strong>RETRY IN LIBRARY</strong>
+          <small>LEARN AGAIN. TRY AGAIN. SUCCEED.</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-navigation" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#exams">Exams</a>
+        <a href="../index.html#subjects">Subjects</a>
+        <a href="./mcqs.html" aria-current="page">Practice</a>
+        <a href="../my-progress.html">My Progress</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>MCQ Practice</span>
+        </nav>
+
+        <p class="eyebrow">TEST YOUR KNOWLEDGE</p>
+        <h1>MCQ Practice Centre</h1>
+        <p class="hero-description">
+          Practice competitive examination questions in Telugu and English.
+          Learn from every answer.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container mcq-page">
+
+        <section class="content-card">
+          <div class="mcq-toolbar">
+            <div>
+              <h2>Practice Settings</h2>
+              <p class="mcq-note">Choose your exam, subject and language.</p>
+            </div>
+
+            <button type="button" id="language-toggle" class="mcq-secondary">
+              తెలుగు
+            </button>
+          </div>
+
+          <div class="mcq-filters">
+            <div>
+              <label for="exam-filter">Select Exam</label>
+              <select id="exam-filter">
+                <option value="all">All Exams</option>
+                <option value="APPSC">APPSC</option>
+                <option value="TGPSC">TGPSC</option>
+                <option value="UPSC">UPSC</option>
+                <option value="SSC">SSC</option>
+                <option value="Railway">Railway</option>
+                <option value="Banking">Banking</option>
+                <option value="Police">Police</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="subject-filter">Select Subject</label>
+              <select id="subject-filter">
+                <option value="all">All Subjects</option>
+                <option value="History">History</option>
+                <option value="Polity">Polity</option>
+                <option value="Geography">Geography</option>
+                <option value="Science">Science</option>
+                <option value="Computer">Computer</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Reasoning">Reasoning</option>
+                <option value="Economy">Economy</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="question-count">Question Set</label>
+              <select id="question-count">
+                <option value="all">All available</option>
+                <option value="5">5 Questions</option>
+                <option value="10">10 Questions</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mcq-actions">
+            <button type="button" id="start-practice" class="mcq-primary">
+              Start Practice
+            </button>
+            <button type="button" id="reset-practice" class="mcq-secondary">
+              Reset Current Test
+            </button>
+          </div>
+
+          <p class="mcq-note" id="filter-message" role="status" aria-live="polite">
+            Select your preferences and start practising.
+          </p>
+        </section>
+
+        <section class="content-card" aria-label="Practice statistics">
+          <h2>Your Practice Statistics</h2>
+
+          <div class="mcq-stats">
+            <div class="mcq-stat">
+              <strong id="stat-attempted">0</strong>
+              <span>Attempted</span>
+            </div>
+
+            <div class="mcq-stat">
+              <strong id="stat-correct">0</strong>
+              <span>Correct</span>
+            </div>
+
+            <div class="mcq-stat">
+              <strong id="stat-wrong">0</strong>
+              <span>Incorrect</span>
+            </div>
+
+            <div class="mcq-stat">
+              <strong id="stat-accuracy">0%</strong>
+              <span>Accuracy</span>
+            </div>
+          </div>
+
+          <p class="mcq-note">
+            Statistics are saved in this browser only. Clearing browser data
+            may remove your saved progress.
+          </p>
+        </section>
+
+        <section class="content-card" id="practice-area">
+          <div class="mcq-toolbar">
+            <h2>Question Practice</h2>
+            <span id="question-counter">Not started</span>
+          </div>
+
+          <div class="mcq-progress-track"
+               role="progressbar"
+               aria-label="Practice progress"
+               aria-valuemin="0"
+               aria-valuemax="100"
+               aria-valuenow="0"
+               id="progress-track">
+            <div class="mcq-progress-fill" id="progress-fill"></div>
+          </div>
+
+          <div id="question-container" class="mcq-empty">
+            <h3>Ready to begin?</h3>
+            <p>Choose your filters and select Start Practice.</p>
+          </div>
+
+          <div class="mcq-navigation">
+            <button type="button" id="previous-question" class="mcq-secondary" disabled>
+              Previous
+            </button>
+
+            <button type="button" id="next-question" class="mcq-primary" disabled>
+              Next
+            </button>
+          </div>
+        </section>
+
+        <section class="mcq-result" id="result-panel" hidden aria-live="polite">
+          <h2>Practice Results</h2>
+          <p class="mcq-result-score" id="result-score">0 / 0</p>
+          <p id="result-message"></p>
+          <div class="mcq-stats">
+            <div class="mcq-stat">
+              <strong id="result-correct">0</strong>
+              <span>Correct</span>
+            </div>
+            <div class="mcq-stat">
+              <strong id="result-wrong">0</strong>
+              <span>Incorrect</span>
+            </div>
+            <div class="mcq-stat">
+              <strong id="result-unanswered">0</strong>
+              <span>Unanswered</span>
+            </div>
+            <div class="mcq-stat">
+              <strong id="result-accuracy">0%</strong>
+              <span>Accuracy</span>
+            </div>
+          </div>
+
+          <button type="button" id="restart-test" class="mcq-primary">
+            Try Again
+          </button>
+        </section>
+
+        <section class="content-card">
+          <h2>About These Questions</h2>
+          <p>
+            The initial question bank contains original practice questions
+            created for learning. They are not represented as official
+            previous-year questions.
+          </p>
+          <p>
+            Verified previous-year questions will be labelled separately
+            with examination name, year and source wherever available.
+          </p>
+        </section>
+
+        <section class="content-card">
+          <h2>Study More</h2>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="../subjects/history.html">History</a>
+            <a class="button button-secondary" href="../subjects/polity.html">Polity</a>
+            <a class="button button-secondary" href="../subjects/geography.html">Geography</a>
+            <a class="button button-secondary" href="../subjects/computer.html">Computer</a>
+            <a class="button button-secondary" href="./mock-tests.html">Mock Tests</a>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <a class="brand footer-brand" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">R</span>
+          <span class="brand-text">
+            <strong>RETRY IN LIBRARY</strong>
+            <small>LEARN AGAIN. TRY AGAIN. SUCCEED.</small>
+          </span>
+        </a>
+        <p>Your journey to success starts here.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+      </div>
+
+      <p class="copyright">
+        © <span data-current-year>2026</span> RETRY IN LIBRARY.
+        Independent educational resource. Not affiliated with any government examination authority.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+  "use strict";
+
+  (() => {
+    const STORAGE_KEY = "retryLibraryMcqStatsV1";
+    const LANGUAGE_KEY = "retryLibraryMcqLanguageV1";
+
+    const questions = [
+      {
+        id: "H001",
+        subject: "History",
+        exams: ["APPSC", "TGPSC", "UPSC", "SSC"],
+        question: {
+          en: "Which ancient dynasty is strongly associated with the Deccan region?",
+          te: "దక్కన్ ప్రాంతంతో బలంగా సంబంధం ఉన్న ప్రాచీన రాజవంశం ఏది?"
+        },
+        options: [
+          { en: "Satavahanas", te: "శాతవాహనులు" },
+          { en: "Mughals", te: "మొఘలులు" },
+          { en: "Lodhis", te: "లోడీలు" },
+          { en: "Tughlaqs", te: "తుగ్లక్‌లు" }
+        ],
+        answer: 0,
+        explanation: {
+          en: "The Satavahanas were an important ancient dynasty that ruled large parts of the Deccan.",
+          te: "శాతవాహనులు దక్కన్ ప్రాంతంలోని విస్తారమైన ప్రాంతాలను పాలించిన ముఖ్యమైన ప్రాచీన రాజవంశం."
+        }
+      },
+      {
+        id: "P001",
+        subject: "Polity",
+        exams: ["APPSC", "TGPSC", "UPSC", "SSC", "Police"],
+        question: {
+          en: "When did the Constitution of India come into force?",
+          te: "భారత రాజ్యాంగం ఎప్పుడు అమల్లోకి వచ్చింది?"
+        },
+        options: [
+          { en: "15 August 1947", te: "15 ఆగస్టు 1947" },
+          { en: "26 January 1950", te: "26 జనవరి 1950" },
+          { en: "26 November 1949", te: "26 నవంబర్ 1949" },
+          { en: "2 October 1950", te: "2 అక్టోబర్ 1950" }
+        ],
+        answer: 1,
+        explanation: {
+          en: "The Constitution of India came into force on 26 January 1950. This day is celebrated as Republic Day.",
+          te: "భారత రాజ్యాంగం 1950 జనవరి 26న అమల్లోకి వచ్చింది. ఈ రోజును గణతంత్ర దినోత్సవంగా జరుపుకుంటాం."
+        }
+      },
+      {
+        id: "G001",
+        subject: "Geography",
+        exams: ["APPSC", "TGPSC", "UPSC", "Railway"],
+        question: {
+          en: "Which is the longest river flowing entirely within India?",
+          te: "పూర్తిగా భారతదేశంలోనే ప్రవహించే పొడవైన నది ఏది?"
+        },
+        options: [
+          { en: "Ganga", te: "గంగా" },
+          { en: "Godavari", te: "గోదావరి" },
+          { en: "Yamuna", te: "యమునా" },
+          { en: "Narmada", te: "నర్మదా" }
+        ],
+        answer: 1,
+        explanation: {
+          en: "The Godavari is commonly known as the longest river flowing entirely within India.",
+          te: "గోదావరి నది పూర్తిగా భారతదేశంలో ప్రవహించే పొడవైన నదిగా ప్రసిద్ధి చెందింది."
+        }
+      },
+      {
+        id: "S001",
+        subject: "Science",
+        exams: ["APPSC", "TGPSC", "UPSC", "SSC", "Railway", "Police"],
+        question: {
+          en: "What is the chemical symbol for gold?",
+          te: "బంగారం యొక్క రసాయన సంకేతం ఏమిటి?"
+        },
+        options: [
+          { en: "Ag", te: "Ag" },
+          { en: "Au", te: "Au" },
+          { en: "Fe", te: "Fe" },
+          { en: "Cu", te: "Cu" }
+        ],
+        answer: 1,
+        explanation: {
+          en: "Au is the chemical symbol for gold, derived from the Latin word Aurum.",
+          te: "బంగారానికి Au అనే రసాయన సంకేతం ఉపయోగిస్తారు. ఇది Aurum అనే లాటిన్ పదం నుంచి వచ్చింది."
+        }
+      },
+      {
+        id: "C001",
+        subject: "Computer",
+        exams: ["APPSC", "TGPSC", "SSC", "Railway", "Banking"],
+        question: {
+          en: "Which component is commonly called the brain of a computer?",
+          te: "కంప్యూటర్ మెదడు అని సాధారణంగా దేనిని అంటారు?"
+        },
+        options: [
+          { en: "Monitor", te: "మానిటర్" },
+          { en: "Keyboard", te: "కీబోర్డ్" },
+          { en: "CPU", te: "CPU" },
+          { en: "Printer", te: "ప్రింటర్" }
+        ],
+        answer: 2,
+        explanation: {
+          en: "The CPU executes instructions and performs processing operations.",
+          te: "CPU సూచనలను అమలు చేసి కంప్యూటర్ ప్రాసెసింగ్ పనులను నిర్వహిస్తుంది."
+        }
+      },
+      {
+        id: "M001",
+        subject: "Mathematics",
+        exams: ["SSC", "Railway", "Banking", "Police"],
+        question: {
+          en: "What is 25% of 200?",
+          te: "200లో 25 శాతం ఎంత?"
+        },
+        options: [
+          { en: "25", te: "25" },
+          { en: "40", te: "40" },
+          { en: "50", te: "50" },
+          { en: "75", te: "75" }
+        ],
+        answer: 2,
+        explanation: {
+          en: "25% of 200 = (25 / 100) × 200 = 50.",
+          te: "200లో 25 శాతం = (25 / 100) × 200 = 50."
+        }
+      },
+      {
+        id: "R001",
+        subject: "Reasoning",
+        exams: ["SSC", "Railway", "Banking", "Police"],
+        question: {
+          en: "Find the next number: 2, 4, 8, 16, __",
+          te: "తదుపరి సంఖ్యను కనుగొనండి: 2, 4, 8, 16, __"
+        },
+        options: [
+          { en: "18", te: "18" },
+          { en: "24", te: "24" },
+          { en: "30", te: "30" },
+          { en: "32", te: "32" }
+        ],
+        answer: 3,
+        explanation: {
+          en: "Each number is multiplied by 2. Therefore, 16 × 2 = 32.",
+          te: "ప్రతి సంఖ్యను 2తో గుణిస్తున్నారు. కాబట్టి 16 × 2 = 32."
+        }
+      },
+      {
+        id: "E001",
+        subject: "Economy",
+        exams: ["APPSC", "TGPSC", "UPSC", "Banking"],
+        question: {
+          en: "What does GDP stand for?",
+          te: "GDP పూర్తి రూపం ఏమిటి?"
+        },
+        options: [
+          { en: "General Domestic Product", te: "General Domestic Product" },
+          { en: "Gross Domestic Product", te: "Gross Domestic Product" },
+          { en: "Global Development Plan", te: "Global Development Plan" },
+          { en: "Gross Development Programme", te: "Gross Development Programme" }
+        ],
+        answer: 1,
+        explanation: {
+          en: "GDP stands for Gross Domestic Product. It measures the value of final goods and services produced within a country's domestic territory during a specified period.",
+          te: "GDP అంటే Gross Domestic Product. ఒక నిర్దిష్ట కాలంలో దేశీయ భూభాగంలో ఉత్పత్తి చేసిన తుది వస్తువులు మరియు సేవల విలువను ఇది కొలుస్తుంది."
+        }
+      },
+      {
+        id: "P002",
+        subject: "Polity",
+        exams: ["APPSC", "TGPSC", "UPSC", "SSC"],
+        question: {
+          en: "Which part of the Indian Constitution contains Fundamental Rights?",
+          te: "భారత రాజ్యాంగంలో ప్రాథమిక హక్కులు ఏ భాగంలో ఉన్నాయి?"
+        },
+        options: [
+          { en: "Part I", te: "భాగం I" },
+          { en: "Part II", te: "భాగం II" },
+          { en: "Part III", te: "భాగం III" },
+          { en: "Part IV", te: "భాగం IV" }
+        ],
+        answer: 2,
+        explanation: {
+          en: "Fundamental Rights are contained in Part III of the Indian Constitution, Articles 12 to 35.",
+          te: "భారత రాజ్యాంగంలోని భాగం IIIలో ఆర్టికల్స్ 12 నుంచి 35 వరకు ప్రాథమిక హక్కులు ఉన్నాయి."
+        }
+      },
+      {
+        id: "C002",
+        subject: "Computer",
+        exams: ["APPSC", "TGPSC", "SSC", "Railway", "Banking"],
+        question: {
+          en: "Which of the following is volatile memory?",
+          te: "క్రింది వాటిలో ఏది తాత్కాలిక (Volatile) మెమరీ?"
+        },
+        options: [
+          { en: "ROM", te: "ROM" },
+          { en: "RAM", te: "RAM" },
+          { en: "DVD", te: "DVD" },
+          { en: "Hard Disk", te: "హార్డ్ డిస్క్" }
+        ],
+        answer: 1,
+        explanation: {
+          en: "RAM is generally volatile memory. Its contents are lost when power is removed.",
+          te: "RAM సాధారణంగా Volatile Memory. విద్యుత్ సరఫరా నిలిచినప్పుడు అందులోని డేటా తొలగిపోతుంది."
+        }
+      },
+      {
+        id: "G002",
+        subject: "Geography",
+        exams: ["APPSC", "TGPSC", "UPSC", "Railway"],
+        question: {
+          en: "The Eastern Ghats are located along which side of peninsular India?",
+          te: "తూర్పు కనుమలు ద్వీపకల్ప భారతదేశంలోని ఏ వైపున ఉన్నాయి?"
+        },
+        options: [
+          { en: "Western side", te: "పశ్చిమ వైపు" },
+          { en: "Eastern side", te: "తూర్పు వైపు" },
+          { en: "Northern side", te: "ఉత్తర వైపు" },
+          { en: "Central side", te: "మధ్య ప్రాంతం" }
+        ],
+        answer: 1,
+        explanation: {
+          en: "The Eastern Ghats extend along the eastern side of peninsular India, though they are discontinuous.",
+          te: "తూర్పు కనుమలు ద్వీపకల్ప భారతదేశ తూర్పు వైపున విస్తరించి ఉంటాయి. అయితే అవి నిరంతర పర్వత శ్రేణిగా ఉండవు."
+        }
+      },
+      {
+        id: "S002",
+        subject: "Science",
+        exams: ["APPSC", "TGPSC", "UPSC", "SSC", "Railway"],
+        question: {
+          en: "Which gas do green plants absorb during photosynthesis?",
+          te: "కిరణజన్య సంయోగక్రియ సమయంలో ఆకుపచ్చ మొక్కలు ఏ వాయువును గ్రహిస్తాయి?"
+        },
+        options: [
+          { en: "Oxygen", te: "ఆక్సిజన్" },
+          { en: "Nitrogen", te: "నైట్రోజన్" },
+          { en: "Carbon dioxide", te: "కార్బన్ డయాక్సైడ్" },
+          { en: "Hydrogen", te: "హైడ్రోజన్" }
+        ],
+        answer: 2,
+        explanation: {
+          en: "Plants absorb carbon dioxide and use light energy to produce sugars during photosynthesis.",
+          te: "మొక్కలు కార్బన్ డయాక్సైడ్‌ను గ్రహించి కాంతి శక్తిని ఉపయోగించి కిరణజన్య సంయోగక్రియ ద్వారా చక్కెరలను తయారు చేస్తాయి."
+        }
+      }
+    ];
+
+    const elements = {
+      exam: document.getElementById("exam-filter"),
+      subject: document.getElementById("subject-filter"),
+      count: document.getElementById("question-count"),
+      start: document.getElementById("start-practice"),
+      reset: document.getElementById("reset-practice"),
+      language: document.getElementById("language-toggle"),
+      message: document.getElementById("filter-message"),
+      question: document.getElementById("question-container"),
+      counter: document.getElementById("question-counter"),
+      previous: document.getElementById("previous-question"),
+      next: document.getElementById("next-question"),
+      progress: document.getElementById("progress-fill"),
+      progressTrack: document.getElementById("progress-track"),
+      result: document.getElementById("result-panel"),
+      restart: document.getElementById("restart-test")
+    };
+
+    let language = "en";
+    let activeQuestions = [];
+    let currentIndex = 0;
+    let answers = {};
+    let started = false;
+    let finished = false;
+
+    function loadStats() {
+      try {
+        const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        return data && typeof data === "object"
+          ? data
+          : { attempted: 0, correct: 0, wrong: 0 };
+      } catch {
+        return { attempted: 0, correct: 0, wrong: 0 };
+      }
+    }
+
+    function saveStats(stats) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+      } catch {
+        elements.message.textContent =
+          "Browser storage is unavailable. Your progress may not be saved.";
+      }
+    }
+
+    function updateStats() {
+      const stats = loadStats();
+      const accuracy = stats.attempted
+        ? Math.round((stats.correct / stats.attempted) * 100)
+        : 0;
+
+      document.getElementById("stat-attempted").textContent = stats.attempted;
+      document.getElementById("stat-correct").textContent = stats.correct;
+      document.getElementById("stat-wrong").textContent = stats.wrong;
+      document.getElementById("stat-accuracy").textContent = accuracy + "%";
+    }
+
+    function getFilteredQuestions() {
+      const exam = elements.exam.value;
+      const subject = elements.subject.value;
+
+      return questions.filter(question => {
+        const examMatch =
+          exam === "all" || question.exams.includes(exam);
+
+        const subjectMatch =
+          subject === "all" || question.subject === subject;
+
+        return examMatch && subjectMatch;
+      });
+    }
+
+    function shuffle(array) {
+      const result = [...array];
+
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+
+      return result;
+    }
+
+    function makeElement(tag, className, text) {
+      const element = document.createElement(tag);
+
+      if (className) element.className = className;
+      if (text !== undefined) element.textContent = text;
+
+      return element;
+    }
+
+    function updateProgress() {
+      const total = activeQuestions.length;
+      const attempted = Object.keys(answers).length;
+      const percent = total ? Math.round((attempted / total) * 100) : 0;
+
+      elements.progress.style.width = percent + "%";
+      elements.progressTrack.setAttribute("aria-valuenow", String(percent));
+    }
+
+    function renderQuestion() {
+      if (!started || !activeQuestions.length) return;
+
+      const question = activeQuestions[currentIndex];
+      const selectedAnswer = answers[question.id];
+      const submitted = selectedAnswer !== undefined;
+
+      elements.question.replaceChildren();
+
+      const meta = makeElement("div", "mcq-meta");
+      meta.append(
+        makeElement("span", "", question.subject),
+        makeElement("span", "", question.exams.join(" · "))
+      );
+
+      const heading = makeElement(
+        "h3",
+        "mcq-question",
+        question.question[language]
+      );
+
+      const options = makeElement("div", "mcq-options");
+      const letters = ["A", "B", "C", "D"];
+
+      question.options.forEach((option, index) => {
+        const button = makeElement("button", "mcq-option");
+        button.type = "button";
+        button.disabled = submitted;
+
+        const letter = makeElement(
+          "span",
+          "mcq-option-letter",
+          letters[index] + "."
+        );
+
+        const text = makeElement(
+          "span",
+          "",
+          option[language]
+        );
+
+        button.append(letter, text);
+
+        if (submitted && index === question.answer) {
+          button.classList.add("correct");
+        } else if (submitted && index === selectedAnswer &&
+                   selectedAnswer !== question.answer) {
+          button.classList.add("incorrect");
+        }
+
+        button.addEventListener("click", () => {
+          submitAnswer(index);
+        });
+
+        options.append(button);
+      });
+
+      elements.question.append(meta, heading, options);
+
+      if (submitted) {
+        const isCorrect = selectedAnswer === question.answer;
+
+        const feedback = makeElement(
+          "div",
+          "mcq-feedback " +
+            (isCorrect ? "correct-feedback" : "wrong-feedback")
+        );
+
+        feedback.setAttribute("role", "status");
+
+        const resultHeading = makeElement(
+          "h3",
+          "",
+          isCorrect
+            ? (language === "en" ? "Correct answer!" : "సరైన సమాధానం!")
+            : (language === "en" ? "Incorrect answer" : "తప్పు సమాధానం")
+        );
+
+        const correctAnswer = makeElement(
+          "p",
+          "",
+          (language === "en" ? "Correct answer: " : "సరైన సమాధానం: ") +
+          question.options[question.answer][language]
+        );
+
+        const explanation = makeElement(
+          "p",
+          "",
+          question.explanation[language]
+        );
+
+        feedback.append(resultHeading, correctAnswer, explanation);
+        elements.question.append(feedback);
+      }
+
+      elements.counter.textContent =
+        "Question " + (currentIndex + 1) + " of " + activeQuestions.length;
+
+      elements.previous.disabled = currentIndex === 0;
+      elements.next.disabled = !submitted;
+
+      elements.next.textContent =
+        currentIndex === activeQuestions.length - 1
+          ? "View Results"
+          : "Next";
+
+      updateProgress();
+    }
+
+    function submitAnswer(selectedIndex) {
+      const question = activeQuestions[currentIndex];
+
+      if (!question || answers[question.id] !== undefined || finished) {
+        return;
+      }
+
+      answers[question.id] = selectedIndex;
+
+      const stats = loadStats();
+      stats.attempted += 1;
+
+      if (selectedIndex === question.answer) {
+        stats.correct += 1;
+      } else {
+        stats.wrong += 1;
+      }
+
+      saveStats(stats);
+      updateStats();
+      renderQuestion();
+
+      elements.message.textContent =
+        language === "en"
+          ? "Answer submitted. Read the explanation before continuing."
+          : "సమాధానం నమోదు అయింది. కొనసాగించే ముందు వివరణ చదవండి.";
+    }
+
+    function startPractice() {
+      const filtered = getFilteredQuestions();
+
+      if (!filtered.length) {
+        elements.message.textContent =
+          "No questions are currently available for this filter combination. Try another subject or exam.";
+        return;
+      }
+
+      const requestedCount = elements.count.value;
+      const shuffled = shuffle(filtered);
+
+      activeQuestions = requestedCount === "all"
+        ? shuffled
+        : shuffled.slice(0, Number(requestedCount));
+
+      currentIndex = 0;
+      answers = {};
+      started = true;
+      finished = false;
+
+      elements.result.hidden = true;
+      elements.message.textContent =
+        "Practice started. Select an option to submit your answer.";
+
+      renderQuestion();
+
+      document.getElementById("practice-area").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    function showResults() {
+      finished = true;
+
+      const total = activeQuestions.length;
+      const attempted = Object.keys(answers).length;
+      const correct = activeQuestions.filter(question =>
+        answers[question.id] === question.answer
+      ).length;
+
+      const wrong = activeQuestions.filter(question =>
+        answers[question.id] !== undefined &&
+        answers[question.id] !== question.answer
+      ).length;
+
+      const unanswered = total - attempted;
+      const accuracy = attempted
+        ? Math.round((correct / attempted) * 100)
+        : 0;
+
+      document.getElementById("result-score").textContent =
+        correct + " / " + total;
+
+      document.getElementById("result-correct").textContent = correct;
+      document.getElementById("result-wrong").textContent = wrong;
+      document.getElementById("result-unanswered").textContent = unanswered;
+      document.getElementById("result-accuracy").textContent = accuracy + "%";
+
+      document.getElementById("result-message").textContent =
+        accuracy >= 80
+          ? "Excellent work! Keep revising."
+          : accuracy >= 50
+            ? "Good effort. Revise the incorrect answers and try again."
+            : "Keep learning. Review the explanations and practise again.";
+
+      elements.result.hidden = false;
+      elements.next.disabled = true;
+      elements.previous.disabled = true;
+
+      elements.result.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    function goNext() {
+      if (!started || finished) return;
+
+      const question = activeQuestions[currentIndex];
+
+      if (answers[question.id] === undefined) {
+        elements.message.textContent =
+          "Please select an answer before continuing.";
+        return;
+      }
+
+      if (currentIndex === activeQuestions.length - 1) {
+        showResults();
+        return;
+      }
+
+      currentIndex++;
+      renderQuestion();
+    }
+
+    function goPrevious() {
+      if (!started || finished || currentIndex === 0) return;
+
+      currentIndex--;
+      renderQuestion();
+    }
+
+    function resetPractice() {
+      if (started && Object.keys(answers).length > 0) {
+        const confirmed = window.confirm(
+          "Reset this test? Your already submitted answers will remain in your overall statistics."
+        );
+
+        if (!confirmed) return;
+      }
+
+      activeQuestions = [];
+      currentIndex = 0;
+      answers = {};
+      started = false;
+      finished = false;
+
+      elements.question.replaceChildren(
+        makeElement("div", "mcq-empty", "Choose your filters and start a new practice session.")
+      );
+
+      elements.counter.textContent = "Not started";
+      elements.progress.style.width = "0%";
+      elements.progressTrack.setAttribute("aria-valuenow", "0");
+      elements.previous.disabled = true;
+      elements.next.disabled = true;
+      elements.next.textContent = "Next";
+      elements.result.hidden = true;
+
+      elements.message.textContent = "Current test has been reset.";
+    }
+
+    function toggleLanguage() {
+      language = language === "en" ? "te" : "en";
+
+      try {
+        localStorage.setItem(LANGUAGE_KEY, language);
+      } catch {
+        // Language still works for this session.
+      }
+
+      elements.language.textContent =
+        language === "en" ? "తెలుగు" : "English";
+
+      if (started && !finished) {
+        renderQuestion();
+      }
+
+      elements.message.textContent =
+        language === "en"
+          ? "Display language: English"
+          : "ప్రదర్శన భాష: తెలుగు";
+    }
+
+    function initialize() {
+      try {
+        const savedLanguage = localStorage.getItem(LANGUAGE_KEY);
+
+        if (savedLanguage === "te" || savedLanguage === "en") {
+          language = savedLanguage;
+        }
+      } catch {
+        // Default language remains English.
+      }
+
+      elements.language.textContent =
+        language === "en" ? "తెలుగు" : "English";
+
+      elements.start.addEventListener("click", startPractice);
+      elements.reset.addEventListener("click", resetPractice);
+      elements.language.addEventListener("click", toggleLanguage);
+      elements.previous.addEventListener("click", goPrevious);
+      elements.next.addEventListener("click", goNext);
+      elements.restart.addEventListener("click", startPractice);
+
+      updateStats();
+    }
+
+    initialize();
+  })();
+  </script>
+</body>
+</html>
