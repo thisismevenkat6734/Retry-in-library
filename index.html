@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RETRY IN LIBRARY | AP & Telangana Competitive Exam Preparation</title>
+
+  <meta name="description" content="Prepare for APPSC, TGPSC, Police, DSC, SSC, Banking and other competitive exams with bilingual Telugu and English study materials, practice questions and mock tests.">
+
+  <meta name="keywords" content="APPSC, TGPSC, Telangana exams, Andhra Pradesh exams, competitive exams, Telugu study materials, English study materials, mock tests">
+
+  <meta name="author" content="RETRY IN LIBRARY">
+  <meta name="theme-color" content="#142D4E">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="RETRY IN LIBRARY">
+  <meta property="og:description" content="Learn Again. Try Again. Succeed.">
+  <meta property="og:type" content="website">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="assets/js/app.js" defer></script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <div class="header-container">
+
+      <a href="./" class="brand" aria-label="Retry In Library Home">
+
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M24 13C18 8 10 9 5 12V36C12 32 18 33 24 38"
+              stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24 13C30 8 38 9 43 12V36C36 32 30 33 24 38"
+              stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24 13V38"
+              stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round"/>
+          </svg>
+        </span>
+
+        <span class="brand-text">
+          <strong>RETRY</strong>
+          <small>IN LIBRARY</small>
+        </span>
+
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="primary-navigation">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+      <nav
+        class="primary-navigation"
+        id="primary-navigation"
+        aria-label="Main navigation">
+
+        <a href="#home">Home</a>
+        <a href="#exams">Exams</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#states">State Library</a>
+        <a href="#current-affairs">Current Affairs</a>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <button
+          class="language-toggle"
+          id="language-toggle"
+          type="button"
+          aria-label="Change language">
+          తెలుగు
+        </button>
+
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode">
+          <span aria-hidden="true">◐</span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero-section" id="home">
+
+      <div class="hero-container">
+
+        <div class="hero-content">
+
+          <span class="hero-label">
+            YOUR DIGITAL STUDY LIBRARY
+          </span>
+
+          <h1>
+            Your Success<br>
+            Starts With a
+            <span>Retry.</span>
+          </h1>
+
+          <p class="hero-description">
+            Learn at your own pace. Practice with confidence.
+            Prepare for your dream government job with
+            quality bilingual study materials.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#subjects" class="btn btn-primary">
+              Explore Library
+            </a>
+
+            <a href="#exams" class="btn btn-secondary">
+              Find Your Exam
+            </a>
+
+          </div>
+
+          <div class="hero-language-note">
+            తెలుగు + English | AP + Telangana | All India Exams
+          </div>
+
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+
+          <div class="hero-book-card">
+
+            <div class="book-symbol">📚</div>
+
+            <span>KNOWLEDGE IS POWER</span>
+
+            <strong>
+              Learn.<br>
+              Practice.<br>
+              Achieve.
+            </strong>
+
+            <div class="book-decoration"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+    <section class="search-section" aria-label="Study material search">
+
+      <div class="search-container">
+
+        <div class="search-heading">
+          <h2>What do you want to learn?</h2>
+          <p>Find subjects, exams, chapters and study materials.</p>
+        </div>
+
+        <form class="search-form" id="global-search">
+
+          <label class="visually-hidden" for="search-input">
+            Search study materials
+          </label>
+
+          <input
+            type="search"
+            id="search-input"
+            name="q"
+            placeholder="Search exams, subjects or topics..."
+            autocomplete="off">
+
+          <button type="submit" class="btn btn-primary">
+            Search
+          </button>
+
+        </form>
+
+        <div
+          id="search-results"
+          class="search-results"
+          aria-live="polite">
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXAM CATEGORIES -->
+    <section class="content-section" id="exams">
+
+      <div class="section-heading">
+
+        <span class="section-label">EXAM PREPARATION</span>
+
+        <h2>Choose Your Examination</h2>
+
+        <p>
+          Explore preparation materials for your target examination.
+        </p>
+
+      </div>
+
+      <div class="exam-grid">
+
+        <a href="#ap-exams" class="exam-card">
+          <span class="exam-icon">🏛️</span>
+          <h3>APPSC</h3>
+          <p>Groups 1, 2, 3 & 4</p>
+          <span class="card-link">Explore →</span>
+        </a>
+
+        <a href="#tg-exams" class="exam-card">
+          <span class="exam-icon">🏛️</span>
+          <h3>TGPSC</h3>
+          <p>Groups 1, 2, 3 & 4</p>
+          <span class="card-link">Explore →</span>
+        </a>
+
+        <a href="#police-exams" class="exam-card">
+          <span class="exam-icon">🛡️</span>
+          <h3>Police Exams</h3>
+          <p>SI & Constable</p>
+          <span class="card-link">Explore →</span>
+        </a>
+
+        <a href="#teaching-exams" class="exam-card">
+          <span class="exam-icon">📖</span>
+          <h3>Teaching Exams</h3>
+          <p>TET & DSC</p>
+          <span class="card-link">Explore →</span>
+        </a>
+
+        <a href="#central-exams" class="exam-card">
+          <span class="exam-icon">🇮🇳</span>
+          <h3>Central Exams</h3>
+          <p>UPSC & SSC</p>
+          <span class="card-link">Explore →</span>
+        </a>
+
+        <a href="#other-exams" class="exam-card">
+          <span class="exam-icon">🚆</span>
+          <h3>Other Exams</h3>
+          <p>Banking, Railway & Defence</p>
+          <span class="card-link">Explore →</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- SUBJECTS -->
+    <section class="content-section subjects-section" id="subjects">
+
+      <div class="section-heading">
+
+        <span class="section-label">MASTER YOUR SUBJECTS</span>
+
+        <h2>Explore Study Subjects</h2>
+
+        <p>
+          Build strong fundamentals with chapter-wise learning.
+        </p>
+
+      </div>
+
+      <div class="subject-grid">
+
+        <a href="#subject-history" class="subject-card">
+          <span>📜</span>
+          <strong>History</strong>
+          <small>చరిత్ర</small>
+        </a>
+
+        <a href="#subject-polity" class="subject-card">
+          <span>⚖️</span>
+          <strong>Indian Polity</strong>
+          <small>భారత రాజ్యాంగం</small>
+        </a>
+
+        <a href="#subject-geography" class="subject-card">
+          <span>🌍</span>
+          <strong>Geography</strong>
+          <small>భూగోళ శాస్త్రం</small>
+        </a>
+
+        <a href="#subject-economy" class="subject-card">
+          <span>📊</span>
+          <strong>Economy</strong>
+          <small>ఆర్థిక శాస్త్రం</small>
+        </a>
+
+        <a href="#subject-science" class="subject-card">
+          <span>🔬</span>
+          <strong>General Science</strong>
+          <small>సాధారణ విజ్ఞాన శాస్త్రం</small>
+        </a>
+
+        <a href="#subject-maths" class="subject-card">
+          <span>➗</span>
+          <strong>Mathematics</strong>
+          <small>గణితం</small>
+        </a>
+
+        <a href="#subject-reasoning" class="subject-card">
+          <span>🧠</span>
+          <strong>Reasoning</strong>
+          <small>తార్కిక సామర్థ్యం</small>
+        </a>
+
+        <a href="#subject-languages" class="subject-card">
+          <span>🔤</span>
+          <strong>Languages</strong>
+          <small>తెలుగు & English</small>
+        </a>
+
+        <a href="#subject-computer" class="subject-card">
+          <span>💻</span>
+          <strong>Computer Knowledge</strong>
+          <small>కంప్యూటర్ పరిజ్ఞానం</small>
+        </a>
+
+        <a href="#subject-gk" class="subject-card">
+          <span>🌐</span>
+          <strong>General Knowledge</strong>
+          <small>సాధారణ జ్ఞానం</small>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- STATE LIBRARY -->
+    <section class="content-section state-section" id="states">
+
+      <div class="section-heading">
+
+        <span class="section-label">STATE SPECIAL LIBRARY</span>
+
+        <h2>Learn Your State</h2>
+
+        <p>
+          Special study materials for Andhra Pradesh and Telangana.
+        </p>
+
+      </div>
+
+      <div class="state-grid">
+
+        <article class="state-card" id="ap-exams">
+
+          <div class="state-symbol">🌾</div>
+
+          <h3>Andhra Pradesh</h3>
+
+          <p>
+            AP History, Geography, Economy, Culture,
+            Government Schemes and more.
+          </p>
+
+          <a href="#ap-exams" class="text-link">
+            Explore AP Library →
+          </a>
+
+        </article>
+
+        <article class="state-card" id="tg-exams">
+
+          <div class="state-symbol">🏰</div>
+
+          <h3>Telangana</h3>
+
+          <p>
+            Telangana History, Movement, Geography,
+            Economy, Culture and more.
+          </p>
+
+          <a href="#tg-exams" class="text-link">
+            Explore Telangana Library →
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRACTICE -->
+    <section class="content-section practice-section">
+
+      <div class="practice-content">
+
+        <span class="section-label">TEST YOUR KNOWLEDGE</span>
+
+        <h2>Practice Makes Progress.</h2>
+
+        <p>
+          Improve your preparation with topic-wise MCQs,
+          practice sets and timed mock examinations.
+        </p>
+
+        <div class="practice-features">
+
+          <span>✓ Chapter-wise MCQs</span>
+          <span>✓ Subject Tests</span>
+          <span>✓ Mock Examinations</span>
+          <span>✓ Detailed Explanations</span>
+
+        </div>
+
+        <a href="#subjects" class="btn btn-primary">
+          Start Practising
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- CURRENT AFFAIRS -->
+    <section class="content-section" id="current-affairs">
+
+      <div class="section-heading">
+
+        <span class="section-label">STAY UPDATED</span>
+
+        <h2>Current Affairs</h2>
+
+        <p>
+          Year-wise and month-wise current affairs preparation.
+        </p>
+
+      </div>
+
+      <div class="current-affairs-grid">
+
+        <a href="#current-2026" class="current-card" id="current-2026">
+          <span>📅</span>
+          <h3>2026 Edition</h3>
+          <p>Current Affairs 2026</p>
+        </a>
+
+        <a href="#current-2027" class="current-card" id="current-2027">
+          <span>🗓️</span>
+          <h3>2027 Edition</h3>
+          <p>Future Edition – To Be Updated</p>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- TRUST & DISCLAIMER -->
+    <section class="trust-section">
+
+      <div class="trust-container">
+
+        <h2>Learn with Confidence</h2>
+
+        <p>
+          Independent educational platform providing
+          original study materials and learning resources.
+          Always verify examination details through official
+          recruitment authority notifications.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-container">
+
+      <div class="footer-brand">
+
+        <strong>RETRY IN LIBRARY</strong>
+
+        <p>
+          Learn Again. Try Again. Succeed.
+        </p>
+
+        <small>
+          An independent educational platform.
+        </small>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>Library</h3>
+
+        <a href="#exams">Examinations</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#states">State Library</a>
+        <a href="#current-affairs">Current Affairs</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>Legal & Support</h3>
+
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="copyright.html">Copyright Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="contact.html">Contact Us</a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span id="current-year">2026</span>
+        RETRY IN LIBRARY. All rights reserved.
+      </p>
+
+      <p>
+        Made for learners, built for knowledge.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
