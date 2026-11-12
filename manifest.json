@@ -1,15 +1,21 @@
+
 {
   "id": "./",
   "name": "RETRY IN LIBRARY",
-  "short_name": "Retry Library",
-  "description": "Learn Again. Try Again. Succeed. A bilingual competitive exam learning platform.",
+  "short_name": "RETRY LIBRARY",
+  "description": "Bilingual Telugu and English competitive examination learning library for AP, Telangana and all-India exams.",
+  "lang": "en-IN",
+  "dir": "ltr",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#f8fafc",
-  "theme_color": "#1e3a8a",
-  "lang": "en",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#2457d6",
   "categories": [
     "education",
     "books",
