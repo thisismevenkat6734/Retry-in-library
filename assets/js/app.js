@@ -3,7 +3,7 @@
 /* =========================================================
    RETRY IN LIBRARY
    File: assets/js/app.js
-   Main website interactions
+   Main website application
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeLanguage();
   initializeSearch();
   initializeCurrentYear();
+  registerServiceWorker();
 });
 
 /* ---------------------------------------------------------
@@ -59,7 +60,6 @@ function initializeNavigation() {
 --------------------------------------------------------- */
 
 function initializeTheme() {
-  const themeToggle = document.querySelector("#theme-toggle");
   const savedTheme = getStoredPreference("ril-theme");
 
   const preferredTheme =
@@ -70,6 +70,8 @@ function initializeTheme() {
       : "light");
 
   applyTheme(preferredTheme);
+
+  const themeToggle = document.querySelector("#theme-toggle");
 
   if (!themeToggle) return;
 
@@ -85,7 +87,9 @@ function initializeTheme() {
 
 function applyTheme(theme) {
   const isDark = theme === "dark";
+
   document.body.classList.toggle("dark-mode", isDark);
+  document.documentElement.style.colorScheme = isDark ? "dark" : "light";
 
   const themeToggle = document.querySelector("#theme-toggle");
 
@@ -97,8 +101,6 @@ function applyTheme(theme) {
 
     themeToggle.setAttribute("aria-pressed", String(isDark));
   }
-
-  document.documentElement.style.colorScheme = isDark ? "dark" : "light";
 }
 
 /* ---------------------------------------------------------
@@ -106,20 +108,16 @@ function applyTheme(theme) {
 --------------------------------------------------------- */
 
 function initializeLanguage() {
-  const languageToggle = document.querySelector("#language-toggle");
   const savedLanguage = getStoredPreference("ril-language");
 
-  const initialLanguage =
-    savedLanguage === "te" ? "te" : "en";
+  applyLanguage(savedLanguage === "te" ? "te" : "en");
 
-  applyLanguage(initialLanguage);
+  const languageToggle = document.querySelector("#language-toggle");
 
   if (!languageToggle) return;
 
   languageToggle.addEventListener("click", () => {
-    const currentLanguage =
-      document.body.dataset.language || "en";
-
+    const currentLanguage = document.body.dataset.language || "en";
     const nextLanguage = currentLanguage === "en" ? "te" : "en";
 
     applyLanguage(nextLanguage);
@@ -131,8 +129,7 @@ function applyLanguage(language) {
   const selectedLanguage = language === "te" ? "te" : "en";
 
   document.body.dataset.language = selectedLanguage;
-  document.documentElement.lang =
-    selectedLanguage === "te" ? "te" : "en";
+  document.documentElement.lang = selectedLanguage;
 
   document.querySelectorAll("[data-en][data-te]").forEach((element) => {
     const translatedText =
@@ -145,14 +142,14 @@ function applyLanguage(language) {
     }
   });
 
-  document.querySelectorAll("[data-en-placeholder][data-te-placeholder]").forEach(
-    (element) => {
-      element.placeholder =
-        selectedLanguage === "te"
-          ? element.dataset.tePlaceholder
-          : element.dataset.enPlaceholder;
-    }
-  );
+  document.querySelectorAll(
+    "[data-en-placeholder][data-te-placeholder]"
+  ).forEach((element) => {
+    element.placeholder =
+      selectedLanguage === "te"
+        ? element.dataset.tePlaceholder
+        : element.dataset.enPlaceholder;
+  });
 
   const languageToggle = document.querySelector("#language-toggle");
 
@@ -193,6 +190,7 @@ function initializeSearch() {
 
   searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
     performSearch(
       searchInput.value,
       searchableItems,
@@ -202,7 +200,7 @@ function initializeSearch() {
 
   searchInput.addEventListener("input", () => {
     if (!searchInput.value.trim()) {
-      searchResults.innerHTML = "";
+      searchResults.replaceChildren();
       searchResults.hidden = true;
     }
   });
@@ -235,6 +233,7 @@ function performSearch(query, items, resultsContainer) {
   if (matches.length === 0) {
     const message = document.createElement("p");
     message.textContent = "No matching study materials found.";
+
     resultsContainer.appendChild(message);
     resultsContainer.hidden = false;
     return;
@@ -297,7 +296,54 @@ function initializeCurrentYear() {
 }
 
 /* ---------------------------------------------------------
-   6. LOCAL PREFERENCE STORAGE
+   6. PWA SERVICE WORKER REGISTRATION
+--------------------------------------------------------- */
+
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) {
+    console.info("Service Workers are not supported in this browser.");
+    return;
+  }
+
+  if (!window.isSecureContext) {
+    console.info("Service Worker requires a secure context such as HTTPS.");
+    return;
+  }
+
+  window.addEventListener("load", async () => {
+    try {
+      const registration = await navigator.serviceWorker.register(
+        "./sw.js",
+        { scope: "./" }
+      );
+
+      console.info(
+        "RETRY IN LIBRARY Service Worker registered:",
+        registration.scope
+      );
+
+      registration.addEventListener("updatefound", () => {
+        const newWorker = registration.installing;
+
+        if (!newWorker) return;
+
+        newWorker.addEventListener("statechange", () => {
+          if (
+            newWorker.state === "installed" &&
+            navigator.serviceWorker.controller
+          ) {
+            console.info("A new website version is available.");
+          }
+        });
+      });
+    } catch (error) {
+      console.error("Service Worker registration failed:", error);
+    }
+  });
+}
+
+/* ---------------------------------------------------------
+   7. LOCAL PREFERENCE STORAGE
 --------------------------------------------------------- */
 
 function getStoredPreference(key) {
