@@ -1,364 +1,626 @@
 "use strict";
 
-/* =========================================================
-   RETRY IN LIBRARY
-   File: assets/js/app.js
-   Main website application
-   ========================================================= */
+/**
+ * RETRY IN LIBRARY
+ * File: assets/js/app.js
+ * Main application controller
+ *
+ * Features:
+ * - Mobile navigation
+ * - Telugu / English language preference
+ * - Light / dark theme preference
+ * - Homepage content search
+ * - Service worker registration
+ * - Accessible interaction handling
+ */
 
-document.addEventListener("DOMContentLoaded", () => {
-  initializeNavigation();
-  initializeTheme();
-  initializeLanguage();
-  initializeSearch();
-  initializeCurrentYear();
-  registerServiceWorker();
-});
-
-/* ---------------------------------------------------------
-   1. MOBILE NAVIGATION
---------------------------------------------------------- */
-
-function initializeNavigation() {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector(".primary-navigation");
-
-  if (!menuToggle || !navigation) return;
-
-  menuToggle.setAttribute("aria-expanded", "false");
-  menuToggle.setAttribute("aria-label", "Open navigation menu");
-
-  menuToggle.addEventListener("click", () => {
-    const isOpen = navigation.classList.toggle("active");
-
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute(
-      "aria-label",
-      isOpen ? "Close navigation menu" : "Open navigation menu"
-    );
+(() => {
+  const STORAGE_KEYS = Object.freeze({
+    language: "ril_language",
+    theme: "ril_theme"
   });
 
-  navigation.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navigation.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Open navigation menu");
-    });
+  const DEFAULT_LANGUAGE = "en";
+  const DEFAULT_THEME = "light";
+
+  const SELECTORS = Object.freeze({
+    menuToggle: ".menu-toggle",
+    navigation: ".primary-navigation",
+    languageToggle: "#language-toggle, [data-language-toggle]",
+    themeToggle: "#theme-toggle, [data-theme-toggle]",
+    searchForm: "#global-search",
+    searchInput: "#search-input",
+    searchResults: "#search-results"
   });
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      navigation.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Open navigation menu");
-    }
-  });
-}
+  const state = {
+    language: DEFAULT_LANGUAGE,
+    theme: DEFAULT_THEME,
+    searchItems: [],
+    searchTimer: null
+  };
 
-/* ---------------------------------------------------------
-   2. THEME MANAGEMENT
---------------------------------------------------------- */
-
-function initializeTheme() {
-  const savedTheme = getStoredPreference("ril-theme");
-
-  const preferredTheme =
-    savedTheme ||
-    (window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light");
-
-  applyTheme(preferredTheme);
-
-  const themeToggle = document.querySelector("#theme-toggle");
-
-  if (!themeToggle) return;
-
-  themeToggle.addEventListener("click", () => {
-    const nextTheme = document.body.classList.contains("dark-mode")
-      ? "light"
-      : "dark";
-
-    applyTheme(nextTheme);
-    savePreference("ril-theme", nextTheme);
-  });
-}
-
-function applyTheme(theme) {
-  const isDark = theme === "dark";
-
-  document.body.classList.toggle("dark-mode", isDark);
-  document.documentElement.style.colorScheme = isDark ? "dark" : "light";
-
-  const themeToggle = document.querySelector("#theme-toggle");
-
-  if (themeToggle) {
-    themeToggle.setAttribute(
-      "aria-label",
-      isDark ? "Switch to light mode" : "Switch to dark mode"
-    );
-
-    themeToggle.setAttribute("aria-pressed", String(isDark));
-  }
-}
-
-/* ---------------------------------------------------------
-   3. LANGUAGE MANAGEMENT
---------------------------------------------------------- */
-
-function initializeLanguage() {
-  const savedLanguage = getStoredPreference("ril-language");
-
-  applyLanguage(savedLanguage === "te" ? "te" : "en");
-
-  const languageToggle = document.querySelector("#language-toggle");
-
-  if (!languageToggle) return;
-
-  languageToggle.addEventListener("click", () => {
-    const currentLanguage = document.body.dataset.language || "en";
-    const nextLanguage = currentLanguage === "en" ? "te" : "en";
-
-    applyLanguage(nextLanguage);
-    savePreference("ril-language", nextLanguage);
-  });
-}
-
-function applyLanguage(language) {
-  const selectedLanguage = language === "te" ? "te" : "en";
-
-  document.body.dataset.language = selectedLanguage;
-  document.documentElement.lang = selectedLanguage;
-
-  document.querySelectorAll("[data-en][data-te]").forEach((element) => {
-    const translatedText =
-      selectedLanguage === "te"
-        ? element.dataset.te
-        : element.dataset.en;
-
-    if (translatedText !== undefined) {
-      element.textContent = translatedText;
-    }
-  });
-
-  document.querySelectorAll(
-    "[data-en-placeholder][data-te-placeholder]"
-  ).forEach((element) => {
-    element.placeholder =
-      selectedLanguage === "te"
-        ? element.dataset.tePlaceholder
-        : element.dataset.enPlaceholder;
-  });
-
-  const languageToggle = document.querySelector("#language-toggle");
-
-  if (languageToggle) {
-    languageToggle.textContent =
-      selectedLanguage === "te" ? "English" : "తెలుగు";
-
-    languageToggle.setAttribute(
-      "aria-label",
-      selectedLanguage === "te"
-        ? "Switch language to English"
-        : "భాషను తెలుగులోకి మార్చండి"
-    );
-
-    languageToggle.setAttribute(
-      "aria-pressed",
-      String(selectedLanguage === "te")
-    );
-  }
-}
-
-/* ---------------------------------------------------------
-   4. WEBSITE SEARCH
---------------------------------------------------------- */
-
-function initializeSearch() {
-  const searchForm = document.querySelector("#global-search");
-  const searchInput = document.querySelector("#search-input");
-  const searchResults = document.querySelector("#search-results");
-
-  if (!searchForm || !searchInput || !searchResults) return;
-
-  const searchableItems = Array.from(
-    document.querySelectorAll(
-      "[data-searchable], .exam-card, .subject-card"
-    )
-  );
-
-  searchForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    performSearch(
-      searchInput.value,
-      searchableItems,
-      searchResults
-    );
-  });
-
-  searchInput.addEventListener("input", () => {
-    if (!searchInput.value.trim()) {
-      searchResults.replaceChildren();
-      searchResults.hidden = true;
-    }
-  });
-}
-
-function performSearch(query, items, resultsContainer) {
-  const normalizedQuery = normalizeSearchText(query);
-
-  resultsContainer.replaceChildren();
-
-  if (!normalizedQuery) {
-    resultsContainer.hidden = true;
-    return;
-  }
-
-  const matches = items.filter((item) => {
-    const searchText = normalizeSearchText(
-      [
-        item.textContent,
-        item.dataset.searchable || "",
-        item.dataset.keywords || "",
-        item.dataset.en || "",
-        item.dataset.te || ""
-      ].join(" ")
-    );
-
-    return searchText.includes(normalizedQuery);
-  });
-
-  if (matches.length === 0) {
-    const message = document.createElement("p");
-    message.textContent = "No matching study materials found.";
-
-    resultsContainer.appendChild(message);
-    resultsContainer.hidden = false;
-    return;
-  }
-
-  const heading = document.createElement("p");
-  heading.textContent = `${matches.length} result(s) found`;
-  resultsContainer.appendChild(heading);
-
-  matches.slice(0, 15).forEach((item) => {
-    const link = document.createElement("a");
-
-    link.href = getSafeItemLink(item);
-    link.textContent =
-      item.dataset.searchable ||
-      item.querySelector("h2, h3, h4")?.textContent?.trim() ||
-      item.textContent.trim().slice(0, 100) ||
-      "Study material";
-
-    resultsContainer.appendChild(link);
-  });
-
-  resultsContainer.hidden = false;
-}
-
-function normalizeSearchText(value) {
-  return String(value || "")
-    .toLocaleLowerCase()
-    .normalize("NFC")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function getSafeItemLink(item) {
-  const link = item.matches("a")
-    ? item
-    : item.querySelector("a[href]");
-
-  if (!link) return "#";
-
-  const href = link.getAttribute("href");
-
-  if (!href || href.startsWith("javascript:")) {
-    return "#";
-  }
-
-  return href;
-}
-
-/* ---------------------------------------------------------
-   5. CURRENT YEAR
---------------------------------------------------------- */
-
-function initializeCurrentYear() {
-  const yearElement = document.querySelector("#current-year");
-
-  if (yearElement) {
-    yearElement.textContent = String(new Date().getFullYear());
-  }
-}
-
-/* ---------------------------------------------------------
-   6. PWA SERVICE WORKER REGISTRATION
---------------------------------------------------------- */
-
-function registerServiceWorker() {
-  if (!("serviceWorker" in navigator)) {
-    console.info("Service Workers are not supported in this browser.");
-    return;
-  }
-
-  if (!window.isSecureContext) {
-    console.info("Service Worker requires a secure context such as HTTPS.");
-    return;
-  }
-
-  window.addEventListener("load", async () => {
+  /**
+   * Safely read a value from localStorage.
+   */
+  function readStorage(key) {
     try {
-      const registration = await navigator.serviceWorker.register(
-        "./sw.js",
-        { scope: "./" }
+      return window.localStorage.getItem(key);
+    } catch (error) {
+      console.warn("Local storage is unavailable:", error);
+      return null;
+    }
+  }
+
+  /**
+   * Safely save a value to localStorage.
+   */
+  function writeStorage(key, value) {
+    try {
+      window.localStorage.setItem(key, value);
+      return true;
+    } catch (error) {
+      console.warn("Could not save preference:", error);
+      return false;
+    }
+  }
+
+  /**
+   * Normalize text for search.
+   * Supports English and Telugu Unicode text.
+   */
+  function normalizeText(value) {
+    return String(value || "")
+      .normalize("NFC")
+      .toLocaleLowerCase()
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  /**
+   * Initialize the mobile navigation.
+   */
+  function initializeNavigation() {
+    const menuToggle = document.querySelector(
+      SELECTORS.menuToggle
+    );
+
+    const navigation = document.querySelector(
+      SELECTORS.navigation
+    );
+
+    if (!menuToggle || !navigation) {
+      return;
+    }
+
+    function setMenuOpen(isOpen) {
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
       );
+
+      navigation.classList.toggle("active", isOpen);
+
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+    }
+
+    setMenuOpen(false);
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen =
+        menuToggle.getAttribute("aria-expanded") === "true";
+
+      setMenuOpen(!isOpen);
+    });
+
+    navigation.addEventListener("click", (event) => {
+      const link = event.target.closest("a");
+
+      if (link) {
+        setMenuOpen(false);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      const clickedInside =
+        navigation.contains(event.target) ||
+        menuToggle.contains(event.target);
+
+      if (!clickedInside) {
+        setMenuOpen(false);
+      }
+    });
+  }
+
+  /**
+   * Apply the selected language to elements
+   * containing data-en and data-te attributes.
+   */
+  function applyLanguage(language) {
+    const selectedLanguage =
+      language === "te" ? "te" : "en";
+
+    state.language = selectedLanguage;
+
+    document.documentElement.lang = selectedLanguage;
+
+    document.querySelectorAll("[data-en][data-te]").forEach(
+      (element) => {
+        const translatedText =
+          selectedLanguage === "te"
+            ? element.getAttribute("data-te")
+            : element.getAttribute("data-en");
+
+        if (translatedText !== null) {
+          element.textContent = translatedText;
+        }
+      }
+    );
+
+    document
+      .querySelectorAll("[data-en-placeholder][data-te-placeholder]")
+      .forEach((element) => {
+        const placeholder =
+          selectedLanguage === "te"
+            ? element.getAttribute("data-te-placeholder")
+            : element.getAttribute("data-en-placeholder");
+
+        if (placeholder !== null) {
+          element.setAttribute("placeholder", placeholder);
+        }
+      });
+
+    document
+      .querySelectorAll("[data-en-aria-label][data-te-aria-label]")
+      .forEach((element) => {
+        const label =
+          selectedLanguage === "te"
+            ? element.getAttribute("data-te-aria-label")
+            : element.getAttribute("data-en-aria-label");
+
+        if (label !== null) {
+          element.setAttribute("aria-label", label);
+        }
+      });
+
+    const languageToggle = document.querySelector(
+      SELECTORS.languageToggle
+    );
+
+    if (languageToggle) {
+      languageToggle.setAttribute(
+        "aria-label",
+        selectedLanguage === "en"
+          ? "Switch language to Telugu"
+          : "భాషను English కు మార్చండి"
+      );
+
+      languageToggle.setAttribute(
+        "aria-pressed",
+        String(selectedLanguage === "te")
+      );
+
+      languageToggle.setAttribute(
+        "title",
+        selectedLanguage === "en"
+          ? "తెలుగులో చూడండి"
+          : "View in English"
+      );
+
+      const visibleLabel =
+        languageToggle.querySelector(".language-label");
+
+      if (visibleLabel) {
+        visibleLabel.textContent =
+          selectedLanguage === "en" ? "తెలుగు" : "English";
+      }
+    }
+
+    writeStorage(STORAGE_KEYS.language, selectedLanguage);
+  }
+
+  /**
+   * Initialize language switching.
+   */
+  function initializeLanguage() {
+    const savedLanguage = readStorage(STORAGE_KEYS.language);
+
+    const initialLanguage =
+      savedLanguage === "te" || savedLanguage === "en"
+        ? savedLanguage
+        : DEFAULT_LANGUAGE;
+
+    applyLanguage(initialLanguage);
+
+    const languageToggle = document.querySelector(
+      SELECTORS.languageToggle
+    );
+
+    if (!languageToggle) {
+      return;
+    }
+
+    languageToggle.addEventListener("click", () => {
+      const nextLanguage =
+        state.language === "en" ? "te" : "en";
+
+      applyLanguage(nextLanguage);
+    });
+  }
+
+  /**
+   * Apply the selected visual theme.
+   */
+  function applyTheme(theme) {
+    const selectedTheme =
+      theme === "dark" ? "dark" : "light";
+
+    state.theme = selectedTheme;
+
+    document.body.classList.toggle(
+      "dark-mode",
+      selectedTheme === "dark"
+    );
+
+    document.documentElement.dataset.theme = selectedTheme;
+
+    const themeToggle = document.querySelector(
+      SELECTORS.themeToggle
+    );
+
+    if (themeToggle) {
+      themeToggle.setAttribute(
+        "aria-pressed",
+        String(selectedTheme === "dark")
+      );
+
+      themeToggle.setAttribute(
+        "aria-label",
+        selectedTheme === "dark"
+          ? "Switch to light theme"
+          : "Switch to dark theme"
+      );
+
+      themeToggle.setAttribute(
+        "title",
+        selectedTheme === "dark"
+          ? "Light mode"
+          : "Dark mode"
+      );
+    }
+
+    writeStorage(STORAGE_KEYS.theme, selectedTheme);
+  }
+
+  /**
+   * Initialize theme switching.
+   */
+  function initializeTheme() {
+    const savedTheme = readStorage(STORAGE_KEYS.theme);
+
+    const initialTheme =
+      savedTheme === "dark" || savedTheme === "light"
+        ? savedTheme
+        : DEFAULT_THEME;
+
+    applyTheme(initialTheme);
+
+    const themeToggle = document.querySelector(
+      SELECTORS.themeToggle
+    );
+
+    if (!themeToggle) {
+      return;
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const nextTheme =
+        state.theme === "light" ? "dark" : "light";
+
+      applyTheme(nextTheme);
+    });
+  }
+
+  /**
+   * Collect searchable content from homepage cards.
+   */
+  function collectSearchItems() {
+    const searchableSelectors = [
+      ".exam-card",
+      ".subject-card",
+      ".state-card",
+      ".practice-card",
+      ".current-affairs-card"
+    ];
+
+    const elements = document.querySelectorAll(
+      searchableSelectors.join(",")
+    );
+
+    return Array.from(elements)
+      .map((element) => {
+        const link = element.matches("a")
+          ? element
+          : element.querySelector("a[href]");
+
+        if (!link) {
+          return null;
+        }
+
+        const href = link.getAttribute("href");
+
+        if (
+          !href ||
+          href.startsWith("#") ||
+          href.startsWith("javascript:")
+        ) {
+          return null;
+        }
+
+        return {
+          element,
+          title: normalizeText(element.textContent),
+          href,
+          originalTitle:
+            link.textContent.trim() ||
+            element.textContent.trim()
+        };
+      })
+      .filter(Boolean);
+  }
+
+  /**
+   * Clear search results safely.
+   */
+  function clearSearchResults(container) {
+    if (!container) {
+      return;
+    }
+
+    container.replaceChildren();
+    container.hidden = true;
+  }
+
+  /**
+   * Display search results without using innerHTML.
+   */
+  function displaySearchResults(results, container, query) {
+    if (!container) {
+      return;
+    }
+
+    container.replaceChildren();
+
+    if (!query) {
+      container.hidden = true;
+      return;
+    }
+
+    container.hidden = false;
+
+    if (results.length === 0) {
+      const message = document.createElement("p");
+
+      message.textContent =
+        state.language === "te"
+          ? "ఫలితాలు కనబడలేదు. వేరే పదంతో వెతకండి."
+          : "No results found. Try another search term.";
+
+      message.className = "search-empty-message";
+
+      container.appendChild(message);
+      return;
+    }
+
+    const heading = document.createElement("p");
+
+    heading.className = "search-results-heading";
+
+    heading.textContent =
+      state.language === "te"
+        ? `${results.length} ఫలితాలు కనుగొనబడ్డాయి`
+        : `${results.length} result(s) found`;
+
+    container.appendChild(heading);
+
+    const resultList = document.createElement("div");
+
+    resultList.className = "search-results-list";
+
+    results.forEach((item) => {
+      const resultLink = document.createElement("a");
+
+      resultLink.className = "search-result-item";
+      resultLink.href = item.href;
+      resultLink.textContent = item.originalTitle;
+
+      resultList.appendChild(resultLink);
+    });
+
+    container.appendChild(resultList);
+  }
+
+  /**
+   * Search homepage cards.
+   */
+  function performSearch(query, container) {
+    const normalizedQuery = normalizeText(query);
+
+    if (!normalizedQuery) {
+      clearSearchResults(container);
+      return;
+    }
+
+    const results = state.searchItems
+      .filter((item) => {
+        return item.title.includes(normalizedQuery);
+      })
+      .slice(0, 20);
+
+    displaySearchResults(
+      results,
+      container,
+      normalizedQuery
+    );
+  }
+
+  /**
+   * Initialize homepage search.
+   */
+  function initializeSearch() {
+    const searchForm = document.querySelector(
+      SELECTORS.searchForm
+    );
+
+    const searchInput = document.querySelector(
+      SELECTORS.searchInput
+    );
+
+    const searchResults = document.querySelector(
+      SELECTORS.searchResults
+    );
+
+    if (!searchForm || !searchInput || !searchResults) {
+      return;
+    }
+
+    state.searchItems = collectSearchItems();
+
+    searchForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (state.searchTimer) {
+        window.clearTimeout(state.searchTimer);
+      }
+
+      performSearch(searchInput.value, searchResults);
+    });
+
+    searchInput.addEventListener("input", () => {
+      if (state.searchTimer) {
+        window.clearTimeout(state.searchTimer);
+      }
+
+      state.searchTimer = window.setTimeout(() => {
+        performSearch(searchInput.value, searchResults);
+      }, 180);
+    });
+
+    searchInput.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        searchInput.value = "";
+        clearSearchResults(searchResults);
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      const clickedSearchArea =
+        searchForm.contains(event.target) ||
+        searchResults.contains(event.target);
+
+      if (!clickedSearchArea) {
+        clearSearchResults(searchResults);
+      }
+    });
+  }
+
+  /**
+   * Register the service worker.
+   *
+   * The sw.js file must exist before offline caching
+   * can work. Registration failures do not break the site.
+   */
+  async function registerServiceWorker() {
+    if (!("serviceWorker" in navigator)) {
+      return;
+    }
+
+    if (!window.isSecureContext) {
+      return;
+    }
+
+    try {
+      const registration =
+        await navigator.serviceWorker.register("./sw.js", {
+          scope: "./"
+        });
 
       console.info(
-        "RETRY IN LIBRARY Service Worker registered:",
+        "RETRY IN LIBRARY service worker registered:",
         registration.scope
       );
+    } catch (error) {
+      console.warn(
+        "Service worker registration failed:",
+        error
+      );
+    }
+  }
 
-      registration.addEventListener("updatefound", () => {
-        const newWorker = registration.installing;
+  /**
+   * Set the current year in elements that request it.
+   */
+  function initializeCurrentYear() {
+    const currentYear = String(new Date().getFullYear());
 
-        if (!newWorker) return;
+    document
+      .querySelectorAll("[data-current-year]")
+      .forEach((element) => {
+        element.textContent = currentYear;
+      });
+  }
 
-        newWorker.addEventListener("statechange", () => {
-          if (
-            newWorker.state === "installed" &&
-            navigator.serviceWorker.controller
-          ) {
-            console.info("A new website version is available.");
-          }
+  /**
+   * Prevent empty placeholder links from jumping to page top.
+   * Only links explicitly marked data-placeholder-link are affected.
+   */
+  function initializePlaceholderLinkProtection() {
+    document
+      .querySelectorAll('a[data-placeholder-link="true"]')
+      .forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
         });
       });
+  }
+
+  /**
+   * Start the application.
+   */
+  function initializeApp() {
+    try {
+      initializeNavigation();
+      initializeLanguage();
+      initializeTheme();
+      initializeSearch();
+      initializeCurrentYear();
+      initializePlaceholderLinkProtection();
+
+      registerServiceWorker();
     } catch (error) {
-      console.error("Service Worker registration failed:", error);
+      console.error(
+        "RETRY IN LIBRARY initialization error:",
+        error
+      );
     }
-  });
-}
-
-/* ---------------------------------------------------------
-   7. LOCAL PREFERENCE STORAGE
---------------------------------------------------------- */
-
-function getStoredPreference(key) {
-  try {
-    return localStorage.getItem(key);
-  } catch (error) {
-    console.warn("Local preference storage is unavailable.", error);
-    return null;
   }
-}
 
-function savePreference(key, value) {
-  try {
-    localStorage.setItem(key, value);
-  } catch (error) {
-    console.warn("Could not save local preference.", error);
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initializeApp,
+      { once: true }
+    );
+  } else {
+    initializeApp();
   }
-}
+})();
