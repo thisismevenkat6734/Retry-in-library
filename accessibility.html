@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b46">
+  <meta name="description" content="Accessibility information and improvement commitments for RETRY IN LIBRARY.">
+  <title>Accessibility | RETRY IN LIBRARY</title>
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/responsive.css">
+  <link rel="stylesheet" href="./assets/css/reader.css">
+  <script src="./assets/js/app.js" defer></script>
+
+  <style>
+    .accessibility-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .accessibility-panel {
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .accessibility-panel h2 {
+      margin-top: 0;
+    }
+
+    .accessibility-panel p,
+    .accessibility-panel li {
+      line-height: 1.8;
+    }
+
+    .accessibility-notice {
+      padding: 15px;
+      border-radius: 9px;
+      background: rgba(128, 128, 128, 0.1);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      .accessibility-panel {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <a class="brand" href="./index.html" aria-label="Retry in Library home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span class="brand-text">
+          <strong>RETRY IN LIBRARY</strong>
+          <small>LEARN AGAIN. TRY AGAIN. SUCCEED.</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-navigation" aria-label="Main navigation">
+        <a href="./index.html">Home</a>
+        <a href="./index.html#exams">Exams</a>
+        <a href="./index.html#subjects">Subjects</a>
+        <a href="./practice/mcqs.html">MCQ Practice</a>
+        <a href="./practice/mock-tests.html">Mock Tests</a>
+        <a href="./my-progress.html">My Progress</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="./index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Accessibility</span>
+        </nav>
+
+        <p class="eyebrow">ACCESS FOR EVERY LEARNER</p>
+        <h1>Accessibility</h1>
+        <p class="hero-description">
+          Our goal is to make learning resources easier to access
+          and use across different devices and abilities.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container accessibility-container">
+
+        <div class="accessibility-notice">
+          <strong>Accessibility commitment and current status</strong>
+          <p>
+            RETRY IN LIBRARY aims to improve accessibility using
+            recognised web accessibility practices, including
+            WCAG 2.1 Level AA as a development target.
+            This is a target, not a claim of certified compliance.
+            The website has not yet undergone a complete independent
+            accessibility audit.
+          </p>
+        </div>
+
+        <section class="accessibility-panel">
+          <h2>1. Our Accessibility Goals</h2>
+          <p>
+            We want students to be able to read, navigate and use
+            learning resources with different devices, input methods
+            and assistive technologies.
+          </p>
+          <ul>
+            <li>Clear and readable page structure.</li>
+            <li>Keyboard-friendly navigation and controls.</li>
+            <li>Meaningful headings and page landmarks.</li>
+            <li>Readable text and sufficient colour contrast.</li>
+            <li>Useful labels for interactive controls.</li>
+            <li>Responsive layouts for mobile, tablet and desktop.</li>
+            <li>Support for Telugu and English educational content.</li>
+          </ul>
+        </section>
+
+        <section class="accessibility-panel">
+          <h2>2. Keyboard Navigation</h2>
+          <p>
+            We aim to make important website features usable without
+            requiring a mouse or touchscreen.
+          </p>
+          <ul>
+            <li>Use the Tab key to move between interactive elements.</li>
+            <li>Use Shift + Tab to move backwards.</li>
+            <li>Use Enter or Space to activate supported controls.</li>
+            <li>Use the Skip to Content link to reach the main content quickly.</li>
+          </ul>
+          <p>
+            Keyboard behaviour may vary by browser and device.
+            Any inaccessible control should be reported for review.
+          </p>
+        </section>
+
+        <section class="accessibility-panel">
+          <h2>3. Screen Readers and Assistive Technology</h2>
+          <p>
+            We aim to use semantic HTML, descriptive link text,
+            accessible form labels and meaningful page titles.
+          </p>
+          <p>
+            These practices can help screen readers and other
+            assistive technologies interpret page content.
+          </p>
+          <p>
+            Compatibility can vary between browsers, operating systems
+            and assistive technologies. Full compatibility has not
+            yet been independently verified.
+          </p>
+        </section>
+
+        <section class="accessibility-panel">
+          <h2>4. Telugu and English Learning Content</h2>
+          <p>
+            The project is intended to provide educational material
+            in Telugu and English.
+          </p>
+          <p>
+            We aim to use readable Telugu text, appropriate language
+            labels and clear separation between Telugu and English
+            explanations.
+          </p>
+          <p>
+            Some pages or resources may not yet be fully translated.
+            Language availability should be checked on each page.
+          </p>
+        </section>
+
+        <section class="accessibility-panel">
+          <h2>5. Colour, Text and Readability</h2>
+          <p>
+            We aim to use readable font sizes, clear visual hierarchy
+            and adequate contrast between text and backgrounds.
+          </p>
+          <p>
+            Users may also be able to use browser zoom and device-level
+            accessibility settings.
+          </p>
+          <p>
+            Colour should not be the only way important information
+            is communicated.
+          </p>
+        </section>
+
+        <section class="accessibility-panel">
+          <h2>6. Mobile and Responsive Access</h2>
+          <p>
+            The website is designed to adapt to different screen sizes.
+            We aim to make reading, navigation and practice features
+            usable on mobile devices as well as larger screens.
+          </p>
+          <p>
+            Device, browser and network limitations may affect
+            individual experiences.
+          </p>
+        </section>
+
+        <section class="accessibility-panel">
+          <h2>7. Known Limitations</h2>
+          <p>
+            Some accessibility issues may remain while the website
+            is under development. Examples may include:
+          </p>
+          <ul>
+            <li>Older PDF documents that are not screen-reader friendly.</li>
+            <li>Images or diagrams with incomplete alternative text.</li>
+            <li>Third-party websites outside our control.</li>
+            <li>Content that has not yet been fully translated.</li>
+            <li>Interactive features that require additional keyboard or screen-reader testing.</li>
+          </ul>
+          <p>
+            We aim to identify and improve these issues as the project
+            develops.
+          </p>
+        </section>
+
+        <section class="accessibility-panel">
+          <h2>8. Accessibility Feedback</h2>
+          <p>
+            If you face a difficulty accessing a page or using a feature,
+            please note:
+          </p>
+          <ul>
+            <li>The page URL.</li>
+            <li>The device and browser you are using.</li>
+            <li>The feature or content that caused difficulty.</li>
+            <li>The assistive technology used, if relevant.</li>
+            <li>What you were trying to do and what happened instead.</li>
+          </ul>
+          <p>
+            Please avoid sharing unnecessary sensitive personal
+            information.
+          </p>
+          <p>
+            A verified public accessibility contact channel has not
+            yet been published. The
+            <a href="./contact.html">Contact page</a>
+            currently does not provide an active accessibility
+            feedback submission form.
+          </p>
+        </section>
+
+        <section class="accessibility-panel">
+          <h2>9. Continuous Improvement</h2>
+          <p>
+            Accessibility should be reviewed throughout development,
+            not only after launch.
+          </p>
+          <p>
+            Planned checks include keyboard testing, screen-reader
+            testing, colour contrast checks, mobile layout testing,
+            form-label checks and automated accessibility scans.
+          </p>
+          <p>
+            Automated tools alone cannot establish full accessibility
+            compliance. Manual testing is also necessary.
+          </p>
+        </section>
+
+        <section class="accessibility-panel">
+          <h2>Related Pages</h2>
+          <ul>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./privacy.html">Privacy Policy</a></li>
+            <li><a href="./terms.html">Terms & Conditions</a></li>
+            <li><a href="./corrections.html">Corrections & Content Removal</a></li>
+          </ul>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <a class="brand footer-brand" href="./index.html">
+          <span class="brand-mark" aria-hidden="true">R</span>
+          <span class="brand-text">
+            <strong>RETRY IN LIBRARY</strong>
+            <small>LEARN AGAIN. TRY AGAIN. SUCCEED.</small>
+          </span>
+        </a>
+        <p>Your journey to success starts here.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./disclaimer.html">Disclaimer</a>
+        <a href="./copyright.html">Copyright</a>
+        <a href="./sources.html">Sources</a>
+        <a href="./corrections.html">Corrections</a>
+        <a href="./accessibility.html">Accessibility</a>
+      </div>
+
+      <p class="copyright">
+        © <span data-current-year>2026</span> RETRY IN LIBRARY.
+        All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
