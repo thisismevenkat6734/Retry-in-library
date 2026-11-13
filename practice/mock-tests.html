@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b46">
+  <meta name="description" content="Take timed competitive examination mock tests for APPSC, TGPSC, UPSC, SSC, Railway and Banking.">
+  <title>Mock Test Centre | RETRY IN LIBRARY</title>
+
+  <link rel="manifest" href="../manifest.json">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/reader.css">
+  <script src="../assets/js/app.js" defer></script>
+
+  <style>
+    .mock-container {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .mock-setup,
+    .mock-test-panel,
+    .mock-result {
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    .mock-test-panel[hidden],
+    .mock-result[hidden] {
+      display: none;
+    }
+
+    .mock-filters {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .mock-filters label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .mock-filters select {
+      width: 100%;
+      min-height: 44px;
+      padding: 9px;
+      border: 1px solid #aab5c2;
+      border-radius: 8px;
+      background: transparent;
+      color: inherit;
+    }
+
+    .mock-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .mock-info {
+      padding: 14px;
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .mock-info strong {
+      display: block;
+      font-size: 1.3rem;
+    }
+
+    .mock-test-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .mock-timer {
+      font-size: 1.4rem;
+      font-weight: 800;
+      padding: 9px 15px;
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 10px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .mock-timer.warning {
+      color: #c33d3d;
+      border-color: #c33d3d;
+    }
+
+    .mock-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 270px;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .mock-question-card,
+    .mock-palette-card {
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .mock-question-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .mock-question-text {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .mock-options {
+      display: grid;
+      gap: 11px;
+    }
+
+    .mock-option {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      width: 100%;
+      padding: 13px;
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 9px;
+      background: transparent;
+      color: inherit;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .mock-option.selected {
+      border: 2px solid #2476c7;
+      background: rgba(36, 118, 199, 0.09);
+    }
+
+    .mock-option:focus-visible,
+    .mock-palette button:focus-visible,
+    .mock-controls button:focus-visible {
+      outline: 3px solid #2476c7;
+      outline-offset: 3px;
+    }
+
+    .mock-option-letter {
+      min-width: 24px;
+      font-weight: 800;
+    }
+
+    .mock-palette {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .mock-palette button {
+      min-height: 39px;
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 7px;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .mock-palette button.current {
+      outline: 2px solid #2476c7;
+      outline-offset: 2px;
+    }
+
+    .mock-palette button.answered {
+      background: #16834a;
+      border-color: #16834a;
+      color: #fff;
+    }
+
+    .mock-palette button.review {
+      background: #d69b25;
+      border-color: #d69b25;
+      color: #171717;
+    }
+
+    .mock-palette button.answered.review {
+      background: #7753a6;
+      border-color: #7753a6;
+      color: #fff;
+    }
+
+    .mock-legend {
+      display: grid;
+      gap: 8px;
+      font-size: 0.85rem;
+    }
+
+    .mock-legend span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mock-dot {
+      width: 13px;
+      height: 13px;
+      display: inline-block;
+      border-radius: 3px;
+      border: 1px solid #888;
+    }
+
+    .mock-dot.answered { background: #16834a; }
+    .mock-dot.review { background: #d69b25; }
+    .mock-dot.not-answered { background: transparent; }
+    .mock-dot.current { outline: 2px solid #2476c7; }
+
+    .mock-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .mock-controls button,
+    .mock-setup button,
+    .mock-result button {
+      min-height: 42px;
+      padding: 9px 15px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #d9e0e7);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+    }
+
+    .mock-primary {
+      background: #1769aa !important;
+      color: #fff !important;
+      border-color: #1769aa !important;
+    }
+
+    .mock-secondary {
+      background: transparent;
+      color: inherit;
+    }
+
+    .mock-danger {
+      background: #a83232 !important;
+      color: #fff !important;
+      border-color: #a83232 !important;
+    }
+
+    .mock-controls button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .mock-result-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .mock-result-item {
+      padding: 14px;
+      text-align: center;
+      border: 1px solid var(--border-color, #d9e0e7);
+      border-radius: 10px;
+    }
+
+    .mock-result-item strong {
+      display: block;
+      font-size: 1.5rem;
+    }
+
+    .mock-history {
+      margin-top: 20px;
+    }
+
+    .mock-history table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .mock-history th,
+    .mock-history td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid var(--border-color, #d9e0e7);
+    }
+
+    .mock-note {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 800px) {
+      .mock-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mock-filters {
+        grid-template-columns: 1fr;
+      }
+
+      .mock-result-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .mock-setup,
+      .mock-test-panel,
+      .mock-result {
+        padding: 14px;
+      }
+
+      .mock-question-card,
+      .mock-palette-card {
+        padding: 13px;
+      }
+
+      .mock-controls button {
+        flex: 1 1 40%;
+      }
+
+      .mock-palette {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <a class="brand" href="../index.html" aria-label="Retry in Library home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span class="brand-text">
+          <strong>RETRY IN LIBRARY</strong>
+          <small>LEARN AGAIN. TRY AGAIN. SUCCEED.</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-navigation" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#exams">Exams</a>
+        <a href="../index.html#subjects">Subjects</a>
+        <a href="./mcqs.html">MCQ Practice</a>
+        <a href="./mock-tests.html" aria-current="page">Mock Tests</a>
+        <a href="../my-progress.html">My Progress</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Mock Tests</span>
+        </nav>
+
+        <p class="eyebrow">EXAM SIMULATION</p>
+        <h1>Competitive Exam Mock Tests</h1>
+        <p class="hero-description">
+          Practise under timed conditions, review your answers and understand
+          your performance.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container mock-container">
+
+        <section class="mock-setup" id="setup-panel">
+          <h2>Configure Your Mock Test</h2>
+          <p>Select an examination, test category and duration.</p>
+
+          <div class="mock-filters">
+            <div>
+              <label for="exam-select">Examination</label>
+              <select id="exam-select">
+                <option value="all">All Exams</option>
+                <option value="APPSC">APPSC</option>
+                <option value="TGPSC">TGPSC</option>
+                <option value="UPSC">UPSC</option>
+                <option value="SSC">SSC</option>
+                <option value="Railway">Railway</option>
+                <option value="Banking">Banking</option>
+                <option value="Police">Police</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="test-category">Test Category</label>
+              <select id="test-category">
+                <option value="mixed">Mixed Subjects</option>
+                <option value="History">History</option>
+                <option value="Polity">Polity</option>
+                <option value="Geography">Geography</option>
+                <option value="Science">Science</option>
+                <option value="Computer">Computer</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Reasoning">Reasoning</option>
+                <option value="Economy">Economy</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="test-duration">Test Duration</label>
+              <select id="test-duration">
+                <option value="10">10 Minutes</option>
+                <option value="15" selected>15 Minutes</option>
+                <option value="30">30 Minutes</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mock-info-grid">
+            <div class="mock-info">
+              <strong id="available-count">12</strong>
+              <span>Available Questions</span>
+            </div>
+            <div class="mock-info">
+              <strong>4</strong>
+              <span>Options per Question</span>
+            </div>
+            <div class="mock-info">
+              <strong>+1 / 0</strong>
+              <span>Scoring</span>
+            </div>
+          </div>
+
+          <p class="mock-note">
+            This practice test uses one mark per correct answer and no negative
+            marking. It does not claim to reproduce the official pattern of
+            every examination.
+          </p>
+
+          <button type="button" class="mock-primary" id="start-test">
+            Start Mock Test
+          </button>
+        </section>
+
+        <section class="mock-test-panel" id="test-panel" hidden>
+          <div class="mock-test-header">
+            <div>
+              <h2 id="test-title">Mock Test</h2>
+              <p id="test-subtitle" class="mock-note">Practice examination</p>
+            </div>
+
+            <div class="mock-timer" id="timer" role="timer"
+                 aria-live="off">15:00</div>
+          </div>
+
+          <div class="mock-layout">
+            <div>
+              <section class="mock-question-card">
+                <div class="mock-question-meta">
+                  <span id="question-number">Question 1</span>
+                  <span id="question-subject">Subject</span>
+                </div>
+
+                <h3 class="mock-question-text" id="question-text"></h3>
+
+                <div class="mock-options" id="options-container"></div>
+
+                <div class="mock-controls">
+                  <button type="button" class="mock-secondary"
+                          id="previous-btn">Previous</button>
+
+                  <button type="button" class="mock-secondary"
+                          id="review-btn">Mark for Review</button>
+
+                  <button type="button" class="mock-primary"
+                          id="next-btn">Save & Next</button>
+                </div>
+              </section>
+            </div>
+
+            <aside class="mock-palette-card">
+              <h3>Question Palette</h3>
+              <p class="mock-note">
+                Select a number to move directly to that question.
+              </p>
+
+              <div class="mock-palette" id="question-palette"
+                   aria-label="Question navigation"></div>
+
+              <div class="mock-legend">
+                <span><i class="mock-dot answered"></i> Answered</span>
+                <span><i class="mock-dot review"></i> Marked for review</span>
+                <span><i class="mock-dot not-answered"></i> Not answered</span>
+                <span><i class="mock-dot current"></i> Current question</span>
+              </div>
+
+              <hr>
+
+              <p>
+                Answered: <strong id="answered-count">0</strong>
+              </p>
+              <p>
+                Marked for review: <strong id="review-count">0</strong>
+              </p>
+              <p>
+                Unanswered: <strong id="unanswered-count">12</strong>
+              </p>
+
+              <button type="button" class="mock-danger"
+                      id="submit-test" style="width:100%;margin-top:12px">
+                Submit Test
+              </button>
+            </aside>
+          </div>
+        </section>
+
+        <section class="mock-result" id="result-panel" hidden
+                 aria-live="polite">
+          <h2>Test Completed</h2>
+          <p id="result-title"></p>
+
+          <p>
+            <strong>Your Score</strong>
+          </p>
+          <p style="font-size:2.2rem;font-weight:800" id="final-score">
+            0 / 12
+          </p>
+
+          <div class="mock-result-grid">
+            <div class="mock-result-item">
+              <strong id="final-correct">0</strong>
+              <span>Correct</span>
+            </div>
+            <div class="mock-result-item">
+              <strong id="final-wrong">0</strong>
+              <span>Incorrect</span>
+            </div>
+            <div class="mock-result-item">
+              <strong id="final-unanswered">0</strong>
+              <span>Unanswered</span>
+            </div>
+            <div class="mock-result-item">
+              <strong id="final-accuracy">0%</strong>
+              <span>Accuracy</span>
+            </div>
+          </div>
+
+          <p id="performance-message"></p>
+
+          <button type="button" class="mock-primary" id="new-test">
+            Start Another Test
+          </button>
+        </section>
+
+        <section class="mock-setup mock-history">
+          <h2>Your Mock Test History</h2>
+          <p class="mock-note">
+            Previous results saved in this browser.
+          </p>
+
+          <div id="history-container">
+            <p>No completed tests yet.</p>
+          </div>
+
+          <button type="button" class="mock-secondary"
+                  id="clear-history">
+            Clear Test History
+          </button>
+        </section>
+
+        <section class="content-card">
+          <h2>Important Information</h2>
+          <ul>
+            <li>Questions in this initial test bank are original practice questions.</li>
+            <li>They are not labelled as official previous-year questions.</li>
+            <li>Each correct answer carries one mark.</li>
+            <li>Incorrect and unanswered questions receive zero marks.</li>
+            <li>Results are stored locally in this browser.</li>
+            <li>Clearing browser data may remove your history.</li>
+            <li>Closing or refreshing the page ends the active test; the timer is not resumed.</li>
+          </ul>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <a class="brand footer-brand" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">R</span>
+          <span class="brand-text">
+            <strong>RETRY IN LIBRARY</strong>
+            <small>LEARN AGAIN. TRY AGAIN. SUCCEED.</small>
+          </span>
+        </a>
+        <p>Your journey to success starts here.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+      </div>
+
+      <p class="copyright">
+        © <span data-current-year>2026</span> RETRY IN LIBRARY.
+        Independent educational resource. Not affiliated with any government examination authority.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+  "use strict";
+
+  (() => {
+    const HISTORY_KEY = "retryLibraryMockHistoryV1";
+
+    const questionBank = [
+      {
+        id: "H001",
+        subject: "History",
+        exams: ["APPSC", "TGPSC", "UPSC", "SSC"],
+        question: "Which dynasty is associated with the Deccan region?",
+        options: ["Satavahanas", "Mughals", "Lodhis", "Tughlaqs"],
+        answer: 0
+      },
+      {
+        id: "P001",
+        subject: "Polity",
+        exams: ["APPSC", "TGPSC", "UPSC", "SSC", "Police"],
+        question: "When did the Constitution of India come into force?",
+        options: [
+          "15 August 1947",
+          "26 January 1950",
+          "26 November 1949",
+          "2 October 1950"
+        ],
+        answer: 1
+      },
+      {
+        id: "G001",
+        subject: "Geography",
+        exams: ["APPSC", "TGPSC", "UPSC", "Railway"],
+        question: "Which is the longest river flowing entirely within India?",
+        options: ["Ganga", "Godavari", "Yamuna", "Narmada"],
+        answer: 1
+      },
+      {
+        id: "S001",
+        subject: "Science",
+        exams: ["APPSC", "TGPSC", "UPSC", "SSC", "Railway", "Police"],
+        question: "What is the chemical symbol for gold?",
+        options: ["Ag", "Au", "Fe", "Cu"],
+        answer: 1
+      },
+      {
+        id: "C001",
+        subject: "Computer",
+        exams: ["APPSC", "TGPSC", "SSC", "Railway", "Banking"],
+        question: "Which component is commonly called the brain of a computer?",
+        options: ["Monitor", "Keyboard", "CPU", "Printer"],
+        answer: 2
+      },
+      {
+        id: "M001",
+        subject: "Mathematics",
+        exams: ["SSC", "Railway", "Banking", "Police"],
+        question: "What is 25% of 200?",
+        options: ["25", "40", "50", "75"],
+        answer: 2
+      },
+      {
+        id: "R001",
+        subject: "Reasoning",
+        exams: ["SSC", "Railway", "Banking", "Police"],
+        question: "Find the next number: 2, 4, 8, 16, __",
+        options: ["18", "24", "30", "32"],
+        answer: 3
+      },
+      {
+        id: "E001",
+        subject: "Economy",
+        exams: ["APPSC", "TGPSC", "UPSC", "Banking"],
+        question: "What does GDP stand for?",
+        options: [
+          "General Domestic Product",
+          "Gross Domestic Product",
+          "Global Development Plan",
+          "Gross Development Programme"
+        ],
+        answer: 1
+      },
+      {
+        id: "P002",
+        subject: "Polity",
+        exams: ["APPSC", "TGPSC", "UPSC", "SSC"],
+        question: "Which part of the Indian Constitution contains Fundamental Rights?",
+        options: ["Part I", "Part II", "Part III", "Part IV"],
+        answer: 2
+      },
+      {
+        id: "C002",
+        subject: "Computer",
+        exams: ["APPSC", "TGPSC", "SSC", "Railway", "Banking"],
+        question: "Which of the following is volatile memory?",
+        options: ["ROM", "RAM", "DVD", "Hard Disk"],
+        answer: 1
+      },
+      {
+        id: "G002",
+        subject: "Geography",
+        exams: ["APPSC", "TGPSC", "UPSC", "Railway"],
+        question: "The Eastern Ghats are located along which side of peninsular India?",
+        options: ["Western side", "Eastern side", "Northern side", "Central side"],
+        answer: 1
+      },
+      {
+        id: "S002",
+        subject: "Science",
+        exams: ["APPSC", "TGPSC", "UPSC", "SSC", "Railway"],
+        question: "Which gas do green plants absorb during photosynthesis?",
+        options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
+        answer: 2
+      }
+    ];
+
+    const $ = id => document.getElementById(id);
+
+    const ui = {
+      exam: $("exam-select"),
+      category: $("test-category"),
+      duration: $("test-duration"),
+      available: $("available-count"),
+      setup: $("setup-panel"),
+      test: $("test-panel"),
+      result: $("result-panel"),
+      start: $("start-test"),
+      timer: $("timer"),
+      title: $("test-title"),
+      subtitle: $("test-subtitle"),
+      number: $("question-number"),
+      subject: $("question-subject"),
+      question: $("question-text"),
+      options: $("options-container"),
+      palette: $("question-palette"),
+      previous: $("previous-btn"),
+      next: $("next-btn"),
+      review: $("review-btn"),
+      submit: $("submit-test"),
+      answered: $("answered-count"),
+      reviewed: $("review-count"),
+      unanswered: $("unanswered-count"),
+      history: $("history-container")
+    };
+
+    let testQuestions = [];
+    let answers = {};
+    let reviewMarks = new Set();
+    let currentIndex = 0;
+    let remainingSeconds = 0;
+    let timerInterval = null;
+    let testActive = false;
+    let testFinished = false;
+
+    function readHistory() {
+      try {
+        const data = JSON.parse(localStorage.getItem(HISTORY_KEY));
+        return Array.isArray(data) ? data : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveHistory(history) {
+      try {
+        localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 30)));
+      } catch {
+        alert("Browser storage is unavailable. This result could not be saved.");
+      }
+    }
+
+    function shuffle(items) {
+      const result = [...items];
+
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+
+      return result;
+    }
+
+    function getAvailableQuestions() {
+      const exam = ui.exam.value;
+      const category = ui.category.value;
+
+      return questionBank.filter(question => {
+        const examMatch =
+          exam === "all" || question.exams.includes(exam);
+
+        const subjectMatch =
+          category === "mixed" || question.subject === category;
+
+        return examMatch && subjectMatch;
+      });
+    }
+
+    function updateAvailableCount() {
+      ui.available.textContent = getAvailableQuestions().length;
+    }
+
+    function startTest() {
+      if (testActive) return;
+
+      const available = getAvailableQuestions();
+
+      if (!available.length) {
+        alert("No questions are currently available for this combination. Choose another exam or category.");
+        return;
+      }
+
+      testQuestions = shuffle(available);
+      answers = {};
+      reviewMarks = new Set();
+      currentIndex = 0;
+      testFinished = false;
+      testActive = true;
+
+      remainingSeconds = Number(ui.duration.value) * 60;
+
+      ui.setup.hidden = true;
+      ui.result.hidden = true;
+      ui.test.hidden = false;
+
+      ui.title.textContent =
+        (ui.exam.value === "all" ? "All Exams" : ui.exam.value) +
+        " Mock Test";
+
+      ui.subtitle.textContent =
+        (ui.category.value === "mixed" ? "Mixed Subjects" : ui.category.value) +
+        " · " + testQuestions.length + " Questions";
+
+      renderQuestion();
+      renderPalette();
+      updateCounts();
+      updateTimerDisplay();
+      startTimer();
+    }
+
+    function startTimer() {
+      stopTimer();
+
+      timerInterval = window.setInterval(() => {
+        if (!testActive || testFinished) {
+          stopTimer();
+          return;
+        }
+
+        remainingSeconds -= 1;
+
+        updateTimerDisplay();
+
+        if (remainingSeconds <= 0) {
+          stopTimer();
+          finishTest(true);
+        }
+      }, 1000);
+    }
+
+    function stopTimer() {
+      if (timerInterval !== null) {
+        window.clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }
+
+    function updateTimerDisplay() {
+      const minutes = Math.floor(Math.max(0, remainingSeconds) / 60);
+      const seconds = Math.max(0, remainingSeconds) % 60;
+
+      ui.timer.textContent =
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0");
+
+      ui.timer.classList.toggle("warning", remainingSeconds <= 60);
+    }
+
+    function renderQuestion() {
+      if (!testActive || testFinished) return;
+
+      const question = testQuestions[currentIndex];
+
+      ui.number.textContent =
+        "Question " + (currentIndex + 1) + " of " + testQuestions.length;
+
+      ui.subject.textContent = question.subject;
+      ui.question.textContent = question.question;
+      ui.options.replaceChildren();
+
+      const letters = ["A", "B", "C", "D"];
+
+      question.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "mock-option";
+        button.classList.toggle(
+          "selected",
+          answers[question.id] === index
+        );
+
+        const letter = document.createElement("span");
+        letter.className = "mock-option-letter";
+        letter.textContent = letters[index] + ".";
+
+        const text = document.createElement("span");
+        text.textContent = option;
+
+        button.append(letter, text);
+
+        button.addEventListener("click", () => {
+          if (!testActive || testFinished) return;
+
+          answers[question.id] = index;
+          renderQuestion();
+          renderPalette();
+          updateCounts();
+        });
+
+        ui.options.append(button);
+      });
+
+      ui.previous.disabled = currentIndex === 0;
+
+      ui.next.textContent =
+        currentIndex === testQuestions.length - 1
+          ? "Save Answer"
+          : "Save & Next";
+
+      ui.review.textContent =
+        reviewMarks.has(question.id)
+          ? "Remove Review Mark"
+          : "Mark for Review";
+    }
+
+    function renderPalette() {
+      ui.palette.replaceChildren();
+
+      testQuestions.forEach((question, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = String(index + 1);
+
+        const isAnswered = answers[question.id] !== undefined;
+        const isReview = reviewMarks.has(question.id);
+
+        button.classList.toggle("answered", isAnswered);
+        button.classList.toggle("review", isReview);
+        button.classList.toggle("current", index === currentIndex);
+
+        button.setAttribute(
+          "aria-label",
+          "Question " + (index + 1) +
+          (isAnswered ? ", answered" : ", not answered") +
+          (isReview ? ", marked for review" : "")
+        );
+
+        button.addEventListener("click", () => {
+          if (!testActive || testFinished) return;
+
+          currentIndex = index;
+          renderQuestion();
+          renderPalette();
+        });
+
+        ui.palette.append(button);
+      });
+    }
+
+    function updateCounts() {
+      const answered = Object.keys(answers).length;
+      const reviewed = reviewMarks.size;
+      const unanswered = testQuestions.length - answered;
+
+      ui.answered.textContent = answered;
+      ui.reviewed.textContent = reviewed;
+      ui.unanswered.textContent = unanswered;
+    }
+
+    function goNext() {
+      if (!testActive || testFinished) return;
+
+      if (currentIndex < testQuestions.length - 1) {
+        currentIndex++;
+        renderQuestion();
+        renderPalette();
+      }
+    }
+
+    function goPrevious() {
+      if (!testActive || testFinished || currentIndex === 0) return;
+
+      currentIndex--;
+      renderQuestion();
+      renderPalette();
+    }
+
+    function toggleReview() {
+      if (!testActive || testFinished) return;
+
+      const question = testQuestions[currentIndex];
+
+      if (reviewMarks.has(question.id)) {
+        reviewMarks.delete(question.id);
+      } else {
+        reviewMarks.add(question.id);
+      }
+
+      renderQuestion();
+      renderPalette();
+      updateCounts();
+    }
+
+    function submitConfirmation() {
+      if (!testActive || testFinished) return;
+
+      const answered = Object.keys(answers).length;
+      const unanswered = testQuestions.length - answered;
+      const reviewCount = reviewMarks.size;
+
+      const message =
+        "Submit this mock test?\n\n" +
+        "Total questions: " + testQuestions.length + "\n" +
+        "Answered: " + answered + "\n" +
+        "Unanswered: " + unanswered + "\n" +
+        "Marked for review: " + reviewCount + "\n\n" +
+        "You cannot return to the test after submission.";
+
+      if (window.confirm(message)) {
+        finishTest(false);
+      }
+    }
+
+    function finishTest(timeExpired) {
+      if (testFinished || !testActive) return;
+
+      testFinished = true;
+      testActive = false;
+      stopTimer();
+
+      const total = testQuestions.length;
+
+      let correct = 0;
+      let wrong = 0;
+
+      testQuestions.forEach(question => {
+        const selected = answers[question.id];
+
+        if (selected === undefined) return;
+
+        if (selected === question.answer) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const attempted = correct + wrong;
+      const unanswered = total - attempted;
+      const accuracy = attempted
+        ? Math.round((correct / attempted) * 100)
+        : 0;
+
+      const historyItem = {
+        date: new Date().toISOString(),
+        exam: ui.exam.value,
+        category: ui.category.value,
+        total,
+        correct,
+        wrong,
+        unanswered,
+        accuracy,
+        timeExpired
+      };
+
+      const history = readHistory();
+      history.unshift(historyItem);
+      saveHistory(history);
+
+      $("result-title").textContent =
+        timeExpired
+          ? "Time expired. Your test was submitted automatically."
+          : "You have successfully submitted your test.";
+
+      $("final-score").textContent = correct + " / " + total;
+      $("final-correct").textContent = correct;
+      $("final-wrong").textContent = wrong;
+      $("final-unanswered").textContent = unanswered;
+      $("final-accuracy").textContent = accuracy + "%";
+
+      $("performance-message").textContent =
+        accuracy >= 80
+          ? "Excellent performance. Continue practising."
+          : accuracy >= 50
+            ? "Good attempt. Revise the incorrect answers."
+            : "Keep learning and try another practice test.";
+
+      ui.test.hidden = true;
+      ui.result.hidden = false;
+
+      renderHistory();
+
+      ui.result.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    function renderHistory() {
+      const history = readHistory();
+      ui.history.replaceChildren();
+
+      if (!history.length) {
+        const empty = document.createElement("p");
+        empty.textContent = "No completed tests yet.";
+        ui.history.append(empty);
+        return;
+      }
+
+      const wrapper = document.createElement("div");
+      wrapper.style.overflowX = "auto";
+
+      const table = document.createElement("table");
+      const thead = document.createElement("thead");
+      const headerRow = document.createElement("tr");
+
+      [
+        "Date",
+        "Exam",
+        "Category",
+        "Score",
+        "Accuracy"
+      ].forEach(label => {
+        const th = document.createElement("th");
+        th.textContent = label;
+        headerRow.append(th);
+      });
+
+      thead.append(headerRow);
+
+      const tbody = document.createElement("tbody");
+
+      history.forEach(item => {
+        const row = document.createElement("tr");
+
+        const date = new Date(item.date);
+        const dateText = Number.isNaN(date.getTime())
+          ? "Unknown"
+          : date.toLocaleDateString();
+
+        [
+          dateText,
+          item.exam === "all" ? "All Exams" : item.exam,
+          item.category === "mixed" ? "Mixed" : item.category,
+          item.correct + " / " + item.total,
+          item.accuracy + "%"
+        ].forEach(value => {
+          const td = document.createElement("td");
+          td.textContent = value;
+          row.append(td);
+        });
+
+        tbody.append(row);
+      });
+
+      table.append(thead, tbody);
+      wrapper.append(table);
+      ui.history.append(wrapper);
+    }
+
+    function startAnotherTest() {
+      ui.result.hidden = true;
+      ui.setup.hidden = false;
+
+      testQuestions = [];
+      answers = {};
+      reviewMarks = new Set();
+      currentIndex = 0;
+      testActive = false;
+      testFinished = false;
+
+      updateAvailableCount();
+
+      ui.setup.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    function clearHistory() {
+      const history = readHistory();
+
+      if (!history.length) {
+        alert("There is no test history to clear.");
+        return;
+      }
+
+      if (!window.confirm("Delete all saved mock test history from this browser?")) {
+        return;
+      }
+
+      try {
+        localStorage.removeItem(HISTORY_KEY);
+        renderHistory();
+      } catch {
+        alert("Unable to clear browser history.");
+      }
+    }
+
+    function initialize() {
+      ui.exam.addEventListener("change", updateAvailableCount);
+      ui.category.addEventListener("change", updateAvailableCount);
+
+      ui.start.addEventListener("click", startTest);
+      ui.previous.addEventListener("click", goPrevious);
+      ui.next.addEventListener("click", goNext);
+      ui.review.addEventListener("click", toggleReview);
+      ui.submit.addEventListener("click", submitConfirmation);
+      $("new-test").addEventListener("click", startAnotherTest);
+      $("clear-history").addEventListener("click", clearHistory);
+
+      updateAvailableCount();
+      renderHistory();
+
+      window.addEventListener("beforeunload", event => {
+        if (testActive && !testFinished) {
+          event.preventDefault();
+          event.returnValue = "";
+        }
+      });
+    }
+
+    initialize();
+  })();
+  </script>
+</body>
+</html>
