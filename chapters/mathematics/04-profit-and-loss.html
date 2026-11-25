@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Profit and Loss complete Telugu and English Mathematics notes, formulas, solved examples and 50 interactive MCQs for competitive examinations.">
+<title>Profit and Loss | RETRY IN LIBRARY</title>
+<style>
+:root{--saffron:#f28c28;--deep:#a94708;--pale:#fff0dc;--bg:#fff8ef;--ink:#30251c;--muted:#6d6258;--green:#187443;--red:#bd3030;--line:#edcfad}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+header{background:linear-gradient(135deg,#ffb347,#e66c13);color:white;text-align:center;padding:27px 15px}
+.brand{font-size:13px;letter-spacing:2px;font-weight:bold}
+header h1{font-size:29px;margin:8px 0}
+header p{margin:3px}
+.tagline{font-size:11px;letter-spacing:1px;margin-top:8px}
+nav{position:sticky;top:0;z-index:5;background:#fff;display:flex;gap:8px;overflow-x:auto;padding:10px;border-bottom:1px solid var(--line)}
+nav a{white-space:nowrap;text-decoration:none;color:var(--deep);font-size:13px;font-weight:bold;background:var(--pale);padding:7px 11px;border-radius:20px}
+.container{max-width:950px;width:94%;margin:22px auto 45px}
+.card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px;margin:15px 0;box-shadow:0 3px 12px #78400b0b}
+h2{color:var(--deep);font-size:22px;border-bottom:2px solid #f6d6b2;padding-bottom:7px}
+h3{color:#b45712;font-size:18px;margin-top:22px}
+h4{margin-bottom:5px;color:#74400f}
+p{margin:8px 0}
+li{margin:5px 0}
+.tag{display:inline-block;background:var(--pale);color:var(--deep);padding:4px 9px;border-radius:15px;font-size:12px;font-weight:bold;margin:3px}
+.note{background:#fff4e5;border-left:4px solid var(--saffron);padding:12px 14px;border-radius:6px;margin:12px 0}
+.example{background:#f7fbff;border-left:4px solid #4085b9;padding:12px 14px;border-radius:6px;margin:12px 0}
+.warning{background:#fff0ef;border-left:4px solid var(--red);padding:12px 14px;border-radius:6px;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px;text-align:left}
+th{background:var(--pale);color:var(--deep)}
+.formula{background:#fff7eb;padding:12px;border-radius:8px;font-weight:bold;color:#813d08;overflow-wrap:anywhere}
+button{background:var(--saffron);color:#fff;border:0;border-radius:8px;padding:10px 15px;font-weight:bold;cursor:pointer}
+button:hover{background:var(--deep)}
+button:disabled{opacity:.65;cursor:not-allowed}
+.quiz-question{border:1px solid var(--line);padding:14px;border-radius:10px;margin:13px 0;background:#fff}
+.q-title{font-weight:bold;margin-bottom:10px}
+.option{display:block;width:100%;text-align:left;background:#fff8ef;color:var(--ink);border:1px solid #e8cba9;margin:7px 0;padding:10px;border-radius:7px;font-weight:normal}
+.option:hover:not(:disabled){background:#ffebd3}
+.option.correct{background:#e4f6eb;border-color:var(--green);color:#125c35}
+.option.wrong{background:#ffe7e5;border-color:var(--red);color:#922323}
+.feedback{font-size:14px;margin-top:8px;font-weight:bold}
+.muted{color:var(--muted);font-size:13px}
+#quizStatus{position:sticky;top:49px;background:#fff;border:1px solid var(--line);padding:10px;border-radius:8px;z-index:3}
+.progress{height:9px;background:#f2dfca;border-radius:10px;overflow:hidden;margin-top:8px}
+.progress span{display:block;height:100%;width:0;background:var(--saffron);transition:width .2s}
+#result{display:none;background:#fff4e5;border:2px solid var(--saffron);border-radius:12px;padding:18px;margin:15px 0}
+footer{text-align:center;background:#39271b;color:#fff;padding:22px 12px;font-size:13px}
+footer strong{color:#ffb76d}
+@media(min-width:700px){.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}header h1{font-size:36px}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand">RETRY IN LIBRARY</div>
+<h1>Profit and Loss</h1>
+<p>లాభం మరియు నష్టం</p>
+<div class="tagline">LEARN AGAIN. TRY AGAIN. SUCCEED.</div>
+<p><span class="tag">MATHEMATICS</span><span class="tag">CHAPTER 04</span><span class="tag">TELUGU + ENGLISH</span></p>
+</header>
+<nav>
+<a href="#intro">Introduction</a><a href="#terms">Basic Terms</a><a href="#profitloss">Profit &amp; Loss</a><a href="#discount">Discount</a><a href="#successive">Successive Discount</a><a href="#special">Special Cases</a><a href="#examples">Examples</a><a href="#formulas">Formulas</a><a href="#quiz">50 MCQs</a>
+</nav>
+<main class="container">
+<section class="card" id="intro">
+<h2>1. Introduction to Profit and Loss | లాభనష్టాల పరిచయం</h2>
+<p><b>English:</b> Profit and Loss is an important arithmetic topic. It explains the gain or loss made when an article is purchased and then sold. It is widely used in trade, business, shopping and competitive-exam calculations.</p>
+<p><b>తెలుగు:</b> ఒక వస్తువును కొనుగోలు చేసి తిరిగి అమ్మినప్పుడు వచ్చే లాభం లేదా నష్టాన్ని లెక్కించే గణిత అంశాన్ని లాభనష్టాలు అంటారు. వ్యాపారం, కొనుగోళ్లు మరియు పోటీ పరీక్షల్లో ఇది ముఖ్యమైనది.</p>
+<div class="note"><b>Exam importance:</b> Questions commonly involve Cost Price, Selling Price, Marked Price, profit/loss percentage, discount and successive discounts.<br><b>పరీక్షా ప్రాముఖ్యత:</b> కొనుగోలు ధర, అమ్మకపు ధర, గుర్తించిన ధర, లాభనష్టం శాతం మరియు తగ్గింపులపై ప్రశ్నలు వస్తాయి.</div>
+<h3>Real-life applications | రోజువారీ జీవితంలో ఉపయోగాలు</h3>
+<ul><li>Shopkeepers calculate profit or loss on goods they sell.</li><li>Businesses compare purchase costs and sales revenue.</li><li>Customers calculate discounts during sales.</li><li lang="te">వ్యాపారులు వస్తువుల కొనుగోలు, అమ్మకాల ద్వారా లాభనష్టాలను లెక్కిస్తారు.</li><li lang="te">వినియోగదారులు షాపింగ్ సమయంలో తగ్గింపులను లెక్కిస్తారు.</li></ul>
+</section>
+<section class="card" id="terms">
+<h2>2. Basic Terms | ప్రాథమిక పదాలు</h2>
+<h3>2.1 Cost Price (CP) | కొనుగోలు ధర</h3><p>The price paid to purchase an article is called its Cost Price. ఒక వస్తువును కొనుగోలు చేసిన ధరను కొనుగోలు ధర అంటారు.</p><div class="formula">CP = Cost Price = కొనుగోలు ధర</div>
+<h3>2.2 Selling Price (SP) | అమ్మకపు ధర</h3><p>The price at which an article is sold is called its Selling Price. ఒక వస్తువును అమ్మిన ధరను అమ్మకపు ధర అంటారు.</p><div class="formula">SP = Selling Price = అమ్మకపు ధర</div>
+<h3>2.3 Marked Price (MP) | గుర్తించిన ధర</h3><p>The price printed or displayed on an article before discount is its Marked Price. తగ్గింపు ఇవ్వడానికి ముందు వస్తువుపై ముద్రించిన లేదా చూపించిన ధరను గుర్తించిన ధర అంటారు.</p><div class="formula">MP = Marked Price = గుర్తించిన ధర</div>
+<h3>2.4 Profit | లాభం</h3><p>If Selling Price is greater than Cost Price, the seller makes a profit. అమ్మకపు ధర కొనుగోలు ధర కంటే ఎక్కువైతే లాభం వస్తుంది.</p><div class="formula">Profit = SP − CP</div>
+<h3>2.5 Loss | నష్టం</h3><p>If Cost Price is greater than Selling Price, the seller incurs a loss. కొనుగోలు ధర అమ్మకపు ధర కంటే ఎక్కువైతే నష్టం వస్తుంది.</p><div class="formula">Loss = CP − SP</div>
+<table><tr><th>Condition</th><th>Result</th><th>తెలుగు</th></tr><tr><td>SP &gt; CP</td><td>Profit</td><td>లాభం</td></tr><tr><td>CP &gt; SP</td><td>Loss</td><td>నష్టం</td></tr><tr><td>SP = CP</td><td>No profit, no loss</td><td>లాభం లేదు, నష్టం లేదు</td></tr></table>
+</section>
+<section class="card" id="profitloss">
+<h2>3. Profit and Loss Percentage | లాభనష్టాల శాతం</h2>
+<h3>3.1 Profit Percentage | లాభ శాతం</h3><p>Profit percentage is always calculated on Cost Price. లాభ శాతాన్ని ఎల్లప్పుడూ కొనుగోలు ధర ఆధారంగా లెక్కించాలి.</p><div class="formula">Profit % = (Profit ÷ CP) × 100</div>
+<div class="example"><b>Example:</b> CP = ₹500, SP = ₹600.<br>Profit = 600 − 500 = ₹100.<br>Profit% = (100/500) × 100 = <b>20%</b>.<br><b>తెలుగు:</b> ₹500కు కొని ₹600కు అమ్మితే ₹100 లాభం; లాభ శాతం 20%.</div>
+<h3>3.2 Loss Percentage | నష్ట శాతం</h3><p>Loss percentage is also calculated on Cost Price. నష్ట శాతాన్ని కూడా కొనుగోలు ధర ఆధారంగా లెక్కిస్తారు.</p><div class="formula">Loss % = (Loss ÷ CP) × 100</div>
+<div class="example"><b>Example:</b> CP = ₹800, SP = ₹680.<br>Loss = 800 − 680 = ₹120.<br>Loss% = (120/800) × 100 = <b>15%</b>.</div>
+<h3>3.3 Finding Selling Price | అమ్మకపు ధర కనుగొనడం</h3><div class="formula">SP = CP × (100 + Profit %) ÷ 100</div><div class="formula">SP = CP × (100 − Loss %) ÷ 100</div>
+<h3>3.4 Finding Cost Price | కొనుగోలు ధర కనుగొనడం</h3><div class="formula">CP = SP × 100 ÷ (100 + Profit %)</div><div class="formula">CP = SP × 100 ÷ (100 − Loss %)</div>
+<div class="warning"><b>Important:</b> Profit% and Loss% are calculated on CP, not SP. లాభం, నష్టం శాతాలను SP ఆధారంగా కాకుండా CP ఆధారంగా లెక్కించాలి.</div>
+</section>
+<section class="card" id="discount">
+<h2>4. Discount | తగ్గింపు</h2>
+<p>Discount is the reduction given on the Marked Price of an article. వస్తువు గుర్తించిన ధరపై ఇచ్చే తగ్గింపును Discount అంటారు.</p>
+<div class="formula">Discount = MP − SP</div><div class="formula">Discount % = (Discount ÷ MP) × 100</div><div class="formula">SP = MP × (100 − Discount %) ÷ 100</div>
+<div class="example"><b>Example:</b> MP = ₹1,000; discount = 10%.<br>Discount = 1000 × 10/100 = ₹100.<br>SP = 1000 − 100 = <b>₹900</b>.<br><b>తెలుగు:</b> ₹1,000పై 10% తగ్గింపు ₹100. కాబట్టి అమ్మకపు ధర ₹900.</div>
+<h3>Profit versus Discount | లాభం – తగ్గింపు తేడా</h3><table><tr><th>Profit</th><th>Discount</th></tr><tr><td>Calculated on CP</td><td>Calculated on MP</td></tr><tr><td>లాభం CP ఆధారంగా</td><td>తగ్గింపు MP ఆధారంగా</td></tr><tr><td>SP − CP</td><td>MP − SP</td></tr></table>
+</section>
+<section class="card" id="successive">
+<h2>5. Successive Discounts | వరుస తగ్గింపులు</h2>
+<p>When two or more discounts are given one after another, they are called successive discounts. ఒకదాని తర్వాత మరొకటి తగ్గింపులు ఇస్తే వాటిని వరుస తగ్గింపులు అంటారు.</p>
+<div class="formula">Equivalent Discount = A + B − (A × B ÷ 100)</div>
+<div class="example"><b>Example:</b> Successive discounts = 20% and 10%.<br>Equivalent discount = 20 + 10 − (20 × 10/100) = 30 − 2 = <b>28%</b>.</div>
+<div class="note"><b>Remember:</b> 20% and 10% successive discounts are not 30%; they are equivalent to 28%. వరుస తగ్గింపులను నేరుగా కూడకూడదు.</div>
+<p>For three successive discounts A%, B% and C%, the final price is MP × (1−A/100) × (1−B/100) × (1−C/100). Calculate the combined reduction from the original MP.</p>
+</section>
+<section class="card" id="special">
+<h2>6. Special Cases | ప్రత్యేక సందర్భాలు</h2>
+<h3>6.1 Equal Selling Prices with Equal Gain and Loss | ఒకే అమ్మకపు ధర</h3>
+<p>When two articles are sold at the same Selling Price, one at x% gain and the other at x% loss, the overall result is a loss.</p><div class="formula">Overall Loss % = x² ÷ 100</div>
+<div class="example">If one article is sold at 10% profit and another at 10% loss for the same SP, overall loss = 10²/100 = <b>1%</b>.</div>
+<h3>6.2 False Weight | తప్పుడు తూకం</h3>
+<p>If a seller charges for 1 kg but gives less than 1 kg, the gain is calculated on the actual quantity given, assuming the same price per unit.</p><div class="formula">Gain % = (Shortage ÷ Actual quantity given) × 100</div>
+<div class="example">A seller charges for 1,000 g but gives 900 g. Shortage = 100 g. Gain% = (100/900) × 100 = <b>11.11%</b> approximately.</div>
+<h3>6.3 Marked Price for a Desired Profit | కావలసిన లాభానికి గుర్తించిన ధర</h3><div class="formula">Required SP = CP × (100 + Profit %) ÷ 100</div><div class="formula">MP = Required SP × 100 ÷ (100 − Discount %)</div>
+</section>
+<section class="card" id="examples">
+<h2>7. Solved Examples | సాధించిన ఉదాహరణలు</h2>
+<div class="example"><b>Example 1: Find profit.</b><br>CP = ₹800, SP = ₹1,000.<br>Profit = 1000 − 800 = <b>₹200</b>.</div>
+<div class="example"><b>Example 2: Find profit percentage.</b><br>CP = ₹800, profit = ₹200.<br>Profit% = 200/800 × 100 = <b>25%</b>.</div>
+<div class="example"><b>Example 3: Find loss percentage.</b><br>CP = ₹1,200, SP = ₹900.<br>Loss = ₹300; Loss% = 300/1200 × 100 = <b>25%</b>.</div>
+<div class="example"><b>Example 4: Find SP at 15% profit.</b><br>CP = ₹2,000.<br>SP = 2000 × 115/100 = <b>₹2,300</b>.</div>
+<div class="example"><b>Example 5: Find CP at 20% profit.</b><br>SP = ₹1,440.<br>CP = 1440 × 100/120 = <b>₹1,200</b>.</div>
+<div class="example"><b>Example 6: Find SP at 10% loss.</b><br>CP = ₹750.<br>SP = 750 × 90/100 = <b>₹675</b>.</div>
+<div class="example"><b>Example 7: Find CP at 10% loss.</b><br>SP = ₹720.<br>CP = 720 × 100/90 = <b>₹800</b>.</div>
+<div class="example"><b>Example 8: Find discount and SP.</b><br>MP = ₹2,500; discount = 12%.<br>Discount = ₹300; SP = 2500 − 300 = <b>₹2,200</b>.</div>
+<div class="example"><b>Example 9: Successive discount.</b><br>Discounts = 25% and 20%.<br>Equivalent = 25 + 20 − (25×20/100) = <b>40%</b>.</div>
+<div class="example"><b>Example 10: Find MP for desired profit.</b><br>CP = ₹800; desired profit = 25%; discount = 20%.<br>Required SP = 800 × 125/100 = ₹1,000.<br>MP = 1000 × 100/80 = <b>₹1,250</b>.</div>
+<div class="example"><b>Example 11: Same SP, equal profit and loss.</b><br>One sale at 20% gain and another at 20% loss, both at same SP.<br>Overall loss = 20²/100 = <b>4%</b>.</div>
+<div class="example"><b>Example 12: False weight.</b><br>Charge for 1 kg but give 900 g.<br>Gain% = (100/900) × 100 = <b>11.11%</b> approximately.</div>
+</section>
+<section class="card" id="formulas">
+<h2>8. Important Formulas and Shortcuts | ముఖ్యమైన సూత్రాలు</h2>
+<table><tr><th>Topic</th><th>Formula</th></tr>
+<tr><td>Profit</td><td>SP − CP</td></tr><tr><td>Loss</td><td>CP − SP</td></tr><tr><td>Profit %</td><td>(Profit ÷ CP) × 100</td></tr><tr><td>Loss %</td><td>(Loss ÷ CP) × 100</td></tr>
+<tr><td>SP at profit</td><td>CP × (100 + P)/100</td></tr><tr><td>SP at loss</td><td>CP × (100 − L)/100</td></tr><tr><td>CP at profit</td><td>SP × 100/(100 + P)</td></tr><tr><td>CP at loss</td><td>SP × 100/(100 − L)</td></tr>
+<tr><td>Discount</td><td>MP − SP</td></tr><tr><td>Discount %</td><td>(Discount ÷ MP) × 100</td></tr><tr><td>SP after discount</td><td>MP × (100 − D)/100</td></tr><tr><td>Two successive discounts</td><td>A + B − AB/100</td></tr><tr><td>Equal SP, equal gain/loss</td><td>Loss % = x²/100</td></tr></table>
+<h3>Quick fraction values | త్వరిత శాతం విలువలు</h3><table><tr><th>Fraction</th><th>Percentage</th></tr><tr><td>1/2</td><td>50%</td></tr><tr><td>1/3</td><td>33⅓%</td></tr><tr><td>1/4</td><td>25%</td></tr><tr><td>1/5</td><td>20%</td></tr><tr><td>1/8</td><td>12.5%</td></tr><tr><td>1/10</td><td>10%</td></tr><tr><td>1/20</td><td>5%</td></tr><tr><td>1/25</td><td>4%</td></tr></table>
+<div class="note"><b>Exam tips:</b><ul><li>Identify CP, SP and MP before selecting a formula.</li><li>Profit/loss percentage is based on CP.</li><li>Discount percentage is based on MP.</li><li>Do not add successive discounts directly.</li><li>For a desired profit after discount, calculate SP first and MP next.</li><li lang="te">సూత్రాన్ని ఉపయోగించే ముందు CP, SP, MPలను గుర్తించండి.</li><li lang="te">వరుస తగ్గింపులను నేరుగా కూడవద్దు.</li></ul></div>
+</section>
+<section class="card">
+<h2>9. Glossary | ముఖ్యమైన పదజాలం</h2>
+<table><tr><th>English</th><th>తెలుగు</th></tr><tr><td>Cost Price</td><td>కొనుగోలు ధర</td></tr><tr><td>Selling Price</td><td>అమ్మకపు ధర</td></tr><tr><td>Marked Price</td><td>గుర్తించిన ధర</td></tr><tr><td>Profit</td><td>లాభం</td></tr><tr><td>Loss</td><td>నష్టం</td></tr><tr><td>Discount</td><td>తగ్గింపు</td></tr><tr><td>Percentage</td><td>శాతం</td></tr><tr><td>Successive</td><td>వరుసగా</td></tr><tr><td>Gain</td><td>లాభం</td></tr><tr><td>Shortage</td><td>కొరత / తక్కువ పరిమాణం</td></tr><tr><td>Revenue</td><td>ఆదాయం</td></tr></table>
+</section>
+<section class="card" id="quiz">
+<h2>10. Practice Test – 50 MCQs | అభ్యాస పరీక్ష</h2>
+<p>Choose one answer for each question. After selecting, the correct answer and explanation will appear. Complete all questions to see your score.</p>
+<p lang="te">ప్రతి ప్రశ్నకు ఒక సమాధానాన్ని ఎంచుకోండి. సమాధానం ఎంచుకున్న తర్వాత సరైన జవాబు, వివరణ కనిపిస్తాయి. అన్ని ప్రశ్నలు పూర్తిచేసిన తర్వాత మీ స్కోర్ కనిపిస్తుంది.</p>
+<div id="quizStatus"><b id="progressText">Answered: 0 / 50</b> <span id="scoreLive" style="float:right">Correct: 0</span><div class="progress"><span id="progressBar"></span></div></div>
+<div id="questions"></div>
+<div id="result" class="note" style="display:none"><h3>Test Result | పరీక్ష ఫలితం</h3><p id="scoreText"></p><p id="remark"></p><button type="button" onclick="resetQuiz()">Restart Test | మళ్లీ ప్రారంభించండి</button></div>
+</section>
+</main>
+<footer><strong>RETRY IN LIBRARY</strong><p>LEARN AGAIN. TRY AGAIN. SUCCEED.</p><p>Mathematics | Profit and Loss</p></footer>
+<script>
+'use strict';
+const mcqs = [{"q":"CP = ₹500 and SP = ₹600. Find the profit.","o":["₹50","₹100","₹150","₹200"],"a":1,"e":"Profit = SP − CP = 600 − 500 = ₹100."},{"q":"CP = ₹800 and SP = ₹720. Find the loss.","o":["₹60","₹70","₹80","₹90"],"a":2,"e":"Loss = CP − SP = 800 − 720 = ₹80."},{"q":"CP = ₹400 and SP = ₹500. Find the profit percentage.","o":["20%","25%","30%","40%"],"a":1,"e":"Profit = 100. Profit% = (100/400) × 100 = 25%."},{"q":"CP = ₹1,000 and SP = ₹800. Find the loss percentage.","o":["10%","15%","20%","25%"],"a":2,"e":"Loss = 200. Loss% = (200/1000) × 100 = 20%."},{"q":"An article costing ₹600 is sold at 10% profit. Find SP.","o":["₹620","₹640","₹660","₹680"],"a":2,"e":"SP = 600 × 110/100 = ₹660."},{"q":"An article costing ₹900 is sold at 20% loss. Find SP.","o":["₹700","₹720","₹750","₹780"],"a":1,"e":"SP = 900 × 80/100 = ₹720."},{"q":"An article is sold for ₹1,200 at 20% profit. Find CP.","o":["₹900","₹1,000","₹1,050","₹1,100"],"a":1,"e":"CP = 1200 × 100/120 = ₹1,000."},{"q":"An article is sold for ₹850 at 15% loss. Find CP.","o":["₹900","₹1,000","₹1,050","₹1,100"],"a":1,"e":"CP = 850 × 100/85 = ₹1,000."},{"q":"A trader buys an article for ₹250 and sells it for ₹300. Find profit percentage.","o":["15%","18%","20%","25%"],"a":2,"e":"Profit = 50. Profit% = (50/250) × 100 = 20%."},{"q":"An article is sold for ₹540 at 10% loss. Find CP.","o":["₹580","₹590","₹600","₹620"],"a":2,"e":"CP = 540 × 100/90 = ₹600."},{"q":"MP is ₹1,000 and discount is 10%. Find SP.","o":["₹800","₹850","₹900","₹950"],"a":2,"e":"SP = 1000 × 90/100 = ₹900."},{"q":"MP = ₹2,000 and SP = ₹1,700. Find discount amount.","o":["₹200","₹250","₹300","₹350"],"a":2,"e":"Discount = MP − SP = 2000 − 1700 = ₹300."},{"q":"MP = ₹800 and discount = 25%. Find SP.","o":["₹500","₹550","₹600","₹650"],"a":2,"e":"SP = 800 × 75/100 = ₹600."},{"q":"MP = ₹1,500 and SP = ₹1,200. Find discount percentage.","o":["10%","15%","20%","25%"],"a":2,"e":"Discount = 300. Discount% = (300/1500) × 100 = 20%."},{"q":"An article is sold for ₹960 after a 20% discount. Find MP.","o":["₹1,100","₹1,150","₹1,200","₹1,250"],"a":2,"e":"MP = 960 × 100/80 = ₹1,200."},{"q":"Successive discounts of 10% and 20% are equivalent to:","o":["25%","28%","30%","32%"],"a":1,"e":"Equivalent discount = 10 + 20 − (10×20/100) = 28%."},{"q":"Successive discounts of 20% and 25% are equivalent to:","o":["35%","40%","45%","50%"],"a":1,"e":"Equivalent discount = 20 + 25 − (20×25/100) = 40%."},{"q":"A person gains ₹150 on an article costing ₹750. Find profit percentage.","o":["15%","20%","25%","30%"],"a":1,"e":"Profit% = (150/750) × 100 = 20%."},{"q":"A person loses ₹180 on an article costing ₹900. Find loss percentage.","o":["10%","15%","20%","25%"],"a":2,"e":"Loss% = (180/900) × 100 = 20%."},{"q":"If CP = ₹400 and SP = ₹400, what is the result?","o":["10% profit","10% loss","No profit, no loss","20% profit"],"a":2,"e":"When CP equals SP, there is neither profit nor loss."},{"q":"An article is sold for ₹1,080 at 20% profit. Find CP.","o":["₹800","₹850","₹900","₹950"],"a":2,"e":"CP = 1080 × 100/120 = ₹900."},{"q":"An article is sold for ₹720 at 10% loss. Find CP.","o":["₹750","₹780","₹800","₹820"],"a":2,"e":"CP = 720 × 100/90 = ₹800."},{"q":"MP is ₹2,000 and discount is 15%. Find SP.","o":["₹1,600","₹1,650","₹1,700","₹1,750"],"a":2,"e":"SP = 2000 × 85/100 = ₹1,700."},{"q":"MP = ₹1,200 and SP = ₹1,020. Find discount percentage.","o":["10%","12%","15%","18%"],"a":2,"e":"Discount = 180. Discount% = (180/1200) × 100 = 15%."},{"q":"A trader buys 10 pens for ₹100 and sells each for ₹12. Find total profit.","o":["₹10","₹15","₹20","₹25"],"a":2,"e":"Total SP = 10 × 12 = ₹120. Profit = 120 − 100 = ₹20."},{"q":"A trader buys 20 items for ₹400 and sells each for ₹18. Find the result.","o":["₹20 loss","₹40 loss","₹20 profit","₹40 profit"],"a":1,"e":"Total SP = 20 × 18 = ₹360. Loss = 400 − 360 = ₹40."},{"q":"An article is sold for ₹1,000 at 25% profit. Find CP.","o":["₹750","₹800","₹850","₹900"],"a":1,"e":"CP = 1000 × 100/125 = ₹800."},{"q":"An article is sold for ₹720 at 20% loss. Find CP.","o":["₹800","₹850","₹900","₹950"],"a":2,"e":"CP = 720 × 100/80 = ₹900."},{"q":"CP = ₹2,500 and SP = ₹3,000. Find profit percentage.","o":["15%","18%","20%","25%"],"a":2,"e":"Profit = 500. Profit% = (500/2500) × 100 = 20%."},{"q":"CP = ₹1,600 and SP = ₹1,360. Find loss percentage.","o":["10%","12%","15%","20%"],"a":2,"e":"Loss = 240. Loss% = (240/1600) × 100 = 15%."},{"q":"MP = ₹500 and discount = 10%. Find discount amount.","o":["₹25","₹40","₹50","₹60"],"a":2,"e":"Discount = 500 × 10/100 = ₹50."},{"q":"MP = ₹2,500 and discount = 12%. Find SP.","o":["₹2,100","₹2,150","₹2,200","₹2,250"],"a":2,"e":"SP = 2500 × 88/100 = ₹2,200."},{"q":"Successive discounts of 30% and 10% are equivalent to:","o":["35%","37%","40%","43%"],"a":1,"e":"Equivalent discount = 30 + 10 − (30×10/100) = 37%."},{"q":"Successive discounts of 15% and 20% are equivalent to:","o":["30%","32%","35%","38%"],"a":1,"e":"Equivalent discount = 15 + 20 − (15×20/100) = 32%."},{"q":"If an article is sold at 40% profit, SP is what percentage of CP?","o":["120%","130%","140%","150%"],"a":2,"e":"SP = 100% + 40% = 140% of CP."},{"q":"If an article is sold at 30% loss, SP is what percentage of CP?","o":["60%","65%","70%","75%"],"a":2,"e":"SP = 100% − 30% = 70% of CP."},{"q":"CP = ₹600, MP = ₹800 and discount = 10%. Find profit.","o":["₹100","₹110","₹120","₹140"],"a":2,"e":"SP = 800 × 90/100 = ₹720. Profit = 720 − 600 = ₹120."},{"q":"CP = ₹1,000. At what price should it be sold to gain 15%?","o":["₹1,100","₹1,125","₹1,150","₹1,200"],"a":2,"e":"SP = 1000 × 115/100 = ₹1,150."},{"q":"An article is sold for ₹960 at 20% loss. Find CP.","o":["₹1,100","₹1,150","₹1,200","₹1,250"],"a":2,"e":"CP = 960 × 100/80 = ₹1,200."},{"q":"An article is sold for ₹1,500 at 25% profit. Find the profit amount.","o":["₹250","₹300","₹350","₹375"],"a":1,"e":"CP = 1500 × 100/125 = ₹1,200. Profit = 1500 − 1200 = ₹300."},{"q":"A shopkeeper charges for 1 kg but gives only 900 g. What is the gain percentage on the quantity given, assuming the same price per kg?","o":["10%","11.11%","12.5%","15%"],"a":1,"e":"Shortage = 100 g. Gain% = (100/900) × 100 = 11.11%."},{"q":"CP = ₹2,000 and profit = 10%. Find SP.","o":["₹2,100","₹2,150","₹2,200","₹2,250"],"a":2,"e":"SP = 2000 × 110/100 = ₹2,200."},{"q":"CP = ₹800 and loss = 5%. Find SP.","o":["₹740","₹750","₹760","₹780"],"a":2,"e":"SP = 800 × 95/100 = ₹760."},{"q":"MP = ₹1,000. A discount of 20% is given and the seller still makes 25% profit. Find CP.","o":["₹600","₹640","₹650","₹700"],"a":1,"e":"SP = 1000 × 80/100 = ₹800. CP = 800 × 100/125 = ₹640."},{"q":"Two articles are sold for ₹1,000 each. One gives 20% profit and the other 20% loss. Find the overall result.","o":["No profit, no loss","4% profit","4% loss","2% loss"],"a":2,"e":"For equal selling prices and equal gain/loss rate x%, overall loss = x²/100 = 400/100 = 4%."},{"q":"CP = ₹400 and the article is marked 25% above CP. Find MP.","o":["₹450","₹475","₹500","₹525"],"a":2,"e":"MP = 400 × 125/100 = ₹500."},{"q":"An article is sold for ₹1,600 at 20% profit. Find CP.","o":["₹1,200","₹1,250","₹1,333.33","₹1,400"],"a":2,"e":"CP = 1600 × 100/120 = ₹1,333.33 (approximately)."},{"q":"An article is sold for ₹1,380 at 15% profit. Find CP.","o":["₹1,100","₹1,200","₹1,250","₹1,300"],"a":1,"e":"CP = 1380 × 100/115 = ₹1,200."},{"q":"A trader marks an article at ₹2,000 and gives 10% discount. If CP is ₹1,500, find profit percentage.","o":["10%","15%","20%","25%"],"a":2,"e":"SP = 2000 × 90/100 = ₹1,800. Profit = 300. Profit% = 300/1500 × 100 = 20%."},{"q":"A shopkeeper sells an article at 10% loss for ₹900. Find the loss amount.","o":["₹90","₹100","₹110","₹120"],"a":1,"e":"CP = 900 × 100/90 = ₹1,000. Loss = 1,000 − 900 = ₹100."}];
+let answered = 0;
+let correct = 0;
+const questionsEl = document.getElementById('questions');
+function renderQuiz(){
+  questionsEl.innerHTML = '';
+  mcqs.forEach((item,index)=>{
+    const box = document.createElement('div');
+    box.className = 'quiz-question';
+    const title = document.createElement('div');
+    title.className = 'q-title';
+    title.textContent = (index+1) + '. ' + item.q;
+    box.appendChild(title);
+    const feedback = document.createElement('div');
+    feedback.className = 'feedback';
+    feedback.setAttribute('aria-live','polite');
+    item.o.forEach((option,optionIndex)=>{
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'option';
+      btn.textContent = String.fromCharCode(65+optionIndex) + '. ' + option;
+      btn.addEventListener('click',()=>{
+        if(box.dataset.answered === 'yes') return;
+        box.dataset.answered = 'yes';
+        answered++;
+        const buttons = box.querySelectorAll('.option');
+        if(optionIndex === item.a){
+          correct++;
+          btn.classList.add('correct');
+          feedback.style.color = '#187443';
+          feedback.textContent = 'Correct! ✓ ' + item.e;
+        } else {
+          btn.classList.add('wrong');
+          buttons[item.a].classList.add('correct');
+          feedback.style.color = '#a12b24';
+          feedback.textContent = 'Incorrect. Correct answer: ' + item.o[item.a] + '. ' + item.e;
+        }
+        buttons.forEach(button=>button.disabled = true);
+        box.appendChild(feedback);
+        updateProgress();
+      });
+      box.appendChild(btn);
+    });
+    box.appendChild(feedback);
+    questionsEl.appendChild(box);
+  });
+}
+function updateProgress(){
+  document.getElementById('progressText').textContent = 'Answered: ' + answered + ' / ' + mcqs.length;
+  document.getElementById('scoreLive').textContent = 'Correct: ' + correct;
+  document.getElementById('progressBar').style.width = (answered/mcqs.length*100) + '%';
+  if(answered === mcqs.length){
+    const percent = Math.round(correct/mcqs.length*100);
+    document.getElementById('scoreText').textContent = 'Your score: ' + correct + ' / ' + mcqs.length + ' (' + percent + '%)';
+    document.getElementById('remark').textContent = percent >= 80 ? 'Excellent performance! చాలా బాగా చేశారు!' : percent >= 60 ? 'Good effort. Revise the explanations and try again. మంచి ప్రయత్నం.' : 'Keep learning. Review the chapter and attempt the test again. మరింత సాధన చేయండి.';
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+function resetQuiz(){
+  answered = 0;
+  correct = 0;
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('progressText').textContent = 'Answered: 0 / ' + mcqs.length;
+  document.getElementById('scoreLive').textContent = 'Correct: 0';
+  document.getElementById('progressBar').style.width = '0%';
+  renderQuiz();
+  document.getElementById('quiz').scrollIntoView({behavior:'smooth'});
+}
+renderQuiz();
+updateProgress();
+</script>
+</body>
+</html>
