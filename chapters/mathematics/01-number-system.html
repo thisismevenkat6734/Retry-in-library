@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Number System complete Telugu and English Mathematics notes, formulas, solved examples and 50 interactive MCQs for competitive examinations.">
+<title>Number System | RETRY IN LIBRARY</title>
+<style>
+:root{--saffron:#f28c28;--deep:#a94708;--pale:#fff0dc;--bg:#fff8ef;--ink:#30251c;--muted:#6d6258;--green:#187443;--red:#bd3030;--line:#edcfad}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+header{background:linear-gradient(135deg,#ffb347,#e66c13);color:white;text-align:center;padding:27px 15px}
+.brand{font-size:13px;letter-spacing:2px;font-weight:bold}
+header h1{font-size:29px;margin:8px 0}
+header p{margin:3px}
+.tagline{font-size:11px;letter-spacing:1px;margin-top:8px}
+nav{position:sticky;top:0;z-index:5;background:#fff;display:flex;gap:8px;overflow-x:auto;padding:10px;border-bottom:1px solid var(--line)}
+nav a{white-space:nowrap;text-decoration:none;color:var(--deep);font-size:13px;font-weight:bold;background:var(--pale);padding:7px 11px;border-radius:20px}
+.container{max-width:950px;width:94%;margin:22px auto 45px}
+.card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px;margin:15px 0;box-shadow:0 3px 12px #78400b0b}
+h2{color:var(--deep);font-size:22px;border-bottom:2px solid #f6d6b2;padding-bottom:7px}
+h3{color:#b45712;font-size:18px;margin-top:22px}
+h4{margin-bottom:5px;color:#74400f}
+p{margin:8px 0}
+li{margin:5px 0}
+.tag{display:inline-block;background:var(--pale);color:var(--deep);padding:4px 9px;border-radius:15px;font-size:12px;font-weight:bold;margin:3px}
+.note{background:#fff4e5;border-left:4px solid var(--saffron);padding:12px 14px;border-radius:6px;margin:12px 0}
+.example{background:#f7fbff;border-left:4px solid #4085b9;padding:12px 14px;border-radius:6px;margin:12px 0}
+.warning{background:#fff0ef;border-left:4px solid var(--red);padding:12px 14px;border-radius:6px;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px;text-align:left}
+th{background:var(--pale);color:var(--deep)}
+.formula{background:#fff7eb;padding:12px;border-radius:8px;font-weight:bold;color:#813d08;overflow-wrap:anywhere}
+button{background:var(--saffron);color:#fff;border:0;border-radius:8px;padding:10px 15px;font-weight:bold;cursor:pointer}
+button:hover{background:var(--deep)}
+button:disabled{opacity:.65;cursor:not-allowed}
+.quiz-question{border:1px solid var(--line);padding:14px;border-radius:10px;margin:13px 0;background:#fff}
+.q-title{font-weight:bold;margin-bottom:10px}
+.option{display:block;width:100%;text-align:left;background:#fff8ef;color:var(--ink);border:1px solid #e8cba9;margin:7px 0;padding:10px;border-radius:7px;font-weight:normal}
+.option:hover:not(:disabled){background:#ffebd3}
+.option.correct{background:#e4f6eb;border-color:var(--green);color:#125c35}
+.option.wrong{background:#ffe7e5;border-color:var(--red);color:#922323}
+.feedback{font-size:14px;margin-top:8px;font-weight:bold}
+.muted{color:var(--muted);font-size:13px}
+#quizStatus{position:sticky;top:49px;background:#fff;border:1px solid var(--line);padding:10px;border-radius:8px;z-index:3}
+.progress{height:9px;background:#f2dfca;border-radius:10px;overflow:hidden;margin-top:8px}
+.progress span{display:block;height:100%;width:0;background:var(--saffron);transition:width .2s}
+#result{display:none;background:#fff4e5;border:2px solid var(--saffron);border-radius:12px;padding:18px;margin:15px 0}
+footer{text-align:center;background:#39271b;color:#fff;padding:22px 12px;font-size:13px}
+footer strong{color:#ffb76d}
+@media(min-width:700px){.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}header h1{font-size:36px}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand">RETRY IN LIBRARY</div>
+<h1>Number System</h1>
+<p>సంఖ్యా వ్యవస్థ</p>
+<div class="tagline">LEARN AGAIN. TRY AGAIN. SUCCEED.</div>
+<p><span class="tag">MATHEMATICS</span><span class="tag">CHAPTER 01</span><span class="tag">TELUGU + ENGLISH</span></p>
+</header>
+
+<nav>
+<a href="#intro">Introduction</a>
+<a href="#types">Types of Numbers</a>
+<a href="#properties">Properties</a>
+<a href="#divisibility">Divisibility</a>
+<a href="#factors">Factors</a>
+<a href="#remainders">Remainders</a>
+<a href="#examples">Examples</a>
+<a href="#quiz">50 MCQs</a>
+</nav>
+
+<main class="container">
+
+<section class="card" id="intro">
+<h2>1. Introduction to Number System | సంఖ్యా వ్యవస్థ పరిచయం</h2>
+<p><b>English:</b> A number system is a method of representing, classifying and working with numbers. Numbers are used for counting, measuring, comparing quantities and performing mathematical operations.</p>
+<p><b>తెలుగు:</b> సంఖ్యలను సూచించడం, వర్గీకరించడం మరియు వాటిపై గణిత క్రియలు చేయడానికి ఉపయోగించే విధానాన్ని సంఖ్యా వ్యవస్థ అంటారు. లెక్కించడం, కొలవడం, పరిమాణాలను పోల్చడం వంటి పనుల్లో సంఖ్యలు ఉపయోగపడతాయి.</p>
+<div class="note"><b>Important:</b> In competitive examinations, number system questions commonly test classification, factors, multiples, divisibility, prime numbers, remainders, unit digits and basic properties.</div>
+<h3>Basic Mathematical Symbols | ప్రాథమిక గణిత చిహ్నాలు</h3>
+<table>
+<tr><th>Symbol</th><th>Meaning</th><th>తెలుగు అర్థం</th></tr>
+<tr><td>+</td><td>Addition</td><td>కూడిక</td></tr>
+<tr><td>−</td><td>Subtraction</td><td>తీసివేత</td></tr>
+<tr><td>×</td><td>Multiplication</td><td>గుణకారం</td></tr>
+<tr><td>÷</td><td>Division</td><td>భాగహారం</td></tr>
+<tr><td>=</td><td>Equal to</td><td>సమానం</td></tr>
+<tr><td>≠</td><td>Not equal to</td><td>సమానం కాదు</td></tr>
+<tr><td>&gt;</td><td>Greater than</td><td>కంటే పెద్దది</td></tr>
+<tr><td>&lt;</td><td>Less than</td><td>కంటే చిన్నది</td></tr>
+<tr><td>≥</td><td>Greater than or equal to</td><td>పెద్దది లేదా సమానం</td></tr>
+<tr><td>≤</td><td>Less than or equal to</td><td>చిన్నది లేదా సమానం</td></tr>
+</table>
+<h3>Place Value and Face Value | స్థాన విలువ, ముఖ విలువ</h3>
+<p><b>Face Value:</b> The digit itself, irrespective of its position. ఒక అంకె యొక్క స్వంత విలువను ముఖ విలువ అంటారు.</p>
+<p><b>Place Value:</b> The value of a digit according to its position in a number. ఒక సంఖ్యలో అంకె ఉన్న స్థానాన్ని బట్టి వచ్చే విలువ స్థాన విలువ.</p>
+<div class="example"><b>Example:</b> In 5,284, consider digit 2.<br>Face value = 2<br>Place value = 200 (hundreds place)<br><b>తెలుగు:</b> 5284లో 2 యొక్క ముఖ విలువ 2; స్థాన విలువ 200.</div>
+<h3>Indian Place Value System | భారతీయ స్థాన విలువ పద్ధతి</h3>
+<table>
+<tr><th>Place</th><th>Value</th></tr>
+<tr><td>Ones</td><td>1</td></tr><tr><td>Tens</td><td>10</td></tr>
+<tr><td>Hundreds</td><td>100</td></tr><tr><td>Thousands</td><td>1,000</td></tr>
+<tr><td>Ten Thousands</td><td>10,000</td></tr><tr><td>Lakhs</td><td>1,00,000</td></tr>
+<tr><td>Ten Lakhs</td><td>10,00,000</td></tr><tr><td>Crores</td><td>1,00,00,000</td></tr>
+</table>
+</section>
+
+<section class="card" id="types">
+<h2>2. Types of Numbers | సంఖ్యల రకాలు</h2>
+<h3>2.1 Natural Numbers (N) | సహజ సంఖ్యలు</h3>
+<p><b>English:</b> Natural numbers are counting numbers starting from 1.</p>
+<p><b>తెలుగు:</b> లెక్కించడానికి ఉపయోగించే 1 నుండి ప్రారంభమయ్యే సంఖ్యలను సహజ సంఖ్యలు అంటారు.</p>
+<div class="formula">N = {1, 2, 3, 4, 5, ...}</div>
+<p>Examples: 1, 7, 25, 100. In the usual school convention, zero is not a natural number.</p>
+
+<h3>2.2 Whole Numbers (W) | పూర్ణ సంఖ్యలు</h3>
+<p>Whole numbers include zero and all natural numbers. సున్నా మరియు అన్ని సహజ సంఖ్యలను కలిపి Whole Numbers అంటారు.</p>
+<div class="formula">W = {0, 1, 2, 3, 4, ...}</div>
+
+<h3>2.3 Integers (Z) | పూర్ణాంకాలు</h3>
+<p>Integers include negative whole numbers, zero and positive whole numbers. భిన్నాలు లేని ధన, ఋణ సంఖ్యలు మరియు సున్నాను పూర్ణాంకాలు అంటారు.</p>
+<div class="formula">Z = {..., −3, −2, −1, 0, 1, 2, 3, ...}</div>
+<p>Examples: −12, −1, 0, 6, 100. Numbers such as 1/2 and 2.5 are not integers.</p>
+
+<h3>2.4 Rational Numbers (Q) | హేతుబద్ధ సంఖ్యలు</h3>
+<p>A number that can be expressed as p/q, where p and q are integers and q ≠ 0, is rational.</p>
+<p>ఏ సంఖ్యనైనా p/q రూపంలో వ్రాయగలిగితే, ఇక్కడ p మరియు q పూర్ణాంకాలు, q సున్నా కాకపోతే దానిని హేతుబద్ధ సంఖ్య అంటారు.</p>
+<div class="formula">Rational number = p/q, q ≠ 0</div>
+<p>Examples: 3/4, −5/2, 7 (=7/1), 0 (=0/1), 0.5, 0.333...</p>
+<div class="note">Terminating decimals and repeating (recurring) decimals are rational numbers. అంతమయ్యే దశాంశాలు, పునరావృతమయ్యే దశాంశాలు హేతుబద్ధ సంఖ్యలు.</div>
+
+<h3>2.5 Irrational Numbers | అహేతుబద్ధ సంఖ్యలు</h3>
+<p>An irrational number cannot be expressed as a ratio of two integers. Its decimal expansion is non-terminating and non-repeating.</p>
+<p>రెండు పూర్ణాంకాల నిష్పత్తిగా వ్రాయలేని సంఖ్య అహేతుబద్ధ సంఖ్య. దీని దశాంశ విస్తరణ అంతం కాకుండా, పునరావృతం కాకుండా ఉంటుంది.</p>
+<div class="formula">Examples: √2, √3, √5, π</div>
+<p>Important: √9 = 3 is rational, because it is an integer. Not every square-root expression is irrational.</p>
+
+<h3>2.6 Real Numbers (R) | వాస్తవ సంఖ్యలు</h3>
+<p>All rational and irrational numbers together form the real number system. హేతుబద్ధ మరియు అహేతుబద్ధ సంఖ్యలన్నింటి సముదాయాన్ని వాస్తవ సంఖ్యలు అంటారు.</p>
+<div class="formula">R = Q ∪ (Irrational Numbers)</div>
+<p>Examples: −5, 0, 2/3, √7, π, 4.25.</p>
+
+<h3>2.7 Prime Numbers | ప్రధాన సంఖ్యలు</h3>
+<p>A prime number is a natural number greater than 1 that has exactly two distinct positive factors: 1 and itself.</p>
+<p>1 మరియు అదే సంఖ్య అనే రెండు భిన్నమైన ధన గుణకాలు మాత్రమే కలిగిన 1 కంటే పెద్ద సహజ సంఖ్యను ప్రధాన సంఖ్య అంటారు.</p>
+<div class="formula">First prime numbers: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29...</div>
+<div class="note"><b>Exam point:</b> 2 is the only even prime number. 2 ఒక్కటే సరి ప్రధాన సంఖ్య.</div>
+<p>1 is neither prime nor composite. The number 0 is also neither prime nor composite.</p>
+
+<h3>2.8 Composite Numbers | సంయుక్త సంఖ్యలు</h3>
+<p>A composite number is a natural number greater than 1 that has more than two positive factors.</p>
+<p>రెండు కంటే ఎక్కువ ధన గుణకాలు కలిగిన 1 కంటే పెద్ద సహజ సంఖ్యను సంయుక్త సంఖ్య అంటారు.</p>
+<p>Examples: 4 (1,2,4), 6 (1,2,3,6), 8, 9, 10, 12.</p>
+
+<h3>2.9 Even and Odd Numbers | సరి, బేసి సంఖ్యలు</h3>
+<div class="two">
+<div class="note"><b>Even Numbers:</b> Divisible by 2 without a remainder. 2తో భాగించినప్పుడు శేషం 0 వచ్చే సంఖ్యలు.<br>Examples: 0, 2, 4, 6, 8, 10...</div>
+<div class="note"><b>Odd Numbers:</b> Not divisible by 2 exactly. 2తో నిశ్శేషంగా భాగించలేని సంఖ్యలు.<br>Examples: 1, 3, 5, 7, 9, 11...</div>
+</div>
+
+<h3>2.10 Co-prime Numbers | పరస్పర ప్రధాన సంఖ్యలు</h3>
+<p>Two or more integers are co-prime if their HCF is 1. రెండు లేదా అంతకంటే ఎక్కువ సంఖ్యల గరిష్ఠ సామాన్య భాజకం 1 అయితే అవి పరస్పర ప్రధాన సంఖ్యలు.</p>
+<p>Examples: 8 and 15; 9 and 16. Co-prime numbers need not themselves be prime.</p>
+<div class="example">HCF of 8 and 15 = 1. Therefore, 8 and 15 are co-prime.</div>
+
+<h3>2.11 Classification Relationship | సంఖ్యల మధ్య సంబంధం</h3>
+<div class="formula">Natural ⊂ Whole ⊂ Integers ⊂ Rational ⊂ Real</div>
+<p>ప్రతి సహజ సంఖ్య పూర్ణ సంఖ్యే; ప్రతి పూర్ణ సంఖ్య పూర్ణాంకమే; ప్రతి పూర్ణాంకం హేతుబద్ధ సంఖ్యే; ప్రతి హేతుబద్ధ సంఖ్య వాస్తవ సంఖ్యే.</p>
+<p>Irrational numbers are also real numbers, but they are not rational numbers.</p>
+</section>
+
+<section class="card" id="properties">
+<h2>3. Properties of Numbers | సంఖ్యల ధర్మాలు</h2>
+<h3>3.1 Closure Property | సంవృత ధర్మం</h3>
+<p>A set is closed under an operation if performing that operation on members of the set always gives a member of the same set.</p>
+<table>
+<tr><th>Set</th><th>Addition</th><th>Subtraction</th><th>Multiplication</th><th>Division</th></tr>
+<tr><td>Natural numbers</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td></tr>
+<tr><td>Whole numbers</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td></tr>
+<tr><td>Integers</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+<tr><td>Rational numbers</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes*</td></tr>
+<tr><td>Real numbers</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes*</td></tr>
+</table>
+<p class="muted">*Division is closed when the divisor is not zero.</p>
+
+<h3>3.2 Commutative Property | వినిమయ ధర్మం</h3>
+<p>Changing the order of numbers does not change the result in addition and multiplication.</p>
+<div class="formula">a + b = b + a<br>a × b = b × a</div>
+<p>ఉదా: 4 + 7 = 7 + 4 = 11; 3 × 5 = 5 × 3 = 15.</p>
+<p>Subtraction and division are not commutative: 8 − 3 ≠ 3 − 8; 8 ÷ 4 ≠ 4 ÷ 8.</p>
+
+<h3>3.3 Associative Property | సహచర్య ధర్మం</h3>
+<div class="formula">(a + b) + c = a + (b + c)<br>(a × b) × c = a × (b × c)</div>
+<p>Example: (2 + 3) + 4 = 2 + (3 + 4) = 9. Subtraction and division are not associative.</p>
+
+<h3>3.4 Distributive Property | విభాజక ధర్మం</h3>
+<div class="formula">a × (b + c) = ab + ac<br>a × (b − c) = ab − ac</div>
+<div class="example">7 × 13 = 7 × (10 + 3) = 70 + 21 = 91.</div>
+
+<h3>3.5 Identity Elements | ఏకత్వ మూలకాలు</h3>
+<ul>
+<li>Additive identity = 0, because a + 0 = a.</li>
+<li>Multiplicative identity = 1, because a × 1 = a.</li>
+<li>కూడికలో 0, గుణకారంలో 1 ఏకత్వ మూలకాలు.</li>
+</ul>
+
+<h3>3.6 Additive and Multiplicative Inverses | వ్యతిరేక, వ్యుత్క్రమ విలువలు</h3>
+<p>Additive inverse of a is −a, because a + (−a) = 0.</p>
+<p>Multiplicative inverse of a non-zero number is 1/a, because a × 1/a = 1.</p>
+<div class="example">Additive inverse of 8 = −8.<br>Multiplicative inverse of 8 = 1/8.</div>
+
+<h3>3.7 Important Zero Properties | సున్నా ధర్మాలు</h3>
+<ul>
+<li>a + 0 = a.</li><li>a × 0 = 0.</li>
+<li>0 ÷ a = 0, if a ≠ 0.</li>
+<li>a ÷ 0 is undefined. సున్నాతో భాగించడం నిర్వచించబడలేదు.</li>
+<li>0 ÷ 0 is indeterminate in ordinary arithmetic.</li>
+</ul>
+<div class="warning"><b>Remember:</b> Division by zero is not allowed.</div>
+</section>
+
+<section class="card" id="divisibility">
+<h2>4. Divisibility Rules | భాగహార నియమాలు</h2>
+<p>Divisibility rules help determine whether one number is exactly divisible by another without performing full division. పూర్తి భాగహారం చేయకుండానే ఒక సంఖ్య మరొక సంఖ్యతో నిశ్శేషంగా భాగపడుతుందో తెలుసుకోవడానికి ఈ నియమాలు ఉపయోగపడతాయి.</p>
+<table>
+<tr><th>Divisor</th><th>Rule</th><th>Example</th></tr>
+<tr><td>2</td><td>Last digit is 0, 2, 4, 6 or 8.</td><td>348</td></tr>
+<tr><td>3</td><td>Sum of digits is divisible by 3.</td><td>123: 1+2+3=6</td></tr>
+<tr><td>4</td><td>Last two digits form a number divisible by 4.</td><td>1316: 16 ÷ 4</td></tr>
+<tr><td>5</td><td>Last digit is 0 or 5.</td><td>725</td></tr>
+<tr><td>6</td><td>Divisible by both 2 and 3.</td><td>234</td></tr>
+<tr><td>8</td><td>Last three digits form a number divisible by 8.</td><td>5120: 120 ÷ 8</td></tr>
+<tr><td>9</td><td>Sum of digits is divisible by 9.</td><td>729: 7+2+9=18</td></tr>
+<tr><td>10</td><td>Last digit is 0.</td><td>450</td></tr>
+<tr><td>11</td><td>Difference between alternating digit sums is 0 or a multiple of 11.</td><td>121: (1+1)−2=0</td></tr>
+<tr><td>12</td><td>Divisible by both 3 and 4.</td><td>144</td></tr>
+<tr><td>15</td><td>Divisible by both 3 and 5.</td><td>345</td></tr>
+<tr><td>25</td><td>Last two digits are 00, 25, 50 or 75.</td><td>1,275</td></tr>
+</table>
+<h3>Detailed Examples | వివరణాత్మక ఉదాహరణలు</h3>
+<div class="example"><b>Example 1:</b> Is 4,572 divisible by 3?<br>Digit sum = 4 + 5 + 7 + 2 = 18. 18 is divisible by 3. Therefore, 4,572 is divisible by 3.</div>
+<div class="example"><b>Example 2:</b> Is 8,316 divisible by 4?<br>Last two digits = 16. Since 16 ÷ 4 = 4, the number is divisible by 4.</div>
+<div class="example"><b>Example 3:</b> Is 7,623 divisible by 11?<br>Alternating sums: (7 + 2) = 9 and (6 + 3) = 9. Difference = 0. Therefore, it is divisible by 11.</div>
+</section>
+
+<section class="card" id="factors">
+<h2>5. Factors, Multiples and Prime Factorisation | గుణకాలు, గుణిజాలు</h2>
+<h3>Factors | గుణకాలు</h3>
+<p>A factor of a number divides it exactly without leaving a remainder. ఒక సంఖ్యను శేషం లేకుండా భాగించే సంఖ్యను ఆ సంఖ్యకు గుణకం అంటారు.</p>
+<p>Factors of 12 = 1, 2, 3, 4, 6, 12.</p>
+<h3>Multiples | గుణిజాలు</h3>
+<p>Multiples are obtained by multiplying a number by positive integers. ఒక సంఖ్యను 1, 2, 3, 4...తో గుణించడం ద్వారా వచ్చే సంఖ్యలు దాని గుణిజాలు.</p>
+<p>Multiples of 5 = 5, 10, 15, 20, 25...</p>
+<h3>Prime Factorisation | ప్రధాన గుణక విభజన</h3>
+<p>Expressing a composite number as a product of prime numbers is called prime factorisation.</p>
+<div class="example"><b>Example:</b> 60 = 2 × 30 = 2 × 2 × 15 = 2 × 2 × 3 × 5.<br><b>Answer:</b> 60 = 2² × 3 × 5.</div>
+<h3>Number of Factors | గుణకాల సంఖ్య</h3>
+<p>If N = pᵃ × qᵇ × rᶜ, where p, q, r are distinct primes, then:</p>
+<div class="formula">Total number of positive factors = (a+1)(b+1)(c+1)</div>
+<div class="example"><b>Example:</b> 72 = 2³ × 3². Number of factors = (3+1)(2+1) = 4 × 3 = 12.</div>
+<h3>Sum of Positive Factors | ధన గుణకాల మొత్తం</h3>
+<div class="formula">For N = pᵃqᵇ: Sum = [(pᵃ⁺¹−1)/(p−1)] × [(qᵇ⁺¹−1)/(q−1)]</div>
+<div class="example">For 12 = 2² × 3, sum = (1+2+4)(1+3) = 7 × 4 = 28.</div>
+<h3>Perfect Squares and Cubes | పరిపూర్ణ వర్గాలు, ఘనాలు</h3>
+<p>A perfect square has even exponents in its prime factorisation. A perfect cube has exponents that are multiples of 3.</p>
+<div class="example">36 = 2² × 3² is a perfect square.<br>216 = 2³ × 3³ is a perfect cube.</div>
+</section>
+
+<section class="card" id="remainders">
+<h2>6. Remainders and Unit Digits | శేషాలు, ఒకట్ల స్థానం</h2>
+<h3>Division Algorithm | భాగహార సూత్రం</h3>
+<div class="formula">Dividend = Divisor × Quotient + Remainder</div>
+<p>భాజ్యం = భాజకం × భాగఫలం + శేషం.</p>
+<p>For a positive divisor d, the remainder r satisfies 0 ≤ r &lt; d.</p>
+<div class="example">29 ÷ 5 gives quotient 5 and remainder 4. 29 = 5 × 5 + 4.</div>
+<h3>Finding Remainders | శేషం కనుగొనడం</h3>
+<div class="example"><b>Example:</b> Find the remainder when 157 is divided by 9.<br>Digit sum = 1 + 5 + 7 = 13. 13 leaves remainder 4 when divided by 9. Therefore, 157 leaves remainder 4.</div>
+<h3>Unit Digit Cycles | ఒకట్ల అంకె చక్రాలు</h3>
+<p>For powers of a number, the unit digit often repeats in a cycle. Use the exponent modulo the cycle length.</p>
+<table>
+<tr><th>Base last digit</th><th>Repeating unit digits</th><th>Cycle length</th></tr>
+<tr><td>0</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>2</td><td>2, 4, 8, 6</td><td>4</td></tr><tr><td>3</td><td>3, 9, 7, 1</td><td>4</td></tr>
+<tr><td>4</td><td>4, 6</td><td>2</td></tr><tr><td>5</td><td>5</td><td>1</td></tr>
+<tr><td>6</td><td>6</td><td>1</td></tr><tr><td>7</td><td>7, 9, 3, 1</td><td>4</td></tr>
+<tr><td>8</td><td>8, 4, 2, 6</td><td>4</td></tr><tr><td>9</td><td>9, 1</td><td>2</td></tr>
+</table>
+<div class="example"><b>Example:</b> Find the unit digit of 7²³.<br>Cycle for 7 = 7, 9, 3, 1 (length 4). 23 ÷ 4 leaves remainder 3. Third digit in cycle = 3. <b>Answer: 3.</b></div>
+<div class="note">If the exponent leaves remainder 0 after division by cycle length, use the last term of the cycle.</div>
+</section>
+
+<section class="card" id="examples">
+<h2>7. Solved Examples | సాధన చేసిన ఉదాహరణలు</h2>
+<div class="example"><b>Example 1: Find the HCF of 24 and 36.</b><br>Factors of 24 = 1,2,3,4,6,8,12,24.<br>Factors of 36 = 1,2,3,4,6,9,12,18,36.<br>Greatest common factor = <b>12</b>.</div>
+<div class="example"><b>Example 2: Find the LCM of 12 and 18.</b><br>12 = 2² × 3; 18 = 2 × 3².<br>LCM = 2² × 3² = <b>36</b>.</div>
+<div class="example"><b>Example 3: Find HCF × LCM of 12 and 18.</b><br>HCF = 6; LCM = 36. Product = 6 × 36 = 216 = 12 × 18.</div>
+<div class="note"><b>Formula for two positive integers:</b> HCF × LCM = Product of the two numbers.</div>
+<div class="example"><b>Example 4: Find the smallest number divisible by 6, 8 and 12.</b><br>6 = 2 × 3; 8 = 2³; 12 = 2² × 3.<br>LCM = 2³ × 3 = <b>24</b>.</div>
+<div class="example"><b>Example 5: Find the greatest 3-digit number divisible by 8.</b><br>999 ÷ 8 leaves remainder 7. 999 − 7 = <b>992</b>.</div>
+<div class="example"><b>Example 6: Find the smallest 4-digit number divisible by 9.</b><br>Smallest 4-digit number = 1000. Add 8 to reach the next multiple of 9. Answer = <b>1008</b>.</div>
+<div class="example"><b>Example 7: How many factors does 100 have?</b><br>100 = 2² × 5². Number of factors = (2+1)(2+1) = <b>9</b>.</div>
+<div class="example"><b>Example 8: Find the unit digit of 3⁴⁵.</b><br>Cycle = 3, 9, 7, 1; length = 4. 45 leaves remainder 1 on division by 4. Answer = <b>3</b>.</div>
+<div class="example"><b>Example 9: Is 1,234,567 divisible by 3?</b><br>Digit sum = 1+2+3+4+5+6+7 = 28. 28 is not divisible by 3, so the number is not divisible by 3.</div>
+<div class="example"><b>Example 10: Find the remainder when 2⁵ is divided by 7.</b><br>2⁵ = 32 = 7 × 4 + 4. Remainder = <b>4</b>.</div>
+<div class="example"><b>Example 11: Find the number of trailing zeros in 10!.</b><br>⌊10/5⌋ + ⌊10/25⌋ = 2 + 0. Answer = <b>2 zeros</b>.</div>
+<div class="example"><b>Example 12: Find the smallest positive number which leaves remainder 2 when divided by both 5 and 7.</b><br>The number is 2 more than a common multiple of 5 and 7. LCM = 35. Smallest positive number = 35 + 2 = <b>37</b>.</div>
+</section>
+
+<section class="card">
+<h2>8. Important Formula Revision | ముఖ్యమైన సూత్రాలు</h2>
+<table>
+<tr><th>Topic</th><th>Formula / Rule</th></tr>
+<tr><td>Division algorithm</td><td>N = dq + r, 0 ≤ r &lt; d</td></tr>
+<tr><td>HCF × LCM</td><td>For two positive integers: HCF × LCM = Product</td></tr>
+<tr><td>Number of factors</td><td>If N = pᵃqᵇrᶜ, then (a+1)(b+1)(c+1)</td></tr>
+<tr><td>Even number</td><td>2n</td></tr>
+<tr><td>Odd number</td><td>2n + 1</td></tr>
+<tr><td>Consecutive integers</td><td>n, n+1, n+2...</td></tr>
+<tr><td>Sum of first n natural numbers</td><td>n(n+1)/2</td></tr>
+<tr><td>Sum of first n even numbers</td><td>n(n+1)</td></tr>
+<tr><td>Sum of first n odd numbers</td><td>n²</td></tr>
+<tr><td>Trailing zeros in n!</td><td>⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + ...</td></tr>
+</table>
+<div class="warning"><b>Common mistakes to avoid:</b>
+<ul>
+<li>1 is neither prime nor composite.</li>
+<li>2 is the only even prime number.</li>
+<li>0 is a whole number and an integer.</li>
+<li>Every integer is rational, but not every rational number is an integer.</li>
+<li>Never divide by zero.</li>
+<li>HCF × LCM = product applies directly to two positive integers.</li>
+</ul></div>
+</section>
+
+<section class="card">
+<h2>9. Glossary | ముఖ్యమైన పదాలు</h2>
+<table>
+<tr><th>English</th><th>తెలుగు</th></tr>
+<tr><td>Number</td><td>సంఖ్య</td></tr>
+<tr><td>Digit</td><td>అంకె</td></tr>
+<tr><td>Natural number</td><td>సహజ సంఖ్య</td></tr>
+<tr><td>Whole number</td><td>పూర్ణ సంఖ్య</td></tr>
+<tr><td>Integer</td><td>పూర్ణాంకం</td></tr>
+<tr><td>Rational number</td><td>హేతుబద్ధ సంఖ్య</td></tr>
+<tr><td>Irrational number</td><td>అహేతుబద్ధ సంఖ్య</td></tr>
+<tr><td>Real number</td><td>వాస్తవ సంఖ్య</td></tr>
+<tr><td>Prime number</td><td>ప్రధాన సంఖ్య</td></tr>
+<tr><td>Composite number</td><td>సంయుక్త సంఖ్య</td></tr>
+<tr><td>Even number</td><td>సరి సంఖ్య</td></tr>
+<tr><td>Odd number</td><td>బేసి సంఖ్య</td></tr>
+<tr><td>Factor</td><td>గుణకం</td></tr>
+<tr><td>Multiple</td><td>గుణిజం</td></tr>
+<tr><td>Divisor</td><td>భాజకం</td></tr>
+<tr><td>Dividend</td><td>భాజ్యం</td></tr>
+<tr><td>Quotient</td><td>భాగఫలం</td></tr>
+<tr><td>Remainder</td><td>శేషం</td></tr>
+<tr><td>HCF</td><td>గరిష్ఠ సామాన్య భాజకం</td></tr>
+<tr><td>LCM</td><td>కనిష్ఠ సామాన్య గుణిజం</td></tr>
+<tr><td>Prime factorisation</td><td>ప్రధాన గుణక విభజన</td></tr>
+<tr><td>Divisibility</td><td>భాగపడే లక్షణం</td></tr>
+</table>
+</section>
+
+<section class="card" id="quiz">
+<h2>10. Practice Test – 50 MCQs</h2>
+<p>ప్రతి ప్రశ్నకు సరైన సమాధానాన్ని ఎంచుకోండి. Answer చేసిన తర్వాత వివరణ కనిపిస్తుంది. చివరలో మీ స్కోర్ తెలుసుకోవచ్చు.</p>
+<div id="quizStatus">
+<div><b id="progressText">Answered: 0 / 50</b> <span style="float:right" id="scoreLive">Correct: 0</span></div>
+<div class="progress"><span id="progressBar"></span></div>
+</div>
+<div id="questions"></div>
+<div id="result">
+<h3>Test Result | పరీక్ష ఫలితం</h3>
+<p id="scoreText"></p>
+<p id="remark"></p>
+<button onclick="resetQuiz()">Try Again | మళ్లీ ప్రయత్నించండి</button>
+</div>
+</section>
+
+<section class="card">
+<h2>11. Chapter Completion Checklist</h2>
+<ul>
+<li>Number classifications and their relationships</li>
+<li>Prime, composite, even, odd and co-prime numbers</li>
+<li>Properties of operations</li>
+<li>Divisibility tests</li>
+<li>Factors, multiples and prime factorisation</li>
+<li>Remainders and unit digit cycles</li>
+<li>HCF, LCM and solved examples</li>
+<li>50 MCQs with explanations</li>
+</ul>
+<div class="note"><b>Study advice:</b> First understand the concept, then solve the examples without looking at the solution, and finally attempt the MCQs. రోజూ కొంత సమయం ప్రాక్టీస్ చేయండి.</div>
+</section>
+</main>
+
+<footer>
+<strong>RETRY IN LIBRARY</strong>
+<p>LEARN AGAIN. TRY AGAIN. SUCCEED.</p>
+<p>Mathematics | Chapter 1 – Number System</p>
+</footer>
+
+<script>
+"use strict";
+
+const mcqs = [
+{q:"Which of the following is the smallest natural number?",o:["0","1","−1","2"],a:1,e:"In the usual school convention, natural numbers start from 1. Whole numbers start from 0."},
+{q:"Which of the following is a whole number but not a natural number?",o:["1","2","0","5"],a:2,e:"Whole numbers are 0, 1, 2, 3... Zero is included in whole numbers but not in natural numbers under the usual convention."},
+{q:"Which set contains negative numbers, zero and positive numbers without fractions?",o:["Natural numbers","Whole numbers","Integers","Irrational numbers"],a:2,e:"Integers include ..., −2, −1, 0, 1, 2, ..."},
+{q:"Which of the following is an irrational number?",o:["1/2","0.25","√2","√9"],a:2,e:"√2 is irrational. √9 = 3, which is rational; 1/2 and 0.25 are also rational."},
+{q:"Which is the only even prime number?",o:["0","1","2","4"],a:2,e:"2 has exactly two positive factors, 1 and 2. Every other even number greater than 2 has at least three factors."},
+{q:"The number 1 is:",o:["Prime","Composite","Neither prime nor composite","Even prime"],a:2,e:"A prime number has exactly two distinct positive factors. A composite number has more than two. The number 1 has only one factor."},
+{q:"Which of the following is a rational number?",o:["√3","π","5/8","√7"],a:2,e:"5/8 is a ratio of two integers with a non-zero denominator."},
+{q:"Which of these is a composite number?",o:["2","3","5","9"],a:3,e:"9 has three positive factors: 1, 3 and 9."},
+{q:"The additive identity is:",o:["1","−1","0","10"],a:2,e:"Adding zero to any number leaves the number unchanged: a + 0 = a."},
+{q:"The multiplicative identity is:",o:["0","1","−1","2"],a:1,e:"Multiplying any number by 1 leaves it unchanged: a × 1 = a."},
+{q:"Which property is shown by 5 + 8 = 8 + 5?",o:["Associative","Distributive","Commutative","Closure only"],a:2,e:"The order of addends changes but the sum remains the same. This is the commutative property."},
+{q:"Which operation is not commutative for integers?",o:["Addition","Multiplication","Subtraction","Both A and B"],a:2,e:"In general, a − b is not equal to b − a."},
+{q:"What is the additive inverse of −12?",o:["−12","12","1/12","0"],a:1,e:"The additive inverse of a number is the number that gives zero when added. −12 + 12 = 0."},
+{q:"What is the multiplicative inverse of 5?",o:["−5","5","1/5","0"],a:2,e:"5 × 1/5 = 1. Zero has no multiplicative inverse."},
+{q:"Which number is not allowed as a divisor?",o:["1","2","−3","0"],a:3,e:"Division by zero is undefined in ordinary arithmetic."},
+{q:"A number is divisible by 3 if:",o:["Its last digit is 3","Its digit sum is divisible by 3","Its last two digits are divisible by 3","It is even"],a:1,e:"The divisibility rule for 3 checks the sum of all digits."},
+{q:"Which number is divisible by 9?",o:["124","234","729","431"],a:2,e:"For 729, digit sum = 7 + 2 + 9 = 18, which is divisible by 9."},
+{q:"A number is divisible by 4 when:",o:["Its digit sum is divisible by 4","Its last two digits form a number divisible by 4","Its last digit is 4","It is even"],a:1,e:"Only the last two digits need to be checked for divisibility by 4."},
+{q:"Which is divisible by 5?",o:["342","671","925","884"],a:2,e:"A number divisible by 5 ends in 0 or 5."},
+{q:"A number is divisible by 6 if it is divisible by:",o:["2 and 3","2 and 5","3 and 5","4 and 6"],a:0,e:"Since 6 = 2 × 3, the number must be divisible by both 2 and 3."},
+{q:"Which of the following is divisible by 11?",o:["121","123","125","127"],a:0,e:"For 121, alternating digit sums are 1 + 1 = 2 and 2. Their difference is 0."},
+{q:"Which is the smallest prime number?",o:["0","1","2","3"],a:2,e:"2 is the smallest prime number and the only even prime."},
+{q:"How many positive factors does 12 have?",o:["4","5","6","7"],a:2,e:"Factors are 1, 2, 3, 4, 6 and 12. There are six."},
+{q:"Prime factorisation of 60 is:",o:["2 × 3 × 10","2² × 3 × 5","2 × 5²","3 × 4 × 5"],a:1,e:"60 = 2 × 30 = 2 × 2 × 15 = 2² × 3 × 5."},
+{q:"How many positive factors does 72 have?",o:["8","10","12","14"],a:2,e:"72 = 2³ × 3². Number of factors = (3+1)(2+1) = 12."},
+{q:"Which pair is co-prime?",o:["8 and 12","9 and 15","8 and 15","12 and 18"],a:2,e:"HCF of 8 and 15 is 1. Therefore, they are co-prime."},
+{q:"What is the HCF of 24 and 36?",o:["6","8","12","18"],a:2,e:"The greatest common factor of 24 and 36 is 12."},
+{q:"What is the LCM of 12 and 18?",o:["24","30","36","72"],a:2,e:"12 = 2² × 3 and 18 = 2 × 3². LCM = 2² × 3² = 36."},
+{q:"The product of HCF and LCM of two positive integers is equal to:",o:["Their sum","Their difference","Their product","Their quotient"],a:2,e:"For two positive integers, HCF × LCM = product of the two numbers."},
+{q:"What is the smallest number divisible by 6, 8 and 12?",o:["12","18","24","48"],a:2,e:"LCM(6, 8, 12) = 24."},
+{q:"What is the remainder when 29 is divided by 5?",o:["2","3","4","5"],a:2,e:"29 = 5 × 5 + 4. Therefore, the remainder is 4."},
+{q:"In the division algorithm, the remainder must be:",o:["Greater than divisor","Equal to divisor","Less than divisor and non-negative","Always zero"],a:2,e:"For a positive divisor d, the remainder r satisfies 0 ≤ r < d."},
+{q:"What is the unit digit of 7²³?",o:["1","3","7","9"],a:1,e:"The unit digit cycle of powers of 7 is 7, 9, 3, 1. 23 leaves remainder 3 on division by 4, so the unit digit is 3."},
+{q:"What is the unit digit of 3⁴⁵?",o:["1","3","7","9"],a:1,e:"The cycle is 3, 9, 7, 1. 45 leaves remainder 1 on division by 4, so the answer is 3."},
+{q:"What is the unit digit of 2¹⁰?",o:["2","4","6","8"],a:1,e:"The cycle is 2, 4, 8, 6. 10 leaves remainder 2 on division by 4, so the unit digit is 4."},
+{q:"What is the remainder when 2⁵ is divided by 7?",o:["1","2","3","4"],a:3,e:"2⁵ = 32 = 7 × 4 + 4. The remainder is 4."},
+{q:"Which is the greatest 3-digit number divisible by 8?",o:["984","992","996","999"],a:1,e:"999 leaves remainder 7 when divided by 8. 999 − 7 = 992."},
+{q:"Which is the smallest 4-digit number divisible by 9?",o:["1000","1005","1008","1017"],a:2,e:"Digit sum of 1000 is 1. The next multiple of 9 is obtained by adding 8: 1008."},
+{q:"How many trailing zeros are there in 10!?",o:["1","2","3","4"],a:1,e:"Trailing zeros = floor(10/5) + floor(10/25) = 2 + 0 = 2."},
+{q:"Which of the following is a perfect square?",o:["18","24","36","50"],a:2,e:"36 = 6² = 2² × 3². Its prime exponents are even."},
+{q:"Which of the following is a perfect cube?",o:["36","64","72","100"],a:1,e:"64 = 4³ = 2⁶. Its prime exponent is a multiple of 3."},
+{q:"The sum of the first 10 natural numbers is:",o:["45","50","55","60"],a:2,e:"n(n+1)/2 = 10 × 11 / 2 = 55."},
+{q:"The sum of the first 10 odd positive integers is:",o:["90","100","110","120"],a:1,e:"The sum of the first n odd numbers is n². Here 10² = 100."},
+{q:"The sum of the first 10 positive even integers is:",o:["90","100","110","120"],a:2,e:"The sum of the first n even positive integers is n(n+1). Here 10 × 11 = 110."},
+{q:"Which decimal is irrational?",o:["0.5","0.333...","0.101001000100001...","0.75"],a:2,e:"This decimal is non-terminating and non-repeating, so it is irrational."},
+{q:"Which of the following is not an integer?",o:["−5","0","7","2.5"],a:3,e:"Integers do not include non-whole fractions or decimals such as 2.5."},
+{q:"What is the face value of digit 7 in 47,325?",o:["7","700","7,000","70"],a:0,e:"Face value is the digit itself, independent of its position."},
+{q:"What is the place value of 7 in 47,325?",o:["7","70","700","7,000"],a:3,e:"In 47,325, the digit 7 is in the thousands place. Its place value is 7,000."},
+{q:"What is the HCF of 18 and 35?",o:["1","3","5","7"],a:0,e:"Factors of 18 and 35 have only 1 as a common positive factor. Therefore HCF = 1."},
+{q:"What is the remainder when 157 is divided by 9?",o:["2","3","4","5"],a:2,e:"Digit sum = 1 + 5 + 7 = 13. 13 leaves remainder 4 on division by 9."},
+{q:"Which statement about rational numbers is correct?",o:["All rational numbers are integers","Every integer is rational","All rational numbers are irrational","No whole number is rational"],a:1,e:"Every integer n can be written as n/1, so every integer is rational."}
+];
+
+let answered=0,correct=0;
+const questionsEl=document.getElementById("questions");
+
+function renderQuiz(){
+ questionsEl.innerHTML="";
+ mcqs.forEach((item,index)=>{
+  const box=document.createElement("div");
+  box.className="quiz-question";
+  const title=document.createElement("div");
+  title.className="q-title";
+  title.textContent=(index+1)+". "+item.q;
+  box.appendChild(title);
+  const feedback=document.createElement("div");
+  feedback.className="feedback";
+  feedback.setAttribute("aria-live","polite");
+  item.o.forEach((option,optionIndex)=>{
+   const btn=document.createElement("button");
+   btn.type="button";
+   btn.className="option";
+   btn.textContent=String.fromCharCode(65+optionIndex)+". "+option;
+   btn.addEventListener("click",()=>{
+    if(box.dataset.answered==="yes")return;
+    box.dataset.answered="yes";
+    answered++;
+    if(optionIndex===item.a){
+     correct++;
+     btn.classList.add("correct");
+     feedback.style.color="#187443";
+     feedback.textContent="Correct! ✓ "+item.e;
+    }else{
+     btn.classList.add("wrong");
+     box.querySelectorAll(".option")[item.a].classList.add("correct");
+     feedback.style.color="#a12b24";
+     feedback.textContent="Incorrect. Correct answer: "+item.o[item.a]+". "+item.e;
+    }
+    box.querySelectorAll("button").forEach(b=>b.disabled=true);
+    updateProgress();
+   });
+   box.appendChild(btn);
+  });
+  box.appendChild(feedback);
+  questionsEl.appendChild(box);
+ });
+}
+function updateProgress(){
+ document.getElementById("progressText").textContent="Answered: "+answered+" / "+mcqs.length;
+ document.getElementById("scoreLive").textContent="Correct: "+correct;
+ document.getElementById("progressBar").style.width=(answered/mcqs.length*100)+"%";
+ if(answered===mcqs.length){
+  const percent=Math.round(correct/mcqs.length*100);
+  document.getElementById("scoreText").textContent="Your score: "+correct+" / "+mcqs.length+" ("+percent+"%)";
+  document.getElementById("remark").textContent=percent>=80?"Excellent performance! Keep practising.":percent>=60?"Good effort. Revise the explanations and try again.":"Keep learning. Review the chapter and attempt the test again.";
+  document.getElementById("result").style.display="block";
+  document.getElementById("result").scrollIntoView({behavior:"smooth",block:"center"});
+ }
+}
+function resetQuiz(){
+ answered=0;correct=0;
+ document.getElementById("result").style.display="none";
+ updateProgress();
+ renderQuiz();
+ document.getElementById("quiz").scrollIntoView({behavior:"smooth"});
+}
+renderQuiz();
+updateProgress();
+</script>
+</body>
+</html>
