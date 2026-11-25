@@ -1,536 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#10233f">
-  <meta name="description" content="Study Ecology, Ecosystems, Biodiversity, Pollution, Climate Change, Wildlife, Environmental Laws and Conservation in Telugu and English.">
-  <title>Environment & Ecology | RETRY IN LIBRARY</title>
-  <link rel="manifest" href="../manifest.json">
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/responsive.css">
-  <link rel="stylesheet" href="../assets/css/reader.css">
-  <link rel="icon" href="../assets/icons/icon-192.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RETRY IN LIBRARY - Environment and Ecology bilingual study material for competitive examinations.">
+<title>Environment & Ecology | RETRY IN LIBRARY</title>
+<style>
+:root{
+  --primary:#e87516;
+  --dark:#9b3f08;
+  --light:#fff4e8;
+  --bg:#fffaf5;
+  --text:#29231e;
+  --muted:#70665e;
+  --border:#f0d5bd;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+header{
+  background:linear-gradient(135deg,#f59a35,#d95b0b);
+  color:white;
+  padding:28px 16px;
+  text-align:center;
+}
+.brand{
+  font-size:14px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+header h1{margin:10px 0 4px;font-size:27px}
+header p{margin:5px 0}
+.tagline{font-size:12px;letter-spacing:1px}
+.container{
+  width:min(950px,92%);
+  margin:24px auto 45px;
+}
+.intro{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:22px;
+}
+.intro h2{color:var(--dark);margin:0 0 8px}
+.progress{
+  background:#f4e4d5;
+  height:9px;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:12px;
+}
+.progress span{
+  display:block;
+  width:100%;
+  height:100%;
+  background:var(--primary);
+}
+.chapter-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+.chapter{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:15px;
+  text-decoration:none;
+  color:var(--text);
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.chapter:hover{
+  transform:translateY(-2px);
+  border-color:var(--primary);
+  box-shadow:0 5px 15px rgba(120,65,20,.08);
+}
+.number{
+  min-width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  background:var(--light);
+  color:var(--dark);
+  border-radius:10px;
+  font-weight:bold;
+}
+.chapter-info{flex:1}
+.chapter-info strong{
+  display:block;
+  color:var(--dark);
+  font-size:15px;
+}
+.chapter-info small{
+  display:block;
+  color:var(--muted);
+  margin-top:3px;
+}
+.arrow{color:var(--primary);font-size:22px}
+.section-title{
+  color:var(--dark);
+  margin:25px 0 12px;
+}
+footer{
+  text-align:center;
+  background:#38271b;
+  color:#fff;
+  padding:22px 12px;
+  font-size:13px;
+}
+footer strong{color:#ffb66f}
+@media(min-width:700px){
+  .chapter-list{grid-template-columns:1fr 1fr}
+  header h1{font-size:34px}
+}
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to content</a>
 
-<header class="site-header">
-  <div class="container header-container">
-    <a class="brand" href="../index.html" aria-label="RETRY IN LIBRARY Home">
-      <span class="brand-mark" aria-hidden="true">R</span>
-      <span class="brand-text">
-        <strong>RETRY IN LIBRARY</strong>
-        <small>LEARN AGAIN. TRY AGAIN. SUCCEED.</small>
-      </span>
-    </a>
-    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="primary-navigation" aria-label="Main navigation">
-      <a href="../index.html">Home</a>
-      <a href="../exams/appsc.html">APPSC</a>
-      <a href="../exams/tgpsc.html">TGPSC</a>
-      <a href="../exams/upsc.html">UPSC</a>
-      <a href="../exams/ssc.html">SSC</a>
-      <a href="./history.html">History</a>
-      <a href="./polity.html">Polity</a>
-      <a href="./economy.html">Economy</a>
-      <a href="./geography.html">Geography</a>
-      <a href="./science.html">Science</a>
-      <a href="./environment.html" aria-current="page">Environment</a>
-      <button id="language-toggle" class="language-toggle" type="button" aria-label="Change language">తెలుగు</button>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
-    </nav>
-  </div>
+<header>
+  <div class="brand">RETRY IN LIBRARY</div>
+  <h1>Environment & Ecology</h1>
+  <p>పర్యావరణ శాస్త్రం మరియు జీవావరణ శాస్త్రం</p>
+  <div class="tagline">LEARN AGAIN. TRY AGAIN. SUCCEED.</div>
 </header>
 
-<main id="main-content">
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="../index.html">Home</a>
-        <span aria-hidden="true">/</span>
-        <span>Environment & Ecology</span>
-      </div>
-      <p class="eyebrow">SUBJECT LIBRARY</p>
-      <h1 data-en="Environment & Ecology" data-te="పర్యావరణం మరియు జీవావరణ శాస్త్రం">Environment & Ecology</h1>
-      <p data-en="Understand ecosystems, biodiversity, natural resources, pollution, climate change and environmental protection."
-         data-te="జీవావరణ వ్యవస్థలు, జీవవైవిధ్యం, సహజ వనరులు, కాలుష్యం, వాతావరణ మార్పులు మరియు పర్యావరణ పరిరక్షణ గురించి తెలుసుకోండి.">
-        Understand ecosystems, biodiversity, natural resources, pollution, climate change and environmental protection.
-      </p>
-      <p class="hero-tagline">LEARN AGAIN. TRY AGAIN. SUCCEED.</p>
-    </div>
+<main class="container">
+
+  <section class="intro">
+    <h2>Environment & Ecology Study Material</h2>
+    <p>
+      Study all 15 chapters in Telugu and English.
+      ప్రతి అధ్యాయంలో ముఖ్యమైన అంశాలు, వివరణలు,
+      పరీక్షా పాయింట్లు మరియు MCQs ఉంటాయి.
+    </p>
+    <strong>15 Chapters</strong>
+    <div class="progress"><span></span></div>
+    <small>Complete chapter directory</small>
   </section>
 
-  <!-- COMPLETE CHAPTER DIRECTORY: 15 CHAPTERS -->
-  <section class="content-section" id="environment-chapters">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">COMPLETE CHAPTER LIBRARY</p>
-        <h2>Environment & Ecology – All 15 Chapters</h2>
-        <p data-en="Open each chapter for detailed study notes and practice questions."
-           data-te="వివరణాత్మక అధ్యయన నోట్స్ మరియు అభ్యాస ప్రశ్నల కోసం ప్రతి అధ్యాయాన్ని తెరవండి.">
-          Open each chapter for detailed study notes and practice questions.
-        </p>
-      </div>
+  <h2 class="section-title">Chapter Directory | అధ్యాయాల జాబితా</h2>
 
-      <div class="subject-grid">
-        <article class="subject-card">
-          <h3>01. Ecology: Basic Concepts and Principles</h3>
-          <p>Ecology, habitat, niche, population, community and ecological organisation.</p>
-          <a href="../chapters/environment/01-ecology-basic-concepts-and-principles.html">Open Chapter 01 →</a>
-        </article>
+  <section class="chapter-list">
 
-        <article class="subject-card">
-          <h3>02. Ecosystem: Structure, Functions and Energy Flow</h3>
-          <p>Producers, consumers, decomposers, productivity, energy flow and ecosystem services.</p>
-          <a href="../chapters/environment/02-ecosystem-structure-functions-and-energy-flow.html">Open Chapter 02 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/01-ecology-basic-concepts-and-principles.html">
+      <span class="number">01</span>
+      <span class="chapter-info">
+        <strong>Ecology: Basic Concepts and Principles</strong>
+        <small>జీవావరణ శాస్త్రం: ప్రాథమిక భావనలు మరియు సూత్రాలు</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>03. Food Chains, Food Webs and Ecological Pyramids</h3>
-          <p>Food chains, food webs, trophic levels, ecological pyramids and biomagnification.</p>
-          <a href="../chapters/environment/03-food-chains-food-webs-and-ecological-pyramids.html">Open Chapter 03 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/02-ecosystem-structure-functions-and-energy-flow.html">
+      <span class="number">02</span>
+      <span class="chapter-info">
+        <strong>Ecosystem: Structure, Functions and Energy Flow</strong>
+        <small>పర్యావరణ వ్యవస్థ: నిర్మాణం, విధులు మరియు శక్తి ప్రవాహం</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>04. Biogeochemical Cycles</h3>
-          <p>Water, carbon, nitrogen, phosphorus and sulphur cycles.</p>
-          <a href="../chapters/environment/04-biogeochemical-cycles.html">Open Chapter 04 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/03-food-chains-food-webs-and-ecological-pyramids.html">
+      <span class="number">03</span>
+      <span class="chapter-info">
+        <strong>Food Chains, Food Webs and Ecological Pyramids</strong>
+        <small>ఆహార గొలుసులు, ఆహార జాలాలు మరియు పర్యావరణ పిరమిడ్లు</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>05. Biodiversity: Types, Values and Hotspots</h3>
-          <p>Genetic, species and ecosystem diversity, biodiversity values and hotspots.</p>
-          <a href="../chapters/environment/05-biodiversity-types-values-and-hotspots.html">Open Chapter 05 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/04-biogeochemical-cycles.html">
+      <span class="number">04</span>
+      <span class="chapter-info">
+        <strong>Biogeochemical Cycles</strong>
+        <small>జీవ భూ రసాయన చక్రాలు</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>06. Biodiversity Conservation: In-situ and Ex-situ</h3>
-          <p>Protected areas, seed banks, conservation programmes and international frameworks.</p>
-          <a href="../chapters/environment/06-biodiversity-conservation-in-situ-and-ex-situ.html">Open Chapter 06 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/05-biodiversity-types-values-and-hotspots.html">
+      <span class="number">05</span>
+      <span class="chapter-info">
+        <strong>Biodiversity: Types, Values and Hotspots</strong>
+        <small>జీవవైవిధ్యం: రకాలు, విలువలు మరియు హాట్‌స్పాట్లు</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>07. Natural Resources and Sustainable Management</h3>
-          <p>Land, water, forests, minerals, energy and sustainable resource management.</p>
-          <a href="../chapters/environment/07-natural-resources-and-sustainable-management.html">Open Chapter 07 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/06-biodiversity-conservation-in-situ-and-ex-situ.html">
+      <span class="number">06</span>
+      <span class="chapter-info">
+        <strong>Biodiversity Conservation: In-situ and Ex-situ</strong>
+        <small>జీవవైవిధ్య పరిరక్షణ: సహజ మరియు కృత్రిమ పద్ధతులు</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>08. Forests, Wildlife and Protected Areas in India</h3>
-          <p>Indian forest types, wildlife protection, tiger reserves and conservation.</p>
-          <a href="../chapters/environment/08-forests-wildlife-and-protected-areas-in-india.html">Open Chapter 08 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/07-natural-resources-and-sustainable-management.html">
+      <span class="number">07</span>
+      <span class="chapter-info">
+        <strong>Natural Resources and Sustainable Management</strong>
+        <small>సహజ వనరులు మరియు సుస్థిర నిర్వహణ</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>09. Environmental Pollution: Air, Water, Soil and Noise</h3>
-          <p>Pollutants, sources, environmental impacts, monitoring and control measures.</p>
-          <a href="../chapters/environment/09-environmental-pollution-air-water-soil-and-noise.html">Open Chapter 09 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/08-forests-wildlife-and-protected-areas-in-india.html">
+      <span class="number">08</span>
+      <span class="chapter-info">
+        <strong>Forests, Wildlife and Protected Areas in India</strong>
+        <small>భారతదేశంలోని అడవులు, వన్యప్రాణులు మరియు రక్షిత ప్రాంతాలు</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>10. Waste Management and Plastic Pollution</h3>
-          <p>Waste segregation, recycling, composting, e-waste and plastic management.</p>
-          <a href="../chapters/environment/10-waste-management-and-plastic-pollution.html">Open Chapter 10 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/09-environmental-pollution-air-water-soil-and-noise.html">
+      <span class="number">09</span>
+      <span class="chapter-info">
+        <strong>Environmental Pollution: Air, Water, Soil and Noise</strong>
+        <small>పర్యావరణ కాలుష్యం: గాలి, నీరు, నేల మరియు శబ్దం</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>11. Climate Change, Global Warming and Ozone Depletion</h3>
-          <p>Greenhouse gases, climate impacts, mitigation, adaptation and ozone protection.</p>
-          <a href="../chapters/environment/11-climate-change-global-warming-and-ozone-depletion.html">Open Chapter 11 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/10-waste-management-and-plastic-pollution.html">
+      <span class="number">10</span>
+      <span class="chapter-info">
+        <strong>Waste Management and Plastic Pollution</strong>
+        <small>వ్యర్థాల నిర్వహణ మరియు ప్లాస్టిక్ కాలుష్యం</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>12. Environmental Laws, Policies and Institutions in India</h3>
-          <p>Constitutional provisions, environmental laws, CPCB, MoEFCC and NGT.</p>
-          <a href="../chapters/environment/12-environmental-laws-policies-and-institutions-in-india.html">Open Chapter 12 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/11-climate-change-global-warming-and-ozone-depletion.html">
+      <span class="number">11</span>
+      <span class="chapter-info">
+        <strong>Climate Change, Global Warming and Ozone Depletion</strong>
+        <small>వాతావరణ మార్పు, భూతాపం మరియు ఓజోన్ పొర క్షీణత</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>13. Environmental Impact Assessment and Sustainable Development</h3>
-          <p>EIA stages, environmental management plans and Sustainable Development Goals.</p>
-          <a href="../chapters/environment/13-environmental-impact-assessment-and-sustainable-development.html">Open Chapter 13 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/12-environmental-laws-policies-and-institutions-in-india.html">
+      <span class="number">12</span>
+      <span class="chapter-info">
+        <strong>Environmental Laws, Policies and Institutions in India</strong>
+        <small>భారతదేశ పర్యావరణ చట్టాలు, విధానాలు మరియు సంస్థలు</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>14. Disaster Risk Reduction and Management</h3>
-          <p>Hazards, vulnerability, preparedness, disaster response and risk reduction.</p>
-          <a href="../chapters/environment/14-disaster-risk-reduction-and-management.html">Open Chapter 14 →</a>
-        </article>
+    <a class="chapter" href="../chapters/environment/13-environmental-impact-assessment-and-sustainable-development.html">
+      <span class="number">13</span>
+      <span class="chapter-info">
+        <strong>Environmental Impact Assessment and Sustainable Development</strong>
+        <small>పర్యావరణ ప్రభావ అంచనా మరియు సుస్థిర అభివృద్ధి</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-        <article class="subject-card">
-          <h3>15. Andhra Pradesh and Telangana: Environment, Ecology and Conservation</h3>
-          <p>State forests, rivers, wetlands, protected areas and environmental challenges.</p>
-          <a href="../chapters/environment/15-andhra-pradesh-and-telangana-environment-ecology-and-conservation.html">Open Chapter 15 →</a>
-        </article>
-      </div>
-    </div>
-  </section>
+    <a class="chapter" href="../chapters/environment/14-disaster-risk-reduction-and-management.html">
+      <span class="number">14</span>
+      <span class="chapter-info">
+        <strong>Disaster Risk Reduction and Management</strong>
+        <small>విపత్తు ప్రమాద తగ్గింపు మరియు నిర్వహణ</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-  <section class="content-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">ENVIRONMENT SYLLABUS</p>
-        <h2>Explore Important Topics</h2>
-        <p>A structured roadmap for environment and ecology preparation in competitive examinations.</p>
-      </div>
-      <div class="subject-grid">
-        <article class="subject-card">
-          <h3>Ecology</h3>
-          <p>Ecological principles, organisms, habitats, populations and communities.</p>
-        </article>
-        <article class="subject-card">
-          <h3>Ecosystems</h3>
-          <p>Food chains, food webs, energy flow, ecological pyramids and nutrient cycles.</p>
-        </article>
-        <article class="subject-card">
-          <h3>Biodiversity</h3>
-          <p>Genetic, species and ecosystem diversity, threats and conservation.</p>
-        </article>
-        <article class="subject-card">
-          <h3>Pollution</h3>
-          <p>Air, water, soil, noise, plastic and other forms of pollution.</p>
-        </article>
-        <article class="subject-card">
-          <h3>Climate Change</h3>
-          <p>Global warming, greenhouse gases, climate impacts and adaptation.</p>
-        </article>
-        <article class="subject-card">
-          <h3>Forests and Wildlife</h3>
-          <p>Forest types, wildlife habitats, protected areas and conservation.</p>
-        </article>
-        <article class="subject-card">
-          <h3>Natural Resources</h3>
-          <p>Water, soil, forests, minerals, energy and sustainable resource use.</p>
-        </article>
-        <article class="subject-card">
-          <h3>Environmental Laws</h3>
-          <p>Important Indian environmental laws, institutions and regulatory frameworks.</p>
-        </article>
-        <article class="subject-card">
-          <h3>National Parks and Sanctuaries</h3>
-          <p>Protected areas, biosphere reserves, tiger reserves and conservation programmes.</p>
-        </article>
-        <article class="subject-card">
-          <h3>International Conventions</h3>
-          <p>Major global environmental agreements, conventions and organisations.</p>
-        </article>
-        <article class="subject-card">
-          <h3>Sustainable Development</h3>
-          <p>Renewable energy, sustainable cities, waste management and Sustainable Development Goals.</p>
-        </article>
-        <article class="subject-card">
-          <h3>AP and Telangana Environment</h3>
-          <p>State forests, rivers, wetlands, protected areas and environmental challenges.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+    <a class="chapter" href="../chapters/environment/15-andhra-pradesh-and-telangana-environment-ecology-and-conservation.html">
+      <span class="number">15</span>
+      <span class="chapter-info">
+        <strong>Andhra Pradesh and Telangana: Environment, Ecology and Conservation</strong>
+        <small>ఆంధ్రప్రదేశ్ మరియు తెలంగాణ: పర్యావరణం, జీవావరణం మరియు పరిరక్షణ</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
 
-  <section class="content-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">ECOLOGY</p>
-        <h2>Introduction to Ecology</h2>
-      </div>
-      <div class="reader-content">
-        <section class="content-block">
-          <h3>1. Meaning of Ecology</h3>
-          <p>Ecology is the scientific study of interactions between organisms and their environment, including relationships among living organisms and their surroundings.</p>
-          <p lang="te">జీవులు మరియు వాటి పరిసరాల మధ్య పరస్పర సంబంధాలను అధ్యయనం చేసే శాస్త్రాన్ని జీవావరణ శాస్త్రం అంటారు.</p>
-        </section>
-        <section class="content-block">
-          <h3>2. Levels of Ecological Organisation</h3>
-          <p>Study organism, population, community, ecosystem, biome and biosphere as levels of ecological organisation.</p>
-          <p lang="te">జీవి, జనాభా, సమాజం, జీవావరణ వ్యవస్థ, జీవభౌగోళిక మండలం మరియు జీవావరణ గోళం వంటి స్థాయులను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>3. Biotic and Abiotic Components</h3>
-          <p>Biotic components include living organisms. Abiotic components include sunlight, water, air, soil and temperature.</p>
-          <p lang="te">జీవ సంబంధిత అంశాల్లో మొక్కలు, జంతువులు, సూక్ష్మజీవులు ఉంటాయి. నిర్జీవ అంశాల్లో సూర్యకాంతి, నీరు, గాలి, నేల మరియు ఉష్ణోగ్రత ఉంటాయి.</p>
-        </section>
-        <section class="content-block">
-          <h3>4. Habitat and Niche</h3>
-          <p>A habitat is the natural place where an organism lives. An ecological niche describes its role and interactions within an ecosystem.</p>
-          <p lang="te">జీవి సహజంగా నివసించే ప్రదేశాన్ని నివాస స్థలం అంటారు. జీవావరణ వ్యవస్థలో ఆ జీవి నిర్వహించే పాత్రను దాని పర్యావరణ స్థానంగా అర్థం చేసుకోవచ్చు.</p>
-        </section>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">ECOSYSTEMS</p>
-        <h2>Understanding Ecosystems</h2>
-      </div>
-      <div class="reader-content">
-        <section class="content-block">
-          <h3>1. Structure of an Ecosystem</h3>
-          <p>Study producers, consumers and decomposers and how they interact with non-living environmental components.</p>
-          <p lang="te">ఉత్పత్తిదారులు, వినియోగదారులు, విచ్ఛిన్నకారులు మరియు నిర్జీవ పర్యావరణ అంశాల మధ్య సంబంధాలను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>2. Food Chain and Food Web</h3>
-          <p>A food chain shows a sequence of feeding relationships. A food web connects multiple food chains within an ecosystem.</p>
-          <p lang="te">ఆహార గొలుసు జీవుల మధ్య ఆహార సంబంధాల క్రమాన్ని చూపిస్తుంది. అనేక ఆహార గొలుసులు కలిసిన వ్యవస్థను ఆహార వలయం అంటారు.</p>
-        </section>
-        <section class="content-block">
-          <h3>3. Energy Flow</h3>
-          <p>Understand how energy moves through trophic levels and why energy available generally decreases at successive levels.</p>
-          <p lang="te">పోషక స్థాయిల ద్వారా శక్తి ఎలా ప్రవహిస్తుందో, ప్రతి తదుపరి స్థాయిలో అందుబాటులో ఉండే శక్తి సాధారణంగా ఎందుకు తగ్గుతుందో తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>4. Ecological Pyramids</h3>
-          <p>Study pyramids of number, biomass and energy and understand their ecological significance.</p>
-          <p lang="te">సంఖ్యా పిరమిడ్, జీవద్రవ్యరాశి పిరమిడ్ మరియు శక్తి పిరమిడ్‌లను వాటి ప్రాముఖ్యతతో సహా అధ్యయనం చేయండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>5. Nutrient Cycles</h3>
-          <p>Understand the water, carbon, nitrogen, oxygen and phosphorus cycles and their importance for ecosystems.</p>
-          <p lang="te">నీటి, కార్బన్, నైట్రోజన్, ఆక్సిజన్ మరియు ఫాస్ఫరస్ చక్రాలను, జీవావరణ వ్యవస్థల్లో వాటి ప్రాముఖ్యతను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>6. Types of Ecosystems</h3>
-          <p>Study forests, grasslands, deserts, freshwater ecosystems, marine ecosystems and wetlands.</p>
-          <p lang="te">అడవులు, గడ్డి భూములు, ఎడారులు, మంచినీటి వ్యవస్థలు, సముద్ర జీవావరణ వ్యవస్థలు మరియు చిత్తడి నేలలను అధ్యయనం చేయండి.</p>
-        </section>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">BIODIVERSITY</p>
-        <h2>Biodiversity and Conservation</h2>
-      </div>
-      <div class="reader-content">
-        <section class="content-block">
-          <h3>1. Levels of Biodiversity</h3>
-          <p>Understand genetic diversity, species diversity and ecosystem diversity.</p>
-          <p lang="te">జన్యు వైవిధ్యం, జాతుల వైవిధ్యం మరియు జీవావరణ వ్యవస్థల వైవిధ్యాన్ని తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>2. Importance of Biodiversity</h3>
-          <p>Study ecological balance, ecosystem services, food security, medicine and livelihoods supported by biodiversity.</p>
-          <p lang="te">పర్యావరణ సమతుల్యత, జీవావరణ సేవలు, ఆహార భద్రత, ఔషధాలు మరియు జీవనోపాధిలో జీవవైవిధ్యం పాత్రను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>3. Threats to Biodiversity</h3>
-          <p>Study habitat loss, fragmentation, invasive species, pollution, overexploitation and climate change.</p>
-          <p lang="te">నివాస ప్రాంతాల నష్టం, విభజన, ఆక్రమణ జాతులు, కాలుష్యం, అధిక వినియోగం మరియు వాతావరణ మార్పుల ప్రభావాలను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>4. In-situ Conservation</h3>
-          <p>In-situ conservation protects species in their natural habitats through protected areas and other conservation measures.</p>
-          <p lang="te">జాతీయ పార్కులు, అభయారణ్యాలు మరియు ఇతర సంరక్షణ చర్యల ద్వారా జీవులను వాటి సహజ నివాస ప్రాంతాల్లోనే కాపాడటాన్ని స్థలీయ సంరక్షణ అంటారు.</p>
-        </section>
-        <section class="content-block">
-          <h3>5. Ex-situ Conservation</h3>
-          <p>Ex-situ conservation protects species outside their natural habitats, for example in botanical gardens, zoos and seed banks.</p>
-          <p lang="te">వృక్షశాలలు, జంతుప్రదర్శనశాలలు మరియు విత్తన బ్యాంకుల వంటి సహజ నివాస ప్రాంతాల వెలుపల జీవులను సంరక్షించడాన్ని స్థలాంతర సంరక్షణ అంటారు.</p>
-        </section>
-        <section class="content-block">
-          <h3>6. Important Conservation Concepts</h3>
-          <p>Learn endemic, endangered, vulnerable, extinct and critically endangered categories using reliable conservation references.</p>
-          <p lang="te">స్థానిక జాతులు, అంతరించిపోతున్న జాతులు, ప్రమాదానికి గురయ్యే జాతులు, అంతరించిన జాతులు మరియు తీవ్రంగా అంతరించే ప్రమాదంలో ఉన్న జాతుల భావనలను తెలుసుకోండి.</p>
-        </section>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">POLLUTION</p>
-        <h2>Environmental Pollution</h2>
-      </div>
-      <div class="reader-content">
-        <section class="content-block">
-          <h3>1. Air Pollution</h3>
-          <p>Study major air pollutants, sources, health and environmental effects, air-quality monitoring and control measures.</p>
-          <p lang="te">ప్రధాన వాయు కాలుష్య కారకాలు, వాటి మూలాలు, ఆరోగ్య మరియు పర్యావరణ ప్రభావాలు, గాలి నాణ్యత పర్యవేక్షణ మరియు నియంత్రణ చర్యలను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>2. Water Pollution</h3>
-          <p>Understand water contaminants, sewage, industrial discharge, eutrophication and water-quality protection.</p>
-          <p lang="te">నీటి కాలుష్య కారకాలు, మురుగునీరు, పారిశ్రామిక వ్యర్థాలు, యూట్రోఫికేషన్ మరియు నీటి నాణ్యత పరిరక్షణను అధ్యయనం చేయండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>3. Soil Pollution</h3>
-          <p>Study chemical contamination, pesticides, industrial waste, soil degradation and remediation approaches.</p>
-          <p lang="te">రసాయన కాలుష్యం, పురుగుమందులు, పారిశ్రామిక వ్యర్థాలు, నేల క్షీణత మరియు నేల పునరుద్ధరణ పద్ధతులను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>4. Noise Pollution</h3>
-          <p>Understand noise sources, measurement concepts, impacts and ways to reduce noise exposure.</p>
-          <p lang="te">శబ్ద కాలుష్య మూలాలు, కొలత విధానాలు, ప్రభావాలు మరియు శబ్దాన్ని తగ్గించే మార్గాలను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>5. Solid Waste and Plastic Pollution</h3>
-          <p>Study waste segregation, recycling, composting, plastic waste management and circular-economy concepts.</p>
-          <p lang="te">వ్యర్థాల వేరు చేయడం, రీసైక్లింగ్, కంపోస్టింగ్, ప్లాస్టిక్ వ్యర్థాల నిర్వహణ మరియు వృత్తాకార ఆర్థిక వ్యవస్థ భావనలను తెలుసుకోండి.</p>
-        </section>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">CLIMATE CHANGE</p>
-        <h2>Global Warming and Climate Change</h2>
-      </div>
-      <div class="reader-content">
-        <section class="content-block">
-          <h3>1. Greenhouse Effect</h3>
-          <p>Understand the natural greenhouse effect, greenhouse gases and how increased concentrations influence global temperatures.</p>
-          <p lang="te">సహజ హరితగృహ ప్రభావం, హరితగృహ వాయువులు మరియు వాటి అధిక సాంద్రతలు ప్రపంచ ఉష్ణోగ్రతలను ఎలా ప్రభావితం చేస్తాయో తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>2. Global Warming</h3>
-          <p>Study long-term increases in global average temperature, major human influences and observed impacts.</p>
-          <p lang="te">ప్రపంచ సగటు ఉష్ణోగ్రతలో దీర్ఘకాలిక పెరుగుదల, మానవ కార్యకలాపాల ప్రభావాలు మరియు వాటి పరిణామాలను అధ్యయనం చేయండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>3. Climate Change Impacts</h3>
-          <p>Understand impacts on rainfall, agriculture, water availability, ecosystems, oceans and human settlements.</p>
-          <p lang="te">వర్షపాతం, వ్యవసాయం, నీటి లభ్యత, జీవావరణ వ్యవస్థలు, సముద్రాలు మరియు మానవ నివాసాలపై వాతావరణ మార్పుల ప్రభావాలను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>4. Mitigation and Adaptation</h3>
-          <p>Mitigation reduces greenhouse gas emissions or increases removals. Adaptation reduces vulnerability to climate impacts.</p>
-          <p lang="te">హరితగృహ వాయు ఉద్గారాలను తగ్గించడం లేదా వాటి తొలగింపును పెంచడం ఉపశమన చర్యలు. వాతావరణ ప్రభావాలకు ఎదుర్కొనే సామర్థ్యాన్ని పెంచడం అనుకూలన చర్యలు.</p>
-        </section>
-        <section class="content-block">
-          <h3>5. Ozone Layer and Acid Rain</h3>
-          <p>Study ozone depletion, ozone protection efforts, acid rain formation and their environmental impacts.</p>
-          <p lang="te">ఓజోన్ పొర క్షీణత, ఓజోన్ సంరక్షణ చర్యలు, ఆమ్ల వర్షం ఏర్పడే విధానం మరియు పర్యావరణ ప్రభావాలను తెలుసుకోండి.</p>
-        </section>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">INDIAN ENVIRONMENT</p>
-        <h2>Environmental Protection in India</h2>
-      </div>
-      <div class="reader-content">
-        <section class="content-block">
-          <h3>1. Important Environmental Laws</h3>
-          <p>Study the broad objectives and provisions of major Indian laws, including the Wildlife (Protection) Act, 1972, Water (Prevention and Control of Pollution) Act, 1974, Forest (Conservation) Act, 1980, Air (Prevention and Control of Pollution) Act, 1981 and Environment (Protection) Act, 1986. Check amendments and current legal names from official sources.</p>
-          <p lang="te">వన్యప్రాణి సంరక్షణ చట్టం, 1972; నీటి కాలుష్య నివారణ మరియు నియంత్రణ చట్టం, 1974; అటవీ సంరక్షణ చట్టం, 1980; వాయు కాలుష్య నివారణ మరియు నియంత్రణ చట్టం, 1981; పర్యావరణ పరిరక్షణ చట్టం, 1986 వంటి చట్టాల ముఖ్య ఉద్దేశాలను అధ్యయనం చేయండి. తాజా సవరణలను అధికారిక వనరుల్లో పరిశీలించండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>2. Environmental Institutions</h3>
-          <p>Understand the roles of the Ministry of Environment, Forest and Climate Change, Central Pollution Control Board, State Pollution Control Boards and National Green Tribunal.</p>
-          <p lang="te">పర్యావరణ, అటవీ మరియు వాతావరణ మార్పుల మంత్రిత్వ శాఖ, కేంద్ర కాలుష్య నియంత్రణ మండలి, రాష్ట్ర కాలుష్య నియంత్రణ మండళ్లు మరియు జాతీయ హరిత ట్రిబ్యునల్ పాత్రలను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>3. Protected Areas</h3>
-          <p>Study national parks, wildlife sanctuaries, conservation reserves, community reserves, tiger reserves and biosphere reserves.</p>
-          <p lang="te">జాతీయ పార్కులు, వన్యప్రాణి అభయారణ్యాలు, సంరక్షణ రిజర్వులు, కమ్యూనిటీ రిజర్వులు, పులుల రిజర్వులు మరియు జీవావరణ రిజర్వులను అధ్యయనం చేయండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>4. International Environmental Agreements</h3>
-          <p>Learn the objectives of the Convention on Biological Diversity, Ramsar Convention, CITES, UNFCCC, Kyoto Protocol, Paris Agreement and Montreal Protocol.</p>
-          <p lang="te">జీవవైవిధ్య ఒప్పందం, రామ్‌సర్ ఒప్పందం, CITES, UNFCCC, క్యోటో ప్రోటోకాల్, పారిస్ ఒప్పందం మరియు మాంట్రియల్ ప్రోటోకాల్ లక్ష్యాలను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>5. Sustainable Development Goals</h3>
-          <p>Study the United Nations Sustainable Development Goals, with particular attention to clean water, clean energy, sustainable cities, responsible consumption, climate action and life on land and below water.</p>
-          <p lang="te">ఐక్యరాజ్యసమితి సుస్థిర అభివృద్ధి లక్ష్యాలను, ముఖ్యంగా స్వచ్ఛమైన నీరు, స్వచ్ఛమైన ఇంధనం, సుస్థిర నగరాలు, బాధ్యతాయుత వినియోగం, వాతావరణ చర్యలు మరియు భూభాగ, సముద్ర జీవ సంరక్షణ లక్ష్యాలను అధ్యయనం చేయండి.</p>
-        </section>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">STATE ENVIRONMENT</p>
-        <h2>Andhra Pradesh and Telangana</h2>
-      </div>
-      <div class="reader-content">
-        <section class="content-block">
-          <h3>Andhra Pradesh</h3>
-          <p>Study coastal ecosystems, mangroves, river basins, wetlands, forests, protected areas, biodiversity and cyclone-related environmental challenges.</p>
-          <p lang="te">తీర జీవావరణ వ్యవస్థలు, మడ అడవులు, నదీ పరీవాహక ప్రాంతాలు, చిత్తడి నేలలు, అడవులు, సంరక్షిత ప్రాంతాలు, జీవవైవిధ్యం మరియు తుఫానుల వల్ల కలిగే పర్యావరణ సమస్యలను అధ్యయనం చేయండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>Telangana</h3>
-          <p>Study forest ecosystems, river systems, reservoirs, wetlands, protected areas, biodiversity and urban environmental challenges.</p>
-          <p lang="te">అటవీ జీవావరణ వ్యవస్థలు, నదీ వ్యవస్థలు, జలాశయాలు, చిత్తడి నేలలు, సంరక్షిత ప్రాంతాలు, జీవవైవిధ్యం మరియు పట్టణ పర్యావరణ సమస్యలను తెలుసుకోండి.</p>
-        </section>
-        <section class="content-block">
-          <h3>State-Level Preparation</h3>
-          <p>For state-specific questions, verify current district-wise forest data, protected-area lists, species records and environmental programmes using the relevant government departments.</p>
-          <p lang="te">రాష్ట్ర స్థాయి ప్రశ్నల కోసం జిల్లా వారీ అటవీ గణాంకాలు, సంరక్షిత ప్రాంతాల జాబితాలు, జీవజాతుల వివరాలు మరియు పర్యావరణ కార్యక్రమాలను సంబంధిత ప్రభుత్వ శాఖల ద్వారా ధృవీకరించండి.</p>
-        </section>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">REFERENCE RESOURCES</p>
-        <h2>Reliable Environment Resources</h2>
-      </div>
-      <ul class="resource-list">
-        <li><a href="https://moef.gov.in/" target="_blank" rel="noopener noreferrer">Ministry of Environment, Forest and Climate Change ↗</a></li>
-        <li><a href="https://cpcb.nic.in/" target="_blank" rel="noopener noreferrer">Central Pollution Control Board ↗</a></li>
-        <li><a href="https://www.indiacode.nic.in/" target="_blank" rel="noopener noreferrer">India Code – Official legislation ↗</a></li>
-        <li><a href="https://www.ramsar.org/" target="_blank" rel="noopener noreferrer">Ramsar Convention ↗</a></li>
-        <li><a href="https://www.cbd.int/" target="_blank" rel="noopener noreferrer">Convention on Biological Diversity ↗</a></li>
-        <li><a href="https://www.ipcc.ch/" target="_blank" rel="noopener noreferrer">Intergovernmental Panel on Climate Change ↗</a></li>
-        <li><a href="https://ncert.nic.in/" target="_blank" rel="noopener noreferrer">NCERT Textbooks ↗</a></li>
-      </ul>
-      <div class="notice-box">
-        <strong>Study note:</strong> This page provides an introductory roadmap, not a complete textbook or verified question bank.
-        Environmental laws may be amended, and protected-area lists, species status and environmental statistics can change.
-        Check the applicable year and official source before using such details in examination notes.
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Continue Learning</h2>
-      </div>
-      <div class="chapter-navigation">
-        <a href="./science.html">← General Science</a>
-        <a href="./mathematics.html">Next Subject: Mathematics →</a>
-      </div>
-    </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <p><strong>RETRY IN LIBRARY</strong></p>
-    <p>LEARN AGAIN. TRY AGAIN. SUCCEED.</p>
-    <p>Independent educational platform. Not affiliated with any government recruitment authority.</p>
-    <div class="footer-links">
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-      <a href="../terms.html">Terms</a>
-      <a href="../privacy.html">Privacy</a>
-      <a href="../disclaimer.html">Disclaimer</a>
-      <a href="../copyright.html">Copyright</a>
-      <a href="../sources.html">Sources</a>
-      <a href="../corrections.html">Corrections</a>
-    </div>
-    <p>© <span data-current-year>2026</span> RETRY IN LIBRARY.</p>
-  </div>
+<footer>
+  <strong>RETRY IN LIBRARY</strong>
+  <p>LEARN AGAIN. TRY AGAIN. SUCCEED.</p>
+  <p>Learn • Practice • Improve</p>
 </footer>
 
-<script src="../assets/js/app.js" defer></script>
 </body>
 </html>
