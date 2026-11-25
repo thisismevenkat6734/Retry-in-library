@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Percentage complete Telugu and English Mathematics notes, formulas, solved examples and 50 interactive MCQs for competitive examinations.">
+<title>Percentage | RETRY IN LIBRARY</title>
+
+<style>
+:root{
+--saffron:#f28c28;--deep:#a94708;--pale:#fff0dc;
+--bg:#fff8ef;--ink:#30251c;--muted:#6d6258;
+--green:#187443;--red:#bd3030;--line:#edcfad
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+header{background:linear-gradient(135deg,#ffb347,#e66c13);color:white;text-align:center;padding:27px 15px}
+.brand{font-size:13px;letter-spacing:2px;font-weight:bold}
+header h1{font-size:29px;margin:8px 0}
+header p{margin:3px}
+.tagline{font-size:11px;letter-spacing:1px;margin-top:8px}
+nav{position:sticky;top:0;z-index:5;background:#fff;display:flex;gap:8px;overflow-x:auto;padding:10px;border-bottom:1px solid var(--line)}
+nav a{white-space:nowrap;text-decoration:none;color:var(--deep);font-size:13px;font-weight:bold;background:var(--pale);padding:7px 11px;border-radius:20px}
+.container{max-width:950px;width:94%;margin:22px auto 45px}
+.card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px;margin:15px 0;box-shadow:0 3px 12px #78400b0b}
+h2{color:var(--deep);font-size:22px;border-bottom:2px solid #f6d6b2;padding-bottom:7px}
+h3{color:#b45712;font-size:18px;margin-top:22px}
+p{margin:8px 0}
+li{margin:5px 0}
+.tag{display:inline-block;background:var(--pale);color:var(--deep);padding:4px 9px;border-radius:15px;font-size:12px;font-weight:bold;margin:3px}
+.note{background:#fff4e5;border-left:4px solid var(--saffron);padding:12px 14px;border-radius:6px;margin:12px 0}
+.example{background:#f7fbff;border-left:4px solid #4085b9;padding:12px 14px;border-radius:6px;margin:12px 0}
+.warning{background:#fff0ef;border-left:4px solid var(--red);padding:12px 14px;border-radius:6px;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px;text-align:left}
+th{background:var(--pale);color:var(--deep)}
+.formula{background:#fff7eb;padding:12px;border-radius:8px;font-weight:bold;color:#813d08;overflow-wrap:anywhere}
+button{background:var(--saffron);color:#fff;border:0;border-radius:8px;padding:10px 15px;font-weight:bold;cursor:pointer}
+button:hover{background:var(--deep)}
+button:disabled{opacity:.65;cursor:not-allowed}
+.quiz-question{border:1px solid var(--line);padding:14px;border-radius:10px;margin:13px 0;background:#fff}
+.q-title{font-weight:bold;margin-bottom:10px}
+.option{display:block;width:100%;text-align:left;background:#fff8ef;color:var(--ink);border:1px solid #e8cba9;margin:7px 0;padding:10px;border-radius:7px;font-weight:normal}
+.option:hover:not(:disabled){background:#ffebd3}
+.option.correct{background:#e4f6eb;border-color:var(--green);color:#125c35}
+.option.wrong{background:#ffe7e5;border-color:var(--red);color:#922323}
+.feedback{font-size:14px;margin-top:8px;font-weight:bold}
+.muted{color:var(--muted);font-size:13px}
+#quizStatus{position:sticky;top:49px;background:#fff;border:1px solid var(--line);padding:10px;border-radius:8px;z-index:3}
+.progress{height:9px;background:#f2dfca;border-radius:10px;overflow:hidden;margin-top:8px}
+.progress span{display:block;height:100%;width:0;background:var(--saffron);transition:width .2s}
+#result{display:none;background:#fff4e5;border:2px solid var(--saffron);border-radius:12px;padding:18px;margin:15px 0}
+footer{text-align:center;background:#39271b;color:#fff;padding:22px 12px;font-size:13px}
+footer strong{color:#ffb76d}
+@media(min-width:700px){.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}header h1{font-size:36px}}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="brand">RETRY IN LIBRARY</div>
+<h1>Percentage</h1>
+<p>శాతాలు</p>
+<div class="tagline">LEARN AGAIN. TRY AGAIN. SUCCEED.</div>
+<p>
+<span class="tag">MATHEMATICS</span>
+<span class="tag">CHAPTER 03</span>
+<span class="tag">TELUGU + ENGLISH</span>
+</p>
+</header>
+
+<nav>
+<a href="#intro">Introduction</a>
+<a href="#basics">Basics</a>
+<a href="#conversion">Conversions</a>
+<a href="#calculations">Calculations</a>
+<a href="#change">Percentage Change</a>
+<a href="#successive">Successive %</a>
+<a href="#applications">Applications</a>
+<a href="#shortcuts">Shortcuts</a>
+<a href="#examples">Examples</a>
+<a href="#quiz">50 MCQs</a>
+</nav>
+
+<main class="container">
+
+<section class="card" id="intro">
+<h2>1. Introduction to Percentage | శాతాల పరిచయం</h2>
+
+<p><b>English:</b> Percentage is a way of expressing a number or quantity as a fraction of 100. The word percentage means "per hundred". It is represented by the symbol %.</p>
+
+<p><b>తెలుగు:</b> ప్రతి వందకు ఎంత అనే భావనను వ్యక్తీకరించే విధానాన్ని శాతం అంటారు. శాతం అనే పదానికి వందకు అని అర్థం. దీనిని % గుర్తుతో సూచిస్తారు.</p>
+
+<div class="formula">
+Percentage = (Part / Whole) × 100
+</div>
+
+<div class="example">
+<b>Example:</b> A student scores 40 marks out of 50.
+
+<br><br>
+Percentage = (40/50) × 100
+
+<br>
+= 0.8 × 100
+
+<br>
+= 80%
+
+<br><br>
+<b>Answer: 80%</b>
+<br>
+<b>తెలుగు:</b> 50 మార్కులకు 40 మార్కులు వస్తే శాతం 80%.
+</div>
+
+<h3>Importance in Competitive Exams | పోటీ పరీక్షల్లో ప్రాముఖ్యత</h3>
+<ul>
+<li>Marks and examination results – పరీక్ష మార్కులు.</li>
+<li>Population growth – జనాభా పెరుగుదల.</li>
+<li>Profit and loss – లాభనష్టాలు.</li>
+<li>Discount calculations – తగ్గింపులు.</li>
+<li>Simple and compound interest – సాధారణ, చక్రవడ్డీ.</li>
+<li>Data interpretation – గణాంకాల విశ్లేషణ.</li>
+<li>Salary and price changes – జీతాలు, ధరల మార్పులు.</li>
+</ul>
+
+<div class="note">
+Percentage is a foundation topic for Profit and Loss, Discount, Interest and Data Interpretation.
+<br>
+శాతాలు అనేవి లాభనష్టాలు, తగ్గింపులు, వడ్డీ మరియు గణాంకాల విశ్లేషణకు పునాది.
+</div>
+</section>
+
+<section class="card" id="basics">
+<h2>2. Basic Concepts of Percentage | శాతాల ప్రాథమిక భావనలు</h2>
+
+<h3>2.1 Meaning of Percentage</h3>
+<p>Percentage means a value out of 100.</p>
+<p>వందలో ఒక భాగాన్ని శాతంగా వ్యక్తీకరిస్తారు.</p>
+
+<table>
+<tr><th>Percentage</th><th>Meaning</th></tr>
+<tr><td>1%</td><td>1 out of 100</td></tr>
+<tr><td>10%</td><td>10 out of 100</td></tr>
+<tr><td>25%</td><td>25 out of 100</td></tr>
+<tr><td>50%</td><td>50 out of 100</td></tr>
+<tr><td>75%</td><td>75 out of 100</td></tr>
+<tr><td>100%</td><td>Whole quantity</td></tr>
+<tr><td>150%</td><td>One and a half times the quantity</td></tr>
+<tr><td>200%</td><td>Twice the quantity</td></tr>
+</table>
+
+<h3>2.2 Basic Formula</h3>
+
+<div class="formula">
+Percentage = (Obtained Value / Total Value) × 100
+</div>
+
+<div class="example">
+<b>Question:</b> A student gets 72 marks out of 90. Find the percentage.
+
+<br><br>
+Percentage = (72/90) × 100
+
+<br>
+= 0.8 × 100
+
+<br>
+= 80%
+
+<br><br>
+<b>Answer: 80%</b>
+</div>
+
+<h3>2.3 Finding a Percentage of a Number</h3>
+
+<div class="formula">
+x% of y = (x/100) × y
+</div>
+
+<div class="example">
+<b>Question:</b> Find 20% of 500.
+
+<br><br>
+= (20/100) × 500
+
+<br>
+= 100
+
+<br><br>
+<b>Answer: 100</b>
+</div>
+
+<h3>2.4 Finding the Whole Quantity</h3>
+
+<div class="formula">
+Whole = (Part × 100) / Percentage
+</div>
+
+<div class="example">
+<b>Question:</b> 40% of a number is 120. Find the number.
+
+<br><br>
+Number = (120 × 100)/40
+
+<br>
+= 12000/40
+
+<br>
+= 300
+
+<br><br>
+<b>Answer: 300</b>
+</div>
+
+<h3>2.5 Finding the Percentage of Remaining Quantity</h3>
+
+<div class="example">
+A person spends 30% of their income. What percentage remains?
+
+<br><br>
+Remaining = 100% − 30%
+
+<br>
+= 70%
+
+<br><br>
+<b>Answer: 70%</b>
+</div>
+</section>
+
+<section class="card" id="conversion">
+<h2>3. Conversion of Fractions, Decimals and Percentages | మార్పిడులు</h2>
+
+<h3>3.1 Fraction to Percentage | భిన్నం నుండి శాతం</h3>
+
+<div class="formula">
+Percentage = Fraction × 100
+</div>
+
+<div class="example">
+Convert 3/4 into percentage.
+
+<br><br>
+= (3/4) × 100
+
+<br>
+= 75%
+
+<br><br>
+<b>Answer: 75%</b>
+</div>
+
+<h3>3.2 Percentage to Fraction | శాతం నుండి భిన్నం</h3>
+
+<p>Write the percentage over 100 and simplify.</p>
+
+<p>శాతాన్ని 100తో భాగించి, భిన్నాన్ని సరళీకరించాలి.</p>
+
+<div class="example">
+Convert 40% into a fraction.
+
+<br><br>
+= 40/100
+
+<br>
+= 2/5
+
+<br><br>
+<b>Answer: 2/5</b>
+</div>
+
+<h3>3.3 Decimal to Percentage | దశాంశం నుండి శాతం</h3>
+
+<div class="formula">
+Decimal × 100 = Percentage
+</div>
+
+<div class="example">
+Convert 0.75 into percentage.
+
+<br><br>
+= 0.75 × 100
+
+<br>
+= 75%
+
+<br><br>
+<b>Answer: 75%</b>
+</div>
+
+<h3>3.4 Percentage to Decimal | శాతం నుండి దశాంశం</h3>
+
+<div class="formula">
+Percentage ÷ 100 = Decimal
+</div>
+
+<div class="example">
+Convert 65% into decimal.
+
+<br><br>
+= 65/100
+
+<br>
+= 0.65
+
+<br><br>
+<b>Answer: 0.65</b>
+</div>
+
+<h3>3.5 Important Conversion Table</h3>
+
+<table>
+<tr><th>Fraction</th><th>Decimal</th><th>Percentage</th></tr>
+<tr><td>1/2</td><td>0.50</td><td>50%</td></tr>
+<tr><td>1/3</td><td>0.333...</td><td>33⅓%</td></tr>
+<tr><td>2/3</td><td>0.666...</td><td>66⅔%</td></tr>
+<tr><td>1/4</td><td>0.25</td><td>25%</td></tr>
+<tr><td>3/4</td><td>0.75</td><td>75%</td></tr>
+<tr><td>1/5</td><td>0.20</td><td>20%</td></tr>
+<tr><td>2/5</td><td>0.40</td><td>40%</td></tr>
+<tr><td>3/5</td><td>0.60</td><td>60%</td></tr>
+<tr><td>4/5</td><td>0.80</td><td>80%</td></tr>
+<tr><td>1/6</td><td>0.1666...</td><td>16⅔%</td></tr>
+<tr><td>1/8</td><td>0.125</td><td>12.5%</td></tr>
+<tr><td>3/8</td><td>0.375</td><td>37.5%</td></tr>
+<tr><td>5/8</td><td>0.625</td><td>62.5%</td></tr>
+<tr><td>7/8</td><td>0.875</td><td>87.5%</td></tr>
+<tr><td>1/10</td><td>0.10</td><td>10%</td></tr>
+<tr><td>1/20</td><td>0.05</td><td>5%</td></tr>
+<tr><td>1/25</td><td>0.04</td><td>4%</td></tr>
+<tr><td>1/40</td><td>0.025</td><td>2.5%</td></tr>
+<tr><td>1/50</td><td>0.02</td><td>2%</td></tr>
+<tr><td>1/100</td><td>0.01</td><td>1%</td></tr>
+</table>
+
+<div class="note">
+<b>Exam Tip:</b> Memorise common fraction-percentage conversions. They save time in competitive examinations.
+<br>
+ముఖ్యమైన భిన్నాలు, శాతాల మార్పిడులను గుర్తుంచుకుంటే పరీక్షలో సమయం ఆదా అవుతుంది.
+</div>
+</section>
+
+<section class="card" id="calculations">
+<h2>4. Percentage Calculations | శాతం గణనలు</h2>
+
+<h3>4.1 Finding x% of a Number</h3>
+
+<div class="formula">
+x% of y = (x × y)/100
+</div>
+
+<div class="example">
+Find 15% of 800.
+
+<br><br>
+= (15 × 800)/100
+
+<br>
+= 15 × 8
+
+<br>
+= 120
+
+<br><br>
+<b>Answer: 120</b>
+</div>
+
+<h3>4.2 Finding What Percentage One Number is of Another</h3>
+
+<div class="formula">
+Required Percentage = (First Number / Second Number) × 100
+</div>
+
+<div class="example">
+40 is what percentage of 200?
+
+<br><br>
+= (40/200) × 100
+
+<br>
+= 20%
+
+<br><br>
+<b>Answer: 20%</b>
+</div>
+
+<h3>4.3 Finding the Original Number</h3>
+
+<div class="example">
+25% of a number is 75. Find the number.
+
+<br><br>
+Number = (75 × 100)/25
+
+<br>
+= 300
+
+<br><br>
+<b>Answer: 300</b>
+</div>
+
+<h3>4.4 Comparing Two Numbers</h3>
+
+<div class="example">
+A is 50 and B is 100. A is what percentage of B?
+
+<br><br>
+= (50/100) × 100
+
+<br>
+= 50%
+
+<br><br>
+<b>Answer: 50%</b>
+</div>
+
+<h3>4.5 Percentage of a Total</h3>
+
+<div class="example">
+A class has 40 students. 24 are boys. Find the percentage of boys.
+
+<br><br>
+= (24/40) × 100
+
+<br>
+= 60%
+
+<br><br>
+<b>Answer: 60%</b>
+</div>
+</section>
+
+<section class="card" id="change">
+<h2>5. Percentage Increase and Decrease | శాతం పెరుగుదల మరియు తగ్గుదల</h2>
+
+<h3>5.1 Percentage Increase | శాతం పెరుగుదల</h3>
+
+<div class="formula">
+Percentage Increase = (Increase / Original Value) × 100
+</div>
+
+<div class="example">
+A price increases from ₹200 to ₹250. Find the percentage increase.
+
+<br><br>
+Increase = 250 − 200 = 50
+
+<br>
+Percentage Increase = (50/200) × 100
+
+<br>
+= 25%
+
+<br><br>
+<b>Answer: 25%</b>
+</div>
+
+<h3>5.2 Percentage Decrease | శాతం తగ్గుదల</h3>
+
+<div class="formula">
+Percentage Decrease = (Decrease / Original Value) × 100
+</div>
+
+<div class="example">
+A price decreases from ₹500 to ₹400.
+
+<br><br>
+Decrease = 500 − 400 = 100
+
+<br>
+Percentage Decrease = (100/500) × 100
+
+<br>
+= 20%
+
+<br><br>
+<b>Answer: 20%</b>
+</div>
+
+<h3>5.3 New Value after Increase</h3>
+
+<div class="formula">
+New Value = Original Value × (1 + r/100)
+</div>
+
+<div class="example">
+A salary of ₹10,000 increases by 10%.
+
+<br><br>
+New Salary = 10000 × (1 + 10/100)
+
+<br>
+= 10000 × 1.10
+
+<br>
+= ₹11,000
+</div>
+
+<h3>5.4 New Value after Decrease</h3>
+
+<div class="formula">
+New Value = Original Value × (1 − r/100)
+</div>
+
+<div class="example">
+A product costs ₹800. Its price decreases by 15%.
+
+<br><br>
+New Price = 800 × (1 − 15/100)
+
+<br>
+= 800 × 0.85
+
+<br>
+= ₹680
+</div>
+
+<h3>5.5 Important Difference</h3>
+
+<div class="warning">
+Percentage increase and percentage decrease are calculated using the original value as the denominator.
+
+<br><br>
+శాతం పెరుగుదల, తగ్గుదలలను లెక్కించేటప్పుడు అసలు విలువను హారంగా తీసుకోవాలి.
+</div>
+</section>
+
+<section class="card" id="successive">
+<h2>6. Successive Percentage Changes | వరుస శాతం మార్పులు</h2>
+
+<p><b>English:</b> When a value changes by two or more percentages successively, each percentage is applied to the value obtained after the previous change.</p>
+
+<p><b>తెలుగు:</b> ఒక విలువపై వరుసగా రెండు లేదా అంతకంటే ఎక్కువ శాతం మార్పులు జరిగినప్పుడు, ప్రతి మార్పును ముందు వచ్చిన కొత్త విలువపై లెక్కించాలి.</p>
+
+<h3>6.1 Two Successive Increases</h3>
+
+<div class="formula">
+Net Increase = a + b + (ab/100) %
+</div>
+
+<div class="example">
+A value increases by 10% and then by 20%.
+
+<br><br>
+Net Increase = 10 + 20 + (10 × 20)/100
+
+<br>
+= 30 + 2
+
+<br>
+= 32%
+
+<br><br>
+<b>Answer: 32% increase</b>
+</div>
+
+<h3>6.2 Two Successive Decreases</h3>
+
+<div class="formula">
+Net Decrease = a + b − (ab/100) %
+</div>
+
+<div class="example">
+A value decreases by 10% and then by 20%.
+
+<br><br>
+Net Decrease = 10 + 20 − (10 × 20)/100
+
+<br>
+= 30 − 2
+
+<br>
+= 28%
+
+<br><br>
+<b>Answer: 28% decrease</b>
+</div>
+
+<h3>6.3 One Increase and One Decrease</h3>
+
+<div class="formula">
+Net Change = a − b − (ab/100) %
+</div>
+
+<p>Here a is the increase percentage and b is the decrease percentage. The result may be positive or negative.</p>
+
+<div class="example">
+A value increases by 20% and then decreases by 10%.
+
+<br><br>
+Net Change = 20 − 10 − (20 × 10)/100
+
+<br>
+= 10 − 2
+
+<br>
+= 8%
+
+<br><br>
+<b>Answer: 8% increase</b>
+</div>
+
+<h3>6.4 General Successive Change Formula</h3>
+
+<div class="formula">
+Final Value = Original Value × (1 ± a/100) × (1 ± b/100)
+</div>
+
+<p>Use + for increase and − for decrease.</p>
+
+<div class="example">
+A value of 1000 increases by 10% and then decreases by 10%.
+
+<br><br>
+= 1000 × 1.10 × 0.90
+
+<br>
+= 990
+
+<br><br>
+Net change = 990 − 1000 = −10
+
+<br>
+Percentage change = −1%
+
+<br><br>
+<b>Answer: 1% decrease</b>
+</div>
+
+<div class="note">
+Equal percentage increase and decrease do not cancel each other. A 10% increase followed by a 10% decrease results in a 1% net decrease.
+<br><br>
+ఒకే శాతం పెరుగుదల, తగ్గుదల పరస్పరం రద్దు కావు.
+</div>
+</section>
+
+<section class="card" id="applications">
+<h2>7. Applications of Percentage | శాతాల ఉపయోగాలు</h2>
+
+<h3>7.1 Examination Marks | పరీక్ష మార్కులు</h3>
+
+<div class="example">
+A student scores 450 out of 600.
+
+<br><br>
+Percentage = (450/600) × 100
+
+<br>
+= 75%
+
+<br><br>
+<b>Answer: 75%</b>
+</div>
+
+<h3>7.2 Population Growth | జనాభా పెరుగుదల</h3>
+
+<div class="example">
+A town has a population of 20,000. It increases by 5%.
+
+<br><br>
+Increase = 5% of 20,000
+
+<br>
+= 1,000
+
+<br>
+New Population = 20,000 + 1,000
+
+<br>
+= 21,000
+
+<br><br>
+<b>Answer: 21,000</b>
+</div>
+
+<h3>7.3 Discount | తగ్గింపు</h3>
+
+<p>Discount is the reduction in the marked price of a product.</p>
+
+<p>ఒక వస్తువు గుర్తించిన ధరపై ఇచ్చే తగ్గింపును డిస్కౌంట్ అంటారు.</p>
+
+<div class="formula">
+Discount = Marked Price − Selling Price
+
+<br><br>
+Discount % = (Discount / Marked Price) × 100
+</div>
+
+<div class="example">
+Marked Price = ₹1,000
+
+<br>
+Discount = 20%
+
+<br><br>
+Discount Amount = 1000 × 20/100
+
+<br>
+= ₹200
+
+<br>
+Selling Price = 1000 − 200
+
+<br>
+= ₹800
+</div>
+
+<h3>7.4 Profit and Loss | లాభనష్టాలు</h3>
+
+<p>Percentage is used to calculate profit and loss relative to cost price.</p>
+
+<div class="formula">
+Profit = Selling Price − Cost Price
+
+<br><br>
+Profit % = (Profit / Cost Price) × 100
+
+<br><br>
+Loss = Cost Price − Selling Price
+
+<br><br>
+Loss % = (Loss / Cost Price) × 100
+</div>
+
+<div class="example">
+Cost Price = ₹500
+
+<br>
+Selling Price = ₹600
+
+<br><br>
+Profit = 600 − 500 = ₹100
+
+<br>
+Profit % = (100/500) × 100
+
+<br>
+= 20%
+</div>
+
+<h3>7.5 Simple Interest | సాధారణ వడ్డీ</h3>
+
+<div class="formula">
+SI = (P × R × T)/100
+</div>
+
+<p>P = Principal (అసలు)</p>
+<p>R = Annual Interest Rate (వార్షిక వడ్డీ రేటు)</p>
+<p>T = Time in Years (సంవత్సరాల్లో కాలం)</p>
+
+<div class="example">
+Principal = ₹5,000
+
+<br>
+Rate = 10% per annum
+
+<br>
+Time = 2 years
+
+<br><br>
+SI = (5000 × 10 × 2)/100
+
+<br>
+= ₹1,000
+</div>
+
+<h3>7.6 Salary Increase | జీతం పెరుగుదల</h3>
+
+<div class="example">
+An employee earns ₹20,000. Salary increases by 15%.
+
+<br><br>
+Increase = 20,000 × 15/100
+
+<br>
+= ₹3,000
+
+<br>
+New Salary = ₹23,000
+</div>
+
+<h3>7.7 Election Results | ఎన్నికల ఫలితాలు</h3>
+
+<div class="example">
+A candidate receives 6,000 votes out of 10,000 valid votes.
+
+<br><br>
+Percentage = (6000/10000) × 100
+
+<br>
+= 60%
+
+<br><br>
+<b>Answer: 60%</b>
+</div>
+</section>
+
+<section class="card" id="shortcuts">
+<h2>8. Quick Calculation Shortcuts | వేగవంతమైన గణన పద్ధతులు</h2>
+
+<h3>8.1 Finding 10%</h3>
+<p>Divide the number by 10.</p>
+<p>సంఖ్యను 10తో భాగించాలి.</p>
+
+<div class="example">
+10% of 800 = 80
+</div>
+
+<h3>8.2 Finding 5%</h3>
+<p>Find 10% and divide by 2.</p>
+
+<div class="example">
+5% of 600
+
+<br>
+10% = 60
+
+<br>
+5% = 60/2 = 30
+</div>
+
+<h3>8.3 Finding 1%</h3>
+<p>Divide the number by 100.</p>
+
+<div class="example">
+1% of 900 = 9
+</div>
+
+<h3>8.4 Finding 25%</h3>
+<p>Divide the number by 4.</p>
+
+<div class="example">
+25% of 800 = 800/4 = 200
+</div>
+
+<h3>8.5 Finding 50%</h3>
+<p>Divide the number by 2.</p>
+
+<div class="example">
+50% of 760 = 380
+</div>
+
+<h3>8.6 Finding 75%</h3>
+<p>Find 3/4 of the number.</p>
+
+<div class="example">
+75% of 400
+
+<br>
+= 400 × 3/4
+
+<br>
+= 300
+</div>
+
+<h3>8.7 Finding 20%</h3>
+<p>Divide the number by 5.</p>
+
+<div class="example">
+20% of 350 = 70
+</div>
+
+<h3>8.8 Finding 12.5%</h3>
+<p>Divide the number by 8.</p>
+
+<div class="example">
+12.5% of 800 = 100
+</div>
+
+<h3>8.9 Finding 2.5%</h3>
+<p>Divide the number by 40.</p>
+
+<div class="example">
+2.5% of 800 = 20
+</div>
+
+<h3>8.10 Important Shortcuts Table</h3>
+
+<table>
+<tr><th>Percentage</th><th>Shortcut</th></tr>
+<tr><td>1%</td><td>Divide by 100</td></tr>
+<tr><td>2%</td><td>Divide by 50</td></tr>
+<tr><td>2.5%</td><td>Divide by 40</td></tr>
+<tr><td>4%</td><td>Divide by 25</td></tr>
+<tr><td>5%</td><td>Divide by 20</td></tr>
+<tr><td>10%</td><td>Divide by 10</td></tr>
+<tr><td>12.5%</td><td>Divide by 8</td></tr>
+<tr><td>20%</td><td>Divide by 5</td></tr>
+<tr><td>25%</td><td>Divide by 4</td></tr>
+<tr><td>50%</td><td>Divide by 2</td></tr>
+<tr><td>75%</td><td>Multiply by 3/4</td></tr>
+</table>
+
+<div class="note">
+These shortcuts are useful for quick mental calculations in competitive examinations.
+</div>
+</section>
+
+<section class="card" id="examples">
+<h2>9. Solved Practice Examples | సాధించిన సమస్యలు</h2>
+
+<h3>Example 1</h3>
+<div class="example">
+Find 35% of 400.
+
+<br><br>
+= (35 × 400)/100
+
+<br>
+= 140
+
+<br><br>
+<b>Answer: 140</b>
+</div>
+
+<h3>Example 2</h3>
+<div class="example">
+60 is what percentage of 240?
+
+<br><br>
+= (60/240) × 100
+
+<br>
+= 25%
+
+<br><br>
+<b>Answer: 25%</b>
+</div>
+
+<h3>Example 3</h3>
+<div class="example">
+20% of a number is 80. Find the number.
+
+<br><br>
+= (80 × 100)/20
+
+<br>
+= 400
+
+<br><br>
+<b>Answer: 400</b>
+</div>
+
+<h3>Example 4</h3>
+<div class="example">
+A price increases from ₹400 to ₹500. Find the increase percentage.
+
+<br><br>
+Increase = 100
+
+<br>
+Percentage = (100/400) × 100
+
+<br>
+= 25%
+
+<br><br>
+<b>Answer: 25%</b>
+</div>
+
+<h3>Example 5</h3>
+<div class="example">
+A price decreases from ₹800 to ₹680. Find the decrease percentage.
+
+<br><br>
+Decrease = 120
+
+<br>
+Percentage = (120/800) × 100
+
+<br>
+= 15%
+
+<br><br>
+<b>Answer: 15%</b>
+</div>
+
+<h3>Example 6</h3>
+<div class="example">
+A student gets 360 marks out of 450. Find the percentage.
+
+<br><br>
+= (360/450) × 100
+
+<br>
+= 80%
+
+<br><br>
+<b>Answer: 80%</b>
+</div>
+
+<h3>Example 7</h3>
+<div class="example">
+A population of 10,000 increases by 10%. Find the new population.
+
+<br><br>
+Increase = 1,000
+
+<br>
+New population = 11,000
+
+<br><br>
+<b>Answer: 11,000</b>
+</div>
+
+<h3>Example 8</h3>
+<div class="example">
+A number is increased by 20% and then decreased by 10%. Find the net change.
+
+<br><br>
+Net Change = 20 − 10 − (20 × 10)/100
+
+<br>
+= 8%
+
+<br><br>
+<b>Answer: 8% increase</b>
+</div>
+
+<h3>Example 9</h3>
+<div class="example">
+Find 12.5% of 640.
+
+<br><br>
+= 640/8
+
+<br>
+= 80
+
+<br><br>
+<b>Answer: 80</b>
+</div>
+
+<h3>Example 10</h3>
+<div class="example">
+A shop offers 25% discount on an item marked at ₹2,000. Find the selling price.
+
+<br><br>
+Discount = 2000 × 25/100
+
+<br>
+= ₹500
+
+<br>
+Selling Price = 2000 − 500
+
+<br>
+= ₹1,500
+
+<br><br>
+<b>Answer: ₹1,500</b>
+</div>
+</section>
+
+<section class="card">
+<h2>10. Important Formulas | ముఖ్యమైన సూత్రాలు</h2>
+
+<table>
+<tr><th>Topic</th><th>Formula</th></tr>
+<tr><td>Percentage</td><td>(Part / Whole) × 100</td></tr>
+<tr><td>Percentage of Number</td><td>(x/100) × Number</td></tr>
+<tr><td>Whole Quantity</td><td>(Part × 100)/Percentage</td></tr>
+<tr><td>Percentage Increase</td><td>(Increase / Original) × 100</td></tr>
+<tr><td>Percentage Decrease</td><td>(Decrease / Original) × 100</td></tr>
+<tr><td>New Value after Increase</td><td>Original × (1 + r/100)</td></tr>
+<tr><td>New Value after Decrease</td><td>Original × (1 − r/100)</td></tr>
+<tr><td>Two Successive Increases</td><td>a + b + ab/100</td></tr>
+<tr><td>Two Successive Decreases</td><td>a + b − ab/100</td></tr>
+<tr><td>Discount</td><td>MP − SP</td></tr>
+<tr><td>Discount Percentage</td><td>(Discount / MP) × 100</td></tr>
+<tr><td>Profit Percentage</td><td>(Profit / CP) × 100</td></tr>
+<tr><td>Loss Percentage</td><td>(Loss / CP) × 100</td></tr>
+<tr><td>Simple Interest</td><td>(P × R × T)/100</td></tr>
+</table>
+
+<p class="muted">MP = Marked Price; SP = Selling Price; CP = Cost Price; P = Principal; R = Annual Rate; T = Time in years.</p>
+</section>
+
+<section class="card">
+<h2>11. Important Vocabulary | ముఖ్యమైన పదజాలం</h2>
+
+<table>
+<tr><th>English</th><th>తెలుగు</th></tr>
+<tr><td>Percentage</td><td>శాతం</td></tr>
+<tr><td>Per Hundred</td><td>ప్రతి వందకు</td></tr>
+<tr><td>Fraction</td><td>భిన్నం</td></tr>
+<tr><td>Decimal</td><td>దశాంశం</td></tr>
+<tr><td>Increase</td><td>పెరుగుదల</td></tr>
+<tr><td>Decrease</td><td>తగ్గుదల</td></tr>
+<tr><td>Original Value</td><td>అసలు విలువ</td></tr>
+<tr><td>New Value</td><td>కొత్త విలువ</td></tr>
+<tr><td>Discount</td><td>తగ్గింపు</td></tr>
+<tr><td>Marked Price</td><td>గుర్తించిన ధర</td></tr>
+<tr><td>Selling Price</td><td>అమ్మకపు ధర</td></tr>
+<tr><td>Cost Price</td><td>కొనుగోలు ధర</td></tr>
+<tr><td>Profit</td><td>లాభం</td></tr>
+<tr><td>Loss</td><td>నష్టం</td></tr>
+<tr><td>Interest</td><td>వడ్డీ</td></tr>
+<tr><td>Population</td><td>జనాభా</td></tr>
+<tr><td>Successive Change</td><td>వరుస మార్పు</td></tr>
+<tr><td>Ratio</td><td>నిష్పత్తి</td></tr>
+<tr><td>Proportion</td><td>అనుపాతం</td></tr>
+<tr><td>Expenditure</td><td>ఖర్చు</td></tr>
+<tr><td>Income</td><td>ఆదాయం</td></tr>
+</table>
+</section>
+
+<section class="card" id="quiz">
+<h2>12. Practice Test – 50 MCQs</h2>
+
+<p>Choose the correct answer. Each question has one correct option. Your score will be calculated automatically.</p>
+<p lang="te">ప్రతి ప్రశ్నకు సరైన సమాధానాన్ని ఎంచుకోండి. చివరలో మీ స్కోర్ కనిపిస్తుంది.</p>
+
+<div id="quizStatus">
+<b id="progressText">Answered: 0 / 50</b>
+<span style="float:right" id="scoreLive">Correct: 0</span>
+<div class="progress"><span id="progressBar"></span></div>
+</div>
+
+<div id="questions"></div>
+
+<div id="result">
+<h3>Test Result | పరీక్ష ఫలితం</h3>
+<p id="scoreText"></p>
+<p id="remark"></p>
+<button onclick="resetQuiz()">Try Again | మళ్లీ ప్రయత్నించండి</button>
+</div>
+</section>
+
+<section class="card">
+<h2>13. Chapter Completion Checklist</h2>
+<ul>
+<li>Introduction to Percentage</li>
+<li>Basic percentage formulas</li>
+<li>Fraction to percentage conversions</li>
+<li>Decimal to percentage conversions</li>
+<li>Percentage calculations</li>
+<li>Percentage increase and decrease</li>
+<li>Successive percentage changes</li>
+<li>Discount and profit and loss applications</li>
+<li>Population and salary calculations</li>
+<li>Quick calculation shortcuts</li>
+<li>Solved practice examples</li>
+<li>Important formulas and vocabulary</li>
+<li>50 Interactive MCQs</li>
+</ul>
+
+<div class="note">
+<b>Study Advice:</b> Learn the conversion table first, practise percentage calculations, then solve increase, decrease and successive percentage problems. Attempt all 50 MCQs without referring to the notes.
+
+<br><br>
+<b>తెలుగు:</b> ముందుగా భిన్నాలు, దశాంశాలు, శాతాల మార్పిడులను నేర్చుకోండి. తర్వాత పెరుగుదల, తగ్గుదల సమస్యలను సాధన చేసి చివరగా 50 MCQs ప్రయత్నించండి.
+</div>
+</section>
+
+<section class="card">
+<h2>14. Chapter Navigation</h2>
+<div class="two">
+<div><a href="./02-simplification.html">← Previous: Simplification</a></div>
+<div><a href="./04-profit-and-loss.html">Next: Profit and Loss →</a></div>
+</div>
+<p class="muted">The next chapter link will work after the corresponding file is created.</p>
+</section>
+
+</main>
+
+<footer>
+<strong>RETRY IN LIBRARY</strong>
+<p>LEARN AGAIN. TRY AGAIN. SUCCEED.</p>
+<p>Mathematics | Chapter 03 – Percentage</p>
+<p>Independent educational platform. Not affiliated with any government recruitment authority.</p>
+</footer>
+
+<script>
+"use strict";
+
+const mcqs = [
+{
+q:"What does percentage mean?",
+o:["Per ten","Per hundred","Per thousand","Per million"],
+a:1,e:"Percentage means per hundred. It is represented by the symbol %."
+},
+{
+q:"What is 25% of 200?",
+o:["25","40","50","75"],
+a:2,e:"25% of 200 = (25/100) × 200 = 50."
+},
+{
+q:"Convert 1/2 into percentage.",
+o:["25%","40%","50%","75%"],
+a:2,e:"(1/2) × 100 = 50%."
+},
+{
+q:"Convert 3/4 into percentage.",
+o:["25%","50%","75%","80%"],
+a:2,e:"(3/4) × 100 = 75%."
+},
+{
+q:"Convert 0.6 into percentage.",
+o:["6%","16%","60%","600%"],
+a:2,e:"0.6 × 100 = 60%."
+},
+{
+q:"Convert 45% into a decimal.",
+o:["4.5","0.45","0.045","45"],
+a:1,e:"45 ÷ 100 = 0.45."
+},
+{
+q:"Convert 40% into its simplest fraction.",
+o:["2/5","3/5","4/5","1/5"],
+a:0,e:"40/100 = 2/5 after dividing by 20."
+},
+{
+q:"What is 10% of 750?",
+o:["50","65","75","85"],
+a:2,e:"750 ÷ 10 = 75."
+},
+{
+q:"What is 5% of 600?",
+o:["20","25","30","35"],
+a:2,e:"5% of 600 = 600 × 5/100 = 30."
+},
+{
+q:"What is 20% of 450?",
+o:["80","90","100","110"],
+a:1,e:"450 ÷ 5 = 90."
+},
+{
+q:"What is 50% of 840?",
+o:["320","400","420","440"],
+a:2,e:"50% means half. 840 ÷ 2 = 420."
+},
+{
+q:"What is 25% of 800?",
+o:["100","150","200","250"],
+a:2,e:"25% is one-fourth. 800 ÷ 4 = 200."
+},
+{
+q:"What is 12.5% of 640?",
+o:["60","70","80","90"],
+a:2,e:"12.5% = 1/8. Therefore 640 ÷ 8 = 80."
+},
+{
+q:"40 is what percentage of 200?",
+o:["10%","20%","25%","40%"],
+a:1,e:"(40/200) × 100 = 20%."
+},
+{
+q:"60 is what percentage of 240?",
+o:["20%","25%","30%","40%"],
+a:1,e:"(60/240) × 100 = 25%."
+},
+{
+q:"30% of a number is 90. Find the number.",
+o:["200","250","300","350"],
+a:2,e:"Number = (90 × 100)/30 = 300."
+},
+{
+q:"A student scores 360 out of 450. Find the percentage.",
+o:["70%","75%","80%","85%"],
+a:2,e:"(360/450) × 100 = 80%."
+},
+{
+q:"A student scores 72 out of 90. What is the percentage?",
+o:["70%","75%","80%","90%"],
+a:2,e:"(72/90) × 100 = 80%."
+},
+{
+q:"A number increases from 200 to 250. Find the percentage increase.",
+o:["20%","25%","30%","50%"],
+a:1,e:"Increase = 50. Percentage = (50/200) × 100 = 25%."
+},
+{
+q:"A price decreases from 500 to 400. Find the percentage decrease.",
+o:["10%","15%","20%","25%"],
+a:2,e:"Decrease = 100. Percentage = (100/500) × 100 = 20%."
+},
+{
+q:"A salary of ₹10,000 increases by 10%. What is the new salary?",
+o:["₹10,500","₹11,000","₹11,500","₹12,000"],
+a:1,e:"10% of ₹10,000 = ₹1,000. New salary = ₹11,000."
+},
+{
+q:"A price of ₹800 decreases by 15%. Find the new price.",
+o:["₹640","₹660","₹680","₹700"],
+a:2,e:"15% of 800 = 120. New price = 800 − 120 = 680."
+},
+{
+q:"A value increases by 10% and then by 20%. Find the net increase.",
+o:["28%","30%","32%","35%"],
+a:2,e:"Net increase = 10 + 20 + (10 × 20)/100 = 32%."
+},
+{
+q:"A value decreases by 10% and then by 20%. Find the net decrease.",
+o:["25%","28%","30%","32%"],
+a:1,e:"Net decrease = 10 + 20 − (10 × 20)/100 = 28%."
+},
+{
+q:"A value increases by 20% and then decreases by 10%. Find the net change.",
+o:["6% increase","8% increase","10% increase","12% decrease"],
+a:1,e:"Net change = 20 − 10 − 2 = 8% increase."
+},
+{
+q:"A value increases by 10% and then decreases by 10%. What is the net change?",
+o:["No change","1% increase","1% decrease","2% decrease"],
+a:2,e:"100 × 1.10 × 0.90 = 99. This is a 1% decrease."
+},
+{
+q:"What percentage is 1/4?",
+o:["20%","25%","40%","50%"],
+a:1,e:"(1/4) × 100 = 25%."
+},
+{
+q:"What is 75% of 400?",
+o:["200","250","300","350"],
+a:2,e:"75% = 3/4. Therefore 400 × 3/4 = 300."
+},
+{
+q:"What is 2.5% of 800?",
+o:["10","15","20","25"],
+a:2,e:"2.5% = 1/40. 800 ÷ 40 = 20."
+},
+{
+q:"What is 1% of 900?",
+o:["9","10","90","99"],
+a:0,e:"900 ÷ 100 = 9."
+},
+{
+q:"A class has 40 students, of whom 24 are boys. What percentage are boys?",
+o:["40%","50%","60%","70%"],
+a:2,e:"(24/40) × 100 = 60%."
+},
+{
+q:"A town has a population of 20,000. It increases by 5%. Find the new population.",
+o:["20,500","21,000","21,500","22,000"],
+a:1,e:"5% of 20,000 = 1,000. New population = 21,000."
+},
+{
+q:"The marked price is ₹1,000 and discount is 20%. Find the selling price.",
+o:["₹700","₹750","₹800","₹850"],
+a:2,e:"Discount = ₹200. Selling price = ₹1,000 − ₹200 = ₹800."
+},
+{
+q:"An item costs ₹500 and is sold for ₹600. Find the profit percentage.",
+o:["10%","15%","20%","25%"],
+a:2,e:"Profit = 100. Profit percentage = (100/500) × 100 = 20%."
+},
+{
+q:"An item costs ₹800 and is sold for ₹720. Find the loss percentage.",
+o:["5%","10%","15%","20%"],
+a:1,e:"Loss = 80. Loss percentage = (80/800) × 100 = 10%."
+},
+{
+q:"What is the simple interest on ₹5,000 at 10% per annum for 2 years?",
+o:["₹500","₹750","₹1,000","₹1,500"],
+a:2,e:"SI = (5000 × 10 × 2)/100 = ₹1,000."
+},
+{
+q:"Convert 0.25 into percentage.",
+o:["2.5%","20%","25%","250%"],
+a:2,e:"0.25 × 100 = 25%."
+},
+{
+q:"Convert 12.5% into a fraction.",
+o:["1/4","1/5","1/8","1/10"],
+a:2,e:"12.5/100 = 125/1000 = 1/8."
+},
+{
+q:"What is 33⅓% of 300?",
+o:["50","75","100","150"],
+a:2,e:"33⅓% = 1/3. One-third of 300 = 100."
+},
+{
+q:"What is 66⅔% of 150?",
+o:["75","90","100","125"],
+a:2,e:"66⅔% = 2/3. Therefore 150 × 2/3 = 100."
+},
+{
+q:"A number is reduced by 25% and becomes 300. Find the original number.",
+o:["350","375","400","450"],
+a:2,e:"75% of original = 300. Original = 300 × 100/75 = 400."
+},
+{
+q:"If 40% of a number is 160, find the number.",
+o:["300","350","400","450"],
+a:2,e:"Number = (160 × 100)/40 = 400."
+},
+{
+q:"A person spends 30% of their income. What percentage remains?",
+o:["30%","50%","60%","70%"],
+a:3,e:"Remaining percentage = 100 − 30 = 70%."
+},
+{
+q:"A candidate gets 6,000 votes out of 10,000. Find the vote percentage.",
+o:["40%","50%","60%","70%"],
+a:2,e:"(6000/10000) × 100 = 60%."
+},
+{
+q:"A price of ₹2,000 receives a 25% discount. Find the discount amount.",
+o:["₹250","₹400","₹500","₹750"],
+a:2,e:"Discount = 2000 × 25/100 = ₹500."
+},
+{
+q:"What is 15% of 800?",
+o:["100","110","120","130"],
+a:2,e:"800 × 15/100 = 120."
+},
+{
+q:"What is 4% of 750?",
+o:["20","25","30","35"],
+a:2,e:"750 × 4/100 = 30."
+},
+{
+q:"A number is increased from 400 to 500. What is the new value as a percentage of the original?",
+o:["100%","110%","125%","150%"],
+a:2,e:"(500/400) × 100 = 125%."
+},
+{
+q:"If 20% of x = 60, what is x?",
+o:["200","250","300","350"],
+a:2,e:"x = 60 × 100/20 = 300."
+},
+{
+q:"What is 37.5% of 800?",
+o:["250","275","300","325"],
+a:2,e:"37.5% = 3/8. Therefore 800 × 3/8 = 300."
+}
+];
+
+let answered=0;
+let correct=0;
+
+const questionsEl=document.getElementById("questions");
+
+function renderQuiz(){
+
+questionsEl.innerHTML="";
+
+mcqs.forEach((item,index)=>{
+
+const box=document.createElement("div");
+box.className="quiz-question";
+
+const title=document.createElement("div");
+title.className="q-title";
+title.textContent=(index+1)+". "+item.q;
+
+box.appendChild(title);
+
+const feedback=document.createElement("div");
+feedback.className="feedback";
+feedback.setAttribute("aria-live","polite");
+
+item.o.forEach((option,optionIndex)=>{
+
+const btn=document.createElement("button");
+btn.type="button";
+btn.className="option";
+btn.textContent=String.fromCharCode(65+optionIndex)+". "+option;
+
+btn.addEventListener("click",()=>{
+
+if(box.dataset.answered==="yes")return;
+
+box.dataset.answered="yes";
+answered++;
+
+if(optionIndex===item.a){
+
+correct++;
+btn.classList.add("correct");
+feedback.style.color="#187443";
+feedback.textContent="Correct! ✓ "+item.e;
+
+}else{
+
+btn.classList.add("wrong");
+box.querySelectorAll(".option")[item.a].classList.add("correct");
+feedback.style.color="#a12b24";
+feedback.textContent="Incorrect. Correct answer: "+item.o[item.a]+". "+item.e;
+
+}
+
+box.querySelectorAll("button").forEach(b=>{
+b.disabled=true;
+});
+
+updateProgress();
+
+});
+
+box.appendChild(btn);
+
+});
+
+box.appendChild(feedback);
+questionsEl.appendChild(box);
+
+});
+
+}
+
+function updateProgress(){
+
+document.getElementById("progressText").textContent=
+"Answered: "+answered+" / "+mcqs.length;
+
+document.getElementById("scoreLive").textContent=
+"Correct: "+correct;
+
+document.getElementById("progressBar").style.width=
+(answered/mcqs.length*100)+"%";
+
+if(answered===mcqs.length){
+
+const percent=Math.round(correct/mcqs.length*100);
+
+document.getElementById("scoreText").textContent=
+"Your score: "+correct+" / "+mcqs.length+" ("+percent+"%)";
+
+document.getElementById("remark").textContent=
+percent>=80
+?"Excellent performance! Keep practising."
+:percent>=60
+?"Good effort. Revise the explanations and try again."
+:"Keep learning. Review the chapter and attempt the test again.";
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("result").scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+}
+
+}
+
+function resetQuiz(){
+
+answered=0;
+correct=0;
+
+document.getElementById("result").style.display="none";
+
+updateProgress();
+renderQuiz();
+
+document.getElementById("quiz").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+renderQuiz();
+updateProgress();
+
+</script>
+</body>
+</html>
