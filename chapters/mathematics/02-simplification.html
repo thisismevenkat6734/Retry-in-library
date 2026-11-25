@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Simplification complete Telugu and English Mathematics notes, BODMAS rules, fractions, decimals, powers, solved examples and 50 interactive MCQs for competitive examinations.">
+<title>Simplification | RETRY IN LIBRARY</title>
+
+<style>
+:root{
+--saffron:#f28c28;
+--deep:#a94708;
+--pale:#fff0dc;
+--bg:#fff8ef;
+--ink:#30251c;
+--muted:#6d6258;
+--green:#187443;
+--red:#bd3030;
+--line:#edcfad;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;background:var(--bg);color:var(--ink);
+font-family:Arial,Helvetica,sans-serif;line-height:1.7
+}
+header{
+background:linear-gradient(135deg,#ffb347,#e66c13);
+color:white;text-align:center;padding:27px 15px
+}
+.brand{font-size:13px;letter-spacing:2px;font-weight:bold}
+header h1{font-size:29px;margin:8px 0}
+header p{margin:3px}
+.tagline{font-size:11px;letter-spacing:1px;margin-top:8px}
+nav{
+position:sticky;top:0;z-index:5;background:#fff;
+display:flex;gap:8px;overflow-x:auto;padding:10px;
+border-bottom:1px solid var(--line)
+}
+nav a{
+white-space:nowrap;text-decoration:none;color:var(--deep);
+font-size:13px;font-weight:bold;background:var(--pale);
+padding:7px 11px;border-radius:20px
+}
+.container{max-width:950px;width:94%;margin:22px auto 45px}
+.card{
+background:#fff;border:1px solid var(--line);
+border-radius:13px;padding:18px;margin:15px 0;
+box-shadow:0 3px 12px #78400b0b
+}
+h2{
+color:var(--deep);font-size:22px;
+border-bottom:2px solid #f6d6b2;padding-bottom:7px
+}
+h3{color:#b45712;font-size:18px;margin-top:22px}
+h4{margin-bottom:5px;color:#74400f}
+p{margin:8px 0}
+li{margin:5px 0}
+.tag{
+display:inline-block;background:var(--pale);color:var(--deep);
+padding:4px 9px;border-radius:15px;font-size:12px;
+font-weight:bold;margin:3px
+}
+.note{
+background:#fff4e5;border-left:4px solid var(--saffron);
+padding:12px 14px;border-radius:6px;margin:12px 0
+}
+.example{
+background:#f7fbff;border-left:4px solid #4085b9;
+padding:12px 14px;border-radius:6px;margin:12px 0
+}
+.warning{
+background:#fff0ef;border-left:4px solid var(--red);
+padding:12px 14px;border-radius:6px;margin:12px 0
+}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px;text-align:left}
+th{background:var(--pale);color:var(--deep)}
+.formula{
+background:#fff7eb;padding:12px;border-radius:8px;
+font-weight:bold;color:#813d08;overflow-wrap:anywhere
+}
+button{
+background:var(--saffron);color:#fff;border:0;
+border-radius:8px;padding:10px 15px;font-weight:bold;cursor:pointer
+}
+button:hover{background:var(--deep)}
+button:disabled{opacity:.65;cursor:not-allowed}
+.quiz-question{
+border:1px solid var(--line);padding:14px;
+border-radius:10px;margin:13px 0;background:#fff
+}
+.q-title{font-weight:bold;margin-bottom:10px}
+.option{
+display:block;width:100%;text-align:left;background:#fff8ef;
+color:var(--ink);border:1px solid #e8cba9;
+margin:7px 0;padding:10px;border-radius:7px;font-weight:normal
+}
+.option:hover:not(:disabled){background:#ffebd3}
+.option.correct{background:#e4f6eb;border-color:var(--green);color:#125c35}
+.option.wrong{background:#ffe7e5;border-color:var(--red);color:#922323}
+.feedback{font-size:14px;margin-top:8px;font-weight:bold}
+.muted{color:var(--muted);font-size:13px}
+#quizStatus{
+position:sticky;top:49px;background:#fff;
+border:1px solid var(--line);padding:10px;
+border-radius:8px;z-index:3
+}
+.progress{
+height:9px;background:#f2dfca;
+border-radius:10px;overflow:hidden;margin-top:8px
+}
+.progress span{
+display:block;height:100%;width:0;
+background:var(--saffron);transition:width .2s
+}
+#result{
+display:none;background:#fff4e5;border:2px solid var(--saffron);
+border-radius:12px;padding:18px;margin:15px 0
+}
+footer{
+text-align:center;background:#39271b;color:#fff;
+padding:22px 12px;font-size:13px
+}
+footer strong{color:#ffb76d}
+@media(min-width:700px){
+.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+header h1{font-size:36px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="brand">RETRY IN LIBRARY</div>
+<h1>Simplification</h1>
+<p>సరళీకరణ</p>
+<div class="tagline">LEARN AGAIN. TRY AGAIN. SUCCEED.</div>
+<p>
+<span class="tag">MATHEMATICS</span>
+<span class="tag">CHAPTER 02</span>
+<span class="tag">TELUGU + ENGLISH</span>
+</p>
+</header>
+
+<nav>
+<a href="#intro">Introduction</a>
+<a href="#bodmas">BODMAS</a>
+<a href="#operations">Operations</a>
+<a href="#fractions">Fractions</a>
+<a href="#decimals">Decimals</a>
+<a href="#powers">Powers</a>
+<a href="#roots">Roots</a>
+<a href="#examples">Examples</a>
+<a href="#shortcuts">Shortcuts</a>
+<a href="#quiz">50 MCQs</a>
+</nav>
+
+<main class="container">
+
+<!-- INTRODUCTION -->
+
+<section class="card" id="intro">
+<h2>1. Introduction to Simplification | సరళీకరణ పరిచయం</h2>
+
+<p><b>English:</b> Simplification is the process of reducing a mathematical expression into its simplest form by performing arithmetic operations in the correct order.</p>
+
+<p><b>తెలుగు:</b> ఒక గణిత వ్యక్తీకరణలో ఉన్న కూడిక, తీసివేత, గుణకారం, భాగహారం వంటి క్రియలను సరైన క్రమంలో చేసి సులభమైన రూపంలోకి మార్చడాన్ని సరళీకరణ అంటారు.</p>
+
+<div class="note">
+<b>Exam Importance:</b>
+Simplification is an important topic in competitive examinations. Questions generally involve BODMAS, fractions, decimals, percentages, powers, square roots and arithmetic operations.
+<br>
+<b>తెలుగు:</b> పోటీ పరీక్షల్లో సరళీకరణ ప్రశ్నలు సాధారణంగా BODMAS, భిన్నాలు, దశాంశాలు, శాతాలు, ఘాతాలు మరియు వర్గమూలాలపై ఉంటాయి.
+</div>
+
+<h3>Basic Mathematical Operations | ప్రాథమిక గణిత క్రియలు</h3>
+
+<table>
+<tr><th>Symbol</th><th>Operation</th><th>తెలుగు అర్థం</th></tr>
+<tr><td>+</td><td>Addition</td><td>కూడిక</td></tr>
+<tr><td>−</td><td>Subtraction</td><td>తీసివేత</td></tr>
+<tr><td>×</td><td>Multiplication</td><td>గుణకారం</td></tr>
+<tr><td>÷</td><td>Division</td><td>భాగహారం</td></tr>
+<tr><td>( )</td><td>Parentheses</td><td>కుండలీకరణాలు</td></tr>
+<tr><td>[ ]</td><td>Square Brackets</td><td>బ్రాకెట్లు</td></tr>
+<tr><td>{ }</td><td>Curly Brackets</td><td>పూల బ్రాకెట్లు</td></tr>
+<tr><td>√</td><td>Square Root</td><td>వర్గమూలం</td></tr>
+<tr><td>³√</td><td>Cube Root</td><td>ఘనమూలం</td></tr>
+</table>
+
+<h3>Why Simplification is Important | సరళీకరణ ప్రాముఖ్యత</h3>
+<ul>
+<li>Improves calculation speed – గణన వేగాన్ని పెంచుతుంది.</li>
+<li>Improves accuracy – ఖచ్చితత్వాన్ని పెంచుతుంది.</li>
+<li>Helps solve aptitude questions – ఆప్టిట్యూడ్ ప్రశ్నలకు ఉపయోగపడుతుంది.</li>
+<li>Forms the foundation for arithmetic – అంకగణితానికి పునాది.</li>
+<li>Useful in APPSC, TSPSC, SSC, Banking and other exams.</li>
+</ul>
+</section>
+
+<!-- BODMAS -->
+
+<section class="card" id="bodmas">
+<h2>2. BODMAS Rule | బోడ్మాస్ నియమం</h2>
+
+<p><b>English:</b> BODMAS is a rule that determines the order in which mathematical operations must be performed in an expression.</p>
+
+<p><b>తెలుగు:</b> ఒక గణిత వ్యక్తీకరణలో ఏ క్రియను ముందుగా, ఏ క్రియను తర్వాత చేయాలో తెలియజేసే నియమాన్ని BODMAS అంటారు.</p>
+
+<div class="formula">
+B – Brackets<br>
+O – Orders (Powers and Roots)<br>
+D – Division<br>
+M – Multiplication<br>
+A – Addition<br>
+S – Subtraction
+</div>
+
+<h3>Order of Operations | క్రియల క్రమం</h3>
+
+<table>
+<tr><th>Order</th><th>Operation</th><th>తెలుగు</th></tr>
+<tr><td>1</td><td>Brackets</td><td>కుండలీకరణాలు</td></tr>
+<tr><td>2</td><td>Orders / Powers / Roots</td><td>ఘాతాలు / మూలాలు</td></tr>
+<tr><td>3</td><td>Division and Multiplication</td><td>భాగహారం మరియు గుణకారం</td></tr>
+<tr><td>4</td><td>Addition and Subtraction</td><td>కూడిక మరియు తీసివేత</td></tr>
+</table>
+
+<div class="warning">
+<b>Important Exam Rule:</b>
+Division and Multiplication have equal priority. Perform them from LEFT TO RIGHT.
+Addition and Subtraction also have equal priority. Perform them from LEFT TO RIGHT.
+<br>
+<b>తెలుగు:</b> భాగహారం, గుణకారం రెండింటికీ సమాన ప్రాధాన్యత ఉంటుంది. ఎడమ నుంచి కుడికి చేయాలి. కూడిక, తీసివేతలకు కూడా ఇదే నియమం వర్తిస్తుంది.
+</div>
+
+<h3>Example 1</h3>
+<div class="example">
+<b>Question:</b> 20 + 5 × 4
+
+<br><br>
+Step 1: Multiplication first.<br>
+5 × 4 = 20
+
+<br>
+Step 2: Addition.<br>
+20 + 20 = 40
+
+<br><br>
+<b>Answer = 40</b>
+</div>
+
+<h3>Example 2</h3>
+<div class="example">
+<b>Question:</b> 48 ÷ 6 × 2
+
+<br><br>
+Both division and multiplication have equal priority.
+
+<br>
+48 ÷ 6 = 8<br>
+8 × 2 = 16
+
+<br><br>
+<b>Answer = 16</b>
+</div>
+
+<h3>Example 3</h3>
+<div class="example">
+<b>Question:</b> 100 − 20 ÷ 5 + 6 × 2
+
+<br><br>
+20 ÷ 5 = 4<br>
+6 × 2 = 12<br>
+100 − 4 + 12<br>
+96 + 12 = 108
+
+<br><br>
+<b>Answer = 108</b>
+</div>
+
+<h3>Example 4 – Brackets</h3>
+<div class="example">
+<b>Question:</b> 5 × (12 + 8) ÷ 4
+
+<br><br>
+First bracket: 12 + 8 = 20<br>
+5 × 20 ÷ 4<br>
+100 ÷ 4 = 25
+
+<br><br>
+<b>Answer = 25</b>
+</div>
+
+<h3>Different Types of Brackets | బ్రాకెట్ల రకాలు</h3>
+<table>
+<tr><th>Bracket</th><th>Name</th><th>తెలుగు</th></tr>
+<tr><td>( )</td><td>Parentheses</td><td>చిన్న కుండలీకరణాలు</td></tr>
+<tr><td>[ ]</td><td>Square Brackets</td><td>చతురస్ర బ్రాకెట్లు</td></tr>
+<tr><td>{ }</td><td>Curly Brackets</td><td>పూల బ్రాకెట్లు</td></tr>
+</table>
+
+<div class="note">
+When brackets are nested, simplify the innermost bracket first. లోపలి బ్రాకెట్‌ను ముందుగా పరిష్కరించాలి.
+</div>
+</section>
+
+<!-- OPERATIONS -->
+
+<section class="card" id="operations">
+<h2>3. Fundamental Operations | ప్రాథమిక గణిత క్రియలు</h2>
+
+<h3>3.1 Addition | కూడిక</h3>
+<p>Addition combines two or more quantities to obtain their total.</p>
+<p>రెండు లేదా అంతకంటే ఎక్కువ సంఖ్యలను కలిపి మొత్తం కనుగొనడాన్ని కూడిక అంటారు.</p>
+
+<div class="formula">a + b = Sum</div>
+
+<div class="example">
+25 + 35 + 40 = 100
+
+<br>
+25 + 35 = 60<br>
+60 + 40 = 100
+</div>
+
+<h3>3.2 Subtraction | తీసివేత</h3>
+<p>Subtraction finds the difference between two numbers.</p>
+<p>రెండు సంఖ్యల మధ్య తేడాను కనుగొనడాన్ని తీసివేత అంటారు.</p>
+
+<div class="formula">a − b = Difference</div>
+
+<div class="example">
+95 − 38 = 57
+</div>
+
+<h3>3.3 Multiplication | గుణకారం</h3>
+<p>Multiplication is repeated addition of the same number.</p>
+<p>ఒకే సంఖ్యను పలుమార్లు కూడినట్లుగా చేసే క్రియను గుణకారం అంటారు.</p>
+
+<div class="formula">a × b = Product</div>
+
+<div class="example">
+12 × 5 = 60
+
+<br>
+12 + 12 + 12 + 12 + 12 = 60
+</div>
+
+<h3>3.4 Division | భాగహారం</h3>
+<p>Division means distributing a quantity into equal groups.</p>
+<p>ఒక సంఖ్యను సమాన భాగాలుగా విభజించడాన్ని భాగహారం అంటారు.</p>
+
+<div class="formula">Dividend ÷ Divisor = Quotient</div>
+
+<div class="example">
+84 ÷ 7 = 12
+
+<br>
+84 = Dividend<br>
+7 = Divisor<br>
+12 = Quotient
+</div>
+
+<h3>Sign Rules | ధన, ఋణ సంఖ్యల నియమాలు</h3>
+
+<table>
+<tr><th>Operation</th><th>Result</th></tr>
+<tr><td>(+) × (+)</td><td>Positive (+)</td></tr>
+<tr><td>(−) × (−)</td><td>Positive (+)</td></tr>
+<tr><td>(+) × (−)</td><td>Negative (−)</td></tr>
+<tr><td>(−) × (+)</td><td>Negative (−)</td></tr>
+<tr><td>(+) ÷ (+)</td><td>Positive (+)</td></tr>
+<tr><td>(−) ÷ (−)</td><td>Positive (+)</td></tr>
+<tr><td>(+) ÷ (−)</td><td>Negative (−)</td></tr>
+<tr><td>(−) ÷ (+)</td><td>Negative (−)</td></tr>
+</table>
+
+<h3>Addition of Positive and Negative Numbers</h3>
+
+<div class="example">
+<b>Example 1:</b> 15 + (−8) = 7
+
+<br><br>
+<b>Example 2:</b> −12 + 5 = −7
+
+<br><br>
+<b>Example 3:</b> −10 + (−6) = −16
+</div>
+
+<div class="note">
+<b>Remember:</b> When signs are different, subtract the smaller absolute value from the larger absolute value and retain the sign of the number with the larger absolute value.
+<br>
+<b>తెలుగు:</b> వేర్వేరు గుర్తులు ఉన్నప్పుడు పెద్ద సంపూర్ణ విలువ నుంచి చిన్న సంపూర్ణ విలువను తీసివేసి, పెద్ద సంపూర్ణ విలువ ఉన్న సంఖ్య గుర్తును ఉంచాలి.
+</div>
+</section>
+
+<!-- FRACTIONS -->
+
+<section class="card" id="fractions">
+<h2>4. Fractions | భిన్నాలు</h2>
+
+<p><b>English:</b> A fraction represents a part of a whole. It consists of a numerator and a denominator.</p>
+<p><b>తెలుగు:</b> ఒక సంపూర్ణ వస్తువులోని భాగాన్ని సూచించే సంఖ్యను భిన్నం అంటారు.</p>
+
+<div class="formula">
+Fraction = Numerator / Denominator
+</div>
+
+<p>Numerator = లవం</p>
+<p>Denominator = హారం</p>
+
+<div class="example">
+In 3/5:<br>
+3 = Numerator<br>
+5 = Denominator
+</div>
+
+<h3>4.1 Types of Fractions | భిన్నాల రకాలు</h3>
+
+<table>
+<tr><th>Type</th><th>Meaning</th><th>Example</th></tr>
+<tr><td>Proper Fraction</td><td>Numerator is smaller than denominator</td><td>2/5</td></tr>
+<tr><td>Improper Fraction</td><td>Numerator is equal to or greater than denominator</td><td>7/4</td></tr>
+<tr><td>Mixed Fraction</td><td>Whole number with a fraction</td><td>2 1/3</td></tr>
+<tr><td>Unit Fraction</td><td>Numerator is 1</td><td>1/7</td></tr>
+<tr><td>Equivalent Fractions</td><td>Fractions with equal values</td><td>1/2 = 2/4</td></tr>
+</table>
+
+<h3>4.2 Addition of Fractions | భిన్నాల కూడిక</h3>
+
+<p>When denominators are equal, add the numerators and keep the denominator unchanged.</p>
+
+<div class="example">
+2/7 + 3/7
+
+<br>
+= (2 + 3)/7<br>
+= 5/7
+</div>
+
+<p>When denominators are different, first find the LCM of the denominators.</p>
+
+<div class="example">
+<b>Example:</b> 1/2 + 1/3
+
+<br><br>
+LCM of 2 and 3 = 6
+
+<br>
+= 3/6 + 2/6<br>
+= 5/6
+
+<br><br>
+<b>Answer = 5/6</b>
+</div>
+
+<h3>4.3 Subtraction of Fractions | భిన్నాల తీసివేత</h3>
+
+<div class="example">
+3/4 − 1/4
+
+<br>
+= (3 − 1)/4<br>
+= 2/4<br>
+= 1/2
+</div>
+
+<h3>4.4 Multiplication of Fractions | భిన్నాల గుణకారం</h3>
+
+<div class="formula">
+a/b × c/d = (a × c)/(b × d)
+</div>
+
+<div class="example">
+2/3 × 3/5
+
+<br>
+= 6/15<br>
+= 2/5
+</div>
+
+<h3>4.5 Division of Fractions | భిన్నాల భాగహారం</h3>
+
+<p>To divide by a fraction, multiply by its reciprocal.</p>
+<p>భిన్నంతో భాగించేటప్పుడు రెండవ భిన్నాన్ని విలోమం చేసి గుణించాలి.</p>
+
+<div class="formula">
+a/b ÷ c/d = a/b × d/c
+</div>
+
+<div class="example">
+2/3 ÷ 4/5
+
+<br>
+= 2/3 × 5/4<br>
+= 10/12<br>
+= 5/6
+</div>
+
+<h3>4.6 Simplification of Fractions</h3>
+
+<div class="example">
+Simplify 24/36.
+
+<br><br>
+HCF of 24 and 36 = 12
+
+<br>
+= (24 ÷ 12)/(36 ÷ 12)<br>
+= 2/3
+
+<br><br>
+<b>Answer = 2/3</b>
+</div>
+
+<div class="note">
+<b>Exam Tip:</b> Always reduce the final fraction to its lowest terms when possible.
+<br>
+<b>తెలుగు:</b> చివరి సమాధానాన్ని సాధ్యమైనంత సరళమైన భిన్న రూపంలో రాయాలి.
+</div>
+</section>
+
+<!-- DECIMALS -->
+
+<section class="card" id="decimals">
+<h2>5. Decimals | దశాంశాలు</h2>
+
+<p>A decimal is a number that contains a decimal point. It represents whole numbers and fractional parts.</p>
+<p>దశాంశ బిందువుతో కూడిన సంఖ్యలను దశాంశ సంఖ్యలు అంటారు.</p>
+
+<h3>5.1 Place Values in Decimals</h3>
+
+<table>
+<tr><th>Position</th><th>Example in 25.678</th></tr>
+<tr><td>Ones</td><td>5</td></tr>
+<tr><td>Tenths</td><td>6</td></tr>
+<tr><td>Hundredths</td><td>7</td></tr>
+<tr><td>Thousandths</td><td>8</td></tr>
+</table>
+
+<h3>5.2 Addition of Decimals</h3>
+<div class="example">
+12.50 + 3.25 = 15.75
+
+<br>
+Decimal points must be aligned.
+</div>
+
+<h3>5.3 Subtraction of Decimals</h3>
+<div class="example">
+15.75 − 3.25 = 12.50
+</div>
+
+<h3>5.4 Multiplication of Decimals</h3>
+<div class="example">
+2.5 × 1.2
+
+<br><br>
+25 × 12 = 300
+
+<br>
+There are two total decimal places.
+
+<br>
+Answer = 3.00 = 3
+</div>
+
+<h3>5.5 Division of Decimals</h3>
+<div class="example">
+4.8 ÷ 0.6
+
+<br><br>
+Multiply both numbers by 10.
+
+<br>
+48 ÷ 6 = 8
+
+<br><br>
+<b>Answer = 8</b>
+</div>
+
+<h3>Conversion of Fractions and Decimals</h3>
+
+<table>
+<tr><th>Fraction</th><th>Decimal</th></tr>
+<tr><td>1/2</td><td>0.5</td></tr>
+<tr><td>1/4</td><td>0.25</td></tr>
+<tr><td>3/4</td><td>0.75</td></tr>
+<tr><td>1/5</td><td>0.2</td></tr>
+<tr><td>1/8</td><td>0.125</td></tr>
+<tr><td>1/10</td><td>0.1</td></tr>
+<tr><td>1/20</td><td>0.05</td></tr>
+<tr><td>1/25</td><td>0.04</td></tr>
+</table>
+</section>
+
+<!-- POWERS -->
+
+<section class="card" id="powers">
+<h2>6. Powers and Exponents | ఘాతాలు</h2>
+
+<p>A power represents repeated multiplication of the same number.</p>
+<p>ఒక సంఖ్యను అదే సంఖ్యతో పలుమార్లు గుణించడాన్ని ఘాత రూపంలో సూచిస్తారు.</p>
+
+<div class="formula">
+aⁿ = a × a × a ... (n times)
+</div>
+
+<p>Here:</p>
+<ul>
+<li>a = Base (ఆధారం)</li>
+<li>n = Exponent (ఘాతం)</li>
+</ul>
+
+<div class="example">
+2⁴ = 2 × 2 × 2 × 2 = 16
+
+<br>
+2 is the base.<br>
+4 is the exponent.
+</div>
+
+<h3>Important Laws of Exponents | ఘాతాల నియమాలు</h3>
+
+<table>
+<tr><th>Rule</th><th>Formula</th><th>Example</th></tr>
+<tr><td>Multiplication</td><td>aᵐ × aⁿ = aᵐ⁺ⁿ</td><td>2² × 2³ = 2⁵</td></tr>
+<tr><td>Division</td><td>aᵐ ÷ aⁿ = aᵐ⁻ⁿ</td><td>2⁵ ÷ 2² = 2³</td></tr>
+<tr><td>Power of a power</td><td>(aᵐ)ⁿ = aᵐⁿ</td><td>(2²)³ = 2⁶</td></tr>
+<tr><td>Zero exponent</td><td>a⁰ = 1</td><td>5⁰ = 1</td></tr>
+<tr><td>Negative exponent</td><td>a⁻ⁿ = 1/aⁿ</td><td>2⁻² = 1/4</td></tr>
+<tr><td>Power of product</td><td>(ab)ⁿ = aⁿbⁿ</td><td>(2×3)² = 36</td></tr>
+</table>
+
+<div class="warning">
+For a ≠ 0, a⁰ = 1. The expression 0⁰ is not treated as 1 in ordinary school arithmetic.
+<br>
+a ≠ 0 అయినప్పుడు మాత్రమే a⁰ = 1 అనే సాధారణ ఘాత నియమాన్ని ఉపయోగించాలి.
+</div>
+
+<h3>Examples</h3>
+<div class="example">
+3² × 3³
+
+<br>
+= 3⁵<br>
+= 243
+</div>
+
+<div class="example">
+5⁴ ÷ 5²
+
+<br>
+= 5²<br>
+= 25
+</div>
+
+<div class="example">
+(2³)²
+
+<br>
+= 2⁶<br>
+= 64
+</div>
+</section>
+
+<!-- ROOTS -->
+
+<section class="card" id="roots">
+<h2>7. Square Roots and Cube Roots | వర్గమూలాలు మరియు ఘనమూలాలు</h2>
+
+<h3>7.1 Square Root | వర్గమూలం</h3>
+
+<p>The square root of a number is a value which, when multiplied by itself, gives the original number.</p>
+
+<p>ఒక సంఖ్యను అదే సంఖ్యతో గుణించినప్పుడు ఇచ్చిన సంఖ్య వస్తే, ఆ సంఖ్యను ఇచ్చిన సంఖ్య యొక్క వర్గమూలం అంటారు.</p>
+
+<div class="formula">
+√a = b means b² = a
+</div>
+
+<table>
+<tr><th>Number</th><th>Square Root</th></tr>
+<tr><td>1</td><td>1</td></tr>
+<tr><td>4</td><td>2</td></tr>
+<tr><td>9</td><td>3</td></tr>
+<tr><td>16</td><td>4</td></tr>
+<tr><td>25</td><td>5</td></tr>
+<tr><td>36</td><td>6</td></tr>
+<tr><td>49</td><td>7</td></tr>
+<tr><td>64</td><td>8</td></tr>
+<tr><td>81</td><td>9</td></tr>
+<tr><td>100</td><td>10</td></tr>
+<tr><td>121</td><td>11</td></tr>
+<tr><td>144</td><td>12</td></tr>
+<tr><td>169</td><td>13</td></tr>
+<tr><td>196</td><td>14</td></tr>
+<tr><td>225</td><td>15</td></tr>
+</table>
+
+<div class="example">
+√144 = 12
+
+<br>
+Because 12 × 12 = 144.
+</div>
+
+<h3>7.2 Cube Root | ఘనమూలం</h3>
+
+<p>The cube root of a number is a value which, when multiplied by itself three times, gives the original number.</p>
+
+<p>ఒక సంఖ్యను మూడుసార్లు అదే సంఖ్యతో గుణించినప్పుడు ఇచ్చిన సంఖ్య వస్తే, ఆ సంఖ్యను ఘనమూలం అంటారు.</p>
+
+<div class="formula">
+³√a = b means b³ = a
+</div>
+
+<table>
+<tr><th>Number</th><th>Cube Root</th></tr>
+<tr><td>1</td><td>1</td></tr>
+<tr><td>8</td><td>2</td></tr>
+<tr><td>27</td><td>3</td></tr>
+<tr><td>64</td><td>4</td></tr>
+<tr><td>125</td><td>5</td></tr>
+<tr><td>216</td><td>6</td></tr>
+<tr><td>343</td><td>7</td></tr>
+<tr><td>512</td><td>8</td></tr>
+<tr><td>729</td><td>9</td></tr>
+<tr><td>1000</td><td>10</td></tr>
+</table>
+
+<div class="example">
+³√216 = 6
+
+<br>
+Because 6 × 6 × 6 = 216.
+</div>
+
+<h3>7.3 Important Root Rules</h3>
+<div class="formula">
+√a × √b = √(ab) (for non-negative a and b)
+
+<br><br>
+√a ÷ √b = √(a/b) (for a ≥ 0, b greater than 0)
+
+<br><br>
+√a² = |a|
+</div>
+
+<div class="note">
+Remember: √25 = 5, because the principal square root is non-negative. The solutions of x² = 25 are +5 and −5.
+<br>
+గమనిక: √25 = 5. అయితే x² = 25 సమీకరణానికి +5 మరియు −5 అనే రెండు పరిష్కారాలు ఉంటాయి.
+</div>
+</section>
+
+<!-- EXAMPLES -->
+
+<section class="card" id="examples">
+<h2>8. Solved Examples | సాధించిన సమస్యలు</h2>
+
+<h3>Example 1</h3>
+<div class="example">
+<b>Question:</b> 25 + 15 × 2 − 10
+
+<br><br>
+15 × 2 = 30<br>
+25 + 30 − 10<br>
+55 − 10 = 45
+
+<br><br>
+<b>Answer = 45</b>
+</div>
+
+<h3>Example 2</h3>
+<div class="example">
+<b>Question:</b> 120 ÷ 5 + 8 × 3
+
+<br><br>
+120 ÷ 5 = 24<br>
+8 × 3 = 24<br>
+24 + 24 = 48
+
+<br><br>
+<b>Answer = 48</b>
+</div>
+
+<h3>Example 3</h3>
+<div class="example">
+<b>Question:</b> (45 + 15) ÷ 5 × 2
+
+<br><br>
+Bracket = 60<br>
+60 ÷ 5 × 2<br>
+12 × 2 = 24
+
+<br><br>
+<b>Answer = 24</b>
+</div>
+
+<h3>Example 4</h3>
+<div class="example">
+<b>Question:</b> 3/4 + 1/2
+
+<br><br>
+LCM = 4<br>
+3/4 + 2/4<br>
+= 5/4
+
+<br><br>
+<b>Answer = 5/4 or 1¼</b>
+</div>
+
+<h3>Example 5</h3>
+<div class="example">
+<b>Question:</b> 2.5 + 3.75 − 1.25
+
+<br><br>
+2.5 + 3.75 = 6.25<br>
+6.25 − 1.25 = 5
+
+<br><br>
+<b>Answer = 5</b>
+</div>
+
+<h3>Example 6</h3>
+<div class="example">
+<b>Question:</b> 5² + √64 − 3²
+
+<br><br>
+5² = 25<br>
+√64 = 8<br>
+3² = 9<br>
+25 + 8 − 9 = 24
+
+<br><br>
+<b>Answer = 24</b>
+</div>
+
+<h3>Example 7</h3>
+<div class="example">
+<b>Question:</b> 144 ÷ 12 + 6 × 4
+
+<br><br>
+144 ÷ 12 = 12<br>
+6 × 4 = 24<br>
+12 + 24 = 36
+
+<br><br>
+<b>Answer = 36</b>
+</div>
+
+<h3>Example 8</h3>
+<div class="example">
+<b>Question:</b> 2 × [15 − (6 + 3)]
+
+<br><br>
+Inner bracket = 9<br>
+15 − 9 = 6<br>
+2 × 6 = 12
+
+<br><br>
+<b>Answer = 12</b>
+</div>
+
+<h3>Example 9</h3>
+<div class="example">
+<b>Question:</b> ¾ × ⅔ ÷ ½
+
+<br><br>
+= 3/4 × 2/3 × 2/1<br>
+= 12/12<br>
+= 1
+
+<br><br>
+<b>Answer = 1</b>
+</div>
+
+<h3>Example 10</h3>
+<div class="example">
+<b>Question:</b> 2³ + 3² × 2
+
+<br><br>
+2³ = 8<br>
+3² = 9<br>
+9 × 2 = 18<br>
+8 + 18 = 26
+
+<br><br>
+<b>Answer = 26</b>
+</div>
+</section>
+
+<!-- SHORTCUTS -->
+
+<section class="card" id="shortcuts">
+<h2>9. Quick Calculation Methods | వేగవంతమైన గణన పద్ధతులు</h2>
+
+<h3>9.1 Multiplication by 5</h3>
+<p>Multiply by 10 and divide by 2.</p>
+<div class="example">
+48 × 5 = 48 × 10 ÷ 2<br>
+= 480 ÷ 2<br>
+= 240
+</div>
+
+<h3>9.2 Multiplication by 25</h3>
+<p>Multiply by 100 and divide by 4.</p>
+<div class="example">
+64 × 25 = 64 × 100 ÷ 4<br>
+= 6400 ÷ 4<br>
+= 1600
+</div>
+
+<h3>9.3 Multiplication by 125</h3>
+<p>Multiply by 1000 and divide by 8.</p>
+<div class="example">
+32 × 125 = 32000 ÷ 8<br>
+= 4000
+</div>
+
+<h3>9.4 Squaring Numbers Ending in 5</h3>
+<p>For a two-digit number ending in 5, multiply the tens digit by the next integer and append 25.</p>
+<div class="example">
+35²
+
+<br><br>
+3 × 4 = 12<br>
+Append 25.
+
+<br>
+Answer = 1225
+</div>
+
+<div class="example">
+85²
+
+<br><br>
+8 × 9 = 72<br>
+Append 25.
+
+<br>
+Answer = 7225
+</div>
+
+<h3>9.5 Multiplication by 11</h3>
+<div class="example">
+32 × 11
+
+<br><br>
+3 + 2 = 5<br>
+Place 5 between 3 and 2.
+
+<br>
+Answer = 352
+</div>
+
+<div class="example">
+54 × 11
+
+<br><br>
+5 + 4 = 9<br>
+Answer = 594
+</div>
+
+<h3>9.6 Useful Fraction Shortcuts</h3>
+<table>
+<tr><th>Fraction</th><th>Percentage</th></tr>
+<tr><td>1/2</td><td>50%</td></tr>
+<tr><td>1/3</td><td>33⅓%</td></tr>
+<tr><td>1/4</td><td>25%</td></tr>
+<tr><td>1/5</td><td>20%</td></tr>
+<tr><td>1/6</td><td>16⅔%</td></tr>
+<tr><td>1/8</td><td>12.5%</td></tr>
+<tr><td>1/10</td><td>10%</td></tr>
+<tr><td>1/20</td><td>5%</td></tr>
+<tr><td>1/25</td><td>4%</td></tr>
+<tr><td>1/100</td><td>1%</td></tr>
+</table>
+
+<div class="note">
+Shortcuts should be used only after understanding the basic mathematical operation. ముందుగా ప్రాథమిక పద్ధతిని అర్థం చేసుకుని తర్వాత షార్ట్‌కట్స్ ఉపయోగించాలి.
+</div>
+</section>
+
+<!-- IMPORTANT FORMULAS -->
+
+<section class="card">
+<h2>10. Important Formulas | ముఖ్యమైన సూత్రాలు</h2>
+
+<table>
+<tr><th>Concept</th><th>Formula</th></tr>
+<tr><td>Average</td><td>Sum of observations / Number of observations</td></tr>
+<tr><td>Percentage</td><td>(Value / Total) × 100</td></tr>
+<tr><td>Fraction addition</td><td>a/b + c/d = (ad + bc)/bd</td></tr>
+<tr><td>Fraction subtraction</td><td>a/b − c/d = (ad − bc)/bd</td></tr>
+<tr><td>Fraction multiplication</td><td>(a × c)/(b × d)</td></tr>
+<tr><td>Fraction division</td><td>(a × d)/(b × c)</td></tr>
+<tr><td>Square</td><td>a² = a × a</td></tr>
+<tr><td>Cube</td><td>a³ = a × a × a</td></tr>
+<tr><td>Square root</td><td>√a = b when b² = a</td></tr>
+<tr><td>Cube root</td><td>³√a = b when b³ = a</td></tr>
+</table>
+</section>
+
+<!-- VOCABULARY -->
+
+<section class="card">
+<h2>11. Important Mathematical Vocabulary | ముఖ్యమైన పదజాలం</h2>
+
+<table>
+<tr><th>English</th><th>తెలుగు</th></tr>
+<tr><td>Simplification</td><td>సరళీకరణ</td></tr>
+<tr><td>Operation</td><td>క్రియ</td></tr>
+<tr><td>Bracket</td><td>కుండలీకరణం</td></tr>
+<tr><td>Numerator</td><td>లవం</td></tr>
+<tr><td>Denominator</td><td>హారం</td></tr>
+<tr><td>Fraction</td><td>భిన్నం</td></tr>
+<tr><td>Decimal</td><td>దశాంశం</td></tr>
+<tr><td>Power</td><td>ఘాతం</td></tr>
+<tr><td>Exponent</td><td>ఘాత సూచిక</td></tr>
+<tr><td>Base</td><td>ఆధారం</td></tr>
+<tr><td>Square</td><td>వర్గం</td></tr>
+<tr><td>Cube</td><td>ఘనం</td></tr>
+<tr><td>Square Root</td><td>వర్గమూలం</td></tr>
+<tr><td>Cube Root</td><td>ఘనమూలం</td></tr>
+<tr><td>Product</td><td>లబ్ధం</td></tr>
+<tr><td>Quotient</td><td>భాగఫలం</td></tr>
+<tr><td>Remainder</td><td>శేషం</td></tr>
+<tr><td>Reciprocal</td><td>విలోమం</td></tr>
+<tr><td>Ascending Order</td><td>ఆరోహణ క్రమం</td></tr>
+<tr><td>Descending Order</td><td>అవరోహణ క్రమం</td></tr>
+</table>
+</section>
+
+<!-- MCQS -->
+
+<section class="card" id="quiz">
+<h2>12. Practice Test – 50 MCQs</h2>
+
+<p>ప్రతి ప్రశ్నకు సరైన సమాధానాన్ని ఎంచుకోండి. సమాధానం ఎంచుకున్న వెంటనే వివరణ కనిపిస్తుంది. చివరలో మీ స్కోర్ తెలుసుకోవచ్చు.</p>
+
+<div id="quizStatus">
+<div>
+<b id="progressText">Answered: 0 / 50</b>
+<span style="float:right" id="scoreLive">Correct: 0</span>
+</div>
+<div class="progress"><span id="progressBar"></span></div>
+</div>
+
+<div id="questions"></div>
+
+<div id="result">
+<h3>Test Result | పరీక్ష ఫలితం</h3>
+<p id="scoreText"></p>
+<p id="remark"></p>
+<button onclick="resetQuiz()">Try Again | మళ్లీ ప్రయత్నించండి</button>
+</div>
+</section>
+
+<!-- CHECKLIST -->
+
+<section class="card">
+<h2>13. Chapter Completion Checklist</h2>
+
+<ul>
+<li>Introduction to Simplification</li>
+<li>BODMAS rule and order of operations</li>
+<li>Brackets and their order</li>
+<li>Fundamental arithmetic operations</li>
+<li>Positive and negative numbers</li>
+<li>Fractions and their operations</li>
+<li>Decimals and calculations</li>
+<li>Powers and exponents</li>
+<li>Square roots and cube roots</li>
+<li>Solved examples and shortcut methods</li>
+<li>Important formulas and mathematical vocabulary</li>
+<li>50 Interactive MCQs with explanations</li>
+</ul>
+
+<div class="note">
+<b>Study Advice:</b>
+First understand the BODMAS rule, then practise fractions, decimals and powers. Attempt the 50 MCQs without looking at the notes.
+<br><br>
+<b>తెలుగు:</b> ముందుగా BODMAS నియమాన్ని అర్థం చేసుకోండి. తర్వాత భిన్నాలు, దశాంశాలు, ఘాతాలను సాధన చేయండి. చివరగా 50 MCQs ప్రయత్నించండి.
+</div>
+</section>
+
+<!-- NAVIGATION -->
+
+<section class="card">
+<h2>14. Chapter Navigation</h2>
+<div class="two">
+<div>
+<a href="./01-number-system.html">← Previous: Number System</a>
+</div>
+<div>
+<a href="./03-percentage.html">Next: Percentage →</a>
+</div>
+</div>
+<p class="muted">Chapter navigation links should be connected to the corresponding chapter files in the project.</p>
+</section>
+
+</main>
+
+<footer>
+<strong>RETRY IN LIBRARY</strong>
+<p>LEARN AGAIN. TRY AGAIN. SUCCEED.</p>
+<p>Mathematics | Chapter 02 – Simplification</p>
+<p>Independent educational platform. Not affiliated with any government recruitment authority.</p>
+</footer>
+
+<script>
+"use strict";
+
+const mcqs = [
+
+{
+q:"What is the value of 20 + 5 × 4?",
+o:["100","40","25","50"],
+a:1,
+e:"Multiplication first: 5 × 4 = 20. Then 20 + 20 = 40."
+},
+{
+q:"What is the full form of BODMAS?",
+o:["Brackets, Orders, Division, Multiplication, Addition, Subtraction","Brackets, Operations, Division, Multiplication, Addition, Sum","Basic Order, Division, Multiplication, Addition, Subtraction","None"],
+a:0,
+e:"BODMAS stands for Brackets, Orders, Division, Multiplication, Addition and Subtraction."
+},
+{
+q:"What is 48 ÷ 6 × 2?",
+o:["4","8","16","24"],
+a:2,
+e:"Division and multiplication have equal priority. Work from left to right: 48 ÷ 6 = 8; 8 × 2 = 16."
+},
+{
+q:"What is 100 − 20 ÷ 5?",
+o:["16","96","80","20"],
+a:1,
+e:"Division first: 20 ÷ 5 = 4. Then 100 − 4 = 96."
+},
+{
+q:"What is the value of (12 + 8) × 3?",
+o:["36","50","60","72"],
+a:2,
+e:"First solve the bracket: 12 + 8 = 20. Then 20 × 3 = 60."
+},
+{
+q:"What is 15 + 25 × 2?",
+o:["80","65","50","40"],
+a:1,
+e:"25 × 2 = 50. Then 15 + 50 = 65."
+},
+{
+q:"What is 144 ÷ 12?",
+o:["10","11","12","14"],
+a:2,
+e:"144 divided by 12 equals 12."
+},
+{
+q:"What is 25 × 4 + 10?",
+o:["100","110","120","90"],
+a:1,
+e:"25 × 4 = 100. Then 100 + 10 = 110."
+},
+{
+q:"What is 90 − 30 ÷ 5?",
+o:["12","84","60","72"],
+a:1,
+e:"30 ÷ 5 = 6. Then 90 − 6 = 84."
+},
+{
+q:"What is the value of 5²?",
+o:["10","15","20","25"],
+a:3,
+e:"5² means 5 × 5 = 25."
+},
+{
+q:"What is √169?",
+o:["11","12","13","14"],
+a:2,
+e:"13 × 13 = 169. Therefore √169 = 13."
+},
+{
+q:"What is 2³?",
+o:["6","8","9","12"],
+a:1,
+e:"2³ = 2 × 2 × 2 = 8."
+},
+{
+q:"What is the value of 7² − 3²?",
+o:["30","40","42","58"],
+a:1,
+e:"7² = 49 and 3² = 9. Therefore 49 − 9 = 40."
+},
+{
+q:"What is 3² + 4²?",
+o:["12","25","49","20"],
+a:1,
+e:"3² = 9 and 4² = 16. Total = 25."
+},
+{
+q:"What is the value of 2⁴ × 2²?",
+o:["32","64","128","256"],
+a:1,
+e:"Same base multiplication: 2⁴ × 2² = 2⁶ = 64."
+},
+{
+q:"What is 5⁰?",
+o:["0","1","5","25"],
+a:1,
+e:"Any non-zero number raised to the power zero equals 1."
+},
+{
+q:"What is the reciprocal of 3/5?",
+o:["3/5","5/3","1/5","3/1"],
+a:1,
+e:"The reciprocal is obtained by interchanging numerator and denominator. Reciprocal of 3/5 is 5/3."
+},
+{
+q:"What is 1/2 + 1/4?",
+o:["1/4","2/6","3/4","1"],
+a:2,
+e:"1/2 = 2/4. Therefore 2/4 + 1/4 = 3/4."
+},
+{
+q:"What is 3/4 − 1/4?",
+o:["1/4","1/2","3/4","1"],
+a:1,
+e:"Same denominator: (3 − 1)/4 = 2/4 = 1/2."
+},
+{
+q:"What is 2/3 × 3/4?",
+o:["1/2","2/3","3/4","1"],
+a:0,
+e:"Multiply numerators and denominators: 6/12 = 1/2."
+},
+{
+q:"What is 1/2 ÷ 1/4?",
+o:["1/8","1/2","2","4"],
+a:2,
+e:"1/2 × 4/1 = 4/2 = 2."
+},
+{
+q:"Simplify 24/36.",
+o:["2/3","3/4","4/5","1/3"],
+a:0,
+e:"HCF of 24 and 36 is 12. Dividing both by 12 gives 2/3."
+},
+{
+q:"What is 0.5 + 0.25?",
+o:["0.50","0.65","0.75","1.25"],
+a:2,
+e:"0.50 + 0.25 = 0.75."
+},
+{
+q:"What is 2.5 × 2?",
+o:["4","5","6","7"],
+a:1,
+e:"2.5 × 2 = 5."
+},
+{
+q:"What is 4.8 ÷ 0.6?",
+o:["6","7","8","9"],
+a:2,
+e:"Multiply both numbers by 10: 48 ÷ 6 = 8."
+},
+{
+q:"What is 15.75 − 5.25?",
+o:["9.5","10","10.5","11"],
+a:2,
+e:"15.75 − 5.25 = 10.50."
+},
+{
+q:"What is 3/5 as a decimal?",
+o:["0.3","0.5","0.6","0.8"],
+a:2,
+e:"3 ÷ 5 = 0.6."
+},
+{
+q:"What is 25% of 200?",
+o:["25","40","50","75"],
+a:2,
+e:"25% of 200 = 25/100 × 200 = 50."
+},
+{
+q:"What is 1/4 of 100?",
+o:["20","25","30","40"],
+a:1,
+e:"100 ÷ 4 = 25."
+},
+{
+q:"What is 35 × 11?",
+o:["375","385","395","355"],
+a:1,
+e:"35 × 11 = 35 × 10 + 35 = 385."
+},
+{
+q:"What is 48 × 5?",
+o:["200","220","240","250"],
+a:2,
+e:"48 × 5 = 48 × 10 ÷ 2 = 240."
+},
+{
+q:"What is 64 × 25?",
+o:["1200","1400","1600","1800"],
+a:2,
+e:"64 × 25 = 64 × 100 ÷ 4 = 1600."
+},
+{
+q:"What is 35²?",
+o:["1125","1225","1325","1425"],
+a:1,
+e:"For a number ending in 5, multiply the preceding digit by the next integer: 3 × 4 = 12; append 25. Answer = 1225."
+},
+{
+q:"What is √225?",
+o:["12","13","14","15"],
+a:3,
+e:"15 × 15 = 225."
+},
+{
+q:"What is ³√125?",
+o:["3","4","5","6"],
+a:2,
+e:"5 × 5 × 5 = 125."
+},
+{
+q:"What is ³√216?",
+o:["4","5","6","7"],
+a:2,
+e:"6³ = 6 × 6 × 6 = 216."
+},
+{
+q:"What is the value of (2 + 3)²?",
+o:["10","15","20","25"],
+a:3,
+e:"First solve the bracket: 2 + 3 = 5. Then 5² = 25."
+},
+{
+q:"What is 72 ÷ 8 + 6?",
+o:["12","14","15","18"],
+a:2,
+e:"72 ÷ 8 = 9. Then 9 + 6 = 15."
+},
+{
+q:"What is 50 − 5 × 6 + 10?",
+o:["20","30","40","50"],
+a:1,
+e:"5 × 6 = 30. Then 50 − 30 + 10 = 30."
+},
+{
+q:"What is 2 × [15 − (6 + 3)]?",
+o:["6","10","12","18"],
+a:2,
+e:"Inner bracket: 6 + 3 = 9. Then 15 − 9 = 6. Finally 2 × 6 = 12."
+},
+{
+q:"What is −5 + 12?",
+o:["−17","−7","7","17"],
+a:2,
+e:"The signs are different. Subtract 5 from 12 and keep the positive sign. Answer = 7."
+},
+{
+q:"What is (−6) × (−4)?",
+o:["−24","10","24","−10"],
+a:2,
+e:"The product of two negative numbers is positive. 6 × 4 = 24."
+},
+{
+q:"What is (−30) ÷ 5?",
+o:["6","−6","−5","5"],
+a:1,
+e:"A negative number divided by a positive number gives a negative result. −30 ÷ 5 = −6."
+},
+{
+q:"What is 1/3 + 1/6?",
+o:["1/9","1/2","2/3","1"],
+a:1,
+e:"LCM = 6. So 2/6 + 1/6 = 3/6 = 1/2."
+},
+{
+q:"What is 5/6 − 1/3?",
+o:["1/2","2/3","1/3","5/3"],
+a:0,
+e:"1/3 = 2/6. Therefore 5/6 − 2/6 = 3/6 = 1/2."
+},
+{
+q:"What is 2³ + 3²?",
+o:["15","17","18","20"],
+a:1,
+e:"2³ = 8 and 3² = 9. Total = 17."
+},
+{
+q:"What is 1000 ÷ 125?",
+o:["6","7","8","9"],
+a:2,
+e:"125 × 8 = 1000. Therefore 1000 ÷ 125 = 8."
+},
+{
+q:"What is 0.75 as a fraction in simplest form?",
+o:["1/2","2/3","3/4","4/5"],
+a:2,
+e:"0.75 = 75/100. Divide numerator and denominator by 25 to get 3/4."
+},
+{
+q:"What is the value of 6² ÷ 3²?",
+o:["2","3","4","6"],
+a:2,
+e:"6² = 36 and 3² = 9. 36 ÷ 9 = 4."
+},
+{
+q:"What is 10 + 20 ÷ 5 × 2?",
+o:["12","14","18","20"],
+a:2,
+e:"Division and multiplication from left to right: 20 ÷ 5 = 4; 4 × 2 = 8; 10 + 8 = 18."
+},
+{
+q:"What is the value of 4 × (8 + 2) ÷ 5?",
+o:["6","8","10","12"],
+a:2,
+e:"Bracket first: 8 + 2 = 10. Then 4 × 10 ÷ 5 = 40 ÷ 5 = 8. Correct answer is 8."
+}
+];
+
+let answered = 0;
+let correct = 0;
+
+const questionsEl = document.getElementById("questions");
+
+function renderQuiz(){
+
+questionsEl.innerHTML = "";
+
+mcqs.forEach((item,index)=>{
+
+const box = document.createElement("div");
+box.className = "quiz-question";
+
+const title = document.createElement("div");
+title.className = "q-title";
+title.textContent = (index+1) + ". " + item.q;
+
+box.appendChild(title);
+
+const feedback = document.createElement("div");
+feedback.className = "feedback";
+feedback.setAttribute("aria-live","polite");
+
+item.o.forEach((option,optionIndex)=>{
+
+const btn = document.createElement("button");
+btn.type = "button";
+btn.className = "option";
+btn.textContent = String.fromCharCode(65+optionIndex) + ". " + option;
+
+btn.addEventListener("click",()=>{
+
+if(box.dataset.answered === "yes") return;
+
+box.dataset.answered = "yes";
+answered++;
+
+if(optionIndex === item.a){
+
+correct++;
+btn.classList.add("correct");
+feedback.style.color = "#187443";
+feedback.textContent = "Correct! ✓ " + item.e;
+
+}else{
+
+btn.classList.add("wrong");
+box.querySelectorAll(".option")[item.a].classList.add("correct");
+feedback.style.color = "#a12b24";
+
+feedback.textContent =
+"Incorrect. Correct answer: " +
+item.o[item.a] + ". " + item.e;
+
+}
+
+box.querySelectorAll("button").forEach(b=>{
+b.disabled = true;
+});
+
+updateProgress();
+
+});
+
+box.appendChild(btn);
+
+});
+
+box.appendChild(feedback);
+questionsEl.appendChild(box);
+
+});
+
+}
+
+function updateProgress(){
+
+document.getElementById("progressText").textContent =
+"Answered: " + answered + " / " + mcqs.length;
+
+document.getElementById("scoreLive").textContent =
+"Correct: " + correct;
+
+document.getElementById("progressBar").style.width =
+(answered/mcqs.length*100) + "%";
+
+if(answered === mcqs.length){
+
+const percent = Math.round(correct/mcqs.length*100);
+
+document.getElementById("scoreText").textContent =
+"Your score: " + correct + " / " + mcqs.length +
+" (" + percent + "%)";
+
+document.getElementById("remark").textContent =
+percent >= 80
+? "Excellent performance! Keep practising."
+: percent >= 60
+? "Good effort. Revise the explanations and try again."
+: "Keep learning. Review the chapter and attempt the test again.";
+
+document.getElementById("result").style.display = "block";
+
+document.getElementById("result").scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+}
+
+}
+
+function resetQuiz(){
+
+answered = 0;
+correct = 0;
+
+document.getElementById("result").style.display = "none";
+
+updateProgress();
+renderQuiz();
+
+document.getElementById("quiz").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+renderQuiz();
+updateProgress();
+
+</script>
+
+</body>
+</html>
