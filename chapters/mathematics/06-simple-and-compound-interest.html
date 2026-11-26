@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Simple and Compound Interest complete bilingual Mathematics chapter for competitive examinations.">
+<title>Simple and Compound Interest | RETRY IN LIBRARY</title>
+
+<style>
+:root{
+  --saffron:#f28c28;
+  --deep:#a94708;
+  --pale:#fff0dc;
+  --bg:#fff8ef;
+  --ink:#30251c;
+  --line:#edcfad;
+  --green:#187443;
+  --red:#bd3030;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.7;
+}
+header{
+  background:linear-gradient(135deg,#ffb347,#e66c13);
+  color:white;
+  text-align:center;
+  padding:28px 15px;
+}
+.brand{font-size:13px;letter-spacing:2px;font-weight:bold}
+header h1{font-size:29px;margin:8px 0}
+header p{margin:4px}
+.tag{
+  display:inline-block;
+  background:#fff0dc;
+  color:#a94708;
+  padding:4px 10px;
+  border-radius:15px;
+  font-size:12px;
+  font-weight:bold;
+  margin:3px;
+}
+nav{
+  position:sticky;
+  top:0;
+  z-index:5;
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:10px;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+nav a{
+  white-space:nowrap;
+  text-decoration:none;
+  color:var(--deep);
+  font-size:13px;
+  font-weight:bold;
+  background:var(--pale);
+  padding:7px 11px;
+  border-radius:20px;
+}
+.container{max-width:950px;width:94%;margin:22px auto 45px}
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:18px;
+  margin:15px 0;
+  box-shadow:0 3px 12px #78400b0b;
+}
+h2{
+  color:var(--deep);
+  font-size:22px;
+  border-bottom:2px solid #f6d6b2;
+  padding-bottom:7px;
+}
+h3{color:#b45712;font-size:18px;margin-top:22px}
+p{margin:8px 0}
+li{margin:5px 0}
+.formula{
+  background:#fff7eb;
+  color:#813d08;
+  font-weight:bold;
+  padding:12px;
+  border-radius:8px;
+  margin:10px 0;
+  overflow-wrap:anywhere;
+}
+.note,.example,.warning{
+  padding:12px 14px;
+  border-radius:7px;
+  margin:12px 0;
+}
+.note{background:#fff4e5;border-left:4px solid var(--saffron)}
+.example{background:#f3f8fc;border-left:4px solid #4085b9}
+.warning{background:#fff0ef;border-left:4px solid var(--red)}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px;text-align:left}
+th{background:var(--pale);color:var(--deep)}
+button{
+  background:var(--saffron);
+  color:white;
+  border:0;
+  border-radius:8px;
+  padding:10px 15px;
+  font-weight:bold;
+  cursor:pointer;
+  margin:4px 3px 4px 0;
+}
+button:hover{background:var(--deep)}
+button:disabled{cursor:not-allowed;opacity:.65}
+.quiz-question{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px;
+  margin:13px 0;
+}
+.q-title{font-weight:bold;margin-bottom:10px}
+.option{
+  display:block;
+  width:100%;
+  text-align:left;
+  background:#fff8ef;
+  color:var(--ink);
+  border:1px solid #e8cba9;
+  margin:7px 0;
+  padding:10px;
+  border-radius:7px;
+  font-weight:normal;
+}
+.option:hover:not(:disabled){background:#ffebd3}
+.option.correct{
+  background:#e4f6eb;
+  border-color:var(--green);
+  color:#125c35;
+}
+.option.wrong{
+  background:#ffe7e5;
+  border-color:var(--red);
+  color:#922323;
+}
+.feedback{font-size:14px;margin-top:9px;font-weight:bold}
+#quizStatus{
+  position:sticky;
+  top:49px;
+  background:white;
+  border:1px solid var(--line);
+  padding:10px;
+  border-radius:8px;
+  z-index:3;
+}
+.progress{
+  height:9px;
+  background:#f2dfca;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:8px;
+}
+.progress span{
+  display:block;
+  height:100%;
+  width:0;
+  background:var(--saffron);
+  transition:width .2s;
+}
+#result{
+  display:none;
+  background:#fff4e5;
+  border:2px solid var(--saffron);
+  border-radius:12px;
+  padding:18px;
+  margin:15px 0;
+}
+footer{
+  text-align:center;
+  background:#39271b;
+  color:white;
+  padding:22px 12px;
+  font-size:13px;
+}
+footer strong{color:#ffb76d}
+@media(min-width:700px){
+  header h1{font-size:36px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">RETRY IN LIBRARY</div>
+  <h1>Simple and Compound Interest</h1>
+  <p>సాధారణ వడ్డీ మరియు చక్రవడ్డీ</p>
+  <p>LEARN AGAIN. TRY AGAIN. SUCCEED.</p>
+  <span class="tag">MATHEMATICS</span>
+  <span class="tag">CHAPTER 06</span>
+  <span class="tag">TELUGU + ENGLISH</span>
+</header>
+
+<nav>
+  <a href="#intro">Introduction</a>
+  <a href="#basics">Basic Terms</a>
+  <a href="#simple">Simple Interest</a>
+  <a href="#compound">Compound Interest</a>
+  <a href="#difference">Comparison</a>
+  <a href="#examples">Examples</a>
+  <a href="#formulas">Formulas</a>
+  <a href="#quiz">50 MCQs</a>
+</nav>
+
+<main class="container">
+
+<section class="card" id="intro">
+<h2>1. Introduction | పరిచయం</h2>
+
+<p><b>English:</b> Interest is the extra money paid by a borrower to a lender for using money. The two main types are Simple Interest and Compound Interest.</p>
+
+<p><b>తెలుగు:</b> ఒకరు మరొకరి దగ్గర డబ్బు అప్పుగా తీసుకున్నప్పుడు, ఆ డబ్బును ఉపయోగించినందుకు అదనంగా చెల్లించే మొత్తాన్ని వడ్డీ అంటారు. ఇందులో రెండు ప్రధాన రకాలు ఉన్నాయి.</p>
+
+<div class="two">
+  <div class="note">
+    <b>Simple Interest (SI)</b>
+    <p>Interest is calculated only on the original principal.</p>
+    <p lang="te">అసలు మీద మాత్రమే వడ్డీ లెక్కిస్తారు.</p>
+  </div>
+  <div class="note">
+    <b>Compound Interest (CI)</b>
+    <p>Interest is calculated on the principal and accumulated interest.</p>
+    <p lang="te">అసలు మరియు గత వడ్డీ కలిపిన మొత్తంపై వడ్డీ లెక్కిస్తారు.</p>
+  </div>
+</div>
+
+<h3>Learning Objectives | నేర్చుకునే అంశాలు</h3>
+<ul>
+  <li>Principal, Rate, Time and Amount | అసలు, వడ్డీ రేటు, కాలం, మొత్తం</li>
+  <li>Simple Interest calculations | సాధారణ వడ్డీ లెక్కలు</li>
+  <li>Compound Interest calculations | చక్రవడ్డీ లెక్కలు</li>
+  <li>Annual, half-yearly and quarterly compounding | వార్షిక, అర్ధవార్షిక, త్రైమాసిక చక్రవడ్డీ</li>
+  <li>Difference between SI and CI | సాధారణ వడ్డీ, చక్రవడ్డీ మధ్య తేడా</li>
+  <li>Growth and depreciation | పెరుగుదల మరియు తరుగుదల</li>
+</ul>
+</section>
+
+<section class="card" id="basics">
+<h2>2. Basic Terms | ప్రాథమిక పదాలు</h2>
+
+<table>
+<tr><th>Term</th><th>Meaning</th><th>తెలుగు</th></tr>
+<tr><td>Principal (P)</td><td>Original money invested or borrowed</td><td>అసలు</td></tr>
+<tr><td>Rate (R)</td><td>Interest percentage per year</td><td>వడ్డీ రేటు</td></tr>
+<tr><td>Time (T)</td><td>Duration of investment or borrowing</td><td>కాలం</td></tr>
+<tr><td>Interest (I)</td><td>Extra money paid or earned</td><td>వడ్డీ</td></tr>
+<tr><td>Amount (A)</td><td>Principal plus interest</td><td>మొత్తం</td></tr>
+<tr><td>Compounding</td><td>Adding interest to principal periodically</td><td>వడ్డీని అసలుకు కలపడం</td></tr>
+</table>
+
+<div class="formula">Amount = Principal + Interest</div>
+<div class="formula">A = P + I</div>
+
+<div class="example">
+<b>Example:</b> Principal = ₹5,000 and Interest = ₹500.<br>
+Amount = 5,000 + 500 = <b>₹5,500</b>.
+<p lang="te">అసలు ₹5,000, వడ్డీ ₹500 అయితే మొత్తం ₹5,500.</p>
+</div>
+
+<div class="warning">
+<b>Important:</b> Unless otherwise stated, the rate is generally annual. Convert months into years when using the annual SI formula.
+<p lang="te">ప్రశ్నలో వేరుగా చెప్పకపోతే వడ్డీ రేటు సంవత్సరానికి ఉంటుంది. నెలలను సంవత్సరాల్లోకి మార్చాలి.</p>
+</div>
+</section>
+
+<section class="card" id="simple">
+<h2>3. Simple Interest | సాధారణ వడ్డీ</h2>
+
+<h3>3.1 Definition | నిర్వచనం</h3>
+<p>Simple Interest is calculated only on the original principal throughout the period.</p>
+<p lang="te">మొత్తం కాలానికి అసలు మీద మాత్రమే లెక్కించే వడ్డీని సాధారణ వడ్డీ అంటారు.</p>
+
+<div class="formula">SI = (P × R × T) / 100</div>
+
+<ul>
+<li>P = Principal (అసలు)</li>
+<li>R = Annual rate of interest in percentage (వడ్డీ రేటు)</li>
+<li>T = Time in years (కాలం సంవత్సరాల్లో)</li>
+</ul>
+
+<h3>3.2 Amount | మొత్తం</h3>
+<div class="formula">A = P + SI</div>
+<div class="formula">A = P(1 + RT/100)</div>
+
+<h3>3.3 Finding Principal | అసలు</h3>
+<div class="formula">P = (SI × 100) / (R × T)</div>
+
+<h3>3.4 Finding Rate | వడ్డీ రేటు</h3>
+<div class="formula">R = (SI × 100) / (P × T)</div>
+
+<h3>3.5 Finding Time | కాలం</h3>
+<div class="formula">T = (SI × 100) / (P × R)</div>
+
+<h3>3.6 Time Conversion | కాల మార్పిడి</h3>
+<table>
+<tr><th>Time</th><th>Years</th></tr>
+<tr><td>3 months</td><td>3/12 = 1/4</td></tr>
+<tr><td>6 months</td><td>6/12 = 1/2</td></tr>
+<tr><td>9 months</td><td>9/12 = 3/4</td></tr>
+<tr><td>18 months</td><td>18/12 = 3/2</td></tr>
+<tr><td>2 years 6 months</td><td>2.5 years</td></tr>
+</table>
+
+<h3>3.7 Solved Examples | సాధించిన ఉదాహరణలు</h3>
+
+<div class="example">
+<b>Example 1:</b> Find SI on ₹5,000 at 10% for 2 years.<br>
+SI = 5000 × 10 × 2 / 100<br>
+SI = <b>₹1,000</b>.<br>
+Amount = ₹6,000.
+</div>
+
+<div class="example">
+<b>Example 2:</b> Find SI on ₹8,000 at 5% for 6 months.<br>
+T = 6/12 = 1/2 year.<br>
+SI = 8000 × 5 × 1/2 / 100<br>
+SI = <b>₹200</b>.
+</div>
+
+<div class="example">
+<b>Example 3:</b> SI is ₹900 on ₹6,000 for 3 years. Find rate.<br>
+R = 900 × 100 / (6000 × 3)<br>
+R = <b>5% per annum</b>.
+</div>
+
+<div class="example">
+<b>Example 4:</b> A sum becomes ₹6,600 from ₹6,000 in 2 years. Find the rate under SI.<br>
+SI = 6600 − 6000 = ₹600.<br>
+R = 600 × 100 / (6000 × 2)<br>
+R = <b>5% per annum</b>.
+</div>
+</section>
+
+<section class="card" id="compound">
+<h2>4. Compound Interest | చక్రవడ్డీ</h2>
+
+<h3>4.1 Definition | నిర్వచనం</h3>
+<p>Compound Interest is calculated on the principal plus the accumulated interest from previous periods.</p>
+<p lang="te">అసలుతో పాటు గత కాలాల్లో వచ్చిన వడ్డీని కూడా కలిపి కొత్త మొత్తంపై లెక్కించే వడ్డీని చక్రవడ్డీ అంటారు.</p>
+
+<h3>4.2 Annual Compounding | వార్షిక చక్రవడ్డీ</h3>
+<div class="formula">A = P(1 + R/100)<sup>T</sup></div>
+<div class="formula">CI = A − P</div>
+
+<h3>4.3 Half-Yearly Compounding | అర్ధవార్షిక చక్రవడ్డీ</h3>
+<p>When interest is compounded twice a year:</p>
+<ul>
+<li>Rate per half-year = R/2</li>
+<li>Number of periods = 2T</li>
+</ul>
+<div class="formula">A = P(1 + R/200)<sup>2T</sup></div>
+
+<h3>4.4 Quarterly Compounding | త్రైమాసిక చక్రవడ్డీ</h3>
+<p>When interest is compounded four times a year:</p>
+<ul>
+<li>Rate per quarter = R/4</li>
+<li>Number of periods = 4T</li>
+</ul>
+<div class="formula">A = P(1 + R/400)<sup>4T</sup></div>
+
+<h3>4.5 Compounding Frequency | వడ్డీ కలిపే కాలం</h3>
+<table>
+<tr><th>Frequency</th><th>Rate per period</th><th>Periods in T years</th></tr>
+<tr><td>Yearly</td><td>R%</td><td>T</td></tr>
+<tr><td>Half-yearly</td><td>R/2%</td><td>2T</td></tr>
+<tr><td>Quarterly</td><td>R/4%</td><td>4T</td></tr>
+<tr><td>Monthly</td><td>R/12%</td><td>12T</td></tr>
+</table>
+
+<h3>4.6 Solved Examples | సాధించిన ఉదాహరణలు</h3>
+
+<div class="example">
+<b>Example 1:</b> Find CI on ₹10,000 at 10% for 2 years, compounded annually.<br>
+First year interest = ₹1,000.<br>
+Amount after first year = ₹11,000.<br>
+Second year interest = ₹1,100.<br>
+Final amount = ₹12,100.<br>
+CI = 12,100 − 10,000 = <b>₹2,100</b>.
+</div>
+
+<div class="example">
+<b>Example 2:</b> Find the amount on ₹8,000 at 10% for 1 year, compounded half-yearly.<br>
+Half-year rate = 5%.<br>
+Number of periods = 2.<br>
+A = 8,000 × 1.05²<br>
+A = <b>₹8,820</b>.<br>
+CI = ₹820.
+</div>
+
+<div class="example">
+<b>Example 3:</b> Find the amount on ₹16,000 at 8% for 6 months, compounded quarterly.<br>
+Quarterly rate = 2%.<br>
+Number of quarters = 2.<br>
+A = 16,000 × 1.02²<br>
+A = <b>₹16,646.40</b>.
+</div>
+</section>
+
+<section class="card" id="difference">
+<h2>5. SI vs CI | సాధారణ వడ్డీ మరియు చక్రవడ్డీ తేడా</h2>
+
+<table>
+<tr><th>Simple Interest</th><th>Compound Interest</th></tr>
+<tr><td>Calculated only on original principal.</td><td>Calculated on accumulated amount.</td></tr>
+<tr><td>Same interest each year if principal and rate are fixed.</td><td>Interest generally changes each period.</td></tr>
+<tr><td>SI = PRT/100</td><td>CI = A − P</td></tr>
+<tr><td>అసలు మీద మాత్రమే వడ్డీ.</td><td>అసలు మరియు గత వడ్డీ మీద కూడా వడ్డీ.</td></tr>
+</table>
+
+<h3>5.1 Difference for 2 Years</h3>
+<p>For annual compounding at the same annual rate:</p>
+<div class="formula">CI − SI = P × (R/100)²</div>
+
+<div class="example">
+P = ₹10,000; R = 10%.<br>
+SI for 2 years = ₹2,000.<br>
+CI for 2 years = ₹2,100.<br>
+Difference = <b>₹100</b>.
+</div>
+
+<h3>5.2 Difference for 3 Years</h3>
+<div class="formula">CI − SI = P × [3(R/100)² + (R/100)³]</div>
+<p>This formula applies to annual compounding for exactly 3 years at a constant rate.</p>
+
+<h3>5.3 Growth | పెరుగుదల</h3>
+<div class="formula">Final Value = P(1 + R/100)<sup>T</sup></div>
+
+<h3>5.4 Depreciation | తరుగుదల</h3>
+<div class="formula">Final Value = P(1 − R/100)<sup>T</sup></div>
+
+<div class="example">
+<b>Growth:</b> Population = 10,000; annual increase = 10%.<br>
+New population after one year = 10,000 × 1.10 = <b>11,000</b>.
+</div>
+
+<div class="example">
+<b>Depreciation:</b> Machine value = ₹50,000; annual depreciation = 10%.<br>
+New value after one year = 50,000 × 0.90 = <b>₹45,000</b>.
+</div>
+</section>
+
+<section class="card" id="examples">
+<h2>6. More Solved Examples | మరిన్ని ఉదాహరణలు</h2>
+
+<div class="example">
+<b>1. SI:</b> ₹12,000 at 8% for 3 years.<br>
+SI = 12,000 × 8 × 3 / 100 = <b>₹2,880</b>.
+</div>
+
+<div class="example">
+<b>2. Principal:</b> SI = ₹600, R = 5%, T = 2 years.<br>
+P = 600 × 100 / (5 × 2) = <b>₹6,000</b>.
+</div>
+
+<div class="example">
+<b>3. Rate:</b> P = ₹4,000, SI = ₹800, T = 4 years.<br>
+R = 800 × 100 / (4000 × 4) = <b>5%</b>.
+</div>
+
+<div class="example">
+<b>4. Time:</b> P = ₹5,000, SI = ₹1,000, R = 10%.<br>
+T = 1000 × 100 / (5000 × 10) = <b>2 years</b>.
+</div>
+
+<div class="example">
+<b>5. CI:</b> P = ₹5,000, R = 10%, T = 2 years.<br>
+A = 5000 × 1.1² = ₹6,050.<br>
+CI = <b>₹1,050</b>.
+</div>
+
+<div class="example">
+<b>6. CI for 3 years:</b> P = ₹10,000, R = 10%.<br>
+A = 10,000 × 1.1³ = ₹13,310.<br>
+CI = <b>₹3,310</b>.
+</div>
+
+<div class="example">
+<b>7. Half-yearly:</b> P = ₹4,000, R = 10%, T = 1 year.<br>
+A = 4,000 × 1.05² = ₹4,410.<br>
+CI = <b>₹410</b>.
+</div>
+
+<div class="example">
+<b>8. Difference:</b> P = ₹8,000, R = 5%, T = 2 years.<br>
+Difference = 8,000 × (5/100)² = <b>₹20</b>.
+</div>
+
+<div class="example">
+<b>9. Population:</b> 20,000 increases by 5%.<br>
+New population = 20,000 × 1.05 = <b>21,000</b>.
+</div>
+
+<div class="example">
+<b>10. Depreciation:</b> Vehicle value ₹2,00,000 decreases by 10%.<br>
+New value = 2,00,000 × 0.90 = <b>₹1,80,000</b>.
+</div>
+</section>
+
+<section class="card" id="formulas">
+<h2>7. Important Formulas | ముఖ్యమైన సూత్రాలు</h2>
+
+<table>
+<tr><th>Topic</th><th>Formula</th></tr>
+<tr><td>Simple Interest</td><td>SI = PRT/100</td></tr>
+<tr><td>Amount under SI</td><td>A = P + SI</td></tr>
+<tr><td>Principal</td><td>P = 100SI/(RT)</td></tr>
+<tr><td>Rate</td><td>R = 100SI/(PT)</td></tr>
+<tr><td>Time</td><td>T = 100SI/(PR)</td></tr>
+<tr><td>Compound Amount</td><td>A = P(1 + R/100)<sup>T</sup></td></tr>
+<tr><td>Compound Interest</td><td>CI = A − P</td></tr>
+<tr><td>Half-yearly</td><td>A = P(1 + R/200)<sup>2T</sup></td></tr>
+<tr><td>Quarterly</td><td>A = P(1 + R/400)<sup>4T</sup></td></tr>
+<tr><td>CI − SI for 2 years</td><td>P(R/100)²</td></tr>
+<tr><td>Growth</td><td>P(1 + R/100)<sup>T</sup></td></tr>
+<tr><td>Depreciation</td><td>P(1 − R/100)<sup>T</sup></td></tr>
+</table>
+
+<h3>Exam Tips | పరీక్షా చిట్కాలు</h3>
+<ul>
+<li>Identify whether the question asks for SI or CI.</li>
+<li>Convert months into years for annual SI calculations.</li>
+<li>For half-yearly CI, divide the rate by 2 and multiply periods by 2.</li>
+<li>For quarterly CI, divide the rate by 4 and multiply periods by 4.</li>
+<li>Amount includes principal and interest.</li>
+<li lang="te">ముందుగా ప్రశ్న సాధారణ వడ్డీనా, చక్రవడ్డీనా గుర్తించండి.</li>
+<li lang="te">నెలలను సంవత్సరాల్లోకి మార్చి లెక్కించండి.</li>
+<li lang="te">అర్ధవార్షిక చక్రవడ్డీలో రేటును సగం చేయాలి, కాలాలను రెండింతలు చేయాలి.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>8. Important Vocabulary | ముఖ్యమైన పదజాలం</h2>
+<table>
+<tr><th>English</th><th>తెలుగు</th></tr>
+<tr><td>Interest</td><td>వడ్డీ</td></tr>
+<tr><td>Simple Interest</td><td>సాధారణ వడ్డీ</td></tr>
+<tr><td>Compound Interest</td><td>చక్రవడ్డీ</td></tr>
+<tr><td>Principal</td><td>అసలు</td></tr>
+<tr><td>Rate of Interest</td><td>వడ్డీ రేటు</td></tr>
+<tr><td>Time Period</td><td>కాల వ్యవధి</td></tr>
+<tr><td>Amount</td><td>మొత్తం</td></tr>
+<tr><td>Annual</td><td>వార్షిక</td></tr>
+<tr><td>Half-yearly</td><td>అర్ధవార్షిక</td></tr>
+<tr><td>Quarterly</td><td>త్రైమాసిక</td></tr>
+<tr><td>Growth</td><td>పెరుగుదల</td></tr>
+<tr><td>Depreciation</td><td>తరుగుదల</td></tr>
+<tr><td>Investment</td><td>పెట్టుబడి</td></tr>
+<tr><td>Borrower</td><td>అప్పు తీసుకునేవారు</td></tr>
+<tr><td>Lender</td><td>అప్పు ఇచ్చేవారు</td></tr>
+</table>
+</section>
+
+<section class="card" id="quiz">
+<h2>9. Practice Test – 50 MCQs | అభ్యాస పరీక్ష</h2>
+<p>Choose the correct answer. Each question carries one mark.</p>
+<p lang="te">సరైన సమాధానాన్ని ఎంచుకోండి. ప్రతి ప్రశ్నకు ఒక మార్కు.</p>
+
+<div id="quizStatus">
+  <b id="answered">Answered: 0 / 50</b>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+
+<div id="quizContainer"></div>
+
+<button id="submitQuiz" type="button">Submit Test / పరీక్ష సమర్పించండి</button>
+<button id="resetQuiz" type="button">Restart Test / మళ్లీ ప్రారంభించండి</button>
+
+<div id="result" aria-live="polite"></div>
+</section>
+
+<section class="card">
+<h2>10. Chapter Navigation | అధ్యాయాల నావిగేషన్</h2>
+<p><a href="05-ratio-and-proportion.html">← Previous: Ratio and Proportion</a></p>
+<p><a href="07-average.html">Next: Average →</a></p>
+<p><small>Next chapter link will work after its file is created.</small></p>
+</section>
+
+</main>
+
+<footer>
+<strong>RETRY IN LIBRARY</strong>
+<p>LEARN AGAIN. TRY AGAIN. SUCCEED.</p>
+<p>Mathematics | Simple and Compound Interest</p>
+</footer>
+
+<script>
+"use strict";
+
+const questions = [
+{
+q:"Find the simple interest on ₹5,000 at 10% per annum for 2 years.",
+o:["₹500","₹1,000","₹1,500","₹2,000"],
+a:1,
+e:"SI = 5000 × 10 × 2 / 100 = ₹1,000."
+},
+{
+q:"Find the SI on ₹4,000 at 5% per annum for 3 years.",
+o:["₹400","₹500","₹600","₹800"],
+a:2,
+e:"SI = 4000 × 5 × 3 / 100 = ₹600."
+},
+{
+q:"What is the amount on ₹6,000 at 10% SI for 2 years?",
+o:["₹6,600","₹7,000","₹7,200","₹7,500"],
+a:2,
+e:"SI = ₹1,200. Amount = 6000 + 1200 = ₹7,200."
+},
+{
+q:"Find the SI on ₹8,000 at 5% per annum for 6 months.",
+o:["₹100","₹200","₹300","₹400"],
+a:1,
+e:"6 months = 1/2 year. SI = 8000 × 5 × 1/2 / 100 = ₹200."
+},
+{
+q:"SI is ₹600 on ₹4,000 for 3 years. Find the annual rate.",
+o:["4%","5%","6%","8%"],
+a:1,
+e:"R = 600 × 100 / (4000 × 3) = 5%."
+},
+{
+q:"Find the principal if SI is ₹800 at 10% for 2 years.",
+o:["₹3,000","₹4,000","₹5,000","₹6,000"],
+a:1,
+e:"P = 800 × 100 / (10 × 2) = ₹4,000."
+},
+{
+q:"Find the time if SI is ₹900 on ₹3,000 at 10% per annum.",
+o:["2 years","3 years","4 years","5 years"],
+a:1,
+e:"T = 900 × 100 / (3000 × 10) = 3 years."
+},
+{
+q:"Find the SI on ₹10,000 at 8% for 1 year.",
+o:["₹600","₹700","₹800","₹900"],
+a:2,
+e:"SI = 10000 × 8 × 1 / 100 = ₹800."
+},
+{
+q:"A sum of ₹2,000 earns ₹400 SI in 4 years. Find the rate.",
+o:["4%","5%","6%","8%"],
+a:1,
+e:"R = 400 × 100 / (2000 × 4) = 5%."
+},
+{
+q:"What is the amount on ₹5,000 at 6% SI for 2 years?",
+o:["₹5,300","₹5,500","₹5,600","₹5,800"],
+a:2,
+e:"SI = 5000 × 6 × 2 / 100 = ₹600. Amount = ₹5,600."
+},
+{
+q:"Find the SI on ₹12,000 at 5% for 6 months.",
+o:["₹200","₹250","₹300","₹400"],
+a:2,
+e:"T = 1/2 year. SI = 12000 × 5 × 1/2 / 100 = ₹300."
+},
+{
+q:"At what rate will ₹5,000 earn ₹1,000 SI in 4 years?",
+o:["4%","5%","6%","8%"],
+a:1,
+e:"R = 1000 × 100 / (5000 × 4) = 5%."
+},
+{
+q:"A sum becomes ₹6,000 from ₹5,000 in 2 years under SI. Find the rate.",
+o:["5%","8%","10%","12%"],
+a:2,
+e:"SI = 6000 − 5000 = ₹1,000. R = 1000 × 100 / (5000 × 2) = 10%."
+},
+{
+q:"Find the principal that earns ₹450 SI in 3 years at 5%.",
+o:["₹2,000","₹2,500","₹3,000","₹3,500"],
+a:2,
+e:"P = 450 × 100 / (5 × 3) = ₹3,000."
+},
+{
+q:"What is the SI on ₹7,500 at 4% for 2 years?",
+o:["₹400","₹500","₹600","₹700"],
+a:2,
+e:"SI = 7500 × 4 × 2 / 100 = ₹600."
+},
+{
+q:"A sum earns ₹720 SI at 6% for 2 years. Find the principal.",
+o:["₹4,000","₹5,000","₹6,000","₹7,000"],
+a:2,
+e:"P = 720 × 100 / (6 × 2) = ₹6,000."
+},
+{
+q:"Find the SI on ₹9,000 at 10% for 9 months.",
+o:["₹525","₹600","₹675","₹750"],
+a:2,
+e:"9 months = 3/4 year. SI = 9000 × 10 × 3/4 / 100 = ₹675."
+},
+{
+q:"If SI is equal to half the principal at 10% per annum, find the time.",
+o:["4 years","5 years","6 years","8 years"],
+a:1,
+e:"SI/P = RT/100. 1/2 = 10T/100, so T = 5 years."
+},
+{
+q:"At 8% SI, how much interest is earned on ₹2,500 in 2 years?",
+o:["₹300","₹350","₹400","₹450"],
+a:2,
+e:"SI = 2500 × 8 × 2 / 100 = ₹400."
+},
+{
+q:"A sum doubles in 10 years under SI. Find the annual rate.",
+o:["5%","8%","10%","12%"],
+a:2,
+e:"For doubling, SI = P. R × 10 / 100 = 1, so R = 10%."
+},
+{
+q:"Find the CI on ₹1,000 at 10% per annum for 2 years, compounded annually.",
+o:["₹100","₹200","₹210","₹220"],
+a:2,
+e:"A = 1000 × 1.1² = ₹1,210. CI = ₹210."
+},
+{
+q:"Find the amount on ₹2,000 at 10% CI for 2 years.",
+o:["₹2,200","₹2,400","₹2,420","₹2,440"],
+a:2,
+e:"A = 2000 × 1.1² = ₹2,420."
+},
+{
+q:"Find the CI on ₹5,000 at 10% for 1 year, compounded annually.",
+o:["₹400","₹450","₹500","₹550"],
+a:2,
+e:"For one year, CI = 5000 × 10 / 100 = ₹500."
+},
+{
+q:"Find the CI on ₹4,000 at 5% for 2 years, compounded annually.",
+o:["₹400","₹410","₹420","₹440"],
+a:1,
+e:"A = 4000 × 1.05² = ₹4,410. CI = ₹410."
+},
+{
+q:"Find the amount on ₹10,000 at 10% CI for 3 years.",
+o:["₹13,000","₹13,100","₹13,310","₹13,500"],
+a:2,
+e:"A = 10000 × 1.1³ = ₹13,310."
+},
+{
+q:"Find the CI on ₹8,000 at 5% for 2 years.",
+o:["₹800","₹810","₹820","₹840"],
+a:2,
+e:"A = 8000 × 1.05² = ₹8,820. CI = ₹820."
+},
+{
+q:"₹8,000 is invested at 10% for 1 year, compounded half-yearly. Find the amount.",
+o:["₹8,800","₹8,810","₹8,820","₹8,840"],
+a:2,
+e:"Half-year rate = 5%; periods = 2. A = 8000 × 1.05² = ₹8,820."
+},
+{
+q:"Find the amount on ₹4,000 at 10% for 1 year, compounded half-yearly.",
+o:["₹4,400","₹4,410","₹4,420","₹4,440"],
+a:1,
+e:"Half-year rate = 5%; periods = 2. A = 4000 × 1.05² = ₹4,410."
+},
+{
+q:"For quarterly compounding at 8% per annum, what is the rate per quarter?",
+o:["1%","2%","4%","8%"],
+a:1,
+e:"Quarterly rate = 8/4 = 2%."
+},
+{
+q:"For half-yearly compounding over 3 years, how many periods are there?",
+o:["3","4","5","6"],
+a:3,
+e:"There are two half-year periods per year. 3 × 2 = 6 periods."
+},
+{
+q:"Find the CI on ₹10,000 at 10% for 2 years.",
+o:["₹1,000","₹1,500","₹2,100","₹2,500"],
+a:2,
+e:"A = 10000 × 1.1² = ₹12,100. CI = ₹2,100."
+},
+{
+q:"Find the amount on ₹16,000 at 8% for 6 months, compounded quarterly.",
+o:["₹16,320","₹16,646.40","₹16,640","₹16,800"],
+a:1,
+e:"Quarterly rate = 2%; periods = 2. A = 16000 × 1.02² = ₹16,646.40."
+},
+{
+q:"If ₹5,000 is compounded annually at 20% for 2 years, find the amount.",
+o:["₹6,000","₹6,500","₹7,000","₹7,200"],
+a:3,
+e:"A = 5000 × 1.2² = ₹7,200."
+},
+{
+q:"Find the CI on ₹2,000 at 5% for 2 years.",
+o:["₹200","₹205","₹210","₹215"],
+a:1,
+e:"A = 2000 × 1.05² = ₹2,205. CI = ₹205."
+},
+{
+q:"Find the amount on ₹10,000 at 5% CI for 2 years.",
+o:["₹10,500","₹11,000","₹11,025","₹11,050"],
+a:2,
+e:"A = 10000 × 1.05² = ₹11,025."
+},
+{
+q:"Find the CI on ₹20,000 at 10% for 2 years.",
+o:["₹4,000","₹4,100","₹4,200","₹4,400"],
+a:2,
+e:"A = 20000 × 1.1² = ₹24,200. CI = ₹4,200."
+},
+{
+q:"At 10% per annum compounded annually, what is the amount factor after 2 years?",
+o:["1.10","1.20","1.21","1.22"],
+a:2,
+e:"Factor = 1.1² = 1.21."
+},
+{
+q:"At 10% per annum compounded annually, what is the amount factor after 3 years?",
+o:["1.21","1.30","1.331","1.40"],
+a:2,
+e:"Factor = 1.1³ = 1.331."
+},
+{
+q:"If a sum doubles in 2 years under compound interest, what is the amount after 2 years?",
+o:["P","1.5P","2P","3P"],
+a:2,
+e:"The question states that the sum doubles. Therefore, amount = 2P."
+},
+{
+q:"What is the CI for one year on ₹6,000 at 5% per annum?",
+o:["₹200","₹250","₹300","₹350"],
+a:2,
+e:"For one year, CI = 6000 × 5 / 100 = ₹300."
+},
+{
+q:"Find the difference between CI and SI on ₹10,000 at 10% for 2 years.",
+o:["₹50","₹100","₹150","₹200"],
+a:1,
+e:"Difference = P × (R/100)² = 10000 × 0.1² = ₹100."
+},
+{
+q:"Find the difference between CI and SI on ₹5,000 at 10% for 2 years.",
+o:["₹25","₹50","₹75","₹100"],
+a:1,
+e:"Difference = 5000 × (10/100)² = ₹50."
+},
+{
+q:"For a positive rate and 2 years, annual compound interest is generally:",
+o:["Less than SI","Equal to SI","Greater than SI","Always zero"],
+a:2,
+e:"For positive rate and two years, annual CI is greater than SI."
+},
+{
+q:"A population of 10,000 increases by 10% in one year. Find the new population.",
+o:["10,500","10,900","11,000","11,100"],
+a:2,
+e:"New population = 10000 × 1.10 = 11,000."
+},
+{
+q:"A machine worth ₹50,000 depreciates by 10% in one year. Find its new value.",
+o:["₹40,000","₹44,000","₹45,000","₹46,000"],
+a:2,
+e:"New value = 50000 × 0.90 = ₹45,000."
+},
+{
+q:"A sum of ₹1,000 earns ₹100 SI in one year. Find the annual rate.",
+o:["5%","8%","10%","12%"],
+a:2,
+e:"R = 100 × 100 / (1000 × 1) = 10%."
+},
+{
+q:"At 10% SI, how long will ₹2,000 take to earn ₹600 interest?",
+o:["2 years","3 years","4 years","5 years"],
+a:1,
+e:"T = 600 × 100 / (2000 × 10) = 3 years."
+},
+{
+q:"Find the SI on ₹15,000 at 4% for 2 years.",
+o:["₹900","₹1,000","₹1,200","₹1,500"],
+a:2,
+e:"SI = 15000 × 4 × 2 / 100 = ₹1,200."
+},
+{
+q:"An amount of ₹6,000 is obtained from ₹5,000 under SI in 4 years. Find the annual rate.",
+o:["4%","5%","6%","8%"],
+a:1,
+e:"SI = 6000 − 5000 = ₹1,000. R = 1000 × 100 / (5000 × 4) = 5%."
+},
+{
+q:"Find the amount on ₹3,000 at 10% CI for 2 years.",
+o:["₹3,300","₹3,600","₹3,630","₹3,660"],
+a:2,
+e:"A = 3000 × 1.1² = ₹3,630."
+}
+];
+
+const quizContainer = document.getElementById("quizContainer");
+const answeredLabel = document.getElementById("answered");
+const progressBar = document.getElementById("progressBar");
+const resultBox = document.getElementById("result");
+const submitButton = document.getElementById("submitQuiz");
+const resetButton = document.getElementById("resetQuiz");
+
+let userAnswers = new Array(questions.length).fill(null);
+let submitted = false;
+
+function renderQuiz(){
+  quizContainer.innerHTML = "";
+
+  questions.forEach((question,index)=>{
+    const wrapper = document.createElement("div");
+    wrapper.className = "quiz-question";
+
+    const title = document.createElement("div");
+    title.className = "q-title";
+    title.textContent = (index+1)+". "+question.q;
+    wrapper.appendChild(title);
+
+    question.o.forEach((option,optionIndex)=>{
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "option";
+      button.textContent = String.fromCharCode(65+optionIndex)+". "+option;
+      button.disabled = submitted;
+
+      if(submitted && optionIndex === question.a){
+        button.classList.add("correct");
+      }
+
+      if(submitted && userAnswers[index] === optionIndex && optionIndex !== question.a){
+        button.classList.add("wrong");
+      }
+
+      if(!submitted && userAnswers[index] === optionIndex){
+        button.style.border = "2px solid #a94708";
+        button.style.background = "#ffebd3";
+      }
+
+      button.addEventListener("click",()=>{
+        if(submitted)return;
+        userAnswers[index] = optionIndex;
+        updateProgress();
+        renderQuiz();
+      });
+
+      wrapper.appendChild(button);
+    });
+
+    if(submitted){
+      const feedback = document.createElement("div");
+      feedback.className = "feedback";
+
+      const correct = userAnswers[index] === question.a;
+      feedback.style.color = correct ? "#187443" : "#bd3030";
+
+      feedback.textContent =
+        (correct ? "Correct! " : "Incorrect. ") +
+        "Correct answer: " +
+        String.fromCharCode(65+question.a) + ". " +
+        question.o[question.a] + " | " + question.e;
+
+      wrapper.appendChild(feedback);
+    }
+
+    quizContainer.appendChild(wrapper);
+  });
+}
+
+function updateProgress(){
+  const count = userAnswers.filter(answer=>answer !== null).length;
+  answeredLabel.textContent = "Answered: "+count+" / "+questions.length;
+  progressBar.style.width = (count/questions.length*100)+"%";
+}
+
+submitButton.addEventListener("click",()=>{
+  if(submitted)return;
+
+  const unanswered = userAnswers.filter(answer=>answer === null).length;
+
+  if(unanswered > 0){
+    const confirmed = confirm(
+      "You have "+unanswered+" unanswered questions. Submit anyway?"
+    );
+    if(!confirmed)return;
+  }
+
+  submitted = true;
+
+  const score = questions.reduce((total,question,index)=>{
+    return total + (userAnswers[index] === question.a ? 1 : 0);
+  },0);
+
+  const percentage = score/questions.length*100;
+  let message = "";
+
+  if(percentage >= 80){
+    message = "Excellent performance! చాలా బాగా చేశారు!";
+  }else if(percentage >= 60){
+    message = "Good work! మరింత సాధన చేయండి.";
+  }else if(percentage >= 40){
+    message = "Keep practising! ఇంకా సాధన అవసరం.";
+  }else{
+    message = "Revise the chapter and try again. మళ్లీ చదివి ప్రయత్నించండి.";
+  }
+
+  resultBox.style.display = "block";
+  resultBox.innerHTML =
+    "<h3>Test Result | పరీక్ష ఫలితం</h3>"+
+    "<p><b>Your Score:</b> "+score+" / "+questions.length+"</p>"+
+    "<p><b>Percentage:</b> "+percentage.toFixed(2)+"%</p>"+
+    "<p><b>Correct Answers:</b> "+score+"</p>"+
+    "<p><b>Wrong / Unanswered:</b> "+(questions.length-score)+"</p>"+
+    "<p><b>"+message+"</b></p>";
+
+  renderQuiz();
+  resultBox.scrollIntoView({behavior:"smooth",block:"center"});
+});
+
+resetButton.addEventListener("click",()=>{
+  userAnswers = new Array(questions.length).fill(null);
+  submitted = false;
+  resultBox.style.display = "none";
+  resultBox.innerHTML = "";
+  renderQuiz();
+  updateProgress();
+  document.getElementById("quiz").scrollIntoView({behavior:"smooth"});
+});
+
+renderQuiz();
+updateProgress();
+</script>
+
+</body>
+</html>
