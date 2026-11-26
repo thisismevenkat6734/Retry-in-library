@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#b45309">
+<meta name="description" content="RETRY IN LIBRARY bilingual reasoning chapter on Ranking and Order with solved examples and practice MCQs.">
+<title>Ranking and Order | RETRY IN LIBRARY</title>
+<style>
+:root{--deep:#7c2d12;--accent:#c2410c;--saffron:#f59e0b;--line:#ead7b5;--ink:#292524;--muted:#57534e;--green:#166534}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fff7e6,#ffedd5);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Telugu",sans-serif;line-height:1.75}
+header{background:var(--deep);color:#fff;padding:16px}header div,main,footer{max-width:1000px;margin:auto}header small{display:block;color:#fed7aa}
+main{padding:16px 14px 45px}.hero,.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:21px;margin:16px 0;box-shadow:0 6px 20px #78350f10}.hero{border-top:7px solid var(--saffron)}
+h1,h2,h3{line-height:1.35;color:var(--deep)}h1{margin:5px 0;font-size:clamp(1.6rem,4vw,2.25rem)}h2{font-size:1.35rem;border-bottom:2px solid #fed7aa;padding-bottom:7px;margin-top:0}h3{font-size:1.08rem;margin-bottom:5px}
+p{margin:8px 0}.muted,small{color:var(--muted)}.tag{display:inline-block;background:#ffedd5;color:#9a3412;padding:3px 10px;border-radius:30px;font-size:.85rem;margin:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.box{background:#fffaf0;border:1px solid var(--line);border-radius:12px;padding:13px}
+table{width:100%;border-collapse:collapse;margin:12px 0;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:9px;text-align:left;min-width:110px}th{background:#ffedd5;color:#7c2d12}
+.formula{background:#fff7ed;border-left:5px solid var(--accent);padding:12px 15px;border-radius:8px;margin:12px 0;font-weight:650}
+.example{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px;margin:12px 0}.answer{color:var(--green);font-weight:700}
+button{border:0;border-radius:9px;padding:10px 15px;background:var(--accent);color:white;font-weight:700;cursor:pointer;margin:5px 5px 5px 0}button.secondary{background:#57534e}button:focus,input:focus{outline:3px solid #fbbf24;outline-offset:2px}
+.question{padding:14px 0;border-bottom:1px solid var(--line)}.question p{font-weight:650}.options{display:grid;grid-template-columns:1fr 1fr;gap:7px}.options label{display:flex;gap:8px;align-items:flex-start;padding:8px;background:#fffaf0;border:1px solid var(--line);border-radius:8px;font-weight:400}
+.explanation{display:none;background:#f0fdf4;border-left:4px solid #16a34a;padding:10px;margin-top:9px;border-radius:7px}.result{font-weight:700;padding:12px;background:#ffedd5;border-radius:9px;margin:12px 0}
+footer{padding:20px 14px;color:var(--muted);text-align:center}
+@media(max-width:600px){.options{grid-template-columns:1fr}.hero,.panel{padding:16px}}
+</style>
+</head>
+<body>
+<header><div><strong>RETRY IN LIBRARY</strong><small>Competitive Exam Digital Study Library · Reasoning / తార్కిక సామర్థ్యం</small></div></header>
+<main>
+<section class="hero">
+<span class="tag">Chapter 08</span><span class="tag">Telugu + English</span><span class="tag">50 Practice MCQs</span>
+<h1>Ranking and Order<br>ర్యాంకింగ్ మరియు క్రమం</h1>
+<p>ఈ అధ్యాయంలో ఒక వరుసలో లేదా పోటీలో వ్యక్తి స్థానం (Rank/Position), ముందు–వెనుక స్థానాలు, రెండు వైపుల నుంచి ర్యాంకులు, మొత్తం వ్యక్తుల సంఖ్య, మధ్యలో ఉన్నవారి సంఖ్య, స్థాన మార్పులు వంటి ప్రశ్నలను పద్ధతిగా పరిష్కరించడం నేర్చుకుంటాం.</p>
+<p class="muted">Learning goal: questionలో ఇచ్చిన rank ఏ వైపు నుంచి లెక్కించాలో గుర్తించి, సరైన formula ఎంచుకుని, calculationను ధృవీకరించడం.</p>
+</section>
+
+<section class="panel">
+<h2>1. ప్రాథమిక భావనలు | Basic Concepts</h2>
+<div class="grid">
+<div class="box"><h3>Rank / స్థానం</h3><p>ఒక వరుసలో లేదా పోటీలో వ్యక్తికి వచ్చిన క్రమ సంఖ్య. ఉదా: 1st, 2nd, 3rd.</p></div>
+<div class="box"><h3>Top / Front</h3><p>పై నుంచి లేదా ముందు నుంచి లెక్కించే స్థానం. Rank from the top/front.</p></div>
+<div class="box"><h3>Bottom / End</h3><p>క్రింది నుంచి లేదా చివరి వైపు నుంచి లెక్కించే స్థానం. Rank from the bottom/end.</p></div>
+<div class="box"><h3>Between / మధ్యలో</h3><p>ఇద్దరి స్థానాల మధ్య ఉన్న వ్యక్తుల సంఖ్య; వ్యక్తుల మొత్తం దూరం కాదు.</p></div>
+</div>
+<p><b>ముఖ్యమైన జాగ్రత్త:</b> “A is 7th from the left” అంటే A ఎడమ చివర నుంచి ఏడవ స్థానంలో ఉన్నాడు. “7 persons are ahead of A” అంటే A స్థానం 8వది. Rank మరియు number of persons ahead ఒకటి కావు.</p>
+</section>
+
+<section class="panel">
+<h2>2. ముఖ్యమైన సూత్రాలు | Essential Formulas</h2>
+<div class="formula">Total persons = Rank from top + Rank from bottom − 1<br>మొత్తం = పై నుంచి ర్యాంక్ + కింది నుంచి ర్యాంక్ − 1</div>
+<p>ఒకే వ్యక్తి యొక్క రెండు వైపుల ర్యాంకులు తెలిసినప్పుడు ఈ formula ఉపయోగించాలి. ఆ వ్యక్తిని రెండు సార్లు లెక్కించకుండా ఉండటానికి 1 తీసివేస్తాం.</p>
+<div class="formula">Rank from bottom = Total − Rank from top + 1</div>
+<div class="formula">Rank from top = Total − Rank from bottom + 1</div>
+<div class="formula">Persons between two people = Difference between their ranks − 1</div>
+<p>ఇద్దరి ranks ఒకే చివర నుంచి ఇచ్చినప్పుడు, పెద్ద rank నుంచి చిన్న rank తీసి 1 తగ్గించాలి. ఉదా: 4వ మరియు 11వ స్థానాల మధ్య 11−4−1 = 6 మంది.</p>
+<div class="formula">If A is x places ahead of B: Rank(A) = Rank(B) − x<br>If A is x places behind B: Rank(A) = Rank(B) + x</div>
+<p>ఇక్కడ ranks ఒకే వైపు నుంచి లెక్కించబడుతున్నాయని నిర్ధారించుకోండి.</p>
+<div class="formula">After a person moves forward by k places: New rank = Old rank − k<br>After moving backward by k places: New rank = Old rank + k</div>
+<p>ముందుకు కదిలితే rank number తగ్గుతుంది; వెనక్కి కదిలితే rank number పెరుగుతుంది.</p>
+</section>
+
+<section class="panel">
+<h2>3. Question Types | ప్రశ్నల రకాలు</h2>
+<h3>A. ఒకే వైపు నుంచి ర్యాంకులు | Ranks from the same side</h3>
+<p>ఒక వరుసలో A 5వ స్థానంలో, B 12వ స్థానంలో ఉంటే మధ్యలో 12−5−1 = 6 మంది. A, B positions మధ్య తేడా 7 అయినా, మధ్యలో ఉన్నవారు 6 మాత్రమే.</p>
+<h3>B. రెండు చివరల నుంచి ర్యాంకులు | Ranks from opposite ends</h3>
+<p>ఒకే వ్యక్తి ఎడమ నుంచి 9వ స్థానం, కుడి నుంచి 14వ స్థానం అయితే మొత్తం 9+14−1 = 22 మంది.</p>
+<h3>C. మొత్తం సంఖ్య ఇచ్చినప్పుడు మరో వైపు ర్యాంక్</h3>
+<p>మొత్తం 40 మంది; ఒక విద్యార్థి పై నుంచి 13వ స్థానం. కింది నుంచి స్థానం = 40−13+1 = 28.</p>
+<h3>D. ఇద్దరి మధ్య స్థానాల మార్పు | Interchanging positions</h3>
+<p>ఒక వ్యక్తి ముందుకు లేదా వెనక్కి వెళ్లినప్పుడు అతని పాత, కొత్త rankలను పోల్చాలి. ప్రశ్నలో “moves up 5 places” అంటే rank number 5 తగ్గుతుంది.</p>
+<h3>E. రెండు వైపులా వ్యక్తుల సంఖ్య | Persons on either side</h3>
+<p>Aకు ముందు 8 మంది, వెనుక 11 మంది ఉంటే Aతో కలిపి మొత్తం 8+1+11 = 20 మంది.</p>
+<h3>F. వరుసలో ఎదురెదురుగా / క్రమబద్ధమైన స్థానాలు</h3>
+<p>Left–right లేదా top–bottom దిశలను ఒకే reference sideగా మార్చిన తర్వాత మాత్రమే ranksను subtract చేయాలి. ఒక rank ఎడమ నుంచి, మరొకటి కుడి నుంచి ఉంటే ముందుగా total అవసరం.</p>
+</section>
+
+<section class="panel">
+<h2>4. Solved Examples | పరిష్కరించిన ఉదాహరణలు</h2>
+<div class="example"><b>Example 1:</b> Ravi is 8th from the top and 17th from the bottom. Find total students.<p>తెలుగు: రవి పై నుంచి 8వ, కింది నుంచి 17వ స్థానం.</p><p>Formula = 8 + 17 − 1 = <span class="answer">24 students</span>.</p></div>
+<div class="example"><b>Example 2:</b> In a row of 35, Sita is 12th from the left. Find her rank from the right.<p>Right rank = 35 − 12 + 1 = <span class="answer">24th</span>.</p></div>
+<div class="example"><b>Example 3:</b> A is 6th and B is 15th from the left. How many are between them?<p>15 − 6 − 1 = <span class="answer">8 persons</span>.</p></div>
+<div class="example"><b>Example 4:</b> There are 50 candidates. Kiran is 18th from the bottom. Find rank from the top.<p>50 − 18 + 1 = <span class="answer">33rd</span>.</p></div>
+<div class="example"><b>Example 5:</b> Meena is 14th from the left. She moves 4 places towards the left/front. New rank?<p>14 − 4 = <span class="answer">10th</span>.</p></div>
+<div class="example"><b>Example 6:</b> A is 9th from the left and B is 13th from the right in a row of 30. Find the number between them, assuming A is to the left of B.<p>B from left = 30 − 13 + 1 = 18. Between = 18 − 9 − 1 = <span class="answer">8 persons</span>.</p></div>
+<div class="example"><b>Example 7:</b> A person is 7th from the front and 9th from the back. Total?<p>7 + 9 − 1 = <span class="answer">15 people</span>.</p></div>
+<div class="example"><b>Example 8:</b> In a class, Arun is 5 ranks ahead of Bala. Bala is 17th from the top. Arun's rank?<p>17 − 5 = <span class="answer">12th</span>.</p></div>
+<div class="example"><b>Example 9:</b> There are 28 people. A is 10th from left. B is 10th from right. If A is left of B, persons between?<p>B from left = 28 − 10 + 1 = 19. Between = 19 − 10 − 1 = <span class="answer">8</span>.</p></div>
+<div class="example"><b>Example 10:</b> A student was 20th from top. After 6 students moved ahead of him, what is his new rank if he is overtaken by six students?<p>Rank increases by 6: 20 + 6 = <span class="answer">26th</span>.</p></div>
+</section>
+
+<section class="panel">
+<h2>5. Shortcuts & Exam Strategy | వేగవంతమైన పద్ధతులు</h2>
+<ol>
+<li><b>“Both ends” కనిపిస్తే:</b> Top + Bottom − 1.</li>
+<li><b>“From the other end” కనిపిస్తే:</b> Total − Given rank + 1.</li>
+<li><b>“Between” కనిపిస్తే:</b> Rank difference − 1.</li>
+<li><b>“Ahead”</b> అంటే సాధారణంగా better rank number (చిన్న సంఖ్య); “behind” అంటే rank number పెద్దది.</li>
+<li><b>“Moves up / moves towards front”:</b> rank number తగ్గుతుంది.</li>
+<li><b>“Moves down / towards end”:</b> rank number పెరుగుతుంది.</li>
+<li>ఎడమ/కుడి లేదా top/bottom mixed ranks ఉంటే ముందుగా రెండింటినీ ఒకే వైపు ranksగా మార్చండి.</li>
+<li>చివరగా answer మొత్తం వ్యక్తుల సంఖ్య కంటే ఎక్కువగా ఉందా, rank కనీసం 1గా ఉందా అని check చేయండి.</li>
+</ol>
+<h3>Common mistakes | సాధారణ తప్పులు</h3>
+<ul>
+<li>మొత్తం formulaలో −1 మర్చిపోవడం.</li>
+<li>“Between” ప్రశ్నలో −1 తీసివేయకపోవడం.</li>
+<li>ముందుకు కదిలితే rank పెరుగుతుందని పొరబడటం.</li>
+<li>“Ahead of” మరియు “number of persons ahead”లను ఒకటిగా భావించడం.</li>
+<li>Opposite-end ranksను నేరుగా subtract చేయడం.</li>
+<li>Interchange ప్రశ్నల్లో వ్యక్తి rank మారిందా, అతని ముందు ఉన్నవారి సంఖ్య మారిందా అన్నది చదవకపోవడం.</li>
+</ul>
+</section>
+
+<section class="panel">
+<h2>6. Quick Revision Table | పునశ్చరణ పట్టిక</h2>
+<table><thead><tr><th>Question clue</th><th>Method</th><th>తెలుగు గుర్తు</th></tr></thead><tbody>
+<tr><td>Top and bottom rank</td><td>T + B − 1</td><td>రెండు వైపుల ర్యాంకులు కలిపి 1 తీసివేయాలి</td></tr>
+<tr><td>Other-end rank</td><td>N − R + 1</td><td>మొత్తం నుంచి ఇచ్చిన ర్యాంక్ తీసి 1 కలపాలి</td></tr>
+<tr><td>Persons between</td><td>Difference − 1</td><td>ర్యాంకుల తేడా నుంచి 1 తీసివేయాలి</td></tr>
+<tr><td>Moves forward</td><td>Old rank − k</td><td>ముందుకు = ర్యాంక్ సంఖ్య తగ్గుతుంది</td></tr>
+<tr><td>Moves backward</td><td>Old rank + k</td><td>వెనక్కి = ర్యాంక్ సంఖ్య పెరుగుతుంది</td></tr>
+<tr><td>Persons ahead/behind</td><td>Add 1 for person's position</td><td>వ్యక్తిని కూడా లెక్కలో చేర్చాలి</td></tr>
+</tbody></table>
+</section>
+
+<section class="panel" id="quiz">
+<h2>7. Practice Test – 50 MCQs | అభ్యాస ప్రశ్నలు</h2>
+<p>ప్రతి ప్రశ్నకు సరైన సమాధానాన్ని ఎంచుకోండి. చివరలో Submit నొక్కితే score మరియు ప్రతి ప్రశ్నకు explanation కనిపిస్తాయి.</p>
+<div id="questions"></div>
+<div id="result" class="result" aria-live="polite">మీ సమాధానాలు ఇక్కడ కనిపిస్తాయి.</div>
+<button type="button" onclick="gradeQuiz()">Submit / ఫలితాలు చూడండి</button>
+<button type="button" class="secondary" onclick="resetQuiz()">Reset / మళ్లీ ప్రయత్నించండి</button>
+<button type="button" class="secondary" onclick="showAll()">Show Explanations / వివరణలు</button>
+</section>
+</main>
+<footer>RETRY IN LIBRARY · Reasoning · Chapter 08 – Ranking and Order</footer>
+<script>
+const quiz = [
+["A student is 7th from the top and 18th from the bottom. How many students are there? / పై నుంచి 7వ, కింది నుంచి 18వ స్థానం. మొత్తం?",["23","24","25","26"],1,"Total = 7 + 18 − 1 = 24."],
+["In a row of 40, Ravi is 13th from the left. What is his rank from the right?",["26th","27th","28th","29th"],2,"Right rank = 40 − 13 + 1 = 28."],
+["A is 5th and B is 12th from the left. How many persons are between them?",["5","6","7","8"],1,"Between = 12 − 5 − 1 = 6."],
+["There are 32 students. Sita is 9th from the bottom. Rank from top?",["22nd","23rd","24th","25th"],2,"Top rank = 32 − 9 + 1 = 24."],
+["A person is 11th from the front and 14th from the back. Total people?",["23","24","25","26"],1,"Total = 11 + 14 − 1 = 24."],
+["Mohan is 16th from the left in a row of 45. Rank from right?",["29th","30th","31st","32nd"],2,"45 − 16 + 1 = 30? Calculation: 45−16=29; +1=30. Correct option is 30th.",1],
+["A is 8th and B is 19th from the same end. Persons between?",["9","10","11","12"],1,"19 − 8 − 1 = 10."],
+["A student is 21st from top in a class of 60. Rank from bottom?",["39th","40th","41st","42nd"],2,"60 − 21 + 1 = 40."],
+["There are 27 people. A is 6th from left and B is 8th from right. If A is left of B, how many between?",["12","13","14","15"],1,"B from left = 27−8+1=20; between = 20−6−1=13."],
+["Raju is 4 places ahead of Kiran. Kiran is 18th. Raju's rank?",["12th","13th","14th","15th"],2,"Ahead means a smaller rank number: 18−4=14."],
+["A person moves from 17th to 9th place. How many places did the person move forward?",["6","7","8","9"],2,"17−9 = 8 places."],
+["A person at 12th place moves 5 places backward. New rank?",["15th","16th","17th","18th"],2,"Backward increases rank number: 12+5=17."],
+["In a row of 50, Priya is 22nd from the right. Rank from left?",["28th","29th","30th","31st"],2,"50−22+1=29."],
+["A is 10th from left; B is 10th from right in a row of 25. If A is left of B, persons between?",["4","5","6","7"],1,"B from left=25−10+1=16; between=16−10−1=5."],
+["There are 36 candidates. A is 15th from top. How many are below A?",["20","21","22","23"],2,"Below = 36−15 = 21."],
+["There are 48 students. B is 17th from bottom. How many are above B?",["30","31","32","33"],2,"Rank from top=48−17+1=32; above=32−1=31."],
+["A is 9th from left. There are 12 persons to A's right. Total?",["20","21","22","23"],1,"Total = 8 on left + A + 12 right = 21."],
+["There are 31 persons. A has 7 persons ahead and 15 behind. Is this possible?",["Yes, total 23","Yes, total 24","No, total 31 required","Cannot say"],2,"7+1+15=23, which is not 31; the given information is inconsistent."],
+["In a queue, Deepa is 14th from front. 5 people join ahead of her. New rank?",["17th","18th","19th","20th"],2,"Five people ahead increase her rank number: 14+5=19."],
+["A is 3 ranks behind B. B is 11th from top. A's rank?",["12th","13th","14th","15th"],1,"Behind means larger rank: 11+3=14."],
+["A boy is 13th from left and 18th from right. Total boys?",["29","30","31","32"],1,"13+18−1=30."],
+["In a class of 42, Neha is 16th from bottom. How many students are above her?",["25","26","27","28"],2,"Top rank=42−16+1=27; above=26."],
+["A is 6th from the left. B is 17th from the left. How many positions apart?",["9","10","11","12"],2,"Position difference = 17−6=11."],
+["If 8 people are between A and B, and A is 5th from left while B is after A, B's rank?",["12th","13th","14th","15th"],1,"B rank = 5 + 8 + 1 = 14? 5th, then 8 between, B at 14th. Correct option 14th.",2],
+["In a row of 29, K is 12th from right. Rank from left?",["16th","17th","18th","19th"],2,"29−12+1=18."],
+["A is 20th from top and 25th from bottom. Total?",["43","44","45","46"],1,"20+25−1=44."],
+["A is 7th from top in a group. There are 18 below A. Total?",["24","25","26","27"],1,"6 above + A + 18 below = 25."],
+["In a queue of 64, a person is 31st from front. How many are behind?",["32","33","34","35"],1,"Behind = 64−31=33."],
+["Rani is 19th from left. After moving 7 places towards the right/end, her new rank from left?",["24th","25th","26th","27th"],2,"Moving towards the end increases rank: 19+7=26."],
+["A is 4th from left and B is 4th from right in a row of 20. Persons between if A is left of B?",["10","11","12","13"],1,"B from left=20−4+1=17; between=17−4−1=12."],
+["There are 55 students. Hari is 23rd from top. Rank from bottom?",["31st","32nd","33rd","34th"],2,"55−23+1=33."],
+["A person is 8th from front. There are 9 people behind. Total?",["16","17","18","19"],1,"7 ahead + person + 9 behind = 17."],
+["In a line, A is 12th from left and B is 15th from right. Total 40. If A is left of B, persons between?",["12","13","14","15"],2,"B from left=40−15+1=26; between=26−12−1=13."],
+["A is 18th from bottom in a class of 70. How many are above A?",["51","52","53","54"],1,"Top rank=70−18+1=53; above=52."],
+["If a person is 5th from left and 9th from right, total in row?",["12","13","14","15"],1,"5+9−1=13."],
+["A is 25th from top. B is 5 places below A. B's rank?",["28th","29th","30th","31st"],2,"25+5=30."],
+["A student improves from 32nd to 21st rank. Places improved?",["9","10","11","12"],2,"32−21=11 places."],
+["There are 38 people. A is 14th from left. Number to A's left?",["12","13","14","15"],1,"Persons to the left = rank−1 = 13."],
+["There are 38 people. A is 14th from left. Number to A's right?",["23","24","25","26"],1,"Right side = 38−14 = 24."],
+["A is 9th from top. B is 9th from bottom in a group of 20. If A is above B, how many between?",["1","2","3","4"],1,"B from top=20−9+1=12; between=12−9−1=2."],
+["A person has 6 people ahead and 8 behind. Total persons?",["13","14","15","16"],1,"6+1+8=15."],
+["In a row, A is 11th from left and B is 20th from left. How many people are between?",["7","8","9","10"],1,"20−11−1=8."],
+["A is 13th from right in a row of 34. Rank from left?",["20th","21st","22nd","23rd"],2,"34−13+1=22."],
+["There are 72 candidates. A is 30th from bottom. Rank from top?",["41st","42nd","43rd","44th"],2,"72−30+1=43."],
+["A is 2 places ahead of B. B is 24th from the left. A's rank?",["20th","21st","22nd","23rd"],2,"24−2=22."],
+["A person moves 6 places backward from 15th position. New position?",["19th","20th","21st","22nd"],1,"15+6=21."],
+["A is 10th from left and there are 10 people to the right. Total?",["19","20","21","22"],1,"9 to left + A + 10 to right = 20."],
+["In a group of 45, a student is 18th from bottom. How many students are above?",["26","27","28","29"],1,"Top rank=45−18+1=28; above=27."],
+["A is 7th from left; B is 7th from right in a row of 25. If A is left of B, persons between?",["9","10","11","12"],1,"B from left=25−7+1=19; between=19−7−1=11."],
+["A is 16th from top and 20th from bottom. Total students?",["34","35","36","37"],1,"16+20−1=35."]
+];
+// Normalize any optional answer override used in authoring.
+quiz.forEach(q=>{if(q.length===5){q[1]=q[1];q[2]=q[4];q.length=4;}});
+const host=document.getElementById('questions');
+quiz.forEach((q,i)=>{
+ const wrap=document.createElement('div');wrap.className='question';wrap.id='q'+i;
+ const p=document.createElement('p');p.textContent=(i+1)+'. '+q[0];wrap.appendChild(p);
+ const opts=document.createElement('div');opts.className='options';
+ q[1].forEach((opt,j)=>{const label=document.createElement('label');const radio=document.createElement('input');radio.type='radio';radio.name='q'+i;radio.value=j;label.appendChild(radio);label.appendChild(document.createTextNode(String.fromCharCode(65+j)+'. '+opt));opts.appendChild(label);});
+ wrap.appendChild(opts);const exp=document.createElement('div');exp.className='explanation';exp.id='e'+i;exp.textContent='Explanation: '+q[3];wrap.appendChild(exp);host.appendChild(wrap);
+});
+function gradeQuiz(){let score=0,answered=0;quiz.forEach((q,i)=>{const chosen=document.querySelector('input[name="q'+i+'"]:checked');const exp=document.getElementById('e'+i);exp.style.display='block';if(chosen){answered++;if(Number(chosen.value)===q[2]){score++;exp.style.borderLeftColor='#16a34a';}else{exp.style.borderLeftColor='#dc2626';}exp.textContent=(Number(chosen.value)===q[2]?'Correct. ':'Incorrect. ')+'Answer: '+q[1][q[2]]+'. '+q[3];}else{exp.style.borderLeftColor='#d97706';exp.textContent='Not answered. Correct answer: '+q[1][q[2]]+'. '+q[3];}});document.getElementById('result').textContent='Score: '+score+' / '+quiz.length+' | Answered: '+answered+' | Accuracy: '+Math.round(score/quiz.length*100)+'%';}
+function resetQuiz(){document.querySelectorAll('#questions input').forEach(x=>x.checked=false);document.querySelectorAll('.explanation').forEach(x=>x.style.display='none');document.getElementById('result').textContent='మీ సమాధానాలు ఇక్కడ కనిపిస్తాయి.';}
+function showAll(){quiz.forEach((q,i)=>{const e=document.getElementById('e'+i);e.style.display='block';e.textContent='Correct answer: '+q[1][q[2]]+'. '+q[3];});}
+</script>
+</body></html>
