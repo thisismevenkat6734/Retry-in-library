@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f59e0b">
+  <title>Average - RETRY IN LIBRARY</title>
+  <style>
+    :root {
+      --saffron: #f59e0b;
+      --dark: #78350f;
+      --light: #fff7ed;
+      --green: #15803d;
+      --red: #dc2626;
+      --text: #292524;
+      --muted: #78716c;
+      --border: #fed7aa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Noto Sans Telugu", sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    header {
+      background: linear-gradient(135deg, #f59e0b, #ea580c);
+      color: white;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    header h1 { margin: 0 0 6px; font-size: 27px; }
+    header p { margin: 4px 0; }
+
+    .container {
+      width: min(950px, 94%);
+      margin: 20px auto;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin-bottom: 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 3px 12px rgba(120, 53, 15, 0.06);
+    }
+
+    h2 { color: var(--dark); margin-top: 0; font-size: 21px; }
+    h3 { color: #9a3412; margin-bottom: 8px; }
+
+    .formula {
+      background: #ffedd5;
+      border-left: 5px solid var(--saffron);
+      padding: 14px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-weight: bold;
+      overflow-wrap: anywhere;
+    }
+
+    .example {
+      background: #fafaf9;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 10px 0;
+      border: 1px solid #e7e5e4;
+    }
+
+    .quiz-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 10px;
+      background: #e7e5e4;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 12px 0;
+    }
+
+    #progressBar {
+      height: 100%;
+      width: 0%;
+      background: var(--green);
+      transition: width 0.2s;
+    }
+
+    .question {
+      padding: 16px 0;
+      border-bottom: 1px solid #e7e5e4;
+    }
+
+    .question:last-child { border-bottom: 0; }
+
+    .question h3 {
+      color: var(--text);
+      font-size: 16px;
+      margin: 0 0 10px;
+    }
+
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      padding: 10px;
+      margin: 7px 0;
+      border: 1px solid #e7e5e4;
+      border-radius: 8px;
+      cursor: pointer;
+      background: white;
+    }
+
+    .option:hover {
+      background: #fff7ed;
+      border-color: var(--saffron);
+    }
+
+    .option input {
+      margin-top: 5px;
+      accent-color: #ea580c;
+    }
+
+    .option.correct {
+      border-color: var(--green);
+      background: #dcfce7;
+    }
+
+    .option.wrong {
+      border-color: var(--red);
+      background: #fee2e2;
+    }
+
+    .explanation {
+      display: none;
+      padding: 10px;
+      margin-top: 8px;
+      background: #f5f5f4;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .explanation.show { display: block; }
+
+    button {
+      border: 0;
+      border-radius: 9px;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 5px 5px 5px 0;
+    }
+
+    .primary { background: #ea580c; color: white; }
+    .secondary { background: #e7e5e4; color: #292524; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    #result {
+      display: none;
+      padding: 16px;
+      margin-top: 15px;
+      border-radius: 10px;
+      background: #dcfce7;
+      border: 1px solid #86efac;
+    }
+
+    .result-score {
+      font-size: 25px;
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .note { color: var(--muted); font-size: 14px; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 23px; }
+      .card { padding: 15px; }
+      button { width: 100%; margin: 5px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RETRY IN LIBRARY</h1>
+  <p>Mathematics | గణితం</p>
+  <p><strong>Average – సగటు</strong></p>
+  <p>Learn • Practice • Succeed</p>
+</header>
+
+<main class="container">
+
+  <section class="card">
+    <h2>1. Introduction – పరిచయం</h2>
+    <p>Average is a single value that represents the central or typical value of a group of numbers.</p>
+    <p>సగటు అనేది ఇచ్చిన సంఖ్యల సమూహాన్ని ఒకే విలువ ద్వారా సూచించే పద్ధతి.</p>
+    <div class="formula">Average = Sum of all observations ÷ Number of observations</div>
+    <div class="formula">సగటు = అన్ని సంఖ్యల మొత్తం ÷ సంఖ్యల సంఖ్య</div>
+  </section>
+
+  <section class="card">
+    <h2>2. Important Formulas – ముఖ్యమైన సూత్రాలు</h2>
+    <h3>Formula 1: Average</h3>
+    <div class="formula">Average = Total Sum / Number of Values</div>
+    <h3>Formula 2: Total Sum</h3>
+    <div class="formula">Total Sum = Average × Number of Values</div>
+    <h3>Formula 3: Missing Value</h3>
+    <div class="formula">Missing Value = Required Total − Sum of Known Values</div>
+    <h3>Formula 4: New Average after Adding a Value</h3>
+    <div class="formula">New Average = (Old Total + New Value) / New Number of Values</div>
+    <h3>Formula 5: New Average after Removing a Value</h3>
+    <div class="formula">New Average = (Old Total − Removed Value) / Remaining Values</div>
+  </section>
+
+  <section class="card">
+    <h2>3. Solved Examples – సాధించిన ఉదాహరణలు</h2>
+
+    <div class="example">
+      <strong>Example 1:</strong> Find the average of 10, 20 and 30.
+      <p>మొత్తం = 10 + 20 + 30 = 60</p>
+      <p>సంఖ్యలు = 3</p>
+      <p><strong>Average = 60 ÷ 3 = 20</strong></p>
+    </div>
+
+    <div class="example">
+      <strong>Example 2:</strong> The average of 5 numbers is 12. Find their total.
+      <p>Total = 12 × 5</p>
+      <p><strong>Answer = 60</strong></p>
+    </div>
+
+    <div class="example">
+      <strong>Example 3:</strong> The average of 4 numbers is 15. Three numbers are 10, 12 and 18. Find the fourth number.
+      <p>Required total = 15 × 4 = 60</p>
+      <p>Known total = 10 + 12 + 18 = 40</p>
+      <p><strong>Missing number = 60 − 40 = 20</strong></p>
+    </div>
+
+    <div class="example">
+      <strong>Example 4:</strong> The average of 5 numbers is 20. If 30 is added as a sixth number, find the new average.
+      <p>Old total = 20 × 5 = 100</p>
+      <p>New total = 100 + 30 = 130</p>
+      <p><strong>New average = 130 ÷ 6 = 21.67 approximately</strong></p>
+    </div>
+
+    <div class="example">
+      <strong>Example 5:</strong> The average of 10 numbers is 25. If 30 is removed, find the average of the remaining numbers.
+      <p>Old total = 25 × 10 = 250</p>
+      <p>Remaining total = 250 − 30 = 220</p>
+      <p>Remaining numbers = 9</p>
+      <p><strong>New average = 220 ÷ 9 = 24.44 approximately</strong></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>4. Important Points – ముఖ్యమైన అంశాలు</h2>
+    <ul>
+      <li>Average always depends on the total and the number of values.</li>
+      <li>All values equal అయితే average కూడా అదే విలువ అవుతుంది.</li>
+      <li>ఒక విలువను చేర్చినప్పుడు మొత్తం సంఖ్యల సంఖ్య కూడా పెరుగుతుంది.</li>
+      <li>ఒక విలువను తొలగించినప్పుడు మిగిలిన సంఖ్యల సంఖ్య తగ్గుతుంది.</li>
+      <li>Average can be a decimal value.</li>
+      <li>సగటు తప్పనిసరిగా ఇచ్చిన సంఖ్యలలో ఒకటే కావాల్సిన అవసరం లేదు.</li>
+    </ul>
+  </section>
+
+  <section class="card" id="quiz">
+    <div class="quiz-header">
+      <h2>5. Practice Test – అభ్యాస పరీక్ష</h2>
+      <strong id="answeredCount">Answered: 0 / 50</strong>
+    </div>
+
+    <p class="note">Choose one correct answer for each question. Submit to view your score and explanations.</p>
+
+    <div class="progress-track">
+      <div id="progressBar"></div>
+    </div>
+
+    <div id="questionsContainer"></div>
+
+    <button class="primary" id="submitBtn" type="button">Submit Test</button>
+    <button class="secondary" id="resetBtn" type="button">Reset Test</button>
+
+    <div id="result" aria-live="polite"></div>
+  </section>
+
+</main>
+
+<footer>RETRY IN LIBRARY © Mathematics Learning</footer>
+
+<script>
+"use strict";
+
+const questions = [
+  {
+    q: "Find the average of 10, 20 and 30. / 10, 20, 30 ల సగటు ఎంత?",
+    o: ["10", "20", "30", "40"],
+    a: 1,
+    e: "మొత్తం = 10 + 20 + 30 = 60. సగటు = 60 ÷ 3 = 20."
+  },
+  {
+    q: "The sum of 5 numbers is 75. Find their average. / 5 సంఖ్యల మొత్తం 75 అయితే సగటు ఎంత?",
+    o: ["10", "12", "15", "20"],
+    a: 2,
+    e: "సగటు = 75 ÷ 5 = 15."
+  },
+  {
+    q: "The average of 8 numbers is 12. Find their sum. / 8 సంఖ్యల సగటు 12 అయితే మొత్తం ఎంత?",
+    o: ["84", "90", "96", "108"],
+    a: 2,
+    e: "మొత్తం = 12 × 8 = 96."
+  },
+  {
+    q: "The average of 4 numbers is 25. Find their total.",
+    o: ["75", "90", "100", "125"],
+    a: 2,
+    e: "మొత్తం = 25 × 4 = 100."
+  },
+  {
+    q: "Find the average of 6, 8, 10 and 12.",
+    o: ["8", "9", "10", "11"],
+    a: 1,
+    e: "మొత్తం = 36. సగటు = 36 ÷ 4 = 9."
+  },
+  {
+    q: "The average of 7 numbers is 20. Find their sum.",
+    o: ["120", "130", "140", "150"],
+    a: 2,
+    e: "మొత్తం = 20 × 7 = 140."
+  },
+  {
+    q: "The average of 4, 8, 12 and x is 9. Find x.",
+    o: ["8", "10", "12", "14"],
+    a: 2,
+    e: "మొత్తం = 9 × 4 = 36. తెలిసిన మొత్తం = 24. x = 36 − 24 = 12."
+  },
+  {
+    q: "Find the average of 21, 22 and 23.",
+    o: ["21", "22", "23", "24"],
+    a: 1,
+    e: "సగటు = (21 + 22 + 23) ÷ 3 = 66 ÷ 3 = 22."
+  },
+  {
+    q: "Find the average of the first five natural numbers.",
+    o: ["2", "3", "4", "5"],
+    a: 1,
+    e: "సంఖ్యలు 1, 2, 3, 4, 5. మొత్తం 15. సగటు = 15 ÷ 5 = 3."
+  },
+  {
+    q: "Find the average of 10, 20, 30, 40 and 50.",
+    o: ["20", "25", "30", "35"],
+    a: 2,
+    e: "మొత్తం = 150. సగటు = 150 ÷ 5 = 30."
+  },
+  {
+    q: "The average of 5 numbers is 18. If 24 is added, find the new average.",
+    o: ["18", "19", "20", "21"],
+    a: 1,
+    e: "పాత మొత్తం = 18 × 5 = 90. కొత్త మొత్తం = 90 + 24 = 114. కొత్త సగటు = 114 ÷ 6 = 19."
+  },
+  {
+    q: "The average of 10 numbers is 20. If another number 20 is added, what is the new average?",
+    o: ["18", "19", "20", "21"],
+    a: 2,
+    e: "పాత మొత్తం = 200. కొత్త మొత్తం = 220. సంఖ్యలు = 11. సగటు = 220 ÷ 11 = 20."
+  },
+  {
+    q: "The average of 5 numbers is 16. If 10 is removed, find the average of the remaining numbers.",
+    o: ["16", "17", "17.5", "18"],
+    a: 2,
+    e: "పాత మొత్తం = 16 × 5 = 80. మిగిలిన మొత్తం = 80 − 10 = 70. సగటు = 70 ÷ 4 = 17.5."
+  },
+  {
+    q: "The average of 8 numbers is 25. A value of 32 is replaced by 40. Find the new average.",
+    o: ["25", "26", "27", "28"],
+    a: 1,
+    e: "మొత్తం 8 పెరుగుతుంది. కొత్త మొత్తం = 25 × 8 + 8 = 208. సగటు = 208 ÷ 8 = 26."
+  },
+  {
+    q: "Find the average of 10, 15 and 20.",
+    o: ["12", "15", "18", "20"],
+    a: 1,
+    e: "మొత్తం = 45. సగటు = 45 ÷ 3 = 15."
+  },
+  {
+    q: "Find the average of 2, 4, 6, 8 and 10.",
+    o: ["5", "6", "7", "8"],
+    a: 1,
+    e: "మొత్తం = 30. సగటు = 30 ÷ 5 = 6."
+  },
+  {
+    q: "The average of 6 values is 15. Find their sum.",
+    o: ["75", "80", "90", "100"],
+    a: 2,
+    e: "మొత్తం = 15 × 6 = 90."
+  },
+  {
+    q: "The average of 5 numbers is 12. Four numbers add up to 50. Find the fifth number.",
+    o: ["8", "10", "12", "14"],
+    a: 1,
+    e: "మొత్తం = 12 × 5 = 60. ఐదవ సంఖ్య = 60 − 50 = 10."
+  },
+  {
+    q: "The average of 7 numbers is 9. Find their sum.",
+    o: ["54", "60", "63", "72"],
+    a: 2,
+    e: "మొత్తం = 9 × 7 = 63."
+  },
+  {
+    q: "Find the average of 30, 40, 50 and 60.",
+    o: ["40", "45", "50", "55"],
+    a: 1,
+    e: "మొత్తం = 180. సగటు = 180 ÷ 4 = 45."
+  },
+  {
+    q: "Find the average of the first 10 natural numbers.",
+    o: ["5", "5.5", "6", "6.5"],
+    a: 1,
+    e: "మొత్తం = 10 × 11 ÷ 2 = 55. సగటు = 55 ÷ 10 = 5.5."
+  },
+  {
+    q: "Find the average of the first 10 even natural numbers.",
+    o: ["10", "11", "12", "13"],
+    a: 1,
+    e: "సంఖ్యలు 2 నుంచి 20 వరకు. సగటు = (2 + 20) ÷ 2 = 11."
+  },
+  {
+    q: "Find the average of the first five odd natural numbers.",
+    o: ["3", "4", "5", "6"],
+    a: 2,
+    e: "సంఖ్యలు 1, 3, 5, 7, 9. మొత్తం = 25. సగటు = 25 ÷ 5 = 5."
+  },
+  {
+    q: "Find the average of three consecutive numbers 34, 35 and 36.",
+    o: ["34", "35", "36", "37"],
+    a: 1,
+    e: "మూడు వరుస సంఖ్యల మధ్య సంఖ్య 35. సగటు కూడా 35."
+  },
+  {
+    q: "The ages of four people are 20, 22, 24 and 26. Find their average age.",
+    o: ["21", "22", "23", "24"],
+    a: 2,
+    e: "మొత్తం = 92. సగటు = 92 ÷ 4 = 23."
+  },
+  {
+    q: "The average of 5 numbers is 14. If 20 is added, find the new average.",
+    o: ["14", "15", "16", "17"],
+    a: 1,
+    e: "పాత మొత్తం = 70. కొత్త మొత్తం = 90. సంఖ్యలు = 6. సగటు = 90 ÷ 6 = 15."
+  },
+  {
+    q: "The average of 6 numbers is 10. If one value 10 is removed, find the new average.",
+    o: ["8", "9", "10", "11"],
+    a: 2,
+    e: "పాత మొత్తం = 60. కొత్త మొత్తం = 60 − 10 = 50. మిగిలినవి 5. సగటు = 50 ÷ 5 = 10."
+  },
+  {
+    q: "The average of 4 numbers is 15. If 20 is added as the fifth number, find the new average.",
+    o: ["15", "16", "17", "18"],
+    a: 1,
+    e: "పాత మొత్తం = 60. కొత్త మొత్తం = 80. సగటు = 80 ÷ 5 = 16."
+  },
+  {
+    q: "The average of 8 numbers is 12. Find their total.",
+    o: ["84", "90", "96", "108"],
+    a: 2,
+    e: "మొత్తం = 12 × 8 = 96."
+  },
+  {
+    q: "The average of 5 numbers is 20. If 30 is replaced by 10, find the new average.",
+    o: ["14", "16", "18", "20"],
+    a: 1,
+    e: "మొత్తం 20 తగ్గుతుంది. కొత్త మొత్తం = 100 − 20 = 80. సగటు = 80 ÷ 5 = 16."
+  },
+  {
+    q: "The average of 12 numbers is 8. Find their sum.",
+    o: ["84", "90", "96", "108"],
+    a: 2,
+    e: "మొత్తం = 12 × 8 = 96."
+  },
+  {
+    q: "The average of 4 numbers is 18. Find their total.",
+    o: ["64", "68", "72", "76"],
+    a: 2,
+    e: "మొత్తం = 18 × 4 = 72."
+  },
+  {
+    q: "Find the average of 10, 12, 14, 16 and 18.",
+    o: ["12", "13", "14", "15"],
+    a: 2,
+    e: "మొత్తం = 70. సగటు = 70 ÷ 5 = 14."
+  },
+  {
+    q: "The average of three numbers is 25. Two numbers are 20 and 30. Find the third number.",
+    o: ["20", "25", "30", "35"],
+    a: 1,
+    e: "మొత్తం = 25 × 3 = 75. మూడవ సంఖ్య = 75 − 20 − 30 = 25."
+  },
+  {
+    q: "Find the average of 2, 6, 10 and 14.",
+    o: ["6", "7", "8", "9"],
+    a: 2,
+    e: "మొత్తం = 32. సగటు = 32 ÷ 4 = 8."
+  },
+  {
+    q: "The average of 9 numbers is 16. Find their sum.",
+    o: ["124", "134", "144", "154"],
+    a: 2,
+    e: "మొత్తం = 16 × 9 = 144."
+  },
+  {
+    q: "The average of 11 numbers is 285/11. Find the average approximately.",
+    o: ["25", "25.5", "25.91", "26"],
+    a: 2,
+    e: "285 ÷ 11 = 25.9090... కాబట్టి సుమారు 25.91."
+  },
+  {
+    q: "Find the average of 7, 14 and 21.",
+    o: ["12", "14", "16", "18"],
+    a: 1,
+    e: "మొత్తం = 42. సగటు = 42 ÷ 3 = 14."
+  },
+  {
+    q: "The average of five consecutive numbers is 18. Find the middle number.",
+    o: ["16", "17", "18", "19"],
+    a: 2,
+    e: "ఐదు వరుస సంఖ్యల సగటు మధ్య సంఖ్యకు సమానం. కాబట్టి మధ్య సంఖ్య 18."
+  },
+  {
+    q: "Find the average of 12, 14, 16, 18, 20 and 22.",
+    o: ["15", "16", "17", "18"],
+    a: 2,
+    e: "మొత్తం = 102. సగటు = 102 ÷ 6 = 17."
+  },
+  {
+    q: "The average of 4 numbers is 25. Three numbers are 10, 20 and 30. Find the fourth number.",
+    o: ["30", "35", "40", "45"],
+    a: 2,
+    e: "మొత్తం = 25 × 4 = 100. తెలిసిన మొత్తం = 60. నాలుగవ సంఖ్య = 100 − 60 = 40."
+  },
+  {
+    q: "The average of 5 numbers is 15. If 25 is added, find the new average.",
+    o: ["15", "16", "16.67", "17"],
+    a: 2,
+    e: "పాత మొత్తం = 75. కొత్త మొత్తం = 100. కొత్త సగటు = 100 ÷ 6 = 16.67 సుమారు."
+  },
+  {
+    q: "The average of 10 numbers is 25. If 30 is removed, find the average of the remaining 9 numbers.",
+    o: ["24", "24.44", "24.5", "25"],
+    a: 1,
+    e: "పాత మొత్తం = 25 × 10 = 250. మిగిలిన మొత్తం = 250 − 30 = 220. కొత్త సగటు = 220 ÷ 9 = 24.44 సుమారు."
+  },
+  {
+    q: "The average of 20 numbers is 5. Find their sum.",
+    o: ["80", "90", "100", "110"],
+    a: 2,
+    e: "మొత్తం = 20 × 5 = 100."
+  },
+  {
+    q: "Find the average of 12, 16, 20 and 24.",
+    o: ["16", "17", "18", "19"],
+    a: 2,
+    e: "మొత్తం = 72. సగటు = 72 ÷ 4 = 18."
+  },
+  {
+    q: "The total of 21 numbers is 860. Find the average approximately.",
+    o: ["40", "40.5", "40.95", "41"],
+    a: 2,
+    e: "సగటు = 860 ÷ 21 = 40.9523... కాబట్టి సుమారు 40.95."
+  },
+  {
+    q: "Find the average of 9, 11, 13 and 15.",
+    o: ["10", "11", "12", "13"],
+    a: 2,
+    e: "మొత్తం = 48. సగటు = 48 ÷ 4 = 12."
+  },
+  {
+    q: "The average of 5 numbers is 30. Four numbers add up to 110. Find the fifth number.",
+    o: ["30", "35", "40", "45"],
+    a: 2,
+    e: "మొత్తం = 30 × 5 = 150. ఐదవ సంఖ్య = 150 − 110 = 40."
+  },
+  {
+    q: "The average of 8 numbers is 17. Find their sum.",
+    o: ["126", "132", "136", "144"],
+    a: 2,
+    e: "మొత్తం = 17 × 8 = 136."
+  }
+];
+
+const questionsContainer = document.getElementById("questionsContainer");
+const answeredCount = document.getElementById("answeredCount");
+const progressBar = document.getElementById("progressBar");
+const resultBox = document.getElementById("result");
+const submitBtn = document.getElementById("submitBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+let submitted = false;
+
+function renderQuiz() {
+  questionsContainer.innerHTML = "";
+
+  questions.forEach((question, index) => {
+    const questionElement = document.createElement("div");
+    questionElement.className = "question";
+    questionElement.id = `question-${index}`;
+
+    const heading = document.createElement("h3");
+    heading.textContent = `Q${index + 1}. ${question.q}`;
+    questionElement.appendChild(heading);
+
+    question.o.forEach((option, optionIndex) => {
+      const label = document.createElement("label");
+      label.className = "option";
+      label.htmlFor = `q${index}-option${optionIndex}`;
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = `question-${index}`;
+      input.id = `q${index}-option${optionIndex}`;
+      input.value = String(optionIndex);
+      input.addEventListener("change", updateProgress);
+
+      const text = document.createElement("span");
+      text.textContent = `${String.fromCharCode(65 + optionIndex)}. ${option}`;
+
+      label.appendChild(input);
+      label.appendChild(text);
+      questionElement.appendChild(label);
+    });
+
+    const explanation = document.createElement("div");
+    explanation.className = "explanation";
+    explanation.id = `explanation-${index}`;
+    questionElement.appendChild(explanation);
+
+    questionsContainer.appendChild(questionElement);
+  });
+
+  updateProgress();
+}
+
+function updateProgress() {
+  const answered = questions.filter((question, index) =>
+    document.querySelector(`input[name="question-${index}"]:checked`)
+  ).length;
+
+  answeredCount.textContent = `Answered: ${answered} / ${questions.length}`;
+  progressBar.style.width = `${(answered / questions.length) * 100}%`;
+}
+
+function submitQuiz() {
+  if (submitted) return;
+
+  const unanswered = questions.filter((question, index) =>
+    !document.querySelector(`input[name="question-${index}"]:checked`)
+  ).length;
+
+  if (unanswered > 0) {
+    const confirmSubmit = window.confirm(
+      `${unanswered} questions are unanswered. Do you want to submit anyway?`
+    );
+    if (!confirmSubmit) return;
+  }
+
+  let score = 0;
+
+  questions.forEach((question, index) => {
+    const selected = document.querySelector(
+      `input[name="question-${index}"]:checked`
+    );
+
+    const options = document.querySelectorAll(
+      `#question-${index} .option`
+    );
+
+    options.forEach((option, optionIndex) => {
+      const input = option.querySelector("input");
+      input.disabled = true;
+
+      if (optionIndex === question.a) {
+        option.classList.add("correct");
+      }
+
+      if (selected && Number(selected.value) === optionIndex &&
+          optionIndex !== question.a) {
+        option.classList.add("wrong");
+      }
+    });
+
+    if (selected && Number(selected.value) === question.a) {
+      score++;
+    }
+
+    const explanation = document.getElementById(`explanation-${index}`);
+    explanation.textContent =
+      `Correct Answer: ${String.fromCharCode(65 + question.a)}. ${question.o[question.a]} | Explanation: ${question.e}`;
+    explanation.classList.add("show");
+  });
+
+  submitted = true;
+
+  const percentage = (score / questions.length) * 100;
+
+  let message = "Keep practising. You can improve!";
+  if (percentage >= 80) {
+    message = "Excellent performance! అభినందనలు!";
+  } else if (percentage >= 60) {
+    message = "Good attempt! Keep practising.";
+  }
+
+  resultBox.innerHTML = `
+    <div class="result-score">Your Score: ${score} / ${questions.length}</div>
+    <p>Percentage: ${percentage.toFixed(2)}%</p>
+    <p>${message}</p>
+    <p>Correct Answers: ${score}</p>
+    <p>Incorrect or Unanswered: ${questions.length - score}</p>
+  `;
+
+  resultBox.style.display = "block";
+  submitBtn.disabled = true;
+  resultBox.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function resetQuiz() {
+  const shouldReset = window.confirm("Reset the test and clear all answers?");
+  if (!shouldReset) return;
+
+  submitted = false;
+  resultBox.style.display = "none";
+  resultBox.innerHTML = "";
+  submitBtn.disabled = false;
+  renderQuiz();
+
+  window.scrollTo({
+    top: document.getElementById("quiz").offsetTop,
+    behavior: "smooth"
+  });
+}
+
+submitBtn.addEventListener("click", submitQuiz);
+resetBtn.addEventListener("click", resetQuiz);
+
+renderQuiz();
+</script>
+
+</body>
+</html>
