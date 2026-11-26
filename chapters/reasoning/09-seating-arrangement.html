@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#7c2d12">
+<meta name="description" content="RETRY IN LIBRARY bilingual Reasoning chapter: Seating Arrangement, methods, solved examples and 50 MCQs.">
+<title>Seating Arrangement | RETRY IN LIBRARY</title>
+<style>
+:root{--deep:#7c2d12;--accent:#c2410c;--line:#ead7b5;--ink:#292524;--muted:#57534e;--green:#166534}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fff7e6,#ffedd5);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Telugu",sans-serif;line-height:1.75}
+header{background:var(--deep);color:white;padding:16px}header div,main,footer{max-width:1000px;margin:auto}header small{display:block;color:#fed7aa}
+main{padding:16px 14px 45px}.hero,.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:21px;margin:16px 0;box-shadow:0 6px 20px #78350f10}.hero{border-top:7px solid #f59e0b}
+h1,h2,h3{line-height:1.35;color:var(--deep)}h1{font-size:clamp(1.6rem,4vw,2.2rem);margin:5px 0}h2{font-size:1.35rem;border-bottom:2px solid #fed7aa;padding-bottom:7px;margin-top:0}h3{font-size:1.08rem;margin-bottom:5px}
+p{margin:8px 0}.muted,small{color:var(--muted)}.tag{display:inline-block;background:#ffedd5;color:#9a3412;padding:3px 10px;border-radius:30px;font-size:.85rem;margin:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.box{background:#fffaf0;border:1px solid var(--line);border-radius:12px;padding:13px}
+.formula{background:#fff7ed;border-left:5px solid var(--accent);padding:12px 15px;border-radius:8px;margin:12px 0;font-weight:650}
+.example{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px;margin:12px 0}.answer{color:var(--green);font-weight:700}
+.diagram{font-family:ui-monospace,monospace;background:#292524;color:#fff7ed;padding:12px;border-radius:9px;overflow-x:auto;white-space:pre;line-height:1.6}
+table{width:100%;border-collapse:collapse;margin:12px 0;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:9px;text-align:left;min-width:110px}th{background:#ffedd5;color:#7c2d12}
+button{border:0;border-radius:9px;padding:10px 15px;background:var(--accent);color:white;font-weight:700;cursor:pointer;margin:5px 5px 5px 0}button.secondary{background:#57534e}button:focus,input:focus{outline:3px solid #fbbf24;outline-offset:2px}
+.question{padding:14px 0;border-bottom:1px solid var(--line)}.question p{font-weight:650}.options{display:grid;grid-template-columns:1fr 1fr;gap:7px}.options label{display:flex;gap:8px;align-items:flex-start;padding:8px;background:#fffaf0;border:1px solid var(--line);border-radius:8px;font-weight:400}
+.explanation{display:none;background:#f0fdf4;border-left:4px solid #16a34a;padding:10px;margin-top:9px;border-radius:7px}.result{font-weight:700;padding:12px;background:#ffedd5;border-radius:9px;margin:12px 0}
+footer{padding:20px 14px;color:var(--muted);text-align:center}
+@media(max-width:600px){.options{grid-template-columns:1fr}.hero,.panel{padding:16px}}
+</style>
+</head>
+<body>
+<header><div><strong>RETRY IN LIBRARY</strong><small>Competitive Exam Digital Study Library · Reasoning / తార్కిక సామర్థ్యం</small></div></header>
+<main>
+<section class="hero">
+<span class="tag">Chapter 09</span><span class="tag">Telugu + English</span><span class="tag">50 Practice MCQs</span>
+<h1>Seating Arrangement<br>కూర్చునే అమరిక</h1>
+<p>ఈ అధ్యాయంలో వ్యక్తులు ఒక వరుసలో, వృత్తాకారంలో లేదా చతురస్రాకారంలో ఎలా కూర్చున్నారో ఇచ్చిన సూచనల ఆధారంగా వారి స్థానాలను గుర్తించడం నేర్చుకుంటాం. Left/Right, immediate neighbour, between, opposite, facing centre/outside వంటి పదాలను సరిగ్గా అర్థం చేసుకోవడం ఈ అధ్యాయానికి పునాది.</p>
+<p class="muted">Learning goal: ప్రతి clueను diagramలో నమోదు చేసి, అన్ని cluesను కలిపి ఒకే consistent arrangementను కనుగొనడం.</p>
+</section>
+
+<section class="panel">
+<h2>1. Seating Arrangement అంటే ఏమిటి?</h2>
+<p><b>Seating Arrangement</b> అంటే కొంతమంది వ్యక్తులు ఇచ్చిన నియమాల ప్రకారం కూర్చున్న స్థానాలను గుర్తించడం. ప్రశ్నలో కొన్ని సంబంధాలు మాత్రమే ఇస్తారు; మిగిలిన స్థానాలను వాటి ఆధారంగా పూరించాలి.</p>
+<div class="grid">
+<div class="box"><h3>Linear Arrangement</h3><p>ఒకే వరుసలో ఎడమ నుంచి కుడికి లేదా ఉత్తరం/దక్షిణం వైపు చూస్తూ కూర్చోవడం.</p></div>
+<div class="box"><h3>Circular Arrangement</h3><p>వృత్తం చుట్టూ కేంద్రం వైపు లేదా బయటికి చూస్తూ కూర్చోవడం.</p></div>
+<div class="box"><h3>Square / Rectangular</h3><p>చతురస్రం లేదా దీర్ఘచతురస్రం చుట్టూ భుజాలు, మూలల్లో కూర్చోవడం.</p></div>
+<div class="box"><h3>Parallel Rows</h3><p>రెండు లేదా అంతకంటే ఎక్కువ వరుసల్లో ఒకరికి ఎదురుగా మరొకరు కూర్చోవడం.</p></div>
+</div>
+</section>
+
+<section class="panel">
+<h2>2. అత్యంత ముఖ్యమైన పదాలు | Key Terms</h2>
+<table><thead><tr><th>English clue</th><th>తెలుగు అర్థం</th><th>ఎలా గుర్తించాలి?</th></tr></thead><tbody>
+<tr><td>Immediate left/right</td><td>వెంటనే ఎడమ/కుడి</td><td>పక్కనే ఉన్న సీటు; మధ్యలో ఎవరూ ఉండరు</td></tr>
+<tr><td>Second to the left/right</td><td>ఎడమ/కుడి నుంచి రెండో స్థానం</td><td>ఒక సీటు మధ్యలో ఉంటుంది</td></tr>
+<tr><td>Between A and B</td><td>A, B మధ్య</td><td>సందర్భాన్ని బట్టి మధ్యలో ఒకరు లేదా అంతకంటే ఎక్కువ మంది</td></tr>
+<tr><td>Immediate neighbour</td><td>పక్కనున్న వ్యక్తి</td><td>తక్షణ పక్క సీటు</td></tr>
+<tr><td>Opposite</td><td>ఎదురుగా</td><td>వృత్తం/రెండు వరుసల్లో ఎదురుసీటు</td></tr>
+<tr><td>Facing centre</td><td>కేంద్రం వైపు చూస్తూ</td><td>వృత్తంలో లోపలివైపు ముఖం</td></tr>
+<tr><td>Facing outside</td><td>బయటివైపు చూస్తూ</td><td>వృత్తం నుంచి బయటివైపు ముఖం</td></tr>
+<tr><td>Adjacent</td><td>పక్కపక్కన</td><td>సాధారణంగా immediate neighbours</td></tr>
+<tr><td>Not adjacent</td><td>పక్కపక్కన కాదు</td><td>వారి మధ్య కనీసం ఒకరు ఉంటారు</td></tr>
+</tbody></table>
+</section>
+
+<section class="panel">
+<h2>3. Linear Arrangement | సరళ వరుస అమరిక</h2>
+<h3>అందరూ ఉత్తరం వైపు చూస్తున్నప్పుడు</h3>
+<p>వ్యక్తులు ఉత్తరం వైపు చూస్తూ ఒక వరుసలో కూర్చుంటే, వారి ఎడమ మనకు ఎడమవైపు, కుడి మనకు కుడివైపు ఉంటుంది.</p>
+<div class="diagram">మనకు కనిపించే దిశ:
+LEFT  ←   A   B   C   D   E   →  RIGHT
+అందరూ NORTH (ఉత్తరం) వైపు చూస్తున్నారు</div>
+<h3>అందరూ దక్షిణం వైపు చూస్తున్నప్పుడు</h3>
+<p>దక్షిణం వైపు చూస్తున్న వ్యక్తికి ఎడమ, కుడి మన దృష్టిలో తిరగబడతాయి. కాబట్టి diagram గీయేటప్పుడు facing direction తప్పనిసరిగా రాయండి.</p>
+<div class="diagram">మనకు కనిపించే దిశ:
+LEFT  ←   E   D   C   B   A   →  RIGHT
+వ్యక్తులు SOUTH (దక్షిణం) వైపు చూస్తున్నారు</div>
+<h3>మిశ్రమ దిశలు</h3>
+<p>కొంతమంది ఉత్తరం, మరికొందరు దక్షిణం వైపు చూస్తే ప్రతి వ్యక్తి యొక్క personal left/right వేరుగా ఉంటుంది. ఒకే rowలో ఉన్నారని మాత్రమే భావించి ఎడమ–కుడి నిర్ణయించకండి. Facing directionను ప్రతి clueకి వర్తింపజేయాలి.</p>
+</section>
+
+<section class="panel">
+<h2>4. Circular Arrangement | వృత్తాకార అమరిక</h2>
+<h3>కేంద్రం వైపు చూస్తున్నప్పుడు</h3>
+<p>అందరూ centre వైపు చూస్తే, ఒక వ్యక్తి యొక్క ఎడమవైపు సాధారణంగా clockwise దిశలో ఉంటుంది; కుడివైపు anticlockwise దిశలో ఉంటుంది. మీరు diagramలో clockwise క్రమాన్ని స్థిరంగా గుర్తించి అదే conventionను కొనసాగించండి.</p>
+<div class="diagram">             A
+        F         B
+
+        E         C
+             D
+
+అందరూ కేంద్రం వైపు చూస్తున్నారు
+A యొక్క immediate neighbours: B మరియు F</div>
+<h3>బయటివైపు చూస్తున్నప్పుడు</h3>
+<p>అందరూ బయటివైపు చూస్తే left/right సంబంధం తిరగబడుతుంది. Centre-facing నియమాన్ని అలాగే వాడకండి.</p>
+<div class="formula">Circular seatingలో: Centre-facing ↔ Outside-facing = Left/Right reversal</div>
+<p><b>ముఖ్య గమనిక:</b> ఒక వృత్తాకార ప్రశ్నలో “A is second to the left of B” అని ఉంటే, B నుంచి A వైపు రెండు స్థానాలు లెక్కించాలి. “Second” అంటే మధ్యలో ఒక వ్యక్తి ఉంటాడు.</p>
+</section>
+
+<section class="panel">
+<h2>5. Two Parallel Rows | రెండు సమాంతర వరుసలు</h2>
+<p>ఒక వరుసలోని వ్యక్తులు ఉత్తరం వైపు, ఎదురువరుసలోని వ్యక్తులు దక్షిణం వైపు చూస్తున్నప్పుడు, ఎదురుగా కూర్చున్న వారి left/right పరస్పరం మారవచ్చు. ముందుగా ప్రతి వరుస facing direction గుర్తించండి.</p>
+<div class="diagram">Row 1 (North-facing):   A   B   C   D
+                         ↓   ↓   ↓   ↓
+                         ↑   ↑   ↑   ↑
+Row 2 (South-facing):   E   F   G   H
+
+ప్రతి columnలో ఎదురెదురుగా ఉన్న జంటలను గుర్తించండి.</div>
+<p>ఈ ఉదాహరణలో A ఎదురుగా E, B ఎదురుగా F, C ఎదురుగా G, D ఎదురుగా H. ప్రశ్నలో “B faces G” వంటి clue ఉంటే అది సాధారణంగా ఎదురుసీటు లేదా position relationను సూచిస్తుంది; diagramతో ధృవీకరించండి.</p>
+</section>
+
+<section class="panel">
+<h2>6. Solving Method | దశలవారీ పరిష్కార పద్ధతి</h2>
+<ol>
+<li><b>People count:</b> ఎన్ని మంది ఉన్నారో గుర్తించండి; అన్ని పేర్లను జాబితా చేయండి.</li>
+<li><b>Shape:</b> Linear, circular, square లేదా parallel rows అని నిర్ణయించండి.</li>
+<li><b>Facing direction:</b> North/South లేదా centre/outside స్పష్టంగా రాయండి.</li>
+<li><b>Fixed clues first:</b> “A sits at an end”, “B sits opposite C” వంటి బలమైన clues ముందుగా అమర్చండి.</li>
+<li><b>Relative clues:</b> Immediate left/right, second left/right, between వంటి cluesను ఒక్కొక్కటిగా చేర్చండి.</li>
+<li><b>Negative clues:</b> “A is not next to B” వంటి నియమాలతో తప్పు arrangements తొలగించండి.</li>
+<li><b>Check every clue:</b> చివరి arrangementలో ప్రతి వాక్యం సరిపోతుందా తిరిగి పరీక్షించండి.</li>
+</ol>
+<div class="formula">Best practice: Draw → Place fixed clues → Add relative clues → Test all conditions</div>
+</section>
+
+<section class="panel">
+<h2>7. Solved Examples | పరిష్కరించిన ఉదాహరణలు</h2>
+<div class="example"><b>Example 1 – Linear:</b> P, Q, R, S నాలుగు మంది ఉత్తరం వైపు చూస్తూ వరుసలో ఉన్నారు. P ఎడమ చివర, S కుడి చివర, Q అనేది Pకి వెంటనే కుడివైపు. క్రమం ఏమిటి?<p>P ఎడమ చివర, S కుడి చివర. Q, P వెంటనే కుడి వైపు కాబట్టి రెండో స్థానం. మిగిలిన R మూడో స్థానం.</p><div class="diagram">P   Q   R   S</div><p class="answer">Answer: P – Q – R – S</p></div>
+<div class="example"><b>Example 2 – Linear:</b> A, B, C, D, E ఉత్తరం వైపు చూస్తున్నారు. C మధ్యలో ఉన్నాడు; A, Cకి వెంటనే ఎడమ; E కుడి చివర; B, Aకి వెంటనే ఎడమ. అమరిక?</p>C మూడో స్థానం. A రెండో స్థానం. B మొదటి స్థానం. E ఐదో స్థానం. మిగిలిన D నాలుగో స్థానం.</p><div class="diagram">B   A   C   D   E</div><p class="answer">Answer: B – A – C – D – E</p></div>
+<div class="example"><b>Example 3 – Circular:</b> ఆరుగురు A, B, C, D, E, F కేంద్రం వైపు చూస్తూ కూర్చున్నారు. Aకు immediate neighbours B, F. Bకు కుడివైపు C ఉన్నాడు. క్రమాన్ని గుర్తించండి.</p>ఒక స్థిర orientation తీసుకుని Aను పైభాగంలో ఉంచండి. Centre-facing convention ప్రకారం B, Fలను A పక్కన ఉంచి, B నుంచి rightకు Cను ఉంచండి. మిగిలిన స్థానాలను ఇతర cluesతో మాత్రమే పూరించాలి.</p><p class="answer">Exam tip: ఒకే clueతో మొత్తం circular order నిర్ణయించలేం; అదనపు clues అవసరం.</p></div>
+<div class="example"><b>Example 4 – Parallel rows:</b> Row 1లో A, B, C ఉత్తరం వైపు; Row 2లో P, Q, R దక్షిణం వైపు చూస్తున్నారు. A ఎదురుగా P, B ఎదురుగా Q, C ఎదురుగా R ఉంటే B ఎదురుగా ఎవరు?</p>Column mappingలో రెండో స్థానంలో B, దానికి ఎదురుగా Q.</p><p class="answer">Answer: Q</p></div>
+<div class="example"><b>Example 5 – Negative clue:</b> ఐదుగురు ఒక వరుసలో ఉన్నారు. A ఒక చివర, B మరో చివర. C, A పక్కన లేడు. ఏం చేయాలి?</p>ముందుగా A, Bలను రెండు చివర్లలో ఉంచాలి. Cను A పక్కనున్న రెండో స్థానంలో పెట్టాలి లేదా మిగిలిన మధ్య స్థానాల్లో ఉంచాలి; పూర్తి arrangement కోసం మిగతా clues అవసరం.</p><p class="answer">Answer: Negative clue ఒక్కటితో పూర్తి order నిర్ణయించలేం.</p></div>
+<div class="example"><b>Example 6 – Opposite seats:</b> ఎనిమిది మంది వృత్తంలో కూర్చుంటే ఒక వ్యక్తికి ఎదురుగా ఉన్న స్థానం ఎన్ని స్థానాల దూరంలో ఉంటుంది?</p>ఎనిమిది స్థానాల్లో ఎదురుసీటు సగం వృత్తం దూరంలో ఉంటుంది: 8 ÷ 2 = 4 positions.</p><p class="answer">Answer: 4 positions away</p></div>
+<div class="example"><b>Example 7 – Second neighbour:</b> A, Bకి immediate rightలో కాకుండా second rightలో ఉన్నాడు. A, B మధ్య ఎన్ని మంది?</p>Second right అంటే ఒక సీటు మధ్యలో ఉంటుంది.</p><p class="answer">Answer: 1 person</p></div>
+<div class="example"><b>Example 8 – Ends:</b> ఏడుగురు ఉత్తరం వైపు చూస్తూ వరుసలో ఉన్నారు. M ఎడమ చివర, N కుడి చివర. M నుంచి N వరకు ఎన్ని స్థానాలు ఉన్నాయి?</p>మొత్తం ఏడు స్థానాలు; M మొదట, N ఏడవ. మధ్యలో 5 మంది.</p><p class="answer">Answer: 5 persons between them</p></div>
+</section>
+
+<section class="panel">
+<h2>8. Advanced Clues & Common Mistakes</h2>
+<h3>Multiple possibilities</h3><p>కొన్ని cluesతో ఒకటి కంటే ఎక్కువ arrangements సాధ్యమవుతాయి. ప్రశ్నలో “which must be true?” అని అడిగితే అన్ని valid arrangementsలో నిజమయ్యే statement మాత్రమే ఎంచుకోవాలి.</p>
+<h3>Clockwise / Anticlockwise</h3><p>Clockwise అంటే గడియార ముల్లు తిరిగే దిశ; anticlockwise దానికి వ్యతిరేకం. Centre-facing, outside-facing సందర్భాల్లో left/rightతో సంబంధాన్ని గందరగోళం చేయవద్దు.</p>
+<h3>Common mistakes</h3>
+<ul><li>Facing directionను గుర్తించకుండా left/right అమర్చడం.</li><li>“Immediate” అనే పదాన్ని పట్టించుకోకపోవడం.</li><li>Second left/rightను immediate neighbourగా భావించడం.</li><li>వృత్తాకారంలో ఒకే reference directionను కొనసాగించకపోవడం.</li><li>ఒక clue ఆధారంగా మాత్రమే పూర్తి arrangementను ఊహించడం.</li><li>Negative cluesను చివర్లో validate చేయకపోవడం.</li></ul>
+</section>
+
+<section class="panel">
+<h2>9. Quick Revision | పునశ్చరణ</h2>
+<table><thead><tr><th>Clue</th><th>Meaning / Method</th></tr></thead><tbody>
+<tr><td>Immediate left/right</td><td>పక్కనే ఉన్న సీటు</td></tr>
+<tr><td>Second left/right</td><td>రెండు స్థానాలు దూరం; మధ్యలో ఒకరు</td></tr>
+<tr><td>Opposite in 8 seats</td><td>4 స్థానాల దూరం</td></tr>
+<tr><td>Centre-facing circle</td><td>Left/rightను centre-facing conventionతో లెక్కించాలి</td></tr>
+<tr><td>Outside-facing circle</td><td>Centre-facingకు వ్యతిరేక left/right</td></tr>
+<tr><td>Parallel rows</td><td>Facing directions, columns రెండూ గుర్తించాలి</td></tr>
+<tr><td>Negative clue</td><td>ఆ arrangementను తొలగించాలి; positive cluesతో కలిపి చూడాలి</td></tr>
+</tbody></table>
+</section>
+
+<section class="panel" id="quiz">
+<h2>10. Practice Test – 50 MCQs | అభ్యాస ప్రశ్నలు</h2>
+<p>ప్రతి ప్రశ్నకు ఒక సరైన సమాధానం ఎంచుకోండి. Submit చేసిన తర్వాత score మరియు వివరణలు కనిపిస్తాయి.</p>
+<div id="questions"></div>
+<div id="result" class="result" aria-live="polite">మీ సమాధానాలు ఇక్కడ కనిపిస్తాయి.</div>
+<button type="button" onclick="gradeQuiz()">Submit / ఫలితాలు చూడండి</button>
+<button type="button" class="secondary" onclick="resetQuiz()">Reset / మళ్లీ ప్రయత్నించండి</button>
+<button type="button" class="secondary" onclick="showAll()">Show Explanations / వివరణలు</button>
+</section>
+</main>
+<footer>RETRY IN LIBRARY · Reasoning · Chapter 09 – Seating Arrangement</footer>
+<script>
+const quiz = [
+["In a row facing north, who is immediately to the right of P in P Q R S?",["P","Q","R","S"],1,"The order is left to right P–Q–R–S; Q is immediately right of P."],
+["A person is second to the left of B. How many people are between A and B?",["0","1","2","3"],1,"Second position means one intervening seat."],
+["Eight people sit equally around a circle. How many positions away is the person opposite A?",["2","3","4","5"],2,"Opposite seat is half the circle away: 8 ÷ 2 = 4."],
+["In a row of 7, M is at the extreme left and N at the extreme right. How many people are between them?",["4","5","6","7"],1,"Seven seats with both end seats occupied leave 5 people between M and N."],
+["In a north-facing row, a person's left is which direction on the page?",["Right","Left","Up","Down"],1,"When facing north, personal left corresponds to the left side of the page."],
+["In a south-facing row, a person's left corresponds to which side on the page?",["Left","Right","Up","Down"],1,"Facing south reverses the viewer's left/right: personal left is page-right."],
+["What should be identified first in most seating-arrangement questions?",["Favourite person","Facing direction and arrangement type","Alphabetical order","Age"],1,"Identify linear/circular/parallel layout and facing direction before placing people."],
+["If A is immediately adjacent to B, what does it mean?",["One seat away with a gap","Next to B","Opposite B","At an end"],1,"Immediate adjacent means the next seat, with no person in between."],
+["In a circle, everyone faces the centre. If A's neighbours are B and F, what is certain?",["B and F sit next to A","B opposite F","A at an end","There are only 3 people"],0,"Immediate neighbours are the two seats directly beside A."],
+["In two parallel rows, the people facing each other are generally in the same what?",["Column","Row end","Alphabet group","Age order"],0,"Opposite-facing people occupy corresponding columns."],
+["If A is second to the right of B, how many seats from B is A?",["1","2","3","4"],1,"Second right means move two positions to the right."],
+["Which clue gives a fixed end position?",["A sits somewhere between B and C","A sits at the extreme left end","A is not next to B","A is older than B"],1,"Extreme left end fixes A at the first seat."],
+["A, B, C, D sit in a row. A is first and D is last. B is immediately right of A. Who is third?",["A","B","C","D"],2,"The only order is A–B–C–D; C is third."],
+["In a circle of 10 people, the opposite seat is how many positions away?",["3","4","5","6"],2,"Half of 10 is 5."],
+["Which is the safest way to solve a complex arrangement?",["Guess directly","Draw a diagram and test every clue","Ignore negative clues","Use alphabetical order"],1,"A diagram makes relative positions visible and allows clue-by-clue checking."],
+["What does 'not adjacent to A' mean?",["Immediately next to A","Not in the neighbouring seat","Opposite only","At the left end"],1,"The person cannot occupy either immediate neighbouring seat of A."],
+["In a north-facing row, A is immediately left of B. Which order is correct from left to right?",["B A","A B","A is at right end","Cannot tell"],1,"A is on B's left, so A appears before B in a north-facing row."],
+["In a south-facing row, A is immediately to a person's left. Relative to the page, A is on which side?",["Page-left","Page-right","Above","Below"],1,"For south-facing people, personal left is page-right."],
+["A is between B and C, with exactly one person between A and B and none between A and C. Which relation is certain?",["A is adjacent to C","A is adjacent to B","B and C are adjacent","A is at an end"],0,"No one between A and C means A and C are immediate neighbours."],
+["If 6 people sit in a circle, how many immediate neighbours does each person have?",["1","2","3","6"],1,"Each seat in a circle has two adjacent seats."],
+["In a circular arrangement, 'opposite' is unambiguous in an even-sized circle. Why?",["There is one seat exactly halfway around","Everyone faces north","There are no neighbours","All sit in a line"],0,"An even number of seats has one seat exactly half a circle away."],
+["In a row, A is at the left end. How many people can be immediately to A's left?",["0","1","2","Depends on facing"],0,"An extreme-left seat has no seat to its left."],
+["If A is immediately right of B and C is immediately right of A, what is the order?",["A B C","B A C","C A B","B C A"],1,"Place B, then A to its right, then C to A's right: B–A–C."],
+["In a 12-seat circle, how many positions separate a person from the opposite seat?",["4","5","6","7"],2,"Opposite seat is 12 ÷ 2 = 6 positions away."],
+["What does 'second neighbour clockwise' mean?",["Next seat anticlockwise","Two seats clockwise","Opposite always","Same seat"],1,"Count two positions in the clockwise direction."],
+["If everyone faces outside in a circle, compared with centre-facing, left/right directions are:",["The same","Reversed","Always upward","Not defined"],1,"Outside-facing reverses the left/right relationship."],
+["In a parallel-row puzzle, Row 1 faces north and Row 2 faces south. Which should be checked before using left/right?",["Their facing directions","Their names alphabetically","Their heights","Their ages"],0,"Personal left/right depends on each row's facing direction."],
+["A sits opposite D in a 6-person circle. How many seats are between A and D along either direction?",["1","2","3","4"],1,"Three positions separate the opposite seats counting movement; the two intermediate seats are between them."],
+["A sits between B and C. Does this alone tell whether B is left or right of A?",["Yes, always","No, another clue is needed","B must be opposite","C must be at an end"],1,"'Between' alone does not specify the orientation or which side B occupies."],
+["Which clue is negative?",["A is left of B","A faces C","A is not adjacent to B","A is opposite C"],2,"'Not adjacent' rules out neighbouring seats."],
+["In a north-facing row, D is immediately left of E. Which appears first from the left?",["E","D","Both same","Cannot tell"],1,"D is on E's left, so D comes first."],
+["In a circle of 8 people, if A is opposite E, how many people sit between them along one side?",["2","3","4","5"],1,"Four seat moves reach the opposite seat; there are 3 intervening people on either arc."],
+["What is a valid first clue to place in a linear diagram?",["A is at the extreme right","A likes tea","A is 20 years old","A is a student"],0,"An extreme-position clue fixes a definite seat."],
+["If B is immediately left of C and A is immediately left of B, order is:",["A B C","C B A","B A C","A C B"],0,"A is left of B, and B is left of C: A–B–C."],
+["A person is third to the left of X. How many people are between them?",["1","2","3","4"],1,"Third position means two intervening seats."],
+["In a 4-person circle, the opposite person is:",["One seat away","Two seats away","Three seats away","Not possible"],1,"Half of four is two positions."],
+["A, B, C, D, E sit in a row. C is in the middle. How many seats are to C's left?",["1","2","3","4"],1,"In a five-seat row, the middle is seat 3; two seats are to its left."],
+["If a clue says A is not at either end, which seats are ruled out in a 6-seat row?",["1 and 6","2 and 5","3 and 4","All seats"],0,"The two extreme end positions are excluded."],
+["In a circular arrangement, which direction is the reverse of clockwise?",["North","South","Anticlockwise","Outside"],2,"Anticlockwise is the opposite rotational direction."],
+["If A and B are immediate neighbours, can another person sit between them?",["Yes","No","Only in a circle","Only in a row"],1,"Immediate neighbours have no intervening seat."],
+["In two rows of 4 seats each, if A faces P in column 1, which column does P occupy?",["1","2","3","4"],0,"Facing each other in parallel rows means same column."],
+["Which statement is true for a standard circular seating puzzle?",["There are two ends","Every seat has two neighbours","Everyone must face north","Opposite always exists for odd groups"],1,"A circle has no ends and each position has two immediate neighbours."],
+["In a circle of 9 people, is there one exact opposite seat for each person?",["Yes","No","Two opposite seats","Only if centre-facing"],1,"With an odd number of seats, no seat lies exactly halfway around."],
+["A is immediately right of B. Who is immediately left of A?",["B","C","Nobody","Cannot tell"],0,"If B is immediately to A's left, B is A's immediate left neighbour."],
+["A clue says C sits somewhere to the right of B. Does it mean immediate right?",["Yes","No, not necessarily","It means opposite","It means second right"],1,"'Somewhere right' allows one or more intervening seats; immediate must be stated."],
+["What should be done after a possible arrangement is completed?",["Stop without checking","Verify every clue","Delete the diagram","Change facing directions"],1,"Every given condition must be satisfied before accepting an arrangement."],
+["If six people are in a row and A is at position 2, how many seats are to A's right?",["3","4","5","6"],1,"Seats 3, 4, 5 and 6 are to the right: four seats."],
+["If a person faces north, their right-hand direction is:",["West","East","South","North"],1,"Facing north, right is east."],
+["If a person faces south, their right-hand direction is:",["East","West","North","South"],1,"Facing south, right is west."],
+["A sits two seats clockwise from B. How many people are between A and B along that clockwise path?",["0","1","2","3"],1,"Two seat moves means one intervening person."]
+];
+// Normalize the intentionally padded option row so every question has exactly four options.
+quiz.forEach(q=>{if(q[1].length>4)q[1]=q[1].slice(0,4);});
+const host=document.getElementById('questions');
+quiz.forEach((q,i)=>{
+ const wrap=document.createElement('div');wrap.className='question';
+ const p=document.createElement('p');p.textContent=(i+1)+'. '+q[0];wrap.appendChild(p);
+ const opts=document.createElement('div');opts.className='options';
+ q[1].forEach((opt,j)=>{const label=document.createElement('label');const radio=document.createElement('input');radio.type='radio';radio.name='q'+i;radio.value=j;label.appendChild(radio);label.appendChild(document.createTextNode(String.fromCharCode(65+j)+'. '+opt));opts.appendChild(label);});
+ wrap.appendChild(opts);const exp=document.createElement('div');exp.className='explanation';exp.id='e'+i;wrap.appendChild(exp);host.appendChild(wrap);
+});
+function gradeQuiz(){let score=0,answered=0;quiz.forEach((q,i)=>{const chosen=document.querySelector('input[name="q'+i+'"]:checked');const exp=document.getElementById('e'+i);exp.style.display='block';const correct=chosen&&Number(chosen.value)===q[2];if(chosen){answered++;if(correct)score++;}exp.style.borderLeftColor=correct?'#16a34a':chosen?'#dc2626':'#d97706';exp.textContent=(correct?'Correct. ':'Incorrect / Not answered. ')+'Correct answer: '+q[1][q[2]]+'. '+q[3];});document.getElementById('result').textContent='Score: '+score+' / '+quiz.length+' | Answered: '+answered+' | Accuracy: '+Math.round(score/quiz.length*100)+'%';}
+function resetQuiz(){document.querySelectorAll('#questions input').forEach(x=>x.checked=false);document.querySelectorAll('.explanation').forEach(x=>{x.style.display='none';x.textContent='';});document.getElementById('result').textContent='మీ సమాధానాలు ఇక్కడ కనిపిస్తాయి.';}
+function showAll(){quiz.forEach((q,i)=>{const e=document.getElementById('e'+i);e.style.display='block';e.textContent='Correct answer: '+q[1][q[2]]+'. '+q[3];});}
+</script>
+</body></html>
