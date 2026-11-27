@@ -1,74 +1,911 @@
-<section class="content-section" id="telugu-chapter-library">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">TELUGU CHAPTER LIBRARY</p>
-      <h2>తెలుగు భాష – అధ్యాయాల వారీగా అభ్యాసం</h2>
-      <p>ప్రతి అధ్యాయాన్ని చదివి, ముఖ్యమైన అంశాలను నేర్చుకొని, MCQ ప్రశ్నలతో మీ పరిజ్ఞానాన్ని పరీక్షించుకోండి.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10233f">
+  <meta name="description" content="Learn Telugu Grammar, English Grammar, Vocabulary, Comprehension, Translation and Language Skills in Telugu and English for competitive examinations.">
+  <title>Languages – Telugu & English | RETRY IN LIBRARY</title>
+
+  <link rel="manifest" href="../manifest.json">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/reader.css">
+  <link rel="icon" href="../assets/icons/icon-192.png">
+
+  <style>
+    /* Telugu Chapter Library */
+    .telugu-library {
+      margin-top: 30px;
+    }
+
+    .telugu-library-intro {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    .telugu-library-intro p {
+      line-height: 1.8;
+    }
+
+    .telugu-chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .telugu-chapter-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 155px;
+      padding: 20px;
+      overflow: hidden;
+      background: #fffaf0;
+      border: 1px solid #eadfc9;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(16, 35, 63, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease,
+                  border-color 0.2s ease;
+    }
+
+    .telugu-chapter-card:hover {
+      transform: translateY(-4px);
+      border-color: #d58a28;
+      box-shadow: 0 9px 22px rgba(16, 35, 63, 0.12);
+    }
+
+    .telugu-chapter-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .telugu-chapter-number {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 11px;
+      color: #fff;
+      background: #10233f;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .telugu-chapter-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      color: #9b5a0b;
+      background: #f8e9c9;
+      border-radius: 10px;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    .telugu-chapter-card h3 {
+      margin: 0 0 12px;
+      color: #172b46;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .telugu-chapter-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      margin-top: auto;
+      color: #a65e0a;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+    }
+
+    .telugu-chapter-link:hover {
+      color: #10233f;
+      text-decoration: underline;
+    }
+
+    .telugu-library-note {
+      margin-top: 28px;
+      padding: 18px 20px;
+      background: #fff4dc;
+      border-left: 4px solid #d58a28;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 900px) {
+      .telugu-chapter-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .telugu-chapter-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+      }
+
+      .telugu-chapter-card {
+        min-height: 135px;
+        padding: 17px;
+      }
+
+      .telugu-chapter-card h3 {
+        font-size: 0.98rem;
+      }
+    }
+
+    /* Dark mode compatibility */
+    body.dark-mode .telugu-chapter-card {
+      background: #182b43;
+      border-color: #344861;
+    }
+
+    body.dark-mode .telugu-chapter-card h3 {
+      color: #f3eee3;
+    }
+
+    body.dark-mode .telugu-chapter-number {
+      color: #10233f;
+      background: #f2c879;
+    }
+
+    body.dark-mode .telugu-chapter-icon {
+      color: #f2c879;
+      background: #344861;
+    }
+
+    body.dark-mode .telugu-chapter-link {
+      color: #f2c879;
+    }
+
+    body.dark-mode .telugu-library-note {
+      color: #f3eee3;
+      background: #243950;
+      border-left-color: #f2c879;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <a class="brand" href="../index.html" aria-label="RETRY IN LIBRARY Home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span class="brand-text">
+          <strong>RETRY IN LIBRARY</strong>
+          <small>LEARN AGAIN. TRY AGAIN. SUCCEED.</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button"
+        aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-navigation" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../exams/appsc.html">APPSC</a>
+        <a href="../exams/tgpsc.html">TGPSC</a>
+        <a href="../exams/upsc.html">UPSC</a>
+        <a href="../exams/ssc.html">SSC</a>
+        <a href="./history.html">History</a>
+        <a href="./polity.html">Polity</a>
+        <a href="./economy.html">Economy</a>
+        <a href="./geography.html">Geography</a>
+        <a href="./science.html">Science</a>
+        <a href="./environment.html">Environment</a>
+        <a href="./mathematics.html">Mathematics</a>
+        <a href="./reasoning.html">Reasoning</a>
+        <a href="./languages.html" aria-current="page">Languages</a>
+
+        <button id="language-toggle" class="language-toggle"
+          type="button" aria-label="Change language">తెలుగు</button>
+        <button id="theme-toggle" class="theme-toggle"
+          type="button" aria-label="Toggle dark mode">◐</button>
+      </nav>
     </div>
+  </header>
 
-    <div class="chapter-library">
-      <section class="chapter-group">
-        <h3>Telugu Grammar & Language</h3>
-        <ul class="chapter-list">
+  <main id="main-content">
 
-          <li><a href="../chapters/telugu/01-telugu-varnamala.html"><span class="chapter-number">Chapter 01</span> తెలుగు వర్ణమాల</a></li>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Languages</span>
+        </div>
 
-          <li><a href="../chapters/telugu/02-telugu-padalu-padabhedalu.html"><span class="chapter-number">Chapter 02</span> పదాలు మరియు పదభేదాలు</a></li>
+        <p class="eyebrow">SUBJECT LIBRARY</p>
 
-          <li><a href="../chapters/telugu/03-telugu-lingam-vachanam-purusham.html"><span class="chapter-number">Chapter 03</span> లింగం, వచనం, పురుషం</a></li>
+        <h1 data-en="Telugu & English Languages"
+            data-te="తెలుగు మరియు ఆంగ్ల భాషలు">
+          Telugu & English Languages
+        </h1>
 
-          <li><a href="../chapters/telugu/04-telugu-vibhaktulu-vibhakti-pratyayalu.html"><span class="chapter-number">Chapter 04</span> విభక్తులు మరియు విభక్తి ప్రత్యయాలు</a></li>
+        <p data-en="Improve grammar, vocabulary, reading comprehension, writing and translation skills for competitive examinations."
+           data-te="పోటీ పరీక్షల కోసం వ్యాకరణం, పదజాలం, పఠన అవగాహన, రచన మరియు అనువాద నైపుణ్యాలను అభివృద్ధి చేసుకోండి.">
+          Improve grammar, vocabulary, reading comprehension,
+          writing and translation skills for competitive examinations.
+        </p>
 
-          <li><a href="../chapters/telugu/05-telugu-kriyalu-kriya-bhedalu.html"><span class="chapter-number">Chapter 05</span> క్రియలు మరియు క్రియాభేదాలు</a></li>
+        <p class="hero-tagline">LEARN AGAIN. TRY AGAIN. SUCCEED.</p>
+      </div>
+    </section>
 
-          <li><a href="../chapters/telugu/06-telugu-kaalalu-kriya-roopalu.html"><span class="chapter-number">Chapter 06</span> కాలాలు మరియు క్రియారూపాలు</a></li>
+    <!-- TELUGU CHAPTER LIBRARY -->
+    <section class="content-section" id="telugu-chapter-library">
+      <div class="container">
 
-          <li><a href="../chapters/telugu/07-telugu-vachyalu.html"><span class="chapter-number">Chapter 07</span> వాచ్యాలు</a></li>
+        <div class="telugu-library-intro">
+          <p class="eyebrow">TELUGU CHAPTER LIBRARY</p>
+          <h2>తెలుగు భాష – అధ్యాయాల వారీగా అభ్యాసం</h2>
+          <p>
+            తెలుగు వ్యాకరణం, సాహిత్యం, పదజాలం మరియు భాషా నైపుణ్యాలను
+            అధ్యాయాల వారీగా నేర్చుకోండి. ప్రతి అధ్యాయాన్ని చదివి
+            అభ్యాస ప్రశ్నలతో మీ పరిజ్ఞానాన్ని పరీక్షించుకోండి.
+          </p>
+        </div>
 
-          <li><a href="../chapters/telugu/08-telugu-pratyaksha-paroksha-vakyalu.html"><span class="chapter-number">Chapter 08</span> ప్రత్యక్ష మరియు పరోక్ష వాక్యాలు</a></li>
+        <div class="telugu-chapter-grid">
 
-          <li><a href="../chapters/telugu/09-telugu-samasalu.html"><span class="chapter-number">Chapter 09</span> సమాసాలు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 01</span>
+              <span class="telugu-chapter-icon">అ</span>
+            </div>
+            <h3>తెలుగు వర్ణమాల</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/01-telugu-varnamala.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/10-telugu-alankaramulu.html"><span class="chapter-number">Chapter 10</span> అలంకారాలు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 02</span>
+              <span class="telugu-chapter-icon">ప</span>
+            </div>
+            <h3>పదాలు మరియు పదభేదాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/02-telugu-padalu-padabhedalu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/11-telugu-chandassu.html"><span class="chapter-number">Chapter 11</span> ఛందస్సు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 03</span>
+              <span class="telugu-chapter-icon">లి</span>
+            </div>
+            <h3>లింగం, వచనం, పురుషం</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/03-telugu-lingam-vachanam-purusham.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/12-telugu-virama-chihnalu-vakya-nirmanam.html"><span class="chapter-number">Chapter 12</span> విరామ చిహ్నాలు మరియు వాక్య నిర్మాణం</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 04</span>
+              <span class="telugu-chapter-icon">వి</span>
+            </div>
+            <h3>విభక్తులు మరియు విభక్తి ప్రత్యయాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/04-telugu-vibhaktulu-vibhakti-pratyayalu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/13-telugu-paryayapadalu.html"><span class="chapter-number">Chapter 13</span> పర్యాయపదాలు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 05</span>
+              <span class="telugu-chapter-icon">క్రి</span>
+            </div>
+            <h3>క్రియలు మరియు క్రియాభేదాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/05-telugu-kriyalu-kriya-bhedalu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/14-telugu-vyatireka-padalu.html"><span class="chapter-number">Chapter 14</span> వ్యతిరేక పదాలు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 06</span>
+              <span class="telugu-chapter-icon">కా</span>
+            </div>
+            <h3>కాలాలు మరియు క్రియారూపాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/06-telugu-kaalalu-kriya-roopalu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/15-telugu-nanarthalu.html"><span class="chapter-number">Chapter 15</span> నానార్థాలు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 07</span>
+              <span class="telugu-chapter-icon">వా</span>
+            </div>
+            <h3>వాచ్యాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/07-telugu-vachyalu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/16-telugu-jateeyalu-sametalu.html"><span class="chapter-number">Chapter 16</span> జాతీయాలు మరియు సామెతలు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 08</span>
+              <span class="telugu-chapter-icon">వా</span>
+            </div>
+            <h3>ప్రత్యక్ష మరియు పరోక్ష వాక్యాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/08-telugu-pratyaksha-paroksha-vakyalu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/17-telugu-sahitya-parichayam-prakriyalu.html"><span class="chapter-number">Chapter 17</span> తెలుగు సాహిత్య పరిచయం మరియు సాహిత్య ప్రక్రియలు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 09</span>
+              <span class="telugu-chapter-icon">స</span>
+            </div>
+            <h3>సమాసాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/09-telugu-samasalu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/18-telugu-pramukha-rachayitalu-rachayitalu-birudulu.html"><span class="chapter-number">Chapter 18</span> ప్రముఖ రచయితలు, రచనలు మరియు బిరుదులు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 10</span>
+              <span class="telugu-chapter-icon">అ</span>
+            </div>
+            <h3>అలంకారాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/10-telugu-alankaramulu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/19-telugu-sahitya-yugalu-udyamalu-dhoranulu.html"><span class="chapter-number">Chapter 19</span> తెలుగు సాహిత్య యుగాలు, ఉద్యమాలు మరియు ధోరణులు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 11</span>
+              <span class="telugu-chapter-icon">ఛం</span>
+            </div>
+            <h3>ఛందస్సు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/11-telugu-chandassu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/20-telugu-bhasha-charitra-parinamam-mandalikalu.html"><span class="chapter-number">Chapter 20</span> తెలుగు భాషా చరిత్ర, పరిణామం మరియు మాండలికాలు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 12</span>
+              <span class="telugu-chapter-icon">వా</span>
+            </div>
+            <h3>విరామ చిహ్నాలు మరియు వాక్య నిర్మాణం</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/12-telugu-virama-chihnalu-vakya-nirmanam.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/21-telugu-sandhulu-sandhi-niyamalu.html"><span class="chapter-number">Chapter 21</span> సంధులు మరియు సంధి నియమాలు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 13</span>
+              <span class="telugu-chapter-icon">ప</span>
+            </div>
+            <h3>పర్యాయపదాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/13-telugu-paryayapadalu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/22-telugu-prakruti-vikruthulu-padotpatti.html"><span class="chapter-number">Chapter 22</span> ప్రకృతి–వికృతులు మరియు పదోత్పత్తి</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 14</span>
+              <span class="telugu-chapter-icon">వి</span>
+            </div>
+            <h3>వ్యతిరేక పదాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/14-telugu-vyatireka-padalu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/23-telugu-prakruti-vikruti-padaroopa-parinamam.html"><span class="chapter-number">Chapter 23</span> ప్రకృతి–వికృతి పదాల ఉదాహరణలు మరియు పదరూప పరిణామం</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 15</span>
+              <span class="telugu-chapter-icon">నా</span>
+            </div>
+            <h3>నానార్థాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/15-telugu-nanarthalu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/24-telugu-pada-nirmanam-upasargalu-pratyayalu.html"><span class="chapter-number">Chapter 24</span> పద నిర్మాణం, ఉపసర్గలు మరియు ప్రత్యయాలు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 16</span>
+              <span class="telugu-chapter-icon">జా</span>
+            </div>
+            <h3>జాతీయాలు మరియు సామెతలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/16-telugu-jateeyalu-sametalu.html">Start Learning →</a>
+          </article>
 
-          <li><a href="../chapters/telugu/25-telugu-kriyalu-dhatuvulu-kriyabhedalu.html"><span class="chapter-number">Chapter 25</span> క్రియలు, ధాతువులు మరియు క్రియాభేదాలు</a></li>
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 17</span>
+              <span class="telugu-chapter-icon">సా</span>
+            </div>
+            <h3>తెలుగు సాహిత్య పరిచయం మరియు సాహిత్య ప్రక్రియలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/17-telugu-sahitya-parichayam-prakriyalu.html">Start Learning →</a>
+          </article>
 
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 18</span>
+              <span class="telugu-chapter-icon">ర</span>
+            </div>
+            <h3>ప్రముఖ రచయితలు, రచనలు మరియు బిరుదులు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/18-telugu-pramukha-rachayitalu-rachayitalu-birudulu.html">Start Learning →</a>
+          </article>
+
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 19</span>
+              <span class="telugu-chapter-icon">యు</span>
+            </div>
+            <h3>తెలుగు సాహిత్య యుగాలు, ఉద్యమాలు మరియు ధోరణులు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/19-telugu-sahitya-yugalu-udyamalu-dhoranulu.html">Start Learning →</a>
+          </article>
+
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 20</span>
+              <span class="telugu-chapter-icon">భా</span>
+            </div>
+            <h3>తెలుగు భాషా చరిత్ర, పరిణామం మరియు మాండలికాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/20-telugu-bhasha-charitra-parinamam-mandalikalu.html">Start Learning →</a>
+          </article>
+
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 21</span>
+              <span class="telugu-chapter-icon">సం</span>
+            </div>
+            <h3>సంధులు మరియు సంధి నియమాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/21-telugu-sandhulu-sandhi-niyamalu.html">Start Learning →</a>
+          </article>
+
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 22</span>
+              <span class="telugu-chapter-icon">ప్ర</span>
+            </div>
+            <h3>ప్రకృతి–వికృతులు మరియు పదోత్పత్తి</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/22-telugu-prakruti-vikruthulu-padotpatti.html">Start Learning →</a>
+          </article>
+
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 23</span>
+              <span class="telugu-chapter-icon">ప</span>
+            </div>
+            <h3>ప్రకృతి–వికృతి పదాల ఉదాహరణలు మరియు పదరూప పరిణామం</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/23-telugu-prakruti-vikruti-padaroopa-parinamam.html">Start Learning →</a>
+          </article>
+
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 24</span>
+              <span class="telugu-chapter-icon">ప</span>
+            </div>
+            <h3>పద నిర్మాణం, ఉపసర్గలు మరియు ప్రత్యయాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/24-telugu-pada-nirmanam-upasargalu-pratyayalu.html">Start Learning →</a>
+          </article>
+
+          <article class="telugu-chapter-card">
+            <div class="telugu-chapter-top">
+              <span class="telugu-chapter-number">CHAPTER 25</span>
+              <span class="telugu-chapter-icon">క్రి</span>
+            </div>
+            <h3>క్రియలు, ధాతువులు మరియు క్రియాభేదాలు</h3>
+            <a class="telugu-chapter-link" href="../chapters/telugu/25-telugu-kriyalu-dhatuvulu-kriyabhedalu.html">Start Learning →</a>
+          </article>
+
+        </div>
+
+        <div class="telugu-library-note">
+          <strong>Study Note:</strong>
+          ప్రతి అధ్యాయాన్ని క్రమంగా చదవండి. పాఠ్యాంశాలను పునశ్చరణ చేసి,
+          అభ్యాస ప్రశ్నలను ప్రయత్నించండి.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LANGUAGE SYLLABUS -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">LANGUAGE SYLLABUS</p>
+          <h2>Explore Important Topics</h2>
+          <p>Build your language skills through Telugu and English grammar and practice.</p>
+        </div>
+
+        <div class="subject-grid">
+          <article class="subject-card">
+            <h3>Telugu Grammar</h3>
+            <p>తెలుగు అక్షరాలు, పదాలు, వాక్య నిర్మాణం మరియు వ్యాకరణ ప్రాథమిక అంశాలు.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>English Grammar</h3>
+            <p>Parts of speech, sentence structure, tenses and grammatical rules.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Vocabulary</h3>
+            <p>పదజాలం, కొత్త పదాలు, పదాల అర్థాలు మరియు ఉపయోగాలు.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Synonyms and Antonyms</h3>
+            <p>పర్యాయపదాలు, వ్యతిరేక పదాలు మరియు వాటి సందర్భానుసార వినియోగం.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Parts of Speech</h3>
+            <p>Nouns, pronouns, verbs, adjectives, adverbs and other word classes.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Tenses</h3>
+            <p>Present, past and future tenses with their common forms and uses.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Sentence Correction</h3>
+            <p>Grammar errors, sentence improvement and correct usage.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Voice</h3>
+            <p>Active voice, passive voice and sentence transformation.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Narration</h3>
+            <p>Direct speech, indirect speech and reported statements.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Reading Comprehension</h3>
+            <p>Understand passages, identify main ideas and answer questions.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Telugu Sandhulu</h3>
+            <p>తెలుగు సంధులు, సంధి నియమాలు మరియు ఉదాహరణలు.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Telugu Samasalu</h3>
+            <p>తెలుగు సమాసాలు, వాటి రకాలు మరియు విగ్రహ వాక్యాలు.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Alankaram</h3>
+            <p>అలంకారాలు, వాటి లక్షణాలు మరియు సాహిత్య ఉదాహరణలు.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Idioms and Phrases</h3>
+            <p>Common English idioms, phrases and contextual meanings.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Translation</h3>
+            <p>తెలుగు నుంచి ఆంగ్లంలోకి, ఆంగ్లం నుంచి తెలుగులోకి అనువాద సాధన.</p>
+          </article>
+
+          <article class="subject-card">
+            <h3>Writing Skills</h3>
+            <p>Comprehensible sentences, paragraphs, letters and basic formal writing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELUGU GRAMMAR -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">TELUGU GRAMMAR</p>
+          <h2>తెలుగు వ్యాకరణం – ప్రాథమిక అంశాలు</h2>
+        </div>
+
+        <div class="reader-content">
+          <section class="content-block">
+            <h3>1. వర్ణమాల</h3>
+            <p>తెలుగు వర్ణమాలలో అచ్చులు, హల్లులు మరియు వాటి ఉచ్చారణ, రచనా విధానాన్ని అధ్యయనం చేయండి.</p>
+            <p lang="en">Study Telugu vowels, consonants, pronunciation and writing conventions.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>2. పదభాగాలు</h3>
+            <p>నామవాచకాలు, సర్వనామాలు, క్రియలు, విశేషణాలు వంటి పదాల విధులను తెలుసుకోండి.</p>
+            <p lang="en">Understand the functions of nouns, pronouns, verbs, adjectives and other word classes.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>3. సంధులు</h3>
+            <p>రెండు పదాలు లేదా అక్షరాలు కలిసినప్పుడు జరిగే ధ్వని లేదా రూప మార్పులను సంధుల ద్వారా అధ్యయనం చేయండి.</p>
+            <p lang="en">Study the changes that occur when sounds or words combine under Telugu sandhi rules.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>4. సమాసాలు</h3>
+            <p>రెండు లేదా అంతకంటే ఎక్కువ పదాలు కలిసి ఒక సమాస పదంగా ఏర్పడే విధానాన్ని తెలుసుకోండి.</p>
+            <p lang="en">Learn how two or more words combine to form a compound word and practise vigraha vakyalu.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>5. ఛందస్సు</h3>
+            <p>పద్య నిర్మాణం, గణాలు, యతి, ప్రాస మరియు ఛందస్సు ప్రాథమిక నియమాలను అధ్యయనం చేయండి.</p>
+            <p lang="en">Study poetic structure, metrical units, yati, prasa and basic Telugu prosody.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>6. అలంకారాలు</h3>
+            <p>ఉపమ, రూపకం వంటి అలంకారాల భావనలను, వాటి లక్షణాలను మరియు ఉదాహరణలను తెలుసుకోండి.</p>
+            <p lang="en">Understand figures of speech such as simile and metaphor, with their characteristics and examples.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>7. వాక్య నిర్మాణం</h3>
+            <p>కర్త, కర్మ, క్రియ మరియు వాక్యంలోని పదాల పరస్పర సంబంధాన్ని అధ్యయనం చేయండి.</p>
+            <p lang="en">Study the subject, object, verb and relationships between words in Telugu sentences.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>8. సామెతలు మరియు జాతీయాలు</h3>
+            <p>సామెతలు, జాతీయాలు, వాటి భావాలు మరియు సందర్భానుసార వినియోగాన్ని సాధన చేయండి.</p>
+            <p lang="en">Practise Telugu proverbs, idiomatic expressions, meanings and contextual usage.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGLISH GRAMMAR -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">ENGLISH GRAMMAR</p>
+          <h2>Fundamentals of English Grammar</h2>
+        </div>
+
+        <div class="reader-content">
+          <section class="content-block">
+            <h3>1. Parts of Speech</h3>
+            <p>Learn the major word classes: noun, pronoun, verb, adjective, adverb, preposition, conjunction and interjection.</p>
+            <p lang="te">Noun, Pronoun, Verb, Adjective, Adverb, Preposition, Conjunction మరియు Interjection వంటి పదభేదాలను తెలుసుకోండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>2. Articles</h3>
+            <p>Understand the use of a, an and the in different sentence contexts.</p>
+            <p lang="te">వాక్యాల్లో a, an, the అనే ఆర్టికల్స్‌ను ఎప్పుడు, ఎలా ఉపయోగించాలో తెలుసుకోండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>3. Tenses</h3>
+            <p>Study present, past and future tenses, including their simple, continuous, perfect and perfect continuous forms.</p>
+            <p lang="te">వర్తమాన, భూత, భవిష్యత్ కాలాలను వాటి సాధారణ, నిరంతర, పూర్ణ మరియు పూర్ణ నిరంతర రూపాలతో అధ్యయనం చేయండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>4. Subject-Verb Agreement</h3>
+            <p>Learn how verbs change according to the subject in number and person.</p>
+            <p lang="te">కర్త యొక్క వచనం మరియు పురుషం ఆధారంగా క్రియను సరైన విధంగా ఉపయోగించడం నేర్చుకోండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>5. Prepositions and Conjunctions</h3>
+            <p>Understand words that express relationships and connect clauses or sentences.</p>
+            <p lang="te">సంబంధాలను తెలియజేసే మరియు వాక్య భాగాలను కలిపే పదాల వినియోగాన్ని తెలుసుకోండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>6. Active and Passive Voice</h3>
+            <p>Practise changing sentence structures between active and passive voice while preserving the meaning.</p>
+            <p lang="te">అర్థం మారకుండా వాక్యాలను Active Voice నుంచి Passive Voice కు, తిరిగి మార్చడం సాధన చేయండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>7. Direct and Indirect Speech</h3>
+            <p>Learn reported speech, changes in pronouns, tense, time expressions and reporting verbs.</p>
+            <p lang="te">పరోక్ష కథనం, సర్వనామ మార్పులు, కాల మార్పులు, సమయ సూచనలు మరియు reporting verbs గురించి తెలుసుకోండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>8. Sentence Correction</h3>
+            <p>Identify errors in grammar, word usage, agreement, tense and sentence structure.</p>
+            <p lang="te">వ్యాకరణం, పద వినియోగం, agreement, tense మరియు వాక్య నిర్మాణంలోని తప్పులను గుర్తించండి.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOCABULARY -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">VOCABULARY</p>
+          <h2>Vocabulary Development</h2>
+        </div>
+
+        <div class="reader-content">
+          <section class="content-block">
+            <h3>1. Synonyms</h3>
+            <p>Synonyms are words with similar or closely related meanings.</p>
+            <p lang="te">ఒకే విధమైన లేదా దగ్గర అర్థాలు కలిగిన పదాలను పర్యాయపదాలు అంటారు.</p>
+            <p><strong>Example:</strong> Happy – Joyful.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>2. Antonyms</h3>
+            <p>Antonyms are words with opposite meanings.</p>
+            <p lang="te">వ్యతిరేక అర్థాలు కలిగిన పదాలను వ్యతిరేక పదాలు అంటారు.</p>
+            <p><strong>Example:</strong> Ancient – Modern.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>3. One Word Substitution</h3>
+            <p>Learn a single word that expresses the meaning of a longer phrase.</p>
+            <p lang="te">పొడవైన పదబంధానికి బదులుగా ఒకే పదంతో అర్థాన్ని తెలిపే విధానాన్ని సాధన చేయండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>4. Idioms and Phrases</h3>
+            <p>Study expressions whose meanings may differ from the literal meanings of their individual words.</p>
+            <p lang="te">పదాల ప్రత్యక్ష అర్థాలకు భిన్నమైన భావాన్ని ఇచ్చే పదబంధాలను అధ్యయనం చేయండి.</p>
+            <p><strong>Example:</strong> Once in a blue moon – Very rarely.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>5. Spelling and Word Usage</h3>
+            <p>Practise commonly confused words, correct spelling and appropriate word choices.</p>
+            <p lang="te">తరచుగా గందరగోళం కలిగించే పదాలు, సరైన స్పెల్లింగ్ మరియు సందర్భానుసార పద వినియోగాన్ని సాధన చేయండి.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- READING AND WRITING -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">READING AND WRITING</p>
+          <h2>Comprehension and Communication Skills</h2>
+        </div>
+
+        <div class="reader-content">
+          <section class="content-block">
+            <h3>1. Reading Comprehension</h3>
+            <p>Read a passage, identify its central idea, understand supporting details and answer inference-based questions.</p>
+            <p lang="te">ఒక పేరాను చదివి ప్రధాన భావం, సహాయక వివరాలు మరియు అంతర్లీన అర్థాలను గుర్తించి ప్రశ్నలకు సమాధానాలు ఇవ్వండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>2. Sentence Arrangement</h3>
+            <p>Arrange jumbled sentences into a meaningful paragraph using logical connections and sequence.</p>
+            <p lang="te">అస్తవ్యస్తంగా ఉన్న వాక్యాలను తార్కిక సంబంధాలు మరియు క్రమం ఆధారంగా అర్థవంతమైన పేరాగా అమర్చండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>3. Translation Practice</h3>
+            <p>Practise translating simple sentences and paragraphs between Telugu and English while preserving meaning and grammar.</p>
+            <p lang="te">అర్థం మరియు వ్యాకరణం మారకుండా తెలుగు నుంచి ఆంగ్లంలోకి, ఆంగ్లం నుంచి తెలుగులోకి వాక్యాలు మరియు పేరాలను అనువదించండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>4. Paragraph and Letter Writing</h3>
+            <p>Learn paragraph organisation, formal letters, clear sentence construction and basic writing conventions.</p>
+            <p lang="te">పేరా నిర్మాణం, అధికారిక లేఖలు, స్పష్టమైన వాక్య నిర్మాణం మరియు రచనా నియమాలను తెలుసుకోండి.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREPARATION STRATEGY -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">PREPARATION STRATEGY</p>
+          <h2>How to Improve Language Skills</h2>
+        </div>
+
+        <div class="reader-content">
+          <section class="content-block">
+            <h3>1. Read Every Day</h3>
+            <p>Read a short passage in Telugu and English daily to improve comprehension and vocabulary.</p>
+            <p lang="te">పఠన అవగాహన మరియు పదజాలం పెంచుకోవడానికి ప్రతిరోజూ తెలుగు, ఆంగ్లంలో చిన్న పేరాలు చదవండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>2. Maintain a Vocabulary Notebook</h3>
+            <p>Record new words, meanings, synonyms, antonyms and example sentences.</p>
+            <p lang="te">కొత్త పదాలు, అర్థాలు, పర్యాయపదాలు, వ్యతిరేక పదాలు మరియు ఉదాహరణ వాక్యాలను నమోదు చేయండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>3. Practise Grammar Questions</h3>
+            <p>Solve topic-wise questions and review the rules behind incorrect answers.</p>
+            <p lang="te">విషయాల వారీగా ప్రశ్నలు సాధన చేసి తప్పు సమాధానాల వెనుక ఉన్న వ్యాకరణ నియమాలను తెలుసుకోండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>4. Practise Translation</h3>
+            <p>Translate short sentences in both directions and compare the meaning, grammar and sentence structure.</p>
+            <p lang="te">రెండు భాషల మధ్య చిన్న వాక్యాలను అనువదించి అర్థం, వ్యాకరణం మరియు వాక్య నిర్మాణాన్ని పోల్చండి.</p>
+          </section>
+
+          <section class="content-block">
+            <h3>5. Review Regularly</h3>
+            <p>Revise grammar rules, vocabulary and previously attempted questions at regular intervals.</p>
+            <p lang="te">వ్యాకరణ నియమాలు, పదజాలం మరియు గతంలో సాధన చేసిన ప్రశ్నలను క్రమం తప్పకుండా పునశ్చరణ చేయండి.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">REFERENCE RESOURCES</p>
+          <h2>Language Learning Resources</h2>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <a href="https://ncert.nic.in/" target="_blank" rel="noopener noreferrer">NCERT Textbooks ↗</a>
+          </li>
+          <li>
+            <a href="https://diksha.gov.in/" target="_blank" rel="noopener noreferrer">DIKSHA Learning Platform ↗</a>
+          </li>
+          <li>
+            <a href="https://www.ciil.org/" target="_blank" rel="noopener noreferrer">Central Institute of Indian Languages ↗</a>
+          </li>
+          <li>
+            <a href="https://www.rajbhasha.gov.in/" target="_blank" rel="noopener noreferrer">Department of Official Language ↗</a>
+          </li>
         </ul>
-      </section>
-    </div>
 
-    <div class="notice-box">
-      <strong>Study note:</strong>
-      ప్రతి అధ్యాయంలో వివరమైన పాఠ్యాంశాలు మరియు అభ్యాస ప్రశ్నలు ఉంటాయి.
-      అధ్యాయాల లింకులను GitHub‌లోని అసలు ఫైళ్లతో సరిపోల్చి తనిఖీ చేయండి.
+        <div class="notice-box">
+          <strong>Study note:</strong>
+          This page is an introductory language-learning roadmap,
+          not a complete grammar textbook or verified question bank.
+          Telugu grammar terminology and examination-specific language
+          rules should be checked against reliable textbooks and the
+          relevant official syllabus.
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTINUE LEARNING -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Continue Learning</h2>
+        </div>
+
+        <div class="chapter-navigation">
+          <a href="./reasoning.html">← Reasoning</a>
+          <a href="./computer.html">Next Subject: Computer Knowledge →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>RETRY IN LIBRARY</strong></p>
+      <p>LEARN AGAIN. TRY AGAIN. SUCCEED.</p>
+      <p>Independent educational platform. Not affiliated with any government recruitment authority.</p>
+
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+        <a href="../copyright.html">Copyright</a>
+        <a href="../sources.html">Sources</a>
+        <a href="../corrections.html">Corrections</a>
+      </div>
+
+      <p>© <span data-current-year>2026</span> RETRY IN LIBRARY.</p>
     </div>
-  </div>
-</section>
+  </footer>
+
+  <script src="../assets/js/app.js" defer></script>
+</body>
+            </html>
