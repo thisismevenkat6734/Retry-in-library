@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn logical puzzles in Telugu and English: floor, scheduling, grouping and multi-condition puzzles for competitive examinations.">
+<title>Puzzles | RETRY IN LIBRARY</title>
+<style>
+:root{--ink:#172033;--muted:#5d687b;--brand:#2457c5;--soft:#eef3ff;--line:#dce3ef;--good:#167545;--bad:#b42318}
+*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{background:linear-gradient(125deg,#142c61,#2865ce);color:#fff;padding:30px 18px}
+.wrap{max-width:980px;margin:auto;padding:0 16px}header .wrap{padding:0 16px}header a{color:#fff;text-decoration:none;font-weight:700}
+h1{font-size:clamp(2rem,6vw,3rem);line-height:1.15;margin:18px 0 8px}header p{max-width:760px;color:#e8efff;margin:8px 0}
+main{padding:22px 0 50px}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 5px 18px #15264a0a}
+h2{font-size:1.45rem;margin:0 0 12px;color:#173b80}h3{margin:18px 0 6px;font-size:1.08rem}
+.te{color:#394b68;background:#f7f9fd;border-left:3px solid #9bb5ee;padding:9px 12px;border-radius:7px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.tile{background:#f7f9ff;border:1px solid var(--line);padding:13px;border-radius:12px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.95rem}th,td{border:1px solid #cfd8e8;padding:9px;text-align:center}th{background:#edf2ff}
+.example{background:#f5f8ff;border:1px solid #d9e4ff;border-radius:12px;padding:14px;margin:12px 0}
+.question{padding:16px 0;border-bottom:1px solid var(--line)}.question:last-child{border:0}
+.qtitle{font-weight:700;margin-bottom:8px}.opts{display:grid;gap:7px;margin:10px 0}
+.opt{display:flex;gap:9px;align-items:flex-start;background:#f8f9fc;border:1px solid var(--line);padding:8px 10px;border-radius:9px;cursor:pointer}
+.opt input{margin-top:5px}.explain{display:none;padding:10px 12px;border-radius:9px;background:#f0f7f2;margin-top:8px}.explain.show{display:block}
+button{border:0;border-radius:10px;padding:11px 17px;background:var(--brand);color:white;font-weight:700;cursor:pointer}button.secondary{background:#e8edf8;color:#173b80}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.score{font-weight:700;margin:12px 0}
+footer{text-align:center;color:var(--muted);padding:22px}
+.small{color:var(--muted);font-size:.93rem}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a href="../../subjects/reasoning.html">← RETRY IN LIBRARY / REASONING</a>
+<h1>Puzzles</h1>
+<p>Floor arrangements • Scheduling • Grouping • Multi-condition logical puzzles</p>
+<p lang="te">ఫ్లోర్ పజిల్స్ • షెడ్యూలింగ్ • గ్రూపింగ్ • అనేక షరతులతో కూడిన లాజికల్ పజిల్స్</p>
+</div></header>
+<main class="wrap">
+<section class="panel">
+<h2>1. Introduction | పరిచయం</h2>
+<p>A logical puzzle gives a set of people, objects, places, days or events together with clues. Your task is to find an arrangement that satisfies every clue. A valid answer must satisfy all conditions at the same time.</p>
+<p class="te" lang="te">లాజికల్ పజిల్‌లో కొంతమంది వ్యక్తులు, వస్తువులు, ప్రదేశాలు, రోజులు లేదా సంఘటనలతో పాటు కొన్ని సూచనలు ఇస్తారు. ప్రతి సూచనకు సరిపోయే అమరికను కనుగొనాలి. సరైన సమాధానం అన్ని షరతులనూ ఒకేసారి తీరుస్తుంది.</p>
+<p><strong>Core principle:</strong> Do not solve clues independently and guess. Combine them, record deductions and verify the final arrangement against every clue.</p>
+<p class="te" lang="te"><strong>ముఖ్య సూత్రం:</strong> ఒక్కో సూచనను విడిగా చూసి ఊహించవద్దు. అన్ని సూచనలను కలిపి, తేలిన విషయాలను నమోదు చేసి, చివరి అమరికను ప్రతి సూచనతో సరిపోల్చాలి.</p>
+</section>
+<section class="panel">
+<h2>2. Types of Puzzles | పజిల్స్ రకాలు</h2>
+<div class="grid">
+<div class="tile"><strong>Floor puzzles</strong><p>People live or work on different floors. Clues specify above, below, adjacent or extreme floors.</p><p class="te" lang="te">వేర్వేరు అంతస్తుల్లో నివసించే వ్యక్తుల క్రమాన్ని పై, కింది, పక్క, చివరి అంతస్తు సూచనలతో కనుగొనడం.</p></div>
+<div class="tile"><strong>Scheduling puzzles</strong><p>Assign events, subjects or interviews to days or time slots.</p><p class="te" lang="te">రోజులు లేదా సమయాలకు కార్యక్రమాలు, సబ్జెక్టులు లేదా ఇంటర్వ్యూలను కేటాయించడం.</p></div>
+<div class="tile"><strong>Grouping puzzles</strong><p>Divide people or objects into teams while satisfying membership rules.</p><p class="te" lang="te">సభ్యత్వ నియమాలను పాటిస్తూ వ్యక్తులను లేదా వస్తువులను గ్రూపులుగా విభజించడం.</p></div>
+<div class="tile"><strong>Matching puzzles</strong><p>Match each person with a city, colour, profession, subject or item.</p><p class="te" lang="te">ప్రతి వ్యక్తికి ఒక నగరం, రంగు, వృత్తి, విషయం లేదా వస్తువును జతచేయడం.</p></div>
+<div class="tile"><strong>Ordering puzzles</strong><p>Determine sequence, rank or relative position from clues.</p><p class="te" lang="te">సూచనల ఆధారంగా క్రమం, ర్యాంక్ లేదా పరస్పర స్థానాలను నిర్ణయించడం.</p></div>
+<div class="tile"><strong>Multi-variable puzzles</strong><p>Combine people, days, locations and preferences in one problem.</p><p class="te" lang="te">వ్యక్తులు, రోజులు, ప్రదేశాలు, అభిరుచులు వంటి అనేక అంశాలను కలిపి పరిష్కరించడం.</p></div>
+</div>
+</section>
+<section class="panel">
+<h2>3. Important clue language | సూచనల భాష</h2>
+<table><thead><tr><th>Clue</th><th>Meaning</th><th>తెలుగు అర్థం</th></tr></thead><tbody>
+<tr><td>Immediately above</td><td>Exactly one floor higher</td><td>సరిగ్గా ఒక అంతస్తు పైన</td></tr>
+<tr><td>Above</td><td>Any higher floor, not necessarily adjacent</td><td>ఏదైనా పై అంతస్తు; పక్కనే కావాల్సిన అవసరం లేదు</td></tr>
+<tr><td>Between A and B</td><td>Position lies in the middle region; check whether the clue says immediate</td><td>A, B మధ్యలో; వెంటనే మధ్యలోనా కాదా గమనించాలి</td></tr>
+<tr><td>Neither…nor</td><td>Both named possibilities are excluded</td><td>రెండు అవకాశాలూ ఉండవు</td></tr>
+<tr><td>One of the two</td><td>Exactly one, unless the wording says at least one</td><td>ఇద్దరిలో ఒకరే; “కనీసం ఒకరు”తో గందరగోళం వద్దు</td></tr>
+<tr><td>Not adjacent</td><td>There is at least one position between them</td><td>వారి మధ్య కనీసం ఒక స్థానం ఉంటుంది</td></tr>
+<tr><td>Immediately before</td><td>Directly preceding in sequence</td><td>క్రమంలో సరిగ్గా ముందు</td></tr>
+</tbody></table>
+</section>
+<section class="panel">
+<h2>4. A systematic solving method | పరిష్కార విధానం</h2>
+<ol>
+<li><strong>List the entities:</strong> Write all people, floors, days, teams or categories.</li>
+<li><strong>Draw the framework:</strong> Use numbered slots, a grid or a table before placing answers.</li>
+<li><strong>Enter fixed clues first:</strong> Exact day, exact floor, first/last position and direct pair clues are usually useful anchors.</li>
+<li><strong>Translate negative clues:</strong> Mark what is impossible; do not turn “not A” into “must be B” unless B is the only remaining option.</li>
+<li><strong>Combine clues:</strong> Link relative positions, adjacency and category restrictions.</li>
+<li><strong>Use cases carefully:</strong> If two possibilities remain, create separate cases and eliminate contradictions.</li>
+<li><strong>Verify all clues:</strong> Recheck the completed arrangement from the original statements.</li>
+</ol>
+<p class="te" lang="te">ముందుగా అంశాల జాబితా తయారు చేయండి. తర్వాత స్థానాల పట్టిక గీయండి. ఖచ్చితమైన సూచనలను ముందుగా నమోదు చేసి, నిషేధ సూచనలను గుర్తించండి. రెండు అవకాశాలు ఉంటే వేర్వేరు కేసులుగా పరిశీలించండి. చివరగా ప్రతి సూచనను తిరిగి తనిఖీ చేయండి.</p>
+</section>
+<section class="panel">
+<h2>5. Solved examples | సాధించిన ఉదాహరణలు</h2>
+<div class="example">
+<h3>Example 1 – Floor arrangement</h3>
+<p>Five people A, B, C, D and E live on floors 1 to 5, where 1 is the lowest. A lives immediately above C. E lives on floor 5. B lives below C. D lives on floor 2. Find the order.</p>
+<p class="te" lang="te">A, B, C, D, E ఐదుగురు 1 నుంచి 5 అంతస్తుల్లో ఉంటారు. 1 అతి కింది అంతస్తు. A, Cకి వెంటనే పైన. E ఐదో అంతస్తులో. B, C కంటే కింద. D రెండో అంతస్తులో. క్రమాన్ని కనుగొనండి.</p>
+<p><strong>Step 1:</strong> E = 5 and D = 2. A is immediately above C, so possible pairs are (C=1,A=2), (C=2,A=3), (C=3,A=4), (C=4,A=5). D occupies 2 and E occupies 5, so only (C=3,A=4) remains. B must be below C, so B = 1.</p>
+<p><strong>Answer:</strong> Floor 5 E, floor 4 A, floor 3 C, floor 2 D, floor 1 B.</p>
+<p class="te" lang="te"><strong>సమాధానం:</strong> పై నుంచి కిందికి E, A, C, D, B. A-C జతకు ఖాళీగా ఉన్న వరుస అంతస్తులను పరిశీలించి, మిగిలిన షరతులతో సరిపోల్చాం.</p>
+</div>
+<div class="example">
+<h3>Example 2 – Scheduling</h3>
+<p>Four tests P, Q, R and S are held Monday to Thursday, one per day. P is before R. Q is on Thursday. S is immediately after P. What is the schedule?</p>
+<p class="te" lang="te">P, Q, R, S పరీక్షలు సోమవారం నుంచి గురువారం వరకు రోజుకు ఒకటి చొప్పున జరుగుతాయి. P, R కంటే ముందు. Q గురువారం. S, P తర్వాత వెంటనే. షెడ్యూల్ ఏమిటి?</p>
+<p><strong>Reasoning:</strong> Q = Thursday. P must have a day immediately followed by S. P cannot be Wednesday because Thursday is Q; it cannot be Thursday because Q is already there. P = Monday and S = Tuesday, leaving Wednesday for R.</p>
+<p><strong>Answer:</strong> Monday P, Tuesday S, Wednesday R, Thursday Q.</p>
+<p class="te" lang="te"><strong>సమాధానం:</strong> సోమవారం P, మంగళవారం S, బుధవారం R, గురువారం Q.</p>
+</div>
+<div class="example">
+<h3>Example 3 – Grouping</h3>
+<p>Six students A, B, C, D, E and F are divided into two teams of three. A and B must be together. C and D cannot be together. If Team 1 already contains A and B, who can join Team 1?</p>
+<p><strong>Reasoning:</strong> Team 1 needs one more student. C and D cannot both be in the same team, but either one may join. E or F may also join. Without another clue, the third member is not uniquely determined.</p>
+<p><strong>Lesson:</strong> Recognise when the clues do not provide a unique answer.</p>
+<p class="te" lang="te">ఇచ్చిన సూచనలతో ఒక్క సమాధానం మాత్రమే వస్తుందని అనుకోకండి. అదనపు సూచన లేకపోతే అనేక అమరికలు సాధ్యమవుతాయి.</p>
+</div>
+</section>
+<section class="panel">
+<h2>6. Tables and notation | పట్టికలు, గుర్తులు</h2>
+<ul>
+<li>Use ✓ for confirmed placement and × for impossible placement.</li>
+<li>Use “A &gt; B” only after defining whether it means higher floor, earlier time or greater rank.</li>
+<li>For matching puzzles, create one row per person and columns for each category.</li>
+<li>For grouping puzzles, maintain team-size limits while placing members.</li>
+<li>For scheduling, write all slots in order and mark fixed assignments first.</li>
+</ul>
+<p class="te" lang="te">✓ అంటే ఖరారు; × అంటే అసాధ్యం. A &gt; B వంటి గుర్తులను ఉపయోగించే ముందు అవి ఏ అర్థంలో ఉన్నాయో స్పష్టంగా నిర్ణయించండి. ప్రతి కేటగిరీకి ప్రత్యేక కాలమ్ ఉంచండి.</p>
+</section>
+<section class="panel">
+<h2>7. Common mistakes and exam tips | సాధారణ తప్పులు, పరీక్షా చిట్కాలు</h2>
+<ul>
+<li>Confusing “above” with “immediately above”.</li>
+<li>Forgetting that each person or item is used only once when the puzzle says so.</li>
+<li>Assuming an order from an incomplete clue.</li>
+<li>Ignoring a negative condition after making a tentative arrangement.</li>
+<li>Failing to check every clue after completing the table.</li>
+<li>Spending too long on one case: mark it, move on, and return if time permits.</li>
+</ul>
+<p class="te" lang="te">“పైన” మరియు “వెంటనే పైన” ఒకటి కావు. ప్రతి వ్యక్తి ఒక్కసారే ఉపయోగించాలనే నియమం ఉంటే మళ్లీ వాడకండి. ఊహను నిజమని భావించవద్దు. చివర్లో అన్ని సూచనలను తప్పనిసరిగా తనిఖీ చేయండి.</p>
+</section>
+<section class="panel">
+<h2>8. Practice test – 50 MCQs | అభ్యాస పరీక్ష</h2>
+<p class="small">Choose one answer for each question. Submit to see your score and explanations. ప్రతి ప్రశ్నకు ఒక సమాధానం ఎంచుకుని Submit నొక్కండి.</p>
+<div id="quiz"></div>
+<div class="actions"><button id="submit">Submit test</button><button class="secondary" id="reset" type="button">Reset</button></div>
+<div id="score" class="score" aria-live="polite"></div>
+</section>
+<section class="panel">
+<h2>9. Quick revision | పునశ్చరణ</h2>
+<ul>
+<li>Identify all entities and categories before solving.</li>
+<li>Draw a clear slot diagram, grid or table.</li>
+<li>Start with fixed and highly restrictive clues.</li>
+<li>Keep confirmed facts separate from assumptions.</li>
+<li>Use cases when necessary and eliminate contradictions.</li>
+<li>Check every original clue before selecting an option.</li>
+</ul>
+<p class="te" lang="te">అంశాలను గుర్తించండి → పట్టిక గీయండి → ఖచ్చితమైన సూచనలు నమోదు చేయండి → అవకాశాలను తొలగించండి → అన్ని సూచనలతో సమాధానాన్ని తనిఖీ చేయండి.</p>
+</section>
+</main>
+<footer>RETRY IN LIBRARY · Learn • Practise • Succeed</footer>
+<script>
+const questions = [
+["A is immediately above B. B is on floor 2. On which floor is A?","1","2","3","4",2,"Immediately above means one floor higher: 2 + 1 = 3."],
+["P is scheduled before Q. Q is on Wednesday. Which statement must be true?","P is on Thursday","P is before Wednesday","P is after Wednesday","P is on Monday",1,"If P is before Q and Q is Wednesday, P must be earlier than Wednesday."],
+["Five people occupy floors 1–5. X is on floor 1 and Y on floor 5. How many floors lie between them?","2","3","4","5",1,"Floors 2, 3 and 4 lie between floors 1 and 5: three floors."],
+["A is not adjacent to B in a row of five. What does this guarantee?","A is at an end","B is at an end","At least one position separates them","They are at opposite ends",2,"Not adjacent means they are not consecutive; at least one position lies between."],
+["Four events are on four consecutive days. M is immediately before N. If N is Friday, M is on:","Tuesday","Wednesday","Thursday","Saturday",2,"Immediately before Friday is Thursday."],
+["In a matching puzzle, each person gets exactly one distinct city. If A has Delhi, can B also have Delhi?","Always","Only if B is older","No","Cannot determine",2,"The distinct-city condition means no city is assigned twice."],
+["There are six people and two teams of three. If A and B are fixed in Team 1, how many places remain in Team 1?","One","Two","Three","Four",0,"A team of three already has two members, so one place remains."],
+["A lives above B, and C lives below B. Which order is certain?","A below C","C below B below A","B above A","C above A only",1,"Combining the two relations gives C below B and B below A."],
+["Which clue is the strongest fixed anchor?","A is somewhere above B","C is not next to D","E is on floor 4","F is not first",2,"An exact position fixes E immediately and helps build the arrangement."],
+["If Monday is day 1, what is day 4?","Tuesday","Wednesday","Thursday","Friday",2,"Counting Monday as 1 gives Thursday as day 4."],
+["A is two places before B in a sequence. If A is first, B is:","Second","Third","Fourth","Fifth",1,"Two places after first is third: positions 1, 2, 3."],
+["Three books are red, blue and green, one colour each. Red is not first and blue is last. Which colour is first?","Red","Blue","Green","Cannot determine",2,"Blue is last and red cannot be first, so green must be first."],
+["A, B and C sit in a row. A is left of B; C is right of B. What is the order?","A-B-C","B-A-C","C-B-A","A-C-B",0,"A left of B and C right of B gives A-B-C."],
+["If D is neither first nor last in a four-day schedule, D can be on:","Only day 1","Day 2 or day 3","Only day 4","Any day",1,"The middle positions in four slots are 2 and 3."],
+["A is taller than B. C is shorter than B. Who is tallest among these three?","A","B","C","Cannot determine",0,"A > B > C, so A is tallest."],
+["A meeting is after Tuesday but before Friday. Which days are possible?","Monday, Tuesday","Wednesday or Thursday","Friday only","Saturday",1,"The days strictly between Tuesday and Friday are Wednesday and Thursday."],
+["Four floors: P is above Q; Q is above R; R is above S. Who is lowest?","P","Q","R","S",3,"The chain from top to bottom is P, Q, R, S."],
+["A is immediately before B and B immediately before C. Which sequence is fixed?","B-A-C","A-B-C","C-B-A","A-C-B",1,"Both immediate relations combine into A-B-C."],
+["A is not in Team 1. There are only two teams. What must be true?","A is in Team 2","A is a captain","Team 2 has one member","Cannot be assigned",0,"If exactly two teams are available and each person belongs to one, A must be in Team 2."],
+["In a 7-slot row, which positions are exactly in the middle?","3","4","3 and 4","5",1,"For an odd number of positions, the middle is (7+1)/2 = 4."],
+["If R is scheduled on the last day and S is immediately before R, S is on:","First day","Second-last day","First or second day","Cannot determine",1,"Immediately before the last day is the second-last day."],
+["A is above B but not immediately above. What is certain?","A and B are adjacent","At least one floor lies between them","A is on top floor","B is on bottom floor",1,"Not immediately above means there is at least one intervening floor."],
+["Which tool is most useful for a three-category matching puzzle?","A random list","A grid/table","A calculator only","A map",1,"A grid makes person-category matches and exclusions visible."],
+["If a clue says ‘at least one of A or B’, what does it mean?","Exactly one only","One or both","Neither","Both are excluded",1,"At least one permits A, B, or both."],
+["If exactly one of A and B is selected, which case is impossible?","A only","B only","Both A and B","Either A or B",2,"Exactly one excludes the case where both are selected."],
+["A is two floors above B. B is on floor 2. A is on:","3","4","5","1",1,"Two floors above floor 2 is floor 4."],
+["There are five tasks. X must be before Y and Z must be after Y. Which order relation follows?","X before Z","Z before X","Y before X","X and Z same time",0,"X < Y < Z, so X is before Z."],
+["A person is not assigned Monday, Tuesday or Wednesday in a five-day schedule. Which days remain?","Monday and Friday","Thursday and Friday","Tuesday and Thursday","Wednesday and Friday",1,"Only Thursday and Friday remain after excluding the first three days."],
+["A is first. B is somewhere after A. What is the minimum possible position of B in a four-person row?","1","2","3","4",1,"The earliest position after first is second."],
+["Which is a valid approach when two cases remain?","Ignore one case","Test both against all clues","Choose randomly","Change a clue",1,"Keep both cases and eliminate only those that contradict a clue."],
+["Five people stand in a line. A is at one end and B at the other. How many positions are between them?","2","3","4","0",1,"Positions 2, 3 and 4 lie between the two ends."],
+["If C is immediately after B, and B is third, C is:","Second","Third","Fourth","Fifth",2,"The slot immediately after third is fourth."],
+["A is not above B. Which statement is logically safe?","A is below or at the same level as B","A is immediately below B","B is at the top","A is at the bottom",0,"Not above allows below or equal, depending on whether same level is possible."],
+["A group must contain exactly four members. It currently has A, B and C. How many more are needed?","One","Two","Three","Four",0,"Four required minus three present equals one."],
+["If all seven days are used once and Sunday is fixed last, how many slots remain before it?","5","6","7","1",1,"Seven days total, with Sunday last, leaves six earlier slots."],
+["A is before B. C is after B. D is before A. Who is first among these four?","A","B","C","D",3,"D < A < B < C, so D is first."],
+["A, B, C and D occupy positions 1–4. A is before C; B is after C. Which relation is certain?","A before B","B before A","D before A","D after B",0,"A < C < B, so A is before B."],
+["A clue says two people are consecutive. What does it mean?","They are in the same group","No one is between them","They are at opposite ends","They are on the same floor",1,"Consecutive positions are adjacent, with no intervening position."],
+["In a floor puzzle, floor 1 is explicitly the lowest. Floor 5 is:","Lowest","Second lowest","Highest","Middle",2,"With floors numbered 1 through 5 from bottom upward, floor 5 is highest."],
+["A is not first. B is not last. Which is definitely true?","A is last","B is first","Neither restriction alone fixes an exact position","A is before B",2,"The two negative clues do not establish a unique order."],
+["If an event is on the day immediately after Wednesday, it is on:","Tuesday","Wednesday","Thursday","Friday",2,"The day immediately after Wednesday is Thursday."],
+["A is older than B; B is older than C. Who is youngest?","A","B","C","Cannot determine",2,"A > B > C by age, so C is youngest."],
+["Which clue gives a direct pair?","A is somewhere in the building","B is not on floor 1","C is immediately above D","E is one of five people",2,"It directly links C and D in adjacent positions."],
+["If a team has a maximum of three members and already has three, can another person join?","Yes, always","No","Only if captain agrees","Cannot determine",1,"The maximum size has already been reached."],
+["A is between B and C, but not necessarily immediately. What should you avoid?","Considering both possible sides","Assuming adjacency without evidence","Drawing a line","Checking all positions",1,"‘Between’ alone does not mean immediately between."],
+["A is on floor 3. B is two floors below A. Which floor is B on?","1","2","4","5",0,"3 − 2 = 1."],
+["If P is before Q and Q is before R, which must be true?","R before P","P before R","P and R are adjacent","Q is first",1,"The transitive order is P < Q < R."],
+["A puzzle has no arrangement satisfying every clue. What should you conclude?","Pick the closest answer","One assumption or clue interpretation needs rechecking","Ignore a negative clue","Add a new person",1,"A contradiction signals an error in the case, deduction or interpretation."],
+["What is the final verification step?","Check only the first clue","Check every original clue against the completed arrangement","Count the words","Choose the longest option",1,"A solution is valid only if every given condition is satisfied."],
+["A is in Group X. Each person belongs to exactly one group, X or Y. Can A also belong to Y?","Yes","No","Only on weekends","Cannot determine",1,"Exactly one group excludes simultaneous membership in both."],
+];
+const quiz=document.getElementById('quiz');
+questions.forEach((q,i)=>{
+ const box=document.createElement('div');box.className='question';
+ const title=document.createElement('div');title.className='qtitle';title.textContent=`Q${i+1}. ${q[0]}`;box.appendChild(title);
+ const opts=document.createElement('div');opts.className='opts';
+ for(let j=1;j<=4;j++){const lab=document.createElement('label');lab.className='opt';const radio=document.createElement('input');radio.type='radio';radio.name=`q${i}`;radio.value=j-1;const span=document.createElement('span');span.textContent=`${String.fromCharCode(64+j)}. ${q[j]}`;lab.append(radio,span);opts.appendChild(lab);}
+ box.appendChild(opts);const exp=document.createElement('div');exp.className='explain';exp.id=`exp${i}`;exp.textContent=`Correct answer: ${String.fromCharCode(65+q[5])}. ${q[q[5]+1]} — ${q[6]}`;box.appendChild(exp);quiz.appendChild(box);
+});
+document.getElementById('submit').addEventListener('click',()=>{
+ let score=0,answered=0;
+ questions.forEach((q,i)=>{const chosen=document.querySelector(`input[name="q${i}"]:checked`);if(chosen){answered++;if(Number(chosen.value)===q[5])score++;}document.getElementById(`exp${i}`).classList.add('show');});
+ document.getElementById('score').textContent=`Your score: ${score} / ${questions.length} | Attempted: ${answered} / ${questions.length}`;
+});
+document.getElementById('reset').addEventListener('click',()=>{
+ document.querySelectorAll('#quiz input').forEach(x=>x.checked=false);
+ document.querySelectorAll('.explain').forEach(x=>x.classList.remove('show'));
+ document.getElementById('score').textContent='';
+ window.scrollTo({top:document.querySelector('#quiz').offsetTop,behavior:'smooth'});
+});
+</script>
+</body>
+</html>
