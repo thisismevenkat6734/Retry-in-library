@@ -752,6 +752,60 @@
       }
     ];
 
+
+    // Branded dialog: avoids browser-generated "<hostname> says" labels.
+    function showSiteDialog(message, requireChoice = false) {
+      return new Promise(resolve => {
+        let dialog = document.getElementById("retry-site-dialog");
+        if (!dialog) {
+          dialog = document.createElement("dialog");
+          dialog.id = "retry-site-dialog";
+          dialog.innerHTML = `
+            <div class="retry-dialog-content">
+              <p class="retry-dialog-brand">RETRY IN LIBRARY</p>
+              <p class="retry-dialog-message"></p>
+              <div class="retry-dialog-actions">
+                <button type="button" data-dialog-cancel>Cancel</button>
+                <button type="button" data-dialog-ok class="retry-dialog-primary">OK</button>
+              </div>
+            </div>`;
+          document.body.appendChild(dialog);
+          const style = document.createElement("style");
+          style.textContent = `
+            #retry-site-dialog { width:min( min(92vw, 440px), 440px); border:0; border-radius:16px; padding:0; color:var(--text-color, #172033); background:var(--card-bg, #fff); box-shadow:0 18px 60px #0005; }
+            #retry-site-dialog::backdrop { background:#0008; }
+            .retry-dialog-content { padding:22px; }
+            .retry-dialog-brand { margin:0 0 14px; font-weight:800; letter-spacing:.04em; color:#1769aa; }
+            .retry-dialog-message { white-space:pre-line; line-height:1.65; margin:0 0 22px; }
+            .retry-dialog-actions { display:flex; justify-content:flex-end; gap:10px; }
+            .retry-dialog-actions button { min-height:42px; padding:9px 16px; border:1px solid #cbd5e1; border-radius:8px; background:transparent; color:inherit; font:inherit; font-weight:700; cursor:pointer; }
+            .retry-dialog-actions .retry-dialog-primary { color:#fff; background:#1769aa; border-color:#1769aa; }
+            #retry-site-dialog:not([data-confirm]) [data-dialog-cancel] { display:none; }
+          `;
+          document.head.appendChild(style);
+        }
+        dialog.removeAttribute("data-confirm");
+        if (requireChoice) dialog.setAttribute("data-confirm", "");
+        dialog.querySelector(".retry-dialog-message").textContent = message;
+        const ok = dialog.querySelector("[data-dialog-ok]");
+        const cancel = dialog.querySelector("[data-dialog-cancel]");
+        const finish = value => {
+          if (dialog.open) dialog.close();
+          ok.removeEventListener("click", onOk);
+          cancel.removeEventListener("click", onCancel);
+          dialog.removeEventListener("cancel", onEscape);
+          resolve(value);
+        };
+        const onOk = () => finish(true);
+        const onCancel = () => finish(false);
+        const onEscape = event => { event.preventDefault(); finish(false); };
+        ok.addEventListener("click", onOk);
+        cancel.addEventListener("click", onCancel);
+        dialog.addEventListener("cancel", onEscape);
+        dialog.showModal();
+      });
+    }
+
     const $ = id => document.getElementById(id);
 
     const ui = {
@@ -803,7 +857,7 @@
       try {
         localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 30)));
       } catch {
-        alert("Browser storage is unavailable. This result could not be saved.");
+        showSiteDialog("Browser storage is unavailable. This result could not be saved.");
       }
     }
 
@@ -843,7 +897,7 @@
       const available = getAvailableQuestions();
 
       if (!available.length) {
-        alert("No questions are currently available for this combination. Choose another exam or category.");
+        showSiteDialog("No questions are currently available for this combination. Choose another exam or category.");
         return;
       }
 
@@ -1048,7 +1102,7 @@
       updateCounts();
     }
 
-    function submitConfirmation() {
+    async function submitConfirmation() {
       if (!testActive || testFinished) return;
 
       const answered = Object.keys(answers).length;
@@ -1063,7 +1117,7 @@
         "Marked for review: " + reviewCount + "\n\n" +
         "You cannot return to the test after submission.";
 
-      if (window.confirm(message)) {
+      if (await showSiteDialog(message, true)) {
         finishTest(false);
       }
     }
@@ -1224,15 +1278,15 @@
       });
     }
 
-    function clearHistory() {
+    async function clearHistory() {
       const history = readHistory();
 
       if (!history.length) {
-        alert("There is no test history to clear.");
+        showSiteDialog("There is no test history to clear.");
         return;
       }
 
-      if (!window.confirm("Delete all saved mock test history from this browser?")) {
+      if (!(await showSiteDialog("Delete all saved mock test history from this browser?", true))) {
         return;
       }
 
@@ -1240,7 +1294,7 @@
         localStorage.removeItem(HISTORY_KEY);
         renderHistory();
       } catch {
-        alert("Unable to clear browser history.");
+        showSiteDialog("Unable to clear browser history.");
       }
     }
 
