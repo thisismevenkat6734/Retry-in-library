@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1128,10 +1127,10 @@
       renderQuestion();
     }
 
-    function resetPractice() {
+    async function resetPractice() {
       if (started && Object.keys(answers).length > 0) {
-        const confirmed = window.confirm(
-          "Reset this test? Your already submitted answers will remain in your overall statistics."
+        const confirmed = await showSiteDialog(
+          "Reset this test? Your already submitted answers will remain in your overall statistics.", true
         );
 
         if (!confirmed) return;
